@@ -58,5 +58,17 @@ jobs:
             echo "No download count changes; skipping commit."
           else
             git commit -m "chore(extensions): update download stats [skip ci]"
-            git push origin main
+            # The build workflow can land a commit between our checkout and push;
+            # rebase and retry so a non-fast-forward doesn't drop tonight's stats.
+            for attempt in 1 2 3; do
+              if git push origin main 2>/dev/null; then
+                break
+              fi
+              echo "Push failed (attempt $attempt); rebasing and retrying..."
+              git pull --rebase --autostash origin main
+            done
+            if [ "$(git rev-list --count origin/main..main)" -ne 0 ]; then
+              echo "Push to main failed after 3 attempts"
+              exit 1
+            fi
           fi

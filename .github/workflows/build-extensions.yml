@@ -79,7 +79,19 @@ jobs:
             git add $CHANGED_ZIPS
             if ! git diff --cached --quiet; then
               git commit -m "build(extensions): rebuild .openclipext zips [skip ci]"
-              git push origin main
+              # The stats workflow can land a commit between our checkout and push;
+              # rebase and retry so a non-fast-forward doesn't drop this update.
+              for attempt in 1 2 3; do
+                if git push origin main 2>/dev/null; then
+                  break
+                fi
+                echo "Push failed (attempt $attempt); rebasing and retrying..."
+                git pull --rebase --autostash origin main
+              done
+              if [ "$(git rev-list --count origin/main..main)" -ne 0 ]; then
+                echo "Push to main failed after 3 attempts"
+                exit 1
+              fi
             fi
           fi
 
@@ -127,5 +139,15 @@ jobs:
           git add published/catalog.json
           if ! git diff --cached --quiet; then
             git commit -m "chore(extensions): regenerate catalog.json [skip ci]"
-            git push origin main
+            for attempt in 1 2 3; do
+              if git push origin main 2>/dev/null; then
+                break
+              fi
+              echo "Push failed (attempt $attempt); rebasing and retrying..."
+              git pull --rebase --autostash origin main
+            done
+            if [ "$(git rev-list --count origin/main..main)" -ne 0 ]; then
+              echo "Push to main failed after 3 attempts"
+              exit 1
+            fi
           fi
