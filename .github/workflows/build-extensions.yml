@@ -61,7 +61,11 @@ jobs:
             tag="${identifier}@${version}"
 
             if gh release view "$tag" --json name >/dev/null 2>&1; then
-              echo "Release $tag already exists; skipping (bump 'version' in $pkg_name/openclip.json to republish)."
+              # Same version can be republished: overwrite the release asset in place, so content
+              # changes reach users without a version bump or a new release tag.
+              echo "Release $tag already exists; re-uploading $pkg_name.zip (clobber)."
+              gh release upload "$tag" "$ROOT/published/$pkg_name.zip" --clobber --repo "$GITHUB_REPOSITORY"
+              CHANGED_ZIPS="$CHANGED_ZIPS published/$pkg_name.zip"
               continue
             fi
 

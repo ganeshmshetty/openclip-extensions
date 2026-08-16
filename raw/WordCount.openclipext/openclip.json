@@ -2,6 +2,7 @@
   "identifier": "com.openclip.wordcount",
   "name": "Word & Character Count",
   "version": "1.0.1",
+  "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Count the words and characters in the selected text.",
   "category": "writing",

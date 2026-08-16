@@ -2,12 +2,16 @@
   "identifier": "com.openclip.applemusic",
   "name": "Apple Music",
   "version": "1.0.1",
+  "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Search Apple Music for the selected text.",
   "category": "search",
   "action": {
     "title": "Apple Music",
     "icon": "music.note",
-    "script": "main.applescript"
+    "type": "applescript",
+    "script": "main.applescript",
+    "loading": true,
+    "loadingMessage": "Searching Apple Music…"
   }
 }

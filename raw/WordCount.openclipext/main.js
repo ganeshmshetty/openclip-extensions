@@ -4,7 +4,5 @@ function action(selection, options) {
     var chars = text.length;
     var lines = text.split("\n").length;
 
-    var msg = words + " words  •  " + chars + " chars  •  " + lines + " lines";
-    openclip.showNotification("Word & Character Count", msg);
-    return msg;
+    return words + " words  •  " + chars + " chars  •  " + lines + " lines";
 }
