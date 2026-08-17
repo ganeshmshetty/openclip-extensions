@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.notes",
+  "name": "Notes",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Open the inline Notes popup (New Note) for the selected text.",
+  "action": {
+    "title": "New Note",
+    "icon": "note.text",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

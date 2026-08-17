@@ -5,7 +5,6 @@
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Open Google Maps with the selected text as a search query.",
-  "category": "search",
   "action": {
     "title": "Google Maps",
     "icon": "map",

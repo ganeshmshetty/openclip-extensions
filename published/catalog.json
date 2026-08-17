@@ -7,7 +7,6 @@
       "description": "Search Apple Music for the selected text.",
       "author": "OpenClip Team",
       "icon": "music.note",
-      "category": "search",
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.0.1/AppleMusic.openclipext.zip"
@@ -18,7 +17,6 @@
       "description": "Open Google Maps with the selected text as a search query.",
       "author": "OpenClip Team",
       "icon": "map",
-      "category": "search",
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlemaps@1.0.1/GoogleMaps.openclipext.zip"
@@ -29,7 +27,6 @@
       "description": "Translate the selected text into English with Google Translate.",
       "author": "OpenClip Team",
       "icon": "globe",
-      "category": "writing",
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip"
@@ -40,7 +37,6 @@
       "description": "Search YouTube for videos matching the selected text.",
       "author": "OpenClip Team",
       "icon": "play.circle",
-      "category": "search",
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip"
@@ -51,7 +47,6 @@
       "description": "Look up the selected text on Wikipedia.",
       "author": "OpenClip Team",
       "icon": "book",
-      "category": "search",
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wikipedia@1.0.1/WikipediaSearch.openclipext.zip"
@@ -62,7 +57,6 @@
       "description": "Count the words and characters in the selected text.",
       "author": "OpenClip Team",
       "icon": "text.alignleft",
-      "category": "writing",
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.0.1/WordCount.openclipext.zip"
