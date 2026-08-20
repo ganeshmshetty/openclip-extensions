@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.todoist",
+  "name": "Todoist Task",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Add a quick task to Todoist.",
+  "action": {
+    "title": "Todoist Task",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "todoist://addtask?text={text}"
+  }
+}

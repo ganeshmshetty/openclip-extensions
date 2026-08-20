@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.things",
+  "name": "Things 3",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Add a new to-do task to Things 3 inbox.",
+  "action": {
+    "title": "Things 3",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "things:///add?title={text}"
+  }
+}

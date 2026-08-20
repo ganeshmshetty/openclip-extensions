@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.bearnotes",
+  "name": "Bear Notes",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Create a new note in Bear.",
+  "action": {
+    "title": "Bear Notes",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "bear://x-callback-url/create?text={text}"
+  }
+}

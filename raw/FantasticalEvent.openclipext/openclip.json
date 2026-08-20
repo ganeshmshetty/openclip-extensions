@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.fantasticalevent",
+  "name": "Fantastical Event",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Parse natural language calendar events in Fantastical.",
+  "action": {
+    "title": "Fantastical Event",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "fantastical2://x-callback-url/parse?sentence={text}"
+  }
+}

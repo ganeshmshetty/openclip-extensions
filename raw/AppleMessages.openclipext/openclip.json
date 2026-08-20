@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.applemessages",
+  "name": "Apple Messages",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Share selected text directly via Apple Messages.",
+  "action": {
+    "title": "Apple Messages",
+    "icon": "icon.svg",
+    "type": "service",
+    "serviceName": "com.apple.MobileSMS.SharingExtension"
+  }
+}

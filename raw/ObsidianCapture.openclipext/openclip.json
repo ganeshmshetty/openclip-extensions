@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.obsidiancapture",
+  "name": "Obsidian Capture",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Capture selected text to an Obsidian vault note.",
+  "action": {
+    "title": "Obsidian Capture",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "obsidian://new?content={text}"
+  }
+}

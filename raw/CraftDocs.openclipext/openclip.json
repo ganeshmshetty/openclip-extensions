@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.craftdocs",
+  "name": "Craft Docs",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Add selected text to Craft documents.",
+  "action": {
+    "title": "Craft Docs",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "craftdocs://createdocument?content={text}"
+  }
+}

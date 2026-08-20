@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.drafts",
+  "name": "Drafts Note",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Create a new note in Drafts.",
+  "action": {
+    "title": "Drafts Note",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "drafts://create?text={text}"
+  }
+}

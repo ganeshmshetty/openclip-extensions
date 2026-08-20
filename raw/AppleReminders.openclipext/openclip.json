@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.applereminders",
+  "name": "Apple Reminders",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Quick add a new reminder task to Apple Reminders.",
+  "action": {
+    "title": "Apple Reminders",
+    "icon": "icon.svg",
+    "type": "applescript",
+    "scriptCode": "tell application \"Reminders\"\n\tset defaultList to default list\n\ttell defaultList\n\t\tmake new reminder with properties {name:OPENCLIP_TEXT}\n\tend tell\nend tell"
+  }
+}
