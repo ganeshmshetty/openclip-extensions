@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.devdocs",
+  "name": "DevDocs Search",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Instant unified API documentation search on DevDocs.",
+  "action": {
+    "title": "DevDocs Search",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://devdocs.io/#q={text}"
+  }
+}

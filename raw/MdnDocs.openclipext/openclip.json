@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.mdndocs",
+  "name": "MDN Docs",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Search Web API, JavaScript, and CSS documentation on MDN.",
+  "action": {
+    "title": "MDN Docs",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://developer.mozilla.org/en-US/search?q={text}"
+  }
+}

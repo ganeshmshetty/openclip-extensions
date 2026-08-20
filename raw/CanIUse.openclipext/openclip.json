@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.caniuse",
+  "name": "Can IUse",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Browser compatibility table lookup on Can I Use.",
+  "action": {
+    "title": "Can I Use",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://caniuse.com/?search={text}"
+  }
+}

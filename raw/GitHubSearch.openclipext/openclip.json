@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.githubsearch",
+  "name": "GitHub Search",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Search GitHub code and repositories.",
+  "action": {
+    "title": "GitHub Search",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://github.com/search?q={text}"
+  }
+}

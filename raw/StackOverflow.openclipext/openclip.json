@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.stackoverflow",
+  "name": "Stack Overflow",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Search coding questions and answers on Stack Overflow.",
+  "action": {
+    "title": "Stack Overflow",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://stackoverflow.com/search?q={text}"
+  }
+}

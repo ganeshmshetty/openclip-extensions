@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.pypisearch",
+  "name": "PyPI Search",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Search Python packages on PyPI.",
+  "action": {
+    "title": "PyPI Search",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://pypi.org/search/?q={text}"
+  }
+}

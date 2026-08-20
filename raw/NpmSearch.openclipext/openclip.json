@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.npmsearch",
+  "name": "npm Search",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Search JavaScript packages on npm registry.",
+  "action": {
+    "title": "npm Search",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "https://www.npmjs.com/search?q={text}"
+  }
+}
