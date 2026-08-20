@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:47:20Z",
+  "updatedAt": "2026-08-20T16:52:30Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -110,6 +110,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deduplicatelines@1.0.0/DeduplicateLines.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.deleteselection",
+      "name": "Delete Selection",
+      "description": "Delete the selected text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.0.0/DeleteSelection.openclipext.zip"
     },
     {
       "id": "com.openclip.dotcase",
@@ -292,6 +302,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.0.0/Lowercase.openclipext.zip"
     },
     {
+      "id": "com.openclip.mailcompose",
+      "name": "Mail Compose",
+      "description": "Create a new email draft with the selected text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mailcompose@1.0.0/MailCompose.openclipext.zip"
+    },
+    {
       "id": "com.openclip.markdownblockquote",
       "name": "Markdown Blockquote",
       "description": "Format selected text as a Markdown blockquote.",
@@ -392,6 +412,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.0.0/PascalCase.openclipext.zip"
     },
     {
+      "id": "com.openclip.pasteenter",
+      "name": "Paste Enter",
+      "description": "Paste clipboard text and press Return.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.0.0/PasteEnter.openclipext.zip"
+    },
+    {
       "id": "com.openclip.quotelines",
       "name": "Quote Lines",
       "description": "Enclose every individual line in double quotes.",
@@ -472,6 +502,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip"
     },
     {
+      "id": "com.openclip.selectall",
+      "name": "Select All",
+      "description": "Select the entire document or text field.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.0.0/SelectAll.openclipext.zip"
+    },
+    {
       "id": "com.openclip.sentencecase",
       "name": "Sentence Case",
       "description": "Capitalize the first letter of each sentence.",
@@ -540,6 +580,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortnumerical@1.0.0/SortNumerical.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.speakselection",
+      "name": "Speak Selection",
+      "description": "Text-to-speech using system voice.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.0.0/SpeakSelection.openclipext.zip"
     },
     {
       "id": "com.openclip.splitcommas",
