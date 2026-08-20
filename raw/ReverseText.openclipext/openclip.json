@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.reversetext",
+  "name": "Reverse Text",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Reverse the entire string character-by-character.",
+  "action": {
+    "title": "Reverse Text",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

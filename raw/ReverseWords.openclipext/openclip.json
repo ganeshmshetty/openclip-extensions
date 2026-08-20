@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.reversewords",
+  "name": "Reverse Words",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Reverse word order while keeping word characters intact.",
+  "action": {
+    "title": "Reverse Words",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

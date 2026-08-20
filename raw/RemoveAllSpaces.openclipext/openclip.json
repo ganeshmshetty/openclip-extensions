@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.removeallspaces",
+  "name": "Remove All Spaces",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Strip all whitespace from the selected text.",
+  "action": {
+    "title": "Remove All Spaces",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

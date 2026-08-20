@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.rot13",
+  "name": "ROT13 Cipher",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Apply ROT13 substitution cipher to selected text.",
+  "action": {
+    "title": "ROT13",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

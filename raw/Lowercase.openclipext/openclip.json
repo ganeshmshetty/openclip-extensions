@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.lowercase",
+  "name": "Lowercase",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Convert selected text to lowercase.",
+  "action": {
+    "title": "lowercase",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

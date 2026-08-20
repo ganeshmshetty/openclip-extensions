@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.underscore",
+  "name": "Underscore",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Replace spaces with underscores.",
+  "action": {
+    "title": "Underscore",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}
