@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T12:08:07Z",
+  "updatedAt": "2026-08-20T03:07:59Z",
   "extensions": [
     {
       "id": "com.openclip.applemusic",
@@ -32,6 +32,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip"
     },
     {
+      "id": "com.openclip.notes",
+      "name": "Notes",
+      "description": "Open the inline Notes popup (New Note) for the selected text.",
+      "author": "OpenClip Team",
+      "icon": "note.text",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip"
+    },
+    {
       "id": "com.openclip.youtube",
       "name": "Search YouTube",
       "description": "Search YouTube for videos matching the selected text.",
@@ -40,6 +50,16 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip"
+    },
+    {
+      "id": "com.opeclip.slugify",
+      "name": "Slugify",
+      "description": "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
+      "author": "OpenClip Team",
+      "icon": "snail.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.opeclip.slugify@1.0.0/Slugify.openclipext.zip"
     },
     {
       "id": "com.openclip.wikipedia",
