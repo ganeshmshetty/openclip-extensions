@@ -125,12 +125,19 @@ jobs:
               identifier="$(echo "$identifier" | tr '[:upper:]' '[:lower:]')"
             fi
 
+            raw_icon="$(jq -r '(.action.icon // .actions[0].icon // "")' "$manifest")"
+            if [[ "$raw_icon" =~ \.(svg|png|jpg|jpeg|icns|gif)$ ]]; then
+              store_icon=""
+            else
+              store_icon="$raw_icon"
+            fi
+
             entry=$(jq -nc \
               --arg id "$identifier" \
               --arg name "$(jq -r '.name // (.action.title // .actions[0].title // empty)' "$manifest")" \
               --arg desc "$(jq -r '.description // empty' "$manifest")" \
               --arg author "$(jq -r '.author // "OpenClip Team"' "$manifest")" \
-              --arg icon "$(jq -r '(.action.icon // .actions[0].icon // "puzzlepiece")' "$manifest")" \
+              --arg icon "$store_icon" \
               --arg version "$(jq -r '.version // "1.0.0"' "$manifest")" \
               --arg url "https://github.com/$GITHUB_REPOSITORY/releases/download/${identifier}@$(jq -r '.version // "1.0.0"' "$manifest")/$pkg_name.zip" \
               '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: 0, downloadURL: $url}')
