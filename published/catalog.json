@@ -1,6 +1,16 @@
 {
-  "updatedAt": "2026-08-20T03:07:59Z",
+  "updatedAt": "2026-08-20T16:16:01Z",
   "extensions": [
+    {
+      "id": "com.openclip.alternatingcase",
+      "name": "Alternating Case",
+      "description": "Convert selected text to aLtErNaTiNg CaSe.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.alternatingcase@1.0.0/AlternatingCase.openclipext.zip"
+    },
     {
       "id": "com.openclip.applemusic",
       "name": "Apple Music",
@@ -10,6 +20,46 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.0.1/AppleMusic.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.camelcase",
+      "name": "camelCase",
+      "description": "Convert selected text to camelCase.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.camelcase@1.0.0/CamelCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.capitalizewords",
+      "name": "Capitalize Words",
+      "description": "Capitalize the first letter of every word.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.0.0/CapitalizeWords.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.constantcase",
+      "name": "CONSTANT_CASE",
+      "description": "Convert selected text to CONSTANT_CASE (screaming snake case).",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.dotcase",
+      "name": "Dot Case",
+      "description": "Convert selected text to dot.case.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dotcase@1.0.0/DotCase.openclipext.zip"
     },
     {
       "id": "com.openclip.googlemaps",
@@ -32,6 +82,46 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip"
     },
     {
+      "id": "com.openclip.hyphenate",
+      "name": "Hyphenate",
+      "description": "Replace spaces with hyphens.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.0.0/Hyphenate.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.kebabcase",
+      "name": "kebab-case",
+      "description": "Convert selected text to kebab-case.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.kebabcase@1.0.0/KebabCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.lowercase",
+      "name": "Lowercase",
+      "description": "Convert selected text to lowercase.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.0.0/Lowercase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.normalizespaces",
+      "name": "Normalize Spaces",
+      "description": "Collapse consecutive whitespace into single spaces.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.normalizespaces@1.0.0/NormalizeSpaces.openclipext.zip"
+    },
+    {
       "id": "com.openclip.notes",
       "name": "Notes",
       "description": "Open the inline Notes popup (New Note) for the selected text.",
@@ -40,6 +130,66 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.pascalcase",
+      "name": "PascalCase",
+      "description": "Convert selected text to PascalCase.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.0.0/PascalCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.removeallspaces",
+      "name": "Remove All Spaces",
+      "description": "Strip all whitespace from the selected text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removeallspaces@1.0.0/RemoveAllSpaces.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.removelinebreaks",
+      "name": "Remove Line Breaks",
+      "description": "Replace line breaks with spaces.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.0.0/RemoveLineBreaks.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.reversetext",
+      "name": "Reverse Text",
+      "description": "Reverse the entire string character-by-character.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversetext@1.0.0/ReverseText.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.reversewords",
+      "name": "Reverse Words",
+      "description": "Reverse word order while keeping word characters intact.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversewords@1.0.0/ReverseWords.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.rot13",
+      "name": "ROT13 Cipher",
+      "description": "Apply ROT13 substitution cipher to selected text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.rot13@1.0.0/Rot13.openclipext.zip"
     },
     {
       "id": "com.openclip.youtube",
@@ -52,6 +202,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip"
     },
     {
+      "id": "com.openclip.sentencecase",
+      "name": "Sentence Case",
+      "description": "Capitalize the first letter of each sentence.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip"
+    },
+    {
       "id": "com.opeclip.slugify",
       "name": "Slugify",
       "description": "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
@@ -60,6 +220,46 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.opeclip.slugify@1.0.0/Slugify.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.snakecase",
+      "name": "snake_case",
+      "description": "Convert selected text to snake_case.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.snakecase@1.0.0/SnakeCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.titlecase",
+      "name": "Title Case",
+      "description": "Capitalize words according to English title conventions.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.0.0/TitleCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.underscore",
+      "name": "Underscore",
+      "description": "Replace spaces with underscores.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underscore@1.0.0/Underscore.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.uppercase",
+      "name": "Uppercase",
+      "description": "Convert selected text to uppercase.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.0.0/Uppercase.openclipext.zip"
     },
     {
       "id": "com.openclip.wikipedia",
