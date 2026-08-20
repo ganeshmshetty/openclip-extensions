@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.charactercount",
+  "name": "Character Count",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Display character count as a transient toast.",
+  "action": {
+    "title": "Character Count",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

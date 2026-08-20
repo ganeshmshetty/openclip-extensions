@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.extractphones",
+  "name": "Extract Phones",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Regex-extract all phone numbers into a clean list.",
+  "action": {
+    "title": "Extract Phones",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}
