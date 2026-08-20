@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:39:01Z",
+  "updatedAt": "2026-08-20T16:43:29Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -10,6 +10,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.alternatingcase@1.0.0/AlternatingCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.anglebrackets",
+      "name": "Angle Brackets",
+      "description": "Wrap selected text in angle brackets.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.0.0/AngleBrackets.openclipext.zip"
     },
     {
       "id": "com.openclip.applemusic",
@@ -52,6 +62,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.0.0/CapitalizeWords.openclipext.zip"
     },
     {
+      "id": "com.openclip.codeblock",
+      "name": "Code Block",
+      "description": "Format selected text as a Markdown code block.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.codeblock@1.0.0/CodeBlock.openclipext.zip"
+    },
+    {
       "id": "com.openclip.constantcase",
       "name": "CONSTANT_CASE",
       "description": "Convert selected text to CONSTANT_CASE (screaming snake case).",
@@ -60,6 +80,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.curlybrackets",
+      "name": "Curly Brackets",
+      "description": "Wrap selected text in curly brackets.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.0.0/CurlyBrackets.openclipext.zip"
     },
     {
       "id": "com.openclip.deduplicatelines",
@@ -82,6 +112,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dotcase@1.0.0/DotCase.openclipext.zip"
     },
     {
+      "id": "com.openclip.doublequotes",
+      "name": "Double Quotes",
+      "description": "Wrap selected text in double quotes.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.0.0/DoubleQuotes.openclipext.zip"
+    },
+    {
       "id": "com.openclip.googlemaps",
       "name": "Google Maps",
       "description": "Open Google Maps with the selected text as a search query.",
@@ -102,6 +142,36 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip"
     },
     {
+      "id": "com.openclip.headerone",
+      "name": "Header One",
+      "description": "Format selected text as Markdown Header 1.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerone@1.0.0/HeaderOne.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.headerthree",
+      "name": "Header Three",
+      "description": "Format selected text as Markdown Header 3.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerthree@1.0.0/HeaderThree.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.headertwo",
+      "name": "Header Two",
+      "description": "Format selected text as Markdown Header 2.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headertwo@1.0.0/HeaderTwo.openclipext.zip"
+    },
+    {
       "id": "com.openclip.hyphenate",
       "name": "Hyphenate",
       "description": "Replace spaces with hyphens.",
@@ -110,6 +180,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.0.0/Hyphenate.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.inlinecode",
+      "name": "Inline Code",
+      "description": "Format selected text as inline Markdown code.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.inlinecode@1.0.0/InlineCode.openclipext.zip"
     },
     {
       "id": "com.openclip.joincommas",
@@ -140,6 +220,56 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.0.0/Lowercase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.markdownblockquote",
+      "name": "Markdown Blockquote",
+      "description": "Format selected text as a Markdown blockquote.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownblockquote@1.0.0/MarkdownBlockquote.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.markdownbold",
+      "name": "Markdown Bold",
+      "description": "Format selected text as Markdown bold.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownbold@1.0.0/MarkdownBold.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.markdownitalic",
+      "name": "Markdown Italic",
+      "description": "Format selected text as Markdown italic.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownitalic@1.0.0/MarkdownItalic.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.markdownlink",
+      "name": "Markdown Link",
+      "description": "Format selected text as a Markdown link template.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownlink@1.0.0/MarkdownLink.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.markdownstrikethrough",
+      "name": "Markdown Strikethrough",
+      "description": "Format selected text as Markdown strikethrough.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownstrikethrough@1.0.0/MarkdownStrikethrough.openclipext.zip"
     },
     {
       "id": "com.openclip.normalizespaces",
@@ -282,6 +412,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shufflelines@1.0.0/ShuffleLines.openclipext.zip"
     },
     {
+      "id": "com.openclip.singlequotes",
+      "name": "Single Quotes",
+      "description": "Wrap selected text in single quotes.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.singlequotes@1.0.0/SingleQuotes.openclipext.zip"
+    },
+    {
       "id": "com.opeclip.slugify",
       "name": "Slugify",
       "description": "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
@@ -330,6 +470,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.splitcommas@1.0.0/SplitCommas.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.squarebrackets",
+      "name": "Square Brackets",
+      "description": "Wrap selected text in square brackets.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.squarebrackets@1.0.0/SquareBrackets.openclipext.zip"
     },
     {
       "id": "com.openclip.tasklines",
@@ -400,6 +550,16 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.0.1/WordCount.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.wrapparentheses",
+      "name": "Wrap Parentheses",
+      "description": "Wrap selected text in parentheses.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wrapparentheses@1.0.0/WrapParentheses.openclipext.zip"
     }
   ]
 }
