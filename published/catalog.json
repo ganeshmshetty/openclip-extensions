@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:56:17Z",
+  "updatedAt": "2026-08-20T17:00:49Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -22,6 +22,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.0.0/AngleBrackets.openclipext.zip"
     },
     {
+      "id": "com.openclip.applemessages",
+      "name": "Apple Messages",
+      "description": "Share selected text directly via Apple Messages.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemessages@1.0.0/AppleMessages.openclipext.zip"
+    },
+    {
       "id": "com.openclip.applemusic",
       "name": "Apple Music",
       "description": "Search Apple Music for the selected text.",
@@ -30,6 +40,26 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.0.1/AppleMusic.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.applereminders",
+      "name": "Apple Reminders",
+      "description": "Quick add a new reminder task to Apple Reminders.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applereminders@1.0.0/AppleReminders.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.bearnotes",
+      "name": "Bear Notes",
+      "description": "Create a new note in Bear.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.0.0/BearNotes.openclipext.zip"
     },
     {
       "id": "com.openclip.bulletlines",
@@ -102,6 +132,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip"
     },
     {
+      "id": "com.openclip.craftdocs",
+      "name": "Craft Docs",
+      "description": "Add selected text to Craft documents.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.craftdocs@1.0.0/CraftDocs.openclipext.zip"
+    },
+    {
       "id": "com.openclip.curlybrackets",
       "name": "Curly Brackets",
       "description": "Wrap selected text in curly brackets.",
@@ -162,6 +202,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.0.0/DoubleQuotes.openclipext.zip"
     },
     {
+      "id": "com.openclip.drafts",
+      "name": "Drafts Note",
+      "description": "Create a new note in Drafts.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.drafts@1.0.0/DraftsNote.openclipext.zip"
+    },
+    {
       "id": "com.openclip.extractemails",
       "name": "Extract Emails",
       "description": "Regex-extract all email addresses into a clean list.",
@@ -210,6 +260,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.0.0/ExtractUrls.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.fantasticalevent",
+      "name": "Fantastical Event",
+      "description": "Parse natural language calendar events in Fantastical.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.fantasticalevent@1.0.0/FantasticalEvent.openclipext.zip"
     },
     {
       "id": "com.openclip.githubsearch",
@@ -332,6 +392,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.0.0/LineCount.openclipext.zip"
     },
     {
+      "id": "com.openclip.logseqcapture",
+      "name": "Logseq Capture",
+      "description": "Send selected text to Logseq quick capture.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.logseqcapture@1.0.0/LogseqCapture.openclipext.zip"
+    },
+    {
       "id": "com.openclip.lowercase",
       "name": "Lowercase",
       "description": "Convert selected text to lowercase.",
@@ -450,6 +520,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.0.0/NumberLines.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.obsidiancapture",
+      "name": "Obsidian Capture",
+      "description": "Capture selected text to an Obsidian vault note.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.obsidiancapture@1.0.0/ObsidianCapture.openclipext.zip"
     },
     {
       "id": "com.openclip.paragraphcount",
@@ -702,6 +782,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tasklines@1.0.0/TaskLines.openclipext.zip"
     },
     {
+      "id": "com.openclip.things",
+      "name": "Things 3",
+      "description": "Add a new to-do task to Things 3 inbox.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.0.0/ThingsThree.openclipext.zip"
+    },
+    {
       "id": "com.openclip.titlecase",
       "name": "Title Case",
       "description": "Capitalize words according to English title conventions.",
@@ -710,6 +800,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.0.0/TitleCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.todoist",
+      "name": "Todoist Task",
+      "description": "Add a quick task to Todoist.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.todoist@1.0.0/TodoistTask.openclipext.zip"
     },
     {
       "id": "com.openclip.trimlines",
