@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:43:29Z",
+  "updatedAt": "2026-08-20T16:47:20Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -62,6 +62,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.0.0/CapitalizeWords.openclipext.zip"
     },
     {
+      "id": "com.openclip.charactercount",
+      "name": "Character Count",
+      "description": "Display character count as a transient toast.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.0.0/CharacterCount.openclipext.zip"
+    },
+    {
       "id": "com.openclip.codeblock",
       "name": "Code Block",
       "description": "Format selected text as a Markdown code block.",
@@ -120,6 +130,56 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.0.0/DoubleQuotes.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.extractemails",
+      "name": "Extract Emails",
+      "description": "Regex-extract all email addresses into a clean list.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractemails@1.0.0/ExtractEmails.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.extracthashtags",
+      "name": "Extract Hashtags",
+      "description": "Regex-extract all #hashtags into a clean list.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracthashtags@1.0.0/ExtractHashtags.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.extractips",
+      "name": "Extract IPs",
+      "description": "Regex-extract all IPv4 addresses into a clean list.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractips@1.0.0/ExtractIps.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.extractphones",
+      "name": "Extract Phones",
+      "description": "Regex-extract all phone numbers into a clean list.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractphones@1.0.0/ExtractPhones.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.extracturls",
+      "name": "Extract URLs",
+      "description": "Regex-extract all HTTP/HTTPS links into a clean list.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.0.0/ExtractUrls.openclipext.zip"
     },
     {
       "id": "com.openclip.googlemaps",
@@ -212,6 +272,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.kebabcase@1.0.0/KebabCase.openclipext.zip"
     },
     {
+      "id": "com.openclip.linecount",
+      "name": "Line Count",
+      "description": "Display line count as a transient toast.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.0.0/LineCount.openclipext.zip"
+    },
+    {
       "id": "com.openclip.lowercase",
       "name": "Lowercase",
       "description": "Convert selected text to lowercase.",
@@ -300,6 +370,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.0.0/NumberLines.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.paragraphcount",
+      "name": "Paragraph Count",
+      "description": "Display paragraph count as a transient toast.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.0.0/ParagraphCount.openclipext.zip"
     },
     {
       "id": "com.openclip.pascalcase",
