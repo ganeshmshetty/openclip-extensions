@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.pasteenter",
+  "name": "Paste Enter",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Paste clipboard text and press Return.",
+  "action": {
+    "title": "Paste Enter",
+    "icon": "icon.svg",
+    "type": "applescript",
+    "scriptCode": "tell application \"System Events\"\n\tkeystroke \"v\" using command down\n\tdelay 0.05\n\tkey code 36\nend tell"
+  }
+}

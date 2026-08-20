@@ -1,0 +1,17 @@
+{
+  "identifier": "com.openclip.selectall",
+  "name": "Select All",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Select the entire document or text field.",
+  "action": {
+    "title": "Select All",
+    "icon": "icon.svg",
+    "type": "keypress",
+    "keyPress": "command+a",
+    "requirements": {
+      "requiresSelection": false
+    }
+  }
+}

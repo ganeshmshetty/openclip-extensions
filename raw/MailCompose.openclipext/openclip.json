@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.mailcompose",
+  "name": "Mail Compose",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Create a new email draft with the selected text.",
+  "action": {
+    "title": "Mail Compose",
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "mailto:?body={text}"
+  }
+}
