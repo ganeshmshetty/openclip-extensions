@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:31:58Z",
+  "updatedAt": "2026-08-20T16:39:01Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -20,6 +20,16 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.0.1/AppleMusic.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.bulletlines",
+      "name": "Bullet Lines",
+      "description": "Convert plain lines into a Markdown bullet list.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bulletlines@1.0.0/BulletLines.openclipext.zip"
     },
     {
       "id": "com.openclip.camelcase",
@@ -50,6 +60,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.deduplicatelines",
+      "name": "Deduplicate Lines",
+      "description": "Remove all duplicate lines from the selection.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deduplicatelines@1.0.0/DeduplicateLines.openclipext.zip"
     },
     {
       "id": "com.openclip.dotcase",
@@ -92,6 +112,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.0.0/Hyphenate.openclipext.zip"
     },
     {
+      "id": "com.openclip.joincommas",
+      "name": "Join Commas",
+      "description": "Join lines into a comma-separated string.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.joincommas@1.0.0/JoinCommas.openclipext.zip"
+    },
+    {
       "id": "com.openclip.kebabcase",
       "name": "kebab-case",
       "description": "Convert selected text to kebab-case.",
@@ -132,6 +162,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip"
     },
     {
+      "id": "com.openclip.numberlines",
+      "name": "Number Lines",
+      "description": "Prefix each line with sequential numbers.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.0.0/NumberLines.openclipext.zip"
+    },
+    {
       "id": "com.openclip.pascalcase",
       "name": "PascalCase",
       "description": "Convert selected text to PascalCase.",
@@ -140,6 +180,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.0.0/PascalCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.quotelines",
+      "name": "Quote Lines",
+      "description": "Enclose every individual line in double quotes.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.0.0/QuoteLines.openclipext.zip"
     },
     {
       "id": "com.openclip.removeallspaces",
@@ -160,6 +210,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.0.0/RemoveLineBreaks.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.reverselines",
+      "name": "Reverse Lines",
+      "description": "Reverse the vertical order of lines.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reverselines@1.0.0/ReverseLines.openclipext.zip"
     },
     {
       "id": "com.openclip.reversetext",
@@ -212,6 +272,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip"
     },
     {
+      "id": "com.openclip.shufflelines",
+      "name": "Shuffle Lines",
+      "description": "Randomize the order of lines.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shufflelines@1.0.0/ShuffleLines.openclipext.zip"
+    },
+    {
       "id": "com.opeclip.slugify",
       "name": "Slugify",
       "description": "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
@@ -232,6 +302,46 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.snakecase@1.0.0/SnakeCase.openclipext.zip"
     },
     {
+      "id": "com.openclip.sortalphabetical",
+      "name": "Sort Alphabetical",
+      "description": "Sort selected lines from A to Z.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortalphabetical@1.0.0/SortAlphabetical.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.sortnumerical",
+      "name": "Sort Numerical",
+      "description": "Sort lines by leading numbers.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortnumerical@1.0.0/SortNumerical.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.splitcommas",
+      "name": "Split Commas",
+      "description": "Split comma-separated values into individual lines.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.splitcommas@1.0.0/SplitCommas.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.tasklines",
+      "name": "Task Lines",
+      "description": "Convert lines into Markdown task checkboxes.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tasklines@1.0.0/TaskLines.openclipext.zip"
+    },
+    {
       "id": "com.openclip.titlecase",
       "name": "Title Case",
       "description": "Capitalize words according to English title conventions.",
@@ -240,6 +350,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.0.0/TitleCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.trimlines",
+      "name": "Trim Lines",
+      "description": "Strip leading and trailing whitespace from every line.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.0.0/TrimLines.openclipext.zip"
     },
     {
       "id": "com.openclip.underscore",
