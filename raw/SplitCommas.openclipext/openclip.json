@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.splitcommas",
+  "name": "Split Commas",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Split comma-separated values into individual lines.",
+  "action": {
+    "title": "Split Commas",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

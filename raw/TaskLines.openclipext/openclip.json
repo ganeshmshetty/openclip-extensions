@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.tasklines",
+  "name": "Task Lines",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Convert lines into Markdown task checkboxes.",
+  "action": {
+    "title": "Task Lines",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.shufflelines",
+  "name": "Shuffle Lines",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Randomize the order of lines.",
+  "action": {
+    "title": "Shuffle Lines",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

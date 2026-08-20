@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.trimlines",
+  "name": "Trim Lines",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Strip leading and trailing whitespace from every line.",
+  "action": {
+    "title": "Trim Lines",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

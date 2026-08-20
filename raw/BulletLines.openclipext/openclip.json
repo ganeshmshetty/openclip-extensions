@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.bulletlines",
+  "name": "Bullet Lines",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Convert plain lines into a Markdown bullet list.",
+  "action": {
+    "title": "Bullet Lines",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}
