@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.singlequotes",
+  "name": "Single Quotes",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Wrap selected text in single quotes.",
+  "action": {
+    "title": "Single Quotes",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

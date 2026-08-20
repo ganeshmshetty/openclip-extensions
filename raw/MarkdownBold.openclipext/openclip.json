@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.markdownbold",
+  "name": "Markdown Bold",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Format selected text as Markdown bold.",
+  "action": {
+    "title": "Markdown Bold",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

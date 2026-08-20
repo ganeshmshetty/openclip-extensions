@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.curlybrackets",
+  "name": "Curly Brackets",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Wrap selected text in curly brackets.",
+  "action": {
+    "title": "Curly Brackets",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

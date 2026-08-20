@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.doublequotes",
+  "name": "Double Quotes",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Wrap selected text in double quotes.",
+  "action": {
+    "title": "Double Quotes",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

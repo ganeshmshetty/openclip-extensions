@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.wrapparentheses",
+  "name": "Wrap Parentheses",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Wrap selected text in parentheses.",
+  "action": {
+    "title": "Wrap Parentheses",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

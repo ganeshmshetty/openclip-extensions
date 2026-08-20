@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.headerthree",
+  "name": "Header Three",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Format selected text as Markdown Header 3.",
+  "action": {
+    "title": "Header 3",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

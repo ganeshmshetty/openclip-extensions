@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.markdownitalic",
+  "name": "Markdown Italic",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Format selected text as Markdown italic.",
+  "action": {
+    "title": "Markdown Italic",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}
