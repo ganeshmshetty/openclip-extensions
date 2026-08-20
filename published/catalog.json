@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T16:52:30Z",
+  "updatedAt": "2026-08-20T16:56:17Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -50,6 +50,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.camelcase@1.0.0/CamelCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.caniuse",
+      "name": "Can IUse",
+      "description": "Browser compatibility table lookup on Can I Use.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.caniuse@1.0.0/CanIUse.openclipext.zip"
     },
     {
       "id": "com.openclip.capitalizewords",
@@ -122,6 +132,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.0.0/DeleteSelection.openclipext.zip"
     },
     {
+      "id": "com.openclip.devdocs",
+      "name": "DevDocs Search",
+      "description": "Instant unified API documentation search on DevDocs.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.devdocs@1.0.0/DevDocsSearch.openclipext.zip"
+    },
+    {
       "id": "com.openclip.dotcase",
       "name": "Dot Case",
       "description": "Convert selected text to dot.case.",
@@ -192,6 +212,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.0.0/ExtractUrls.openclipext.zip"
     },
     {
+      "id": "com.openclip.githubsearch",
+      "name": "GitHub Search",
+      "description": "Search GitHub code and repositories.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.githubsearch@1.0.0/GitHubSearch.openclipext.zip"
+    },
+    {
       "id": "com.openclip.googlemaps",
       "name": "Google Maps",
       "description": "Open Google Maps with the selected text as a search query.",
@@ -200,6 +230,16 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlemaps@1.0.1/GoogleMaps.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.googlescholar",
+      "name": "Google Scholar",
+      "description": "Search academic papers and scholarly research on Google Scholar.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlescholar@1.0.0/GoogleScholar.openclipext.zip"
     },
     {
       "id": "com.openclip.translate",
@@ -362,6 +402,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownstrikethrough@1.0.0/MarkdownStrikethrough.openclipext.zip"
     },
     {
+      "id": "com.openclip.mdndocs",
+      "name": "MDN Docs",
+      "description": "Search Web API, JavaScript, and CSS documentation on MDN.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mdndocs@1.0.0/MdnDocs.openclipext.zip"
+    },
+    {
       "id": "com.openclip.normalizespaces",
       "name": "Normalize Spaces",
       "description": "Collapse consecutive whitespace into single spaces.",
@@ -380,6 +430,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.npmsearch",
+      "name": "npm Search",
+      "description": "Search JavaScript packages on npm registry.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.npmsearch@1.0.0/NpmSearch.openclipext.zip"
     },
     {
       "id": "com.openclip.numberlines",
@@ -420,6 +480,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.0.0/PasteEnter.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.pypisearch",
+      "name": "PyPI Search",
+      "description": "Search Python packages on PyPI.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pypisearch@1.0.0/PypiSearch.openclipext.zip"
     },
     {
       "id": "com.openclip.quotelines",
@@ -612,6 +682,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.squarebrackets@1.0.0/SquareBrackets.openclipext.zip"
     },
     {
+      "id": "com.openclip.stackoverflow",
+      "name": "Stack Overflow",
+      "description": "Search coding questions and answers on Stack Overflow.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackoverflow@1.0.0/StackOverflow.openclipext.zip"
+    },
+    {
       "id": "com.openclip.tasklines",
       "name": "Task Lines",
       "description": "Convert lines into Markdown task checkboxes.",
@@ -662,6 +742,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.0.0/Uppercase.openclipext.zip"
     },
     {
+      "id": "com.openclip.waybackmachine",
+      "name": "Wayback Machine",
+      "description": "View historical web archives on the Wayback Machine.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.waybackmachine@1.0.0/WaybackMachine.openclipext.zip"
+    },
+    {
       "id": "com.openclip.wikipedia",
       "name": "Wikipedia Search",
       "description": "Look up the selected text on Wikipedia.",
@@ -670,6 +760,16 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wikipedia@1.0.1/WikipediaSearch.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.wolframalpha",
+      "name": "Wolfram Alpha",
+      "description": "Computational knowledge engine queries on Wolfram Alpha.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wolframalpha@1.0.0/WolframAlpha.openclipext.zip"
     },
     {
       "id": "com.openclip.wordcount",
