@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T17:00:49Z",
+  "updatedAt": "2026-08-21T03:02:54Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
     },
     {
       "id": "com.openclip.caniuse",
-      "name": "Can IUse",
+      "name": "Can I Use",
       "description": "Browser compatibility table lookup on Can I Use.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
