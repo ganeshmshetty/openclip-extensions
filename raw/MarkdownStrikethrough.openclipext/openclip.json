@@ -6,7 +6,7 @@
   "author": "OpenClip Team",
   "description": "Format selected text as Markdown strikethrough.",
   "action": {
-    "title": "Markdown Strike",
+    "title": "Markdown Strikethrough",
     "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js"

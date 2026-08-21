@@ -1,4 +1,8 @@
 function action(selection) {
     if (!selection) return "";
-    return "```\n" + selection + "\n```";
+    var fence = "```";
+    while (selection.indexOf(fence) !== -1) {
+        fence += "`";
+    }
+    return fence + "\n" + selection + "\n" + fence;
 }

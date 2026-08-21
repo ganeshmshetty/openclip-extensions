@@ -9,6 +9,6 @@
     "title": "Todoist Task",
     "icon": "icon.svg",
     "type": "url",
-    "url": "todoist://addtask?text={text}"
+    "url": "todoist://addtask?content={text}"
   }
 }

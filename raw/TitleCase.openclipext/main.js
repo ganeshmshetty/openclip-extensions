@@ -7,10 +7,10 @@ var minorWords = {
 function action(selection) {
     if (!selection) return "";
 
-    return selection.replace(/[A-Za-z0-9]+(?:'[A-Za-z0-9]+)*/g, function(word, index, fullStr) {
+    return selection.replace(/[\p{L}\p{N}]+(?:'[\p{L}\p{N}]+)*/gu, function(word, index, fullStr) {
         var lower = word.toLowerCase();
-        var isFirst = index === 0 || !/[A-Za-z0-9]/.test(fullStr.slice(0, index));
-        var isLast = index + word.length >= fullStr.length || !/[A-Za-z0-9]/.test(fullStr.slice(index + word.length));
+        var isFirst = index === 0 || !/[\p{L}\p{N}]/u.test(fullStr.slice(0, index));
+        var isLast = index + word.length >= fullStr.length || !/[\p{L}\p{N}]/u.test(fullStr.slice(index + word.length));
         var precededByPunct = /[:.!?]\s*$/.test(fullStr.slice(0, index));
 
         if (!isFirst && !isLast && !precededByPunct && minorWords[lower]) {

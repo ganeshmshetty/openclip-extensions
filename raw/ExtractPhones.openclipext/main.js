@@ -1,6 +1,6 @@
 function action(selection) {
     if (!selection) return "";
-    var phoneRegex = /(?:\+?\d{1,3}[-.\s]?)?(?:\(?\d{2,4}\)?[-.\s]?)?\d{3,4}[-.\s]?\d{3,4}(?:[-.\s]?\d{1,4})?/g;
+    var phoneRegex = /(?<!\d[-.\s]?)(?<!\d)(?:(?:\+\d{1,3}[-.\s]?)?(?:\(?\d{2,4}\)?[-.\s]?)?\d{3,4}[-.\s]?\d{3,4}(?:[-.\s]?\d{1,4})?)(?![-.\s]?\d)/g;
     var matches = selection.match(phoneRegex) || [];
     var seen = Object.create(null);
     var filtered = matches.map(function(p) { return p.trim(); }).filter(function(p) {

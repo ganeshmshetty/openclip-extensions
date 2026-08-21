@@ -1,6 +1,6 @@
 function action(selection) {
     if (!selection) return "";
-    var hashtagRegex = /(?:^|\s)(#[a-zA-Z0-9_\u00C0-\u024F]+)/g;
+    var hashtagRegex = /(?:^|[^a-zA-Z0-9_\u00C0-\u024F])(#[a-zA-Z0-9_\u00C0-\u024F]+)/g;
     var matches = [];
     var match;
     while ((match = hashtagRegex.exec(selection)) !== null) {

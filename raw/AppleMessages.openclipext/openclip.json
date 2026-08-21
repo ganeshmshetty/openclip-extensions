@@ -9,6 +9,6 @@
     "title": "Apple Messages",
     "icon": "icon.svg",
     "type": "service",
-    "serviceName": "com.apple.MobileSMS.SharingExtension"
+    "serviceName": "com.apple.messages.ShareExtension"
   }
 }

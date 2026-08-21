@@ -195,8 +195,8 @@ Errors become `.failure` (shown as an error toast).
 ```
 
 - `type` `shell`/`shellinline` + `scriptCode` → runs inline under `/bin/zsh -c`.
-- `type` `script`/`scriptfile`, or any unknown non-url kind with **no** `url`/`scriptCode`, reads the
-  file named by `"script"` (default `script.sh`) from the package dir and runs it directly.
+- `type` `script`/`scriptfile` reads the file named by `"script"` (default `script.sh`) from the
+  package dir and runs it directly.
 
 The command is executed **with a 30-second kill watchdog** (`Constants.scriptTimeout`) and a
 non-zero exit surfaces as an error status. Selection/match data arrive via env vars (§6c), and
