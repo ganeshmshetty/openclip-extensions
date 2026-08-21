@@ -663,8 +663,8 @@
     },
     {
       "id": "com.openclip.roundbrackets",
-      "name": "Round Brackets (Parentheses)",
-      "description": "Wrap selected text in round brackets (parentheses).",
+      "name": "Round Brackets",
+      "description": "Wrap selected text in round brackets.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
       "version": "1.0.0",

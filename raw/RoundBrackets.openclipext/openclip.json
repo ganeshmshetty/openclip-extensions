@@ -1,12 +1,12 @@
 {
   "identifier": "com.openclip.roundbrackets",
-  "name": "Round Brackets (Parentheses)",
+  "name": "Round Brackets",
   "version": "1.0.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Wrap selected text in round brackets (parentheses).",
+  "description": "Wrap selected text in round brackets.",
   "action": {
-    "title": "Round Brackets (Parentheses)",
+    "title": "Round Brackets",
     "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js"
