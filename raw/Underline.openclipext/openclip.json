@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.underline",
+  "name": "Underline",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Toggle underline formatting in rich text editors.",
+  "action": {
+    "title": "Underline",
+    "icon": "underline",
+    "type": "keypress",
+    "keyPress": "command+u"
+  }
+}

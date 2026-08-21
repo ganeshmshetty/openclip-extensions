@@ -65,6 +65,7 @@
     "com.openclip.reversetext": 0,
     "com.openclip.reversewords": 0,
     "com.openclip.rot13": 0,
+    "com.openclip.roundbrackets": 0,
     "com.openclip.selectall": 0,
     "com.openclip.sentencecase": 0,
     "com.openclip.shufflelines": 0,
@@ -88,7 +89,6 @@
     "com.openclip.wikipedia": 0,
     "com.openclip.wolframalpha": 0,
     "com.openclip.wordcount": 0,
-    "com.openclip.wrapparentheses": 0,
     "com.openclip.youtube": 0
   }
 }

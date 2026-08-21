@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.strikethrough",
+  "name": "Strikethrough",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Toggle strikethrough formatting across rich text editors.",
+  "action": {
+    "title": "Strikethrough",
+    "icon": "strikethrough",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

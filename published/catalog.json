@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T03:02:54Z",
+  "updatedAt": "2026-08-21T15:32:24Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -60,6 +60,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.0.0/BearNotes.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.bold",
+      "name": "Bold",
+      "description": "Toggle bold formatting in rich text editors.",
+      "author": "OpenClip Team",
+      "icon": "bold",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.0.0/Bold.openclipext.zip"
     },
     {
       "id": "com.openclip.bulletlines",
@@ -362,6 +372,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.inlinecode@1.0.0/InlineCode.openclipext.zip"
     },
     {
+      "id": "com.openclip.italic",
+      "name": "Italic",
+      "description": "Toggle italic formatting in rich text editors.",
+      "author": "OpenClip Team",
+      "icon": "italic",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.0.0/Italic.openclipext.zip"
+    },
+    {
       "id": "com.openclip.joincommas",
       "name": "Join Commas",
       "description": "Join lines into a comma-separated string.",
@@ -642,6 +662,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.rot13@1.0.0/Rot13.openclipext.zip"
     },
     {
+      "id": "com.openclip.roundbrackets",
+      "name": "Round Brackets (Parentheses)",
+      "description": "Wrap selected text in round brackets (parentheses).",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.roundbrackets@1.0.0/RoundBrackets.openclipext.zip"
+    },
+    {
       "id": "com.openclip.youtube",
       "name": "Search YouTube",
       "description": "Search YouTube for videos matching the selected text.",
@@ -772,6 +802,16 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackoverflow@1.0.0/StackOverflow.openclipext.zip"
     },
     {
+      "id": "com.openclip.strikethrough",
+      "name": "Strikethrough",
+      "description": "Toggle strikethrough formatting across rich text editors.",
+      "author": "OpenClip Team",
+      "icon": "strikethrough",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.0.0/Strikethrough.openclipext.zip"
+    },
+    {
       "id": "com.openclip.tasklines",
       "name": "Task Lines",
       "description": "Convert lines into Markdown task checkboxes.",
@@ -820,6 +860,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.0.0/TrimLines.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.underline",
+      "name": "Underline",
+      "description": "Toggle underline formatting in rich text editors.",
+      "author": "OpenClip Team",
+      "icon": "underline",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.0.0/Underline.openclipext.zip"
     },
     {
       "id": "com.openclip.underscore",
@@ -880,16 +930,6 @@
       "version": "1.0.1",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.0.1/WordCount.openclipext.zip"
-    },
-    {
-      "id": "com.openclip.wrapparentheses",
-      "name": "Wrap Parentheses",
-      "description": "Wrap selected text in parentheses.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wrapparentheses@1.0.0/WrapParentheses.openclipext.zip"
     }
   ]
 }
