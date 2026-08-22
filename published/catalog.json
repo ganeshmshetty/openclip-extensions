@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T17:02:06Z",
+  "updatedAt": "2026-08-22T05:16:28Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -140,6 +140,16 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.copy-as-markdown",
+      "name": "Copy as Markdown",
+      "description": "Convert the selection's HTML to Markdown and copy it.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.copy-as-markdown@1.0.0/CopyAsMarkdown.openclipext.zip"
     },
     {
       "id": "com.openclip.craftdocs",
@@ -620,6 +630,26 @@
       "version": "1.0.0",
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.0.0/RemoveLineBreaks.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.render-html",
+      "name": "Render HTML",
+      "description": "Interpret the selected HTML markup and paste it as rendered rich text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.1.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-html@1.1.0/RenderHTML.openclipext.zip"
+    },
+    {
+      "id": "com.openclip.render-markdown",
+      "name": "Render Markdown",
+      "description": "Interpret the selected Markdown source and paste it as rendered rich text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-markdown@1.0.0/RenderMarkdown.openclipext.zip"
     },
     {
       "id": "com.openclip.reverselines",
