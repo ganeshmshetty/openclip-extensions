@@ -1,0 +1,17 @@
+{
+  "name": "com-openclip-render-markdown",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --format=cjs --platform=browser --target=es2020 --outfile=dist/main.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "marked": "^15.0.0"
+  }
+}

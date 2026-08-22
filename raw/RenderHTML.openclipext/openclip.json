@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.render-html",
+  "name": "Render HTML",
+  "version": "1.1.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Interpret the selected HTML markup and paste it as rendered rich text.",
+  "action": {
+    "title": "Render HTML",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js"
+  }
+}

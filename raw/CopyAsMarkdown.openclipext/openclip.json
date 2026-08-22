@@ -1,0 +1,51 @@
+{
+  "identifier": "com.openclip.copy-as-markdown",
+  "name": "Copy as Markdown",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Convert the selection's HTML to Markdown and copy it.",
+  "action": {
+    "title": "Copy as Markdown",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "dist/main.js",
+    "options": [
+      {
+        "identifier": "headingStyle",
+        "label": "Heading Style",
+        "type": "multiple",
+        "values": ["atx", "setext"],
+        "default": "atx"
+      },
+      {
+        "identifier": "bulletListMarker",
+        "label": "Bullet List Marker",
+        "type": "multiple",
+        "values": ["*", "-", "+"],
+        "default": "*"
+      },
+      {
+        "identifier": "emDelimiter",
+        "label": "Emphasis Delimiter",
+        "type": "multiple",
+        "values": ["*", "_"],
+        "default": "*"
+      },
+      {
+        "identifier": "strongDelimiter",
+        "label": "Strong Delimiter",
+        "type": "multiple",
+        "values": ["**", "__"],
+        "default": "**"
+      },
+      {
+        "identifier": "linkStyle",
+        "label": "Link Style",
+        "type": "multiple",
+        "values": ["inlined", "referenced"],
+        "default": "inlined"
+      }
+    ]
+  }
+}

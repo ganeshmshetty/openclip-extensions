@@ -1,0 +1,14 @@
+{
+  "identifier": "com.openclip.render-markdown",
+  "name": "Render Markdown",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Interpret the selected Markdown source and paste it as rendered rich text.",
+  "action": {
+    "title": "Render Markdown",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "dist/main.js"
+  }
+}
