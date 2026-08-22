@@ -407,9 +407,10 @@ runs:
    General tab's "When an action returns text" pickers (`primaryClickBehavior` for a primary click,
    `secondaryClickBehavior` for a secondary click; defaults primary=paste, secondary=copy); a
    `.preview` preference keeps the popup open for the card render instead of delivering.
-2. **Apply probe** — a chosen `.paste` is downgraded to `.copy` whenever the target cannot paste.
-   The **probe always applies**: to primary *and* secondary clicks, and to declared *and* derived
-   pastes alike — a paste is never delivered to a target that can't paste. The unified
+2. **Apply probe** — a chosen `.paste` is downgraded to `.copy` whenever the target cannot paste,
+   and the rich analogue downgrades `.pasteContent` to `.copyContent`. The **probe always applies**:
+   to primary *and* secondary clicks, and to declared *and* derived pastes alike — a paste is never
+   delivered to a target that can't paste. The unified
    `PasteAvailability` answer (a `denyPaste` per-app rule first, else the live `PasteAvailabilityProbe`
    reporting the AX Edit ▸ Paste disabled/unavailable) says no → `.copy`.
 3. **Toast** — the click's declared toast (`toast` for primary, `secondaryToast` for secondary) wins;
@@ -421,8 +422,10 @@ runs:
    "Copied"**. The default "Copied" is a **delivery-side** fallback, not a script surface — it never
    overrides, or appears alongside, a script's own toast.
 
-Only `.paste` outcomes are ever downgraded to `.copy`; an explicit `.copy` stays a copy, and
-non-text results (openURL, notify, keyPress, …) pass through untouched.
+Only paste outcomes are ever downgraded (`.paste`→`.copy`, `.pasteContent`→`.copyContent`); an
+explicit copy stays a copy, and non-text results (openURL, notify, keyPress, …) pass through
+untouched. A secondary click on a rich-paste primary derives `.copyContent`, mirroring the plain
+paste→copy default.
 
 **Implicit returned text is user-governed.** A runtime that "just returns a string" (JS string
 return, AppleScript output, shell plain-text stdout, a text snippet) produces a `.text` result —
@@ -500,7 +503,7 @@ focus context, which can differ between shows in the same app. Card
 Paste/Copy are explicit user requests: they carry no delivery context and are
 never re-decided — an explicit Paste always pastes.
 
-`.copy`/`.cut` and non-text results are never downgraded. This is a **presentation/delivery**
+`.copy`/`.copyContent`/`.cut` and non-text results are never downgraded. This is a **presentation/delivery**
 decision (App target only) — Core stays pure; `canPaste` and the app policy are injected inputs.
 The per-app `denyPaste` toggle is user-editable in Preferences → Application Rules. Set
 `deny-paste` only via `AppRule`; a manifest has **no** `denyPaste` delivery key (delivery is
