@@ -1,23 +1,29 @@
 #!/usr/bin/env node
-// build-icons.mjs — generates one canonical web icon per extension into
-// published/icons/<identifier>.png during publish (CI or local).
+// build-icons.mjs — generates one canonical ADAPTIVE web icon per extension
+// into published/icons/<identifier>.svg during publish (CI or local).
+//
+// Icons stay monochrome/currentColor so they inherit theme color everywhere
+// (website light/dark, app tinting). No rasterization — pure SVG pass-through.
 //
 // Source priority per package:
-//   1. Manifest icon references a packaged .svg/.png file  → rasterize it
-//   2. Manifest icon is a bare SF Symbol name              → look up icon-map.json
+//   1. Manifest icon references a packaged .svg/.png file → copy its SVG
+//      (normalized: fixed width/height attrs stripped, viewBox kept)
+//   2. Manifest icon is a bare SF Symbol name → look up icon-map.json
 //      (Iconify id) and fetch https://api.iconify.design/<prefix>/<name>.svg
-//   3. Nothing resolvable                                   → deterministic letter tile
+//   3. Nothing resolvable → deterministic colored letter tile (intentionally
+//      self-colored; it is a brand-style fallback, not a tintable glyph)
 //
- // Contract enforcement: if the manifest claims a packaged file that is missing,
- // this script FAILS — the publish must not ship an entry whose icon cannot load.
+// Contract enforcement: if the manifest claims a packaged file that is missing,
+// this script FAILS — the publish must not ship an entry whose icon cannot load.
 //
 // Usage: node scripts/build-icons.mjs [--raw raw] [--out published/icons]
-//        [--map icon-map.json] [--size 128]
+//        [--map icon-map.json]
 
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
-import sharp from 'sharp';
+
+const ICONIFY_BASE = 'https://api.iconify.design';
 
 function arg(name, fallback) {
   const i = process.argv.indexOf(`--${name}`);
@@ -28,7 +34,6 @@ const ROOT = process.cwd();
 const RAW_DIR = path.resolve(ROOT, arg('raw', 'raw'));
 const OUT_DIR = path.resolve(ROOT, arg('out', 'published/icons'));
 const MAP_FILE = path.resolve(ROOT, arg('map', 'icon-map.json'));
-const SIZE = parseInt(arg('size', '128'), 10);
 
 async function readJson(file) {
   return JSON.parse(await fs.readFile(file, 'utf8'));
@@ -43,44 +48,35 @@ function hashHue(str) {
 function letterTileSvg(id, name) {
   const initial = (name || id).trim().charAt(0).toUpperCase() || '?';
   const hue = hashHue(id);
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}">
-  <rect width="${SIZE}" height="${SIZE}" rx="${Math.round(SIZE * 0.22)}" fill="hsl(${hue}, 55%, 45%)"/>
-  <text x="50%" y="54%" dy=".35em" text-anchor="middle"
-        font-family="Arial, Helvetica, sans-serif" font-size="${Math.round(SIZE * 0.44)}"
-        font-weight="600" fill="#ffffff">${initial}</text>
-</svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">\n  <rect width="128" height="128" rx="28" fill="hsl(${hue}, 55%, 45%)"/>\n  <text x="64" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="600" fill="#ffffff">${initial}</text>\n</svg>`;
 }
 
-async function pngFromSvg(svg, sourceLabel) {
-  try {
-    return await sharp(Buffer.from(svg), { density: 300 })
-      .resize(SIZE, SIZE, {
-        fit: 'contain',
-        background: { r: 0, g: 0, b: 0, alpha: 0 },
-      })
-      .png()
-      .toBuffer();
-  } catch (err) {
-    throw new Error(`${sourceLabel}: SVG failed to rasterize (${err.message})`);
-  }
+// Normalize a packaged SVG for adaptive web/app use:
+//  - drop fixed pixel/em dimensions (consumers size it; viewBox drives scaling)
+//  - keep viewBox (required), xmlns (required), and currentColor paint untouched
+function normalizePackagedSvg(svgText) {
+  let svg = svgText.trim();
+  if (!svg.startsWith('<svg')) throw new Error('not an SVG document');
+  if (!/viewBox=/i.test(svg)) throw new Error('SVG has no viewBox (cannot scale safely)');
+  svg = svg.replace(/\swidth="[^"]*"/i, '').replace(/\sheight="[^"]*"/i, '');
+  if (!/xmlns=/.test(svg)) svg = svg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+  return svg;
 }
 
 async function findPackagedIcon(pkgDir, iconValue) {
   const wanted = iconValue.toLowerCase();
   const entries = await fs.readdir(pkgDir);
-  const hit = entries.find((f) => f.toLowerCase() === wanted);
-  if (hit) return path.join(pkgDir, hit);
-  // Case-insensitive sweep over any packaged image asset.
-  const anyImage = entries.find((f) => /\.(svg|png)$/i.test(f));
-  return anyImage ? path.join(pkgDir, anyImage) : null;
+  const exact = entries.find((f) => f.toLowerCase() === wanted && /\.svg$/i.test(f));
+  if (exact) return path.join(pkgDir, exact);
+  const anySvg = entries.find((f) => /\.svg$/i.test(f));
+  return anySvg ? path.join(pkgDir, anySvg) : null;
 }
 
 async function fetchIconifySvg(iconifyId) {
   const [prefix, ...rest] = iconifyId.split(':');
   const name = rest.join(':');
   if (!prefix || !name) throw new Error(`bad Iconify id '${iconifyId}'`);
-  const url = `https://api.iconify.design/${prefix}/${name}.svg?height=${SIZE * 2}`;
-  const res = await fetch(url);
+  const res = await fetch(`${ICONIFY_BASE}/${prefix}/${name}.svg`);
   if (!res.ok) throw new Error(`Iconify HTTP ${res.status} for ${iconifyId}`);
   const svg = await res.text();
   if (!svg.trim().startsWith('<svg')) throw new Error(`Iconify returned non-SVG for ${iconifyId}`);
@@ -91,9 +87,7 @@ async function main() {
   const map = await readJson(MAP_FILE).catch(() => ({}));
   await fs.mkdir(OUT_DIR, { recursive: true });
 
-  const pkgDirs = (await fs.readdir(RAW_DIR))
-    .filter((d) => d.endsWith('.openclipext'))
-    .sort();
+  const pkgDirs = (await fs.readdir(RAW_DIR)).filter((d) => d.endsWith('.openclipext')).sort();
 
   let built = 0;
   const errors = [];
@@ -109,50 +103,44 @@ async function main() {
     }
 
     const identifier =
-      manifest.identifier ||
-      `com.openclip.${pkg.replace(/\.openclipext$/, '').toLowerCase()}`;
+      manifest.identifier || `com.openclip.${pkg.replace(/\.openclipext$/, '').toLowerCase()}`;
     const displayName = manifest.name || identifier;
-    const iconValue =
-      manifest.action?.icon ?? manifest.actions?.[0]?.icon ?? 'puzzlepiece';
+    const iconValue = manifest.action?.icon ?? manifest.actions?.[0]?.icon ?? 'puzzlepiece';
 
     try {
-      let svgSource = null;
+      let svgText;
 
-      if (/\.(svg|png)$/i.test(iconValue)) {
+      if (/\.svg$/i.test(iconValue)) {
         const found = await findPackagedIcon(pkgDir, iconValue);
         if (!found) {
           throw new Error(
             `manifest icon '${iconValue}' does not exist in ${pkg}/ — add the file or use an SF Symbol / mapped icon`);
         }
-        svgSource = await fs.readFile(found);
-      } else if (/^[a-z0-9.-]+$/i.test(iconValue) && !iconValue.includes(':')) {
-        // Bare SF Symbol name → mapped Iconify icon (app renders it natively too).
+        svgText = normalizePackagedSvg(await fs.readFile(found, 'utf8'));
+      } else if (iconValue.includes(':')) {
+        // Manifest already carries an Iconify-style id.
+        svgText = normalizePackagedSvg(await fetchIconifySvg(iconValue));
+      } else {
         const iconifyId = map[iconValue];
         if (!iconifyId) {
           console.warn(`⚠ ${identifier}: SF Symbol '${iconValue}' not in icon-map.json; using letter tile`);
-          svgSource = letterTileSvg(identifier, displayName);
+          svgText = letterTileSvg(identifier, displayName);
         } else {
-          svgSource = await fetchIconifySvg(iconifyId);
+          svgText = normalizePackagedSvg(await fetchIconifySvg(iconifyId));
         }
-      } else {
-        // Iconify-style "prefix:name" in the manifest itself, or anything else odd.
-        svgSource = iconValue.includes(':')
-          ? await fetchIconifySvg(iconValue)
-          : letterTileSvg(identifier, displayName);
       }
 
-      const png = await pngFromSvg(svgSource, identifier);
-      const out = path.join(OUT_DIR, `${identifier}.png`);
-      await fs.writeFile(out, png);
+      const out = path.join(OUT_DIR, `${identifier}.svg`);
+      await fs.writeFile(out, svgText);
       built++;
-      console.log(`✓ ${identifier}.png`);
+      console.log(`✓ ${identifier}.svg`);
     } catch (err) {
       errors.push(err.message);
       console.error(`✗ ${identifier}: ${err.message}`);
     }
   }
 
-  console.log(`\nGenerated ${built} icon(s) → ${path.relative(ROOT, OUT_DIR)}`);
+  console.log(`\nGenerated ${built} adaptive SVG icon(s) → ${path.relative(ROOT, OUT_DIR)}`);
   if (errors.length) {
     console.error(`\n${errors.length} error(s):`);
     for (const e of errors) console.error(`  - ${e}`);

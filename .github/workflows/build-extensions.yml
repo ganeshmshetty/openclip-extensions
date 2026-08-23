@@ -100,15 +100,11 @@ jobs:
           fi
 
       - name: Generate web icons
-        env:
-          ICONIFY_API: https://api.iconify.design
         run: |
           set -euo pipefail
-          # Rasterizes each extension's icon into published/icons/<identifier>.png.
-          # Priority: packaged svg/png → Iconify icon via icon-map.json (SF Symbol
-          # stragglers) → deterministic letter tile. Fails if a manifest claims a
-          # packaged icon file that does not exist.
-          npm ci --prefix scripts --no-audit --no-fund
+          # Emits published/icons/<identifier>.svg — adaptive currentColor SVGs.
+          # Priority: packaged svg → Iconify via icon-map.json (SF Symbols) →
+          # letter tile. Fails if a manifest claims a packaged icon that is missing.
           node scripts/build-icons.mjs --raw raw --out published/icons --map icon-map.json
 
       - name: Commit icons if changed
@@ -166,7 +162,7 @@ jobs:
               --arg icon "$(jq -r '(.action.icon // .actions[0].icon // "puzzlepiece")' "$manifest")" \
               --arg version "$(jq -r '.version // "1.0.0"' "$manifest")" \
               --arg url "https://github.com/$GITHUB_REPOSITORY/releases/download/${identifier}@$(jq -r '.version // "1.0.0"' "$manifest")/$pkg_name.zip" \
-              --arg iconURL "https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@main/published/icons/${identifier}.png" \
+              --arg iconURL "https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@main/published/icons/${identifier}.svg" \
               '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: 0, downloadURL: $url, iconURL: $iconURL}')
 
             jq --argjson entry "$entry" '.extensions += [$entry]' "$CATALOG" > "$CATALOG.tmp"
