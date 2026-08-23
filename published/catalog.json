@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T05:16:28Z",
+  "updatedAt": "2026-08-23T07:43:29Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -9,7 +9,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.alternatingcase@1.0.0/AlternatingCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.alternatingcase@1.0.0/AlternatingCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.alternatingcase.png"
     },
     {
       "id": "com.openclip.anglebrackets",
@@ -19,7 +20,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.0.0/AngleBrackets.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.0.0/AngleBrackets.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.anglebrackets.png"
     },
     {
       "id": "com.openclip.applemessages",
@@ -29,7 +31,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemessages@1.0.0/AppleMessages.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemessages@1.0.0/AppleMessages.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applemessages.png"
     },
     {
       "id": "com.openclip.applemusic",
@@ -39,7 +42,8 @@
       "icon": "music.note",
       "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.0.1/AppleMusic.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.0.1/AppleMusic.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applemusic.png"
     },
     {
       "id": "com.openclip.applereminders",
@@ -49,7 +53,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applereminders@1.0.0/AppleReminders.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applereminders@1.0.0/AppleReminders.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applereminders.png"
     },
     {
       "id": "com.openclip.bearnotes",
@@ -59,7 +64,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.0.0/BearNotes.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.0.0/BearNotes.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bearnotes.png"
     },
     {
       "id": "com.openclip.bold",
@@ -69,7 +75,8 @@
       "icon": "bold",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.0.0/Bold.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.0.0/Bold.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bold.png"
     },
     {
       "id": "com.openclip.bulletlines",
@@ -79,7 +86,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bulletlines@1.0.0/BulletLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bulletlines@1.0.0/BulletLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bulletlines.png"
     },
     {
       "id": "com.openclip.camelcase",
@@ -89,7 +97,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.camelcase@1.0.0/CamelCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.camelcase@1.0.0/CamelCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.camelcase.png"
     },
     {
       "id": "com.openclip.caniuse",
@@ -99,7 +108,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.caniuse@1.0.0/CanIUse.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.caniuse@1.0.0/CanIUse.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.caniuse.png"
     },
     {
       "id": "com.openclip.capitalizewords",
@@ -109,7 +119,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.0.0/CapitalizeWords.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.0.0/CapitalizeWords.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.capitalizewords.png"
     },
     {
       "id": "com.openclip.charactercount",
@@ -119,7 +130,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.0.0/CharacterCount.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.0.0/CharacterCount.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.charactercount.png"
     },
     {
       "id": "com.openclip.codeblock",
@@ -129,7 +141,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.codeblock@1.0.0/CodeBlock.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.codeblock@1.0.0/CodeBlock.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.codeblock.png"
     },
     {
       "id": "com.openclip.constantcase",
@@ -139,7 +152,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.constantcase.png"
     },
     {
       "id": "com.openclip.copy-as-markdown",
@@ -149,7 +163,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.copy-as-markdown@1.0.0/CopyAsMarkdown.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.copy-as-markdown@1.0.0/CopyAsMarkdown.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.copy-as-markdown.png"
     },
     {
       "id": "com.openclip.craftdocs",
@@ -159,7 +174,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.craftdocs@1.0.0/CraftDocs.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.craftdocs@1.0.0/CraftDocs.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.craftdocs.png"
     },
     {
       "id": "com.openclip.curlybrackets",
@@ -169,7 +185,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.0.0/CurlyBrackets.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.0.0/CurlyBrackets.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.curlybrackets.png"
     },
     {
       "id": "com.openclip.deduplicatelines",
@@ -179,7 +196,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deduplicatelines@1.0.0/DeduplicateLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deduplicatelines@1.0.0/DeduplicateLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.deduplicatelines.png"
     },
     {
       "id": "com.openclip.deleteselection",
@@ -189,7 +207,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.0.0/DeleteSelection.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.0.0/DeleteSelection.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.deleteselection.png"
     },
     {
       "id": "com.openclip.devdocs",
@@ -199,7 +218,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.devdocs@1.0.0/DevDocsSearch.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.devdocs@1.0.0/DevDocsSearch.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.devdocs.png"
     },
     {
       "id": "com.openclip.dotcase",
@@ -209,7 +229,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dotcase@1.0.0/DotCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dotcase@1.0.0/DotCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.dotcase.png"
     },
     {
       "id": "com.openclip.doublequotes",
@@ -219,7 +240,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.0.0/DoubleQuotes.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.0.0/DoubleQuotes.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.doublequotes.png"
     },
     {
       "id": "com.openclip.drafts",
@@ -229,7 +251,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.drafts@1.0.0/DraftsNote.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.drafts@1.0.0/DraftsNote.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.drafts.png"
     },
     {
       "id": "com.openclip.extractemails",
@@ -239,7 +262,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractemails@1.0.0/ExtractEmails.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractemails@1.0.0/ExtractEmails.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extractemails.png"
     },
     {
       "id": "com.openclip.extracthashtags",
@@ -249,7 +273,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracthashtags@1.0.0/ExtractHashtags.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracthashtags@1.0.0/ExtractHashtags.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extracthashtags.png"
     },
     {
       "id": "com.openclip.extractips",
@@ -259,7 +284,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractips@1.0.0/ExtractIps.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractips@1.0.0/ExtractIps.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extractips.png"
     },
     {
       "id": "com.openclip.extractphones",
@@ -269,7 +295,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractphones@1.0.0/ExtractPhones.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractphones@1.0.0/ExtractPhones.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extractphones.png"
     },
     {
       "id": "com.openclip.extracturls",
@@ -279,7 +306,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.0.0/ExtractUrls.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.0.0/ExtractUrls.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extracturls.png"
     },
     {
       "id": "com.openclip.fantasticalevent",
@@ -289,7 +317,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.fantasticalevent@1.0.0/FantasticalEvent.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.fantasticalevent@1.0.0/FantasticalEvent.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.fantasticalevent.png"
     },
     {
       "id": "com.openclip.githubsearch",
@@ -299,7 +328,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.githubsearch@1.0.0/GitHubSearch.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.githubsearch@1.0.0/GitHubSearch.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.githubsearch.png"
     },
     {
       "id": "com.openclip.googlemaps",
@@ -309,7 +339,8 @@
       "icon": "map",
       "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlemaps@1.0.1/GoogleMaps.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlemaps@1.0.1/GoogleMaps.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.googlemaps.png"
     },
     {
       "id": "com.openclip.googlescholar",
@@ -319,7 +350,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlescholar@1.0.0/GoogleScholar.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlescholar@1.0.0/GoogleScholar.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.googlescholar.png"
     },
     {
       "id": "com.openclip.translate",
@@ -329,7 +361,8 @@
       "icon": "globe",
       "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.translate.png"
     },
     {
       "id": "com.openclip.headerone",
@@ -339,7 +372,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerone@1.0.0/HeaderOne.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerone@1.0.0/HeaderOne.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headerone.png"
     },
     {
       "id": "com.openclip.headerthree",
@@ -349,7 +383,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerthree@1.0.0/HeaderThree.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerthree@1.0.0/HeaderThree.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headerthree.png"
     },
     {
       "id": "com.openclip.headertwo",
@@ -359,7 +394,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headertwo@1.0.0/HeaderTwo.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headertwo@1.0.0/HeaderTwo.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headertwo.png"
     },
     {
       "id": "com.openclip.hyphenate",
@@ -369,7 +405,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.0.0/Hyphenate.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.0.0/Hyphenate.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.hyphenate.png"
     },
     {
       "id": "com.openclip.inlinecode",
@@ -379,7 +416,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.inlinecode@1.0.0/InlineCode.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.inlinecode@1.0.0/InlineCode.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.inlinecode.png"
     },
     {
       "id": "com.openclip.italic",
@@ -389,7 +427,8 @@
       "icon": "italic",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.0.0/Italic.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.0.0/Italic.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.italic.png"
     },
     {
       "id": "com.openclip.joincommas",
@@ -399,7 +438,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.joincommas@1.0.0/JoinCommas.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.joincommas@1.0.0/JoinCommas.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.joincommas.png"
     },
     {
       "id": "com.openclip.kebabcase",
@@ -409,7 +449,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.kebabcase@1.0.0/KebabCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.kebabcase@1.0.0/KebabCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.kebabcase.png"
     },
     {
       "id": "com.openclip.linecount",
@@ -419,7 +460,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.0.0/LineCount.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.0.0/LineCount.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.linecount.png"
     },
     {
       "id": "com.openclip.logseqcapture",
@@ -429,7 +471,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.logseqcapture@1.0.0/LogseqCapture.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.logseqcapture@1.0.0/LogseqCapture.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.logseqcapture.png"
     },
     {
       "id": "com.openclip.lowercase",
@@ -439,7 +482,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.0.0/Lowercase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.0.0/Lowercase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.lowercase.png"
     },
     {
       "id": "com.openclip.mailcompose",
@@ -449,7 +493,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mailcompose@1.0.0/MailCompose.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mailcompose@1.0.0/MailCompose.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.mailcompose.png"
     },
     {
       "id": "com.openclip.markdownblockquote",
@@ -459,7 +504,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownblockquote@1.0.0/MarkdownBlockquote.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownblockquote@1.0.0/MarkdownBlockquote.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownblockquote.png"
     },
     {
       "id": "com.openclip.markdownbold",
@@ -469,7 +515,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownbold@1.0.0/MarkdownBold.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownbold@1.0.0/MarkdownBold.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownbold.png"
     },
     {
       "id": "com.openclip.markdownitalic",
@@ -479,7 +526,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownitalic@1.0.0/MarkdownItalic.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownitalic@1.0.0/MarkdownItalic.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownitalic.png"
     },
     {
       "id": "com.openclip.markdownlink",
@@ -489,7 +537,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownlink@1.0.0/MarkdownLink.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownlink@1.0.0/MarkdownLink.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownlink.png"
     },
     {
       "id": "com.openclip.markdownstrikethrough",
@@ -499,7 +548,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownstrikethrough@1.0.0/MarkdownStrikethrough.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownstrikethrough@1.0.0/MarkdownStrikethrough.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownstrikethrough.png"
     },
     {
       "id": "com.openclip.mdndocs",
@@ -509,7 +559,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mdndocs@1.0.0/MdnDocs.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mdndocs@1.0.0/MdnDocs.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.mdndocs.png"
     },
     {
       "id": "com.openclip.normalizespaces",
@@ -519,7 +570,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.normalizespaces@1.0.0/NormalizeSpaces.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.normalizespaces@1.0.0/NormalizeSpaces.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.normalizespaces.png"
     },
     {
       "id": "com.openclip.notes",
@@ -529,7 +581,8 @@
       "icon": "note.text",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.notes.png"
     },
     {
       "id": "com.openclip.npmsearch",
@@ -539,7 +592,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.npmsearch@1.0.0/NpmSearch.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.npmsearch@1.0.0/NpmSearch.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.npmsearch.png"
     },
     {
       "id": "com.openclip.numberlines",
@@ -549,7 +603,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.0.0/NumberLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.0.0/NumberLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.numberlines.png"
     },
     {
       "id": "com.openclip.obsidiancapture",
@@ -559,7 +614,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.obsidiancapture@1.0.0/ObsidianCapture.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.obsidiancapture@1.0.0/ObsidianCapture.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.obsidiancapture.png"
     },
     {
       "id": "com.openclip.paragraphcount",
@@ -569,7 +625,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.0.0/ParagraphCount.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.0.0/ParagraphCount.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.paragraphcount.png"
     },
     {
       "id": "com.openclip.pascalcase",
@@ -579,7 +636,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.0.0/PascalCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.0.0/PascalCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pascalcase.png"
     },
     {
       "id": "com.openclip.pasteenter",
@@ -589,7 +647,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.0.0/PasteEnter.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.0.0/PasteEnter.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pasteenter.png"
     },
     {
       "id": "com.openclip.pypisearch",
@@ -599,7 +658,19 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pypisearch@1.0.0/PypiSearch.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pypisearch@1.0.0/PypiSearch.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pypisearch.png"
+    },
+    {
+      "id": "com.openclip.quick-translate",
+      "name": "Quick Translate",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "author": "OpenClip Team",
+      "icon": "character.bubble",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quick-translate@1.0.0/QuickTranslate.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quick-translate.png"
     },
     {
       "id": "com.openclip.quotelines",
@@ -609,7 +680,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.0.0/QuoteLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.0.0/QuoteLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quotelines.png"
     },
     {
       "id": "com.openclip.removeallspaces",
@@ -619,7 +691,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removeallspaces@1.0.0/RemoveAllSpaces.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removeallspaces@1.0.0/RemoveAllSpaces.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.removeallspaces.png"
     },
     {
       "id": "com.openclip.removelinebreaks",
@@ -629,7 +702,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.0.0/RemoveLineBreaks.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.0.0/RemoveLineBreaks.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.removelinebreaks.png"
     },
     {
       "id": "com.openclip.render-html",
@@ -639,7 +713,8 @@
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-html@1.1.0/RenderHTML.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-html@1.1.0/RenderHTML.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.render-html.png"
     },
     {
       "id": "com.openclip.render-markdown",
@@ -649,7 +724,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-markdown@1.0.0/RenderMarkdown.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-markdown@1.0.0/RenderMarkdown.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.render-markdown.png"
     },
     {
       "id": "com.openclip.reverselines",
@@ -659,7 +735,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reverselines@1.0.0/ReverseLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reverselines@1.0.0/ReverseLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.reverselines.png"
     },
     {
       "id": "com.openclip.reversetext",
@@ -669,7 +746,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversetext@1.0.0/ReverseText.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversetext@1.0.0/ReverseText.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.reversetext.png"
     },
     {
       "id": "com.openclip.reversewords",
@@ -679,7 +757,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversewords@1.0.0/ReverseWords.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversewords@1.0.0/ReverseWords.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.reversewords.png"
     },
     {
       "id": "com.openclip.rot13",
@@ -689,7 +768,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.rot13@1.0.0/Rot13.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.rot13@1.0.0/Rot13.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.rot13.png"
     },
     {
       "id": "com.openclip.roundbrackets",
@@ -699,7 +779,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.roundbrackets@1.0.0/RoundBrackets.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.roundbrackets@1.0.0/RoundBrackets.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.roundbrackets.png"
     },
     {
       "id": "com.openclip.youtube",
@@ -709,7 +790,8 @@
       "icon": "play.circle",
       "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.youtube.png"
     },
     {
       "id": "com.openclip.selectall",
@@ -719,7 +801,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.0.0/SelectAll.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.0.0/SelectAll.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.selectall.png"
     },
     {
       "id": "com.openclip.sentencecase",
@@ -729,7 +812,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sentencecase.png"
     },
     {
       "id": "com.openclip.shufflelines",
@@ -739,7 +823,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shufflelines@1.0.0/ShuffleLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shufflelines@1.0.0/ShuffleLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.shufflelines.png"
     },
     {
       "id": "com.openclip.singlequotes",
@@ -749,7 +834,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.singlequotes@1.0.0/SingleQuotes.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.singlequotes@1.0.0/SingleQuotes.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.singlequotes.png"
     },
     {
       "id": "com.opeclip.slugify",
@@ -759,7 +845,8 @@
       "icon": "snail.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.opeclip.slugify@1.0.0/Slugify.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.opeclip.slugify@1.0.0/Slugify.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.opeclip.slugify.png"
     },
     {
       "id": "com.openclip.snakecase",
@@ -769,7 +856,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.snakecase@1.0.0/SnakeCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.snakecase@1.0.0/SnakeCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.snakecase.png"
     },
     {
       "id": "com.openclip.sortalphabetical",
@@ -779,7 +867,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortalphabetical@1.0.0/SortAlphabetical.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortalphabetical@1.0.0/SortAlphabetical.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sortalphabetical.png"
     },
     {
       "id": "com.openclip.sortnumerical",
@@ -789,7 +878,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortnumerical@1.0.0/SortNumerical.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortnumerical@1.0.0/SortNumerical.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sortnumerical.png"
     },
     {
       "id": "com.openclip.speakselection",
@@ -799,7 +889,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.0.0/SpeakSelection.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.0.0/SpeakSelection.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.speakselection.png"
     },
     {
       "id": "com.openclip.splitcommas",
@@ -809,7 +900,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.splitcommas@1.0.0/SplitCommas.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.splitcommas@1.0.0/SplitCommas.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.splitcommas.png"
     },
     {
       "id": "com.openclip.squarebrackets",
@@ -819,7 +911,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.squarebrackets@1.0.0/SquareBrackets.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.squarebrackets@1.0.0/SquareBrackets.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.squarebrackets.png"
     },
     {
       "id": "com.openclip.stackoverflow",
@@ -829,7 +922,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackoverflow@1.0.0/StackOverflow.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackoverflow@1.0.0/StackOverflow.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.stackoverflow.png"
     },
     {
       "id": "com.openclip.strikethrough",
@@ -839,7 +933,8 @@
       "icon": "strikethrough",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.0.0/Strikethrough.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.0.0/Strikethrough.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.strikethrough.png"
     },
     {
       "id": "com.openclip.tasklines",
@@ -849,7 +944,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tasklines@1.0.0/TaskLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tasklines@1.0.0/TaskLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.tasklines.png"
     },
     {
       "id": "com.openclip.things",
@@ -859,7 +955,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.0.0/ThingsThree.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.0.0/ThingsThree.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.things.png"
     },
     {
       "id": "com.openclip.titlecase",
@@ -869,7 +966,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.0.0/TitleCase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.0.0/TitleCase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.titlecase.png"
     },
     {
       "id": "com.openclip.todoist",
@@ -879,7 +977,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.todoist@1.0.0/TodoistTask.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.todoist@1.0.0/TodoistTask.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.todoist.png"
     },
     {
       "id": "com.openclip.trimlines",
@@ -889,7 +988,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.0.0/TrimLines.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.0.0/TrimLines.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.trimlines.png"
     },
     {
       "id": "com.openclip.underline",
@@ -899,7 +999,8 @@
       "icon": "underline",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.0.0/Underline.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.0.0/Underline.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.underline.png"
     },
     {
       "id": "com.openclip.underscore",
@@ -909,7 +1010,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underscore@1.0.0/Underscore.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underscore@1.0.0/Underscore.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.underscore.png"
     },
     {
       "id": "com.openclip.uppercase",
@@ -919,7 +1021,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.0.0/Uppercase.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.0.0/Uppercase.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.uppercase.png"
     },
     {
       "id": "com.openclip.waybackmachine",
@@ -929,7 +1032,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.waybackmachine@1.0.0/WaybackMachine.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.waybackmachine@1.0.0/WaybackMachine.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.waybackmachine.png"
     },
     {
       "id": "com.openclip.wikipedia",
@@ -939,7 +1043,8 @@
       "icon": "book",
       "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wikipedia@1.0.1/WikipediaSearch.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wikipedia@1.0.1/WikipediaSearch.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wikipedia.png"
     },
     {
       "id": "com.openclip.wolframalpha",
@@ -949,7 +1054,8 @@
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wolframalpha@1.0.0/WolframAlpha.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wolframalpha@1.0.0/WolframAlpha.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wolframalpha.png"
     },
     {
       "id": "com.openclip.wordcount",
@@ -959,7 +1065,8 @@
       "icon": "text.alignleft",
       "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.0.1/WordCount.openclipext.zip"
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.0.1/WordCount.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wordcount.png"
     }
   ]
 }
