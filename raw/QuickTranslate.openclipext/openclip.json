@@ -1,0 +1,30 @@
+{
+  "identifier": "com.openclip.quick-translate",
+  "name": "Quick Translate",
+  "version": "1.0.0",
+  "author": "OpenClip Team",
+  "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+  "options": [
+    {
+      "identifier": "targetLang",
+      "label": "Translate to",
+      "type": "multiple",
+      "default": "en",
+      "values": [
+        "en", "hi", "es", "fr", "de", "ja", "zh-Hans", "zh-Hant", "ko", "pt",
+        "ru", "ar", "it", "tr", "nl", "pl", "sv", "da", "fi", "no",
+        "cs", "el", "he", "th", "vi", "id", "uk", "bn", "ta", "te", "ml", "ur", "fa"
+      ]
+    }
+  ],
+  "action": {
+    "title": "Quick Translate",
+    "icon": "character.bubble",
+    "type": "javascript",
+    "script": "main.js",
+    "async": true,
+    "loading": true,
+    "loadingMessage": "Translating…"
+  }
+}
+
