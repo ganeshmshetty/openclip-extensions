@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.markdownblockquote",
   "name": "Markdown Blockquote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Format selected text as a Markdown blockquote.",

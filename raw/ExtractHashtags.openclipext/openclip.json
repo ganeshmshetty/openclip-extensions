@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.extracthashtags",
   "name": "Extract Hashtags",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Regex-extract all #hashtags into a clean list.",

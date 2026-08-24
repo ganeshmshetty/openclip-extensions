@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.waybackmachine",
   "name": "Wayback Machine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "View historical web archives on the Wayback Machine.",
@@ -9,6 +9,9 @@
     "title": "Wayback Machine",
     "icon": "icon.svg",
     "type": "url",
-    "url": "https://web.archive.org/web/*/{text}"
+    "url": "https://web.archive.org/web/*/{matched}",
+    "requirements": {
+      "regex": "(?:https?://|www\\.)\\S+"
+    }
   }
 }

@@ -3,7 +3,12 @@ function action(selection) {
     var urlRegex = /https?:\/\/[^\s<>"'{}|\\^`\[\]]+/gi;
     var matches = selection.match(urlRegex) || [];
     var cleaned = matches.map(function(u) {
-        return u.replace(/[.,;:) \]]+$/, "");
+        u = u.replace(/[.,;:!?]+$/, "");
+        while (/\)$/.test(u) &&
+               (u.match(/\(/g) || []).length < (u.match(/\)/g) || []).length) {
+            u = u.slice(0, -1);
+        }
+        return u;
     });
     var seen = Object.create(null);
     var unique = cleaned.filter(function(u) {

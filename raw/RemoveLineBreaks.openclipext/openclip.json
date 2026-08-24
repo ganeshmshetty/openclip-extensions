@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.removelinebreaks",
   "name": "Remove Line Breaks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Replace line breaks with spaces.",

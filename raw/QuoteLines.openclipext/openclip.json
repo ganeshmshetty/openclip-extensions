@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.quotelines",
   "name": "Quote Lines",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Enclose every individual line in double quotes.",

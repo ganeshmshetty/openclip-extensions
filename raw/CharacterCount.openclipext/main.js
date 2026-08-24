@@ -4,8 +4,5 @@ function action(selection) {
         ? Array.from(new Intl.Segmenter().segment(text)).length
         : Array.from(text).length;
     var msg = count + (count === 1 ? " character" : " characters");
-    if (typeof openclip !== "undefined" && openclip.toast) {
-        openclip.toast(msg, "info");
-    }
     return msg;
 }
