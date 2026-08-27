@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-08-26T04:03:28Z",
+  "updatedAt": "2026-08-27T14:13:04Z",
   "downloads": {
     "com.opeclip.slugify": 0,
     "com.openclip.alternatingcase": 0,
-    "com.openclip.anglebrackets": 1,
+    "com.openclip.anglebrackets": 2,
     "com.openclip.applemessages": 2,
     "com.openclip.applemusic": 2,
     "com.openclip.applereminders": 3,
@@ -16,7 +16,7 @@
     "com.openclip.charactercount": 4,
     "com.openclip.codeblock": 0,
     "com.openclip.constantcase": 0,
-    "com.openclip.copy-as-markdown": 0,
+    "com.openclip.copy-as-markdown": 1,
     "com.openclip.craftdocs": 0,
     "com.openclip.curlybrackets": 0,
     "com.openclip.deduplicatelines": 0,
