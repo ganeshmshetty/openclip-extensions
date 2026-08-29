@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-28T15:23:27Z",
+  "updatedAt": "2026-08-29T10:05:29Z",
   "downloads": {
     "com.opeclip.slugify": 0,
     "com.openclip.alternatingcase": 0,
@@ -61,7 +61,7 @@
     "com.openclip.pascalcase": 0,
     "com.openclip.pasteenter": 0,
     "com.openclip.pypisearch": 0,
-    "com.openclip.quick-translate": 2,
+    "com.openclip.quick-translate": 3,
     "com.openclip.quotelines": 0,
     "com.openclip.removeallspaces": 0,
     "com.openclip.removelinebreaks": 0,
@@ -79,7 +79,7 @@
     "com.openclip.snakecase": 0,
     "com.openclip.sortalphabetical": 0,
     "com.openclip.sortnumerical": 0,
-    "com.openclip.speakselection": 3,
+    "com.openclip.speakselection": 5,
     "com.openclip.splitcommas": 0,
     "com.openclip.squarebrackets": 1,
     "com.openclip.stackoverflow": 0,
@@ -96,7 +96,7 @@
     "com.openclip.waybackmachine": 0,
     "com.openclip.wikipedia": 1,
     "com.openclip.wolframalpha": 0,
-    "com.openclip.wordcount": 1,
+    "com.openclip.wordcount": 2,
     "com.openclip.wrapparentheses": 1,
     "com.openclip.youtube": 0
   }
