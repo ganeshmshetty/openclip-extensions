@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T10:05:29Z",
+  "updatedAt": "2026-08-30T09:14:33Z",
   "downloads": {
     "com.opeclip.slugify": 0,
     "com.openclip.alternatingcase": 0,
@@ -31,7 +31,7 @@
     "com.openclip.extractphones": 0,
     "com.openclip.extracturls": 0,
     "com.openclip.fantasticalevent": 0,
-    "com.openclip.githubsearch": 0,
+    "com.openclip.githubsearch": 1,
     "com.openclip.googlemaps": 0,
     "com.openclip.googlescholar": 0,
     "com.openclip.headerone": 0,
@@ -61,7 +61,7 @@
     "com.openclip.pascalcase": 0,
     "com.openclip.pasteenter": 0,
     "com.openclip.pypisearch": 0,
-    "com.openclip.quick-translate": 3,
+    "com.openclip.quick-translate": 4,
     "com.openclip.quotelines": 0,
     "com.openclip.removeallspaces": 0,
     "com.openclip.removelinebreaks": 0,
