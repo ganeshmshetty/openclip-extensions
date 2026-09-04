@@ -37,7 +37,14 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   "identifier": "com.example.words",
 
   // REQUIRED. Display name of the package. Aliases: "Name".
+  // Can be a plain string or a localized dictionary of language tags:
+  // "name": { "en": "Word Tools", "zh-Hans": "字词工具", "fr": "Outils de mots", "ja": "単語ツール" }
   "name": "Word Tools",
+
+  // OPTIONAL. Description of package. Aliases: "Description".
+  // Plain string or localized dictionary:
+  // "description": { "en": "Text manipulation utilities", "zh-Hans": "文本处理实用工具" }
+  "description": "Text manipulation utilities",
 
   // OPTIONAL. Declared package version. "version" is not used for loading; it is recorded in the
   // validation log line (e.g. "Loaded extension manifest <id> (v1.0.1, schema 1, ...)").
@@ -52,6 +59,9 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   // so any non-empty list here REJECTS the manifest at load time. Reserved for future use; do not
   // write it yet.
   "capabilities": [],
+
+  // OPTIONAL. Package-level search keywords for the action palette (array or comma-separated string).
+  "keywords": ["words", "text", "case"],
 
   // REQUIRED. Either an ARRAY of action objects ("actions"),
   // or a SINGLE action object ("action"). Alias: "Actions".
@@ -111,6 +121,7 @@ Common action fields (all OPTIONAL unless noted):
   "secondaryToast": { "message": "Copied" },  // secondary-click toast (see §5b)
   "requirements": { /* ... */ },       // see §5
   "options": [ /* per-action option overrides, see §4 */ ],
+  "keywords": ["uppercase", "all caps", "majuscule", "大写", "大文字"], // search palette keywords
   "loading": true,                       // slow action: early-close + spinner toast, see §5d
   "loadingMessage": "Searching…"         // loading toast text; defaults to "Opening <title>…"
 }
@@ -175,10 +186,9 @@ a `Promise` (which the host awaits) and a `fetch(url, options)` polyfill is avai
 ```
 
 Inline via `scriptCode`, or file via `"script": "main.applescript"` (or `.scpt`). The script runs as
-an `osascript` subprocess; the selection is injected as a top-level `property OPENCLIP_TEXT`
-(accessible by the bare name `OPENCLIP_TEXT` — `openclip_text` is the same identifier, as
-AppleScript names are case-insensitive), and
-`{text}`/`{query}`/`{matched}`/`{captureN}` placeholders are substituted (unencoded, §6b). Both
+an `osascript` subprocess; the selection is injected as top-level properties `property OPENCLIP_TEXT`,
+`property OPENCLIP_HTML`, and `property OPENCLIP_RTF` (accessible by bare names `OPENCLIP_TEXT`, `OPENCLIP_HTML`, `OPENCLIP_RTF`), and
+`{text}`/`{query}`/`{html}`/`{rtf}`/`{matched}`/`{captureN}` placeholders are substituted (unencoded, §6b). Both
 authoring styles are supported: bare top-level statements **or** an explicit `on run … end run`
 handler. A non-empty string the script returns becomes `.text` — implicitly returned text, delivered
 per the user's per-click preference (preview/paste/copy, §5b), defaulting to today's paste behavior.
@@ -195,11 +205,11 @@ Errors become `.failure` (shown as an error toast).
 ```
 
 - `type` `shell`/`shellinline` + `scriptCode` → runs inline under `/bin/zsh -c`.
-- `type` `script`/`scriptfile` reads the file named by `"script"` (default `script.sh`) from the
-  package dir and runs it directly.
+- `type` `script`/`scriptfile`, or any unknown non-url kind with **no** `url`/`scriptCode`, reads the
+  file named by `"script"` (default `script.sh`) from the package dir and runs it directly.
 
-The command is executed **with a 30-second kill watchdog** (`Constants.scriptTimeout`) and a
-non-zero exit surfaces as an error status. Selection/match data arrive via env vars (§6c), and
+The command is executed **with a 60-second kill watchdog** (`Constants.scriptTimeout`, cancellable anytime by clicking the loading toast) and a
+non-zero exit surfaces as an error status. Selection/match data arrive via env vars (`$OPENCLIP_TEXT`, `$OPENCLIP_HTML`, `$OPENCLIP_RTF`, §6c), and
 stdout is interpreted per §8 (JSON effects, plain-text implicit return, or empty-text success).
 
 ### 3e. textsnippet
@@ -244,7 +254,7 @@ non-QWERTY physical layout may remap them; named keys `return`/`enter`, `escape`
 ```
 
 Runs the named Shortcuts.app shortcut via `/usr/bin/shortcuts run`, passing the selection as input
-(`-i` temp file). Executes under the same 30-second watchdog; a missing binary or non-zero exit
+(`-i` temp file). Executes under the same 60-second watchdog; a missing binary or non-zero exit
 surfaces as an error status.
 
 ### 3h. service
@@ -269,10 +279,11 @@ picker** (`showServices`) on the selected text. Nothing is required.
 ```jsonc
 {
   "title": "Text tools",
+  "icon": "symbol(folder)",
   "type": "group",
   "subActions": [
-    { "id": "upper", "title": "UPPERCASE", "type": "url", "url": "https://example.com/?q={text}" },
-    { "id": "bold",  "title": "Bold",      "type": "keypress", "keyPress": "command+b" }
+    { "id": "upper", "title": "UPPERCASE", "icon": "symbol(textformat.upper)", "type": "url", "url": "https://example.com/?q={text}" },
+    { "id": "bold",  "title": "Bold",      "icon": "symbol(bold)",             "type": "keypress", "keyPress": "command+b" }
   ]
 }
 ```
@@ -285,6 +296,11 @@ sub-action**. Membership is by the **ID-prefix convention**:
 
 For `identifier: "com.example.words"`, group `id:"tools"` → group id `com.example.words.tools` and
 sub-action ids `com.example.words.tools.upper`, `com.example.words.tools.bold`.
+
+**Icon handling:**
+- The group row displays its declared `icon` (or default `symbol(folder)` / `symbol(wand.and.stars)`) on the main popup bar.
+- Each sub-action can specify its own `icon` to render inside the sub-menu or palette.
+- **Icon inheritance**: When a sub-action omits its `icon`, it automatically inherits the group's icon (`inheritedIcon`).
 
 There is **no `parentGroupID` field** — that design was deliberately deferred. Sub-actions are
 matched to their group purely by this id-prefix. **Do not write a `parentGroupID` key.** Nested
@@ -329,7 +345,7 @@ declaring this key in a passive decorator that forwards the original action's id
   "options": [
     {
       "identifier": "lang",          // REQUIRED. Option key. Aliases: "id", "Identifier".
-      "label": "Language",           // REQUIRED. UI label. Aliases: "Label".
+      "label": "Language",           // REQUIRED. UI label. Plain string or localized dict: {"en": "Language", "zh-Hans": "语言"}. Aliases: "Label".
       "type": "string",              // OPTIONAL, default "string": "string"|"boolean"|"multiple"|"secret"
       "default": "en",               // OPTIONAL. Default value if unset. Aliases: "Default".
       "values": ["en", "fr", "es"]   // OPTIONAL. Picker choices for type "multiple". Aliases: "options", "Options".
@@ -345,11 +361,11 @@ only the JSON manifest remains canonical — custom-actions JSON is retired.
 
 ### 4b. Secret vs non-secret storage
 
-The app injects `KeychainActionOptionStore` (`AppDelegate`) into the factory. At runtime:
+The app injects `SecretActionOptionStore` (`AppDelegate`) into the factory. At runtime:
 
-- **`type: "secret"`** values are read/written in the **macOS Keychain**, keyed by account
+- **`type: "secret"`** values are read/written in `SecretStore` (`~/.openclip/secrets.json` with POSIX 0600 permissions), keyed by
   `"action.<actionID>.option.<optionID>"` — they never reach UserDefaults. An empty secret value
-  deletes the Keychain entry.
+  deletes the secret entry.
 - **All other types** (`string`, `boolean`, `multiple`) are stored in `SettingsStore` under the
   same `"action.<actionID>.option.<optionID>"` key (`SettingKey.actionOption`). Values live in
   `~/.openclip` user defaults, never by direct `UserDefaults` calls.
@@ -410,12 +426,12 @@ runs:
 2. **Apply probe** — a chosen `.paste` is downgraded to `.copy` whenever the target cannot paste,
    and the rich analogue downgrades `.pasteContent` to `.copyContent`. The **probe always applies**:
    to primary *and* secondary clicks, and to declared *and* derived pastes alike — a paste is never
-   delivered to a target that can't paste. The unified
-   `PasteAvailability` answer (a `denyPaste` per-app rule first, else the live `PasteAvailabilityProbe`
-   reporting the AX Edit ▸ Paste disabled/unavailable) says no → `.copy`.
+   delivered to a target that can't paste. The unified `PasteAvailability` answer (a `denyPaste`
+   per-app rule first, else the live `PasteAvailabilityProbe` reporting the AX Edit ▸ Paste
+   disabled/unavailable) says no → `.copy`.
 3. **Toast** — the click's declared toast (`toast` for primary, `secondaryToast` for secondary) wins;
-   otherwise the default **"Copied"** toast fires only when a paste context was delivered as a copy
-   (derived at select, declared, or downgraded by the probe) or a `.copyDefinition` is delivered.
+   otherwise the default **"Copied"** toast fires whenever a result is delivered as a copy
+   (native copy, derived at select, declared, or downgraded by the probe) or a `.copyDefinition` is delivered.
 4. **One toast per run** — a script-emitted `.toast` (JS `openclip.toast`, shell JSON `"toast"`)
    **suppresses** the delivery companion toast: nothing beyond the script's own toast surfaces. The
    precedence is **script toast > declared per-click toast (`toast`/`secondaryToast`) > default
@@ -567,7 +583,7 @@ a laid-out content measurement (`layoutSubtreeIfNeeded()` before reading the hos
 hosting view sits in a plain container so the window's constraint engine never tracks the SwiftUI
 content (an `NSHostingView` as a direct contentView that re-measures during the display cycle
 crashes with "marked as needing another Update Constraints in Window pass"). Info/error toasts
-auto-dismiss after `PopupMetrics.toastDurationNanoseconds` (0.5 s); loading toasts have no timer
+auto-dismiss after `PopupMetrics.toastDurationNanoseconds` (1.2 s); loading toasts have no timer
 and stay until the result lands.
 
 ---
@@ -605,11 +621,15 @@ vars: `OPENCLIP_TEXT`, `OPENCLIP_MATCHED`, `OPENCLIP_CAPTURE_1`…`N`, `OPENCLIP
 
 Read-only input context:
 
-- `openclip.input.text`, `openclip.input.matchedText`, `openclip.input.captures` (array),
+- `openclip.input.text`, `openclip.input.html` (source-app HTML or empty), `openclip.input.rtf` (source-app RTF or empty),
+  `openclip.input.matchedText`, `openclip.input.captures` (array),
   `openclip.input.app.bundleID`, `openclip.input.app.name`,
   `openclip.input.isSecondaryClick` (true on a right-click or ⇧-click — see §5c)
 - `openclip.options` — `{ optionID: stringValue }` resolved through the option store
 - `openclip.option(id)` — functional form returning the same value string
+- `openclip.locale` — user's active locale identifier string (e.g. `"zh_CN"`, `"en_US"`, `"fr_FR"`)
+- `openclip.language` — active language code or script tag (e.g. `"zh-Hans"`, `"zh-Hant"`, `"en"`, `"fr"`, `"ja"`)
+- `openclip.i18n(dict)` — returns best localized string from a dictionary of language tags: `openclip.i18n({ en: "Saved", "zh-Hans": "已保存" })`
 
 Entry points: the code is wrapped in an IIFE; if you define `action(selection, options)` or
 `main(selection, options)` it is called with the selection and options dict; otherwise the top-level
@@ -628,6 +648,8 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 
 - `openclip.paste(text)`
 - `openclip.copy(text)`
+- `openclip.pasteContent({ 'public.utf8-plain-text': text, 'public.html': html, 'public.rtf': rtf })` — multi-type rich paste (also accepts shorthand `{ text, html, rtf }`)
+- `openclip.copyContent({ 'public.utf8-plain-text': text, 'public.html': html, 'public.rtf': rtf })` — multi-type rich copy (also accepts shorthand `{ text, html, rtf }`)
 - `openclip.cut(text)`
 - `openclip.openURL(url)`
 - `openclip.keyPress(key, ["command","shift","option","control", ...])`
@@ -650,9 +672,110 @@ single/`sequence`; function string return → `.text(returnValue)` (implicitly r
 per the click's preference); else `.success`.
 
 > Execution runs on a background thread (never the `MainActor`); async scripts are guarded by a
-> 30-second watchdog (`Constants.scriptTimeout`, `TimeoutFlag` pattern) — a never-settling promise
-> surfaces as an error toast. Note the resolution above: a toast followed by an effect yields a
-> sequence of both.
+> 60-second watchdog (`Constants.scriptTimeout`, `TimeoutFlag` pattern) — a never-settling promise
+> surfaces as an error toast. Users can click the loading toast anytime to cancel running scripts immediately.
+> Note the resolution above: a toast followed by an effect yields a sequence of both.
+
+---
+
+## 7b. Multi-language & Localization (i18n)
+
+OpenClip extensions are **100% backward compatible**: single-language extensions using plain strings continue to work with zero modifications. To support users worldwide across English, Simplified Chinese, Traditional Chinese, French, Japanese, etc., any user-facing text can provide localized variations.
+
+### Localized Manifest Fields
+The following fields in `openclip.json` accept either a plain `string` or a dictionary mapping language/script tags (e.g. `"en"`, `"zh-Hans"`, `"zh-Hant"`, `"fr"`, `"ja"`) to localized text:
+- **`name`** (Extension package name in Preferences & Extension Manager)
+- **`description`** (Extension package summary)
+- **`title`** (Action display title in the popup & search palette)
+- **`loadingMessage`** (Loading spinner toast message)
+- **`toast.message`** & **`secondaryToast.message`** (Completion toast message)
+- **`options[].label`** (Setting option display label)
+
+Example:
+```jsonc
+{
+  "identifier": "com.example.counter",
+  "name": {
+    "en": "Word Counter",
+    "zh-Hans": "字数统计",
+    "zh-Hant": "字數統計",
+    "fr": "Compteur de mots",
+    "ja": "文字数カウント"
+  },
+  "description": {
+    "en": "Counts words and characters",
+    "zh-Hans": "统计选中文字的字数与字符数"
+  },
+  "actions": [
+    {
+      "id": "count",
+      "title": {
+        "en": "Count Words",
+        "zh-Hans": "统计字数",
+        "fr": "Compter les mots",
+        "ja": "単語数をカウント"
+      },
+      "type": "javascript",
+      "scriptCode": "const text = openclip.input.text;\nconst words = text.trim().split(/\\s+/).length;\nopenclip.toast(openclip.i18n({\n  en: `${words} words`,\n  'zh-Hans': `${words} 个词`,\n  fr: `${words} mots`,\n  ja: `${words} 語`\n}));"
+    }
+  ]
+}
+```
+
+### Manifest Localization Styles
+
+Authors can choose between two syntax styles:
+
+#### Style 1: Inline Localized Dictionary (Clean & Compact)
+Directly supply a dictionary mapping language tags to strings:
+```jsonc
+"title": {
+  "en": "Count Words",
+  "zh-Hans": "统计字数",
+  "fr": "Compter les mots",
+  "ja": "単語数をカウント"
+}
+```
+*(Note: Because v1.0.0 strictly expected a string for `"title"`, declare `"minOpenClipVersion": "1.1.0"` when using this style so older apps display a friendly update banner rather than an unhandled decode error).*
+
+#### Style 2: Companion `*Locales` (100% Backward Compatible with v1.0.0)
+If you want your extension to run seamlessly on older OpenClip v1.0.0 (falling back to English) while providing localized strings on v1.1.0+:
+- `"name": "Word Counter"` + `"nameLocales": { "zh-Hans": "字数统计", "fr": "Compteur de mots" }`
+- `"title": "Count Words"` + `"titleLocales": { "zh-Hans": "统计字数", "fr": "Compter les mots" }`
+- `"loadingMessage": "Counting..."` + `"loadingMessageLocales": { "zh-Hans": "正在统计..." }`
+- `"label": "Target Language"` + `"labelLocales": { "zh-Hans": "目标语言" }`
+- `"toast": { "message": "Done", "messageLocales": { "zh-Hans": "完成" } }`
+
+*How it works:*
+- On **v1.0.0**: The app reads `"title": "Count Words"`, ignores `"titleLocales"` (unknown JSON keys are skipped), and functions perfectly in English!
+- On **v1.1.0+**: The app merges `"title"` with `"titleLocales"` and displays the appropriate localized string.
+
+### Resolution Order & Fallback
+When OpenClip resolves a localized dictionary:
+1. **Script-specific match**: Matches script and language tag (e.g. `"zh-Hans"` vs `"zh-Hant"`). Region codes like `"zh-CN"` / `"zh-TW"` automatically alias to the appropriate script.
+2. **Exact locale tag**: Matches exact identifier (e.g. `"fr_FR"` or `"en_US"`).
+3. **Normalized case/delimiter match**: Case- and dash/underscore-insensitive match.
+4. **Primary language tag**: Matches `"fr"`, `"ja"`, `"en"`, etc.
+5. **English fallback**: Uses `"en"`, `"en-US"`, or `"en_US"`.
+6. **Default fallback**: Uses `"default"` or the first declared entry.
+
+### Runtime Localization & Older App Compatibility
+- **JavaScript**:
+  - `openclip.locale`: Active system/app locale string (e.g. `"zh_CN"`, `"en_US"`).
+  - `openclip.language`: Active language identifier or script tag (e.g. `"zh-Hans"`, `"en"`).
+  - `openclip.i18n(dictionary)`: Resolves the dictionary against the active language.
+  - *Compatibility with older OpenClip versions:* On OpenClip v1.0.0, `openclip.i18n` is `undefined`. To run on all versions without crashing:
+    ```javascript
+    const text = openclip.i18n ? openclip.i18n({ en: "Done", zh: "完成" }) : "Done";
+    openclip.toast(text);
+    ```
+- **Shell & AppleScript**:
+  - `$OPENCLIP_LOCALE`: Environment variable with current locale (e.g. `zh_CN`).
+  - `$OPENCLIP_LANGUAGE`: Environment variable with language/script (e.g. `zh-Hans`).
+  - *Compatibility with older OpenClip versions:* On OpenClip v1.0.0, these environment variables are unset/empty. Use standard shell fallbacks:
+    ```bash
+    LANG="${OPENCLIP_LANGUAGE:-en}"
+    ```
 
 ---
 
@@ -664,9 +787,11 @@ outcomes, or kind runtimes):
 | Case | Meaning |
 | :--- | :--- |
 | `.success` | no side effect |
-| `.copy(String)` | copy to pasteboard |
+| `.copy(String)` | copy plain text to pasteboard |
+| `.copyContent(RichPasteboardPayload)` | multi-type rich copy to pasteboard (text, HTML, RTF) |
 | `.cut(String)` | copy + delete selection (delete key) |
-| `.paste(String)` | paste text (replaces selection / frontmost app) |
+| `.paste(String)` | paste plain text (replaces selection / frontmost app) |
+| `.pasteContent(RichPasteboardPayload)` | multi-type rich paste (text, HTML, RTF) |
 | `.text(String)` | implicitly returned text (JS string return / AppleScript output / shell stdout / text snippet); no delivery decision — the per-click preference resolves it to preview/paste/copy |
 | `.openURL(URL)` | open the URL |
 | `.showServices(String)` | macOS share picker on the text |
@@ -697,6 +822,8 @@ except `shareService`'s `identifier`, which is required):
 ```jsonc
 { "type": "paste", "value": "text" }                                  // .paste
 { "type": "copy",  "value": "text" }                                  // .copy
+{ "type": "pasteContent", "value": "text", "html": "<b>...</b>", "rtf": "..." } // .pasteContent (rich multi-type paste)
+{ "type": "copyContent",  "value": "text", "html": "<b>...</b>", "rtf": "..." } // .copyContent (rich multi-type copy)
 { "type": "openURL", "value": "https://..." }                         // .openURL
 { "type": "toast", "message": "Done", "style": "success", "keepVisible": true } // .toast — style "success"|"error"|"info"; keepVisible optional (default false)
 { "type": "configure", "reason": "...", "missing": ["opt"] }          // .openConfiguration
@@ -705,7 +832,7 @@ except `shareService`'s `identifier`, which is required):
 
 Unknown `type` → `.success`. If stdout is **not** valid JSON, the plain text is **implicitly
 returned** (`.text`, delivered per the user's per-click preference); empty
-stdout → `.success`. A non-zero exit (or hitting the 30 s watchdog) becomes an error status. These
+stdout → `.success`. A non-zero exit (or hitting the 60 s watchdog) becomes an error status. These
 are the *only* script JSON `type` values the runtime accepts. **`"showContent"` is not one of
 them** — a `"showContent"` type falls into the unknown branch and maps to `.success`.
 
@@ -773,7 +900,7 @@ Once installed, "Look up" opens Wikipedia for the selected text.
 }
 ```
 
-The `api` value is stored in the Keychain (never UserDefaults) and would be read in JS as
+The `api` value is stored in `SecretStore` (`~/.openclip/secrets.json`, never UserDefaults) and would be read in JS as
 `openclip.options.api` / `openclip.option('api')`.
 
 ---
@@ -837,7 +964,7 @@ are rejected at build time by esbuild's browser platform. See
 - **`requiresSelection` gating.** With no `requirements` the default requires a non-blank selection;
   a selected-empty/app with no selection won't show the action. Set
   `requirements.requiresSelection: false` for always-on actions.
-- **Non-zero exit / timeout.** A shell that exits non-zero or exceeds the 30 s watchdog surfaces an
+- **Non-zero exit / timeout.** A shell that exits non-zero or exceeds the 60 s watchdog surfaces an
   error status and does not leave the popup spinning.
 - **keyPress on a non-QWERTY layout** may type the "wrong" key (ANSI mapping assumption, §3f).
 
@@ -893,9 +1020,9 @@ so pre-existing extensions keep working with zero action.
 - **Do not put AppKit/SwiftUI in Core** — extension *parsing* (`OpenClipSnippetParser`) and model
   types in `Sources/Core/` are pure; keep them free of UI imports.
 - **Do not write to `UserDefaults` directly** in extension code paths — Option storage goes through
-  `ActionOptionStore`/`SettingKey`; secrets go through the Keychain store.
+  `ActionOptionStore`/`SettingKey`; secrets go through `SecretStore`.
 - **Do not skip the subprocess watchdog** — any new action that spawns a subprocess must terminate
-  it past `Constants.scriptTimeout` (30 s). Existing shell/shortcut runtimes already do.
+  it past `Constants.scriptTimeout` (60 s). Existing shell/shortcut runtimes already do.
 - **Do not `switch action.id`** for presentation decisions — use `action.chrome`, icons, and
   data-driven fields. The `chrome`/`rowStyle`/`popupBehavior`/`source` you may see in the code are
   **computed by the app**, not manifest keys: a manifest has **no** `chrome`, `subtitle`, `badge`,
@@ -904,7 +1031,7 @@ so pre-existing extensions keep working with zero action.
 - **Do not write a `parentGroupID`** — groups use the id-prefix convention only (§3i); it was
   deliberately deferred.
 - **Do not invent JSON effect `type` strings** — the shell protocol accepts only the types in §8a.
-- **Do not block inside JS** — the async watchdog kills never-settling promises after 30 s
+- **Do not block inside JS** — the async watchdog kills never-settling promises after 60 s
   (`Constants.scriptTimeout`), but keep scripts fast; `"async": true` is required for any script
   that needs `fetch` or to await a promise.
 - **Do not `require` bare or Node-builtin specifiers from a file script** — the host rejects them
@@ -912,7 +1039,7 @@ so pre-existing extensions keep working with zero action.
   esbuild" message); inline `scriptCode` has no `require` at all, and `require` may only reach files
   inside the package directory. See `docs/developer-guide/extensions-modules.md`.
 - **Do not use `?key=` for Gemini/auth in URLs**; credentials go in headers, and secrets belong in
-  Keychain-backed options, not in a manifest.
+  SecretStore-backed options, not in a manifest.
 
 ---
 
@@ -929,8 +1056,8 @@ so pre-existing extensions keep working with zero action.
   `ConfigurationRequest.swift`).
 - Delivery model (primary/secondary + per-click toasts): `Sources/Core/Actions/ActionDelivery.swift`,
   `Sources/Core/Actions/ActionResultDelivery.swift`, `Sources/Core/Actions/DeliveryDecoratedAction.swift`.
-- AI result card (native SwiftUI): `Sources/OpenClip/UI/Popup/AIResultCardView.swift`.
+- Result card (native SwiftUI, any text-returning action): `Sources/OpenClip/UI/Popup/ResultCardView.swift`.
 - Visibility/required options: `Sources/Core/Actions/ActionVisibility.swift`, `ExtensionActionRules.swift`.
 - Options storage: `Sources/Core/Settings/ActionOptionStore.swift`, `SettingKey.swift`,
-  `Sources/OpenClip/Platform/Extensions/KeychainActionOptionStore.swift`.
+  `Sources/OpenClip/Platform/Extensions/SecretActionOptionStore.swift`, `Sources/OpenClip/Platform/SecretStore.swift`.
 - Shell JSON effects + watchdog: `Sources/Core/Extensions/ShellProcessRunner.swift`.

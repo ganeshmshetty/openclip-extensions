@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.speakselection",
   "name": "Speak Selection",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Text-to-speech using system voice.",
@@ -9,6 +9,8 @@
     "title": "Speak Selection",
     "icon": "icon.svg",
     "type": "applescript",
-    "scriptCode": "say OPENCLIP_TEXT"
+    "scriptCode": "say OPENCLIP_TEXT",
+    "loading": true,
+    "loadingMessage": "Speaking…"
   }
 }
