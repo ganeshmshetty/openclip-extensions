@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T04:22:34Z",
+  "updatedAt": "2026-09-04T11:47:47Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -887,9 +887,9 @@
       "description": "Text-to-speech using system voice.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.0.0/SpeakSelection.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.0.1/SpeakSelection.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.speakselection.svg"
     },
     {
