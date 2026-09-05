@@ -180,10 +180,28 @@ jobs:
             fi
             dl_count=${dl_count:-0}
 
+            name_str=$(jq -r '
+              def resolve_text:
+                if type == "string" then .
+                elif type == "object" then (.en // (to_entries | map(select(.value | type == "string" and (.value | test("^[[:space:]]*$") | not))) | .[0]?.value) // "")
+                else "" end;
+              (.name | resolve_text) as $n |
+              if ($n | length) > 0 then $n
+              else ((.action.title // .actions[0].title // empty) | resolve_text) end
+            ' "$manifest")
+
+            desc_str=$(jq -r '
+              def resolve_text:
+                if type == "string" then .
+                elif type == "object" then (.en // (to_entries | map(select(.value | type == "string" and (.value | test("^[[:space:]]*$") | not))) | .[0]?.value) // "")
+                else "" end;
+              (.description // empty) | resolve_text
+            ' "$manifest")
+
             entry=$(jq -nc \
               --arg id "$identifier" \
-              --arg name "$(jq -r '.name // (.action.title // .actions[0].title // empty)' "$manifest")" \
-              --arg desc "$(jq -r '.description // empty' "$manifest")" \
+              --arg name "$name_str" \
+              --arg desc "$desc_str" \
               --arg author "$(jq -r '.author // "OpenClip Team"' "$manifest")" \
               --arg icon "$(jq -r '(.action.icon // .actions[0].icon // "puzzlepiece")' "$manifest")" \
               --arg version "$(jq -r '.version // "1.0.0"' "$manifest")" \
