@@ -1,0 +1,73 @@
+{
+  "identifier": "com.openclip.stackclipboard",
+  "name": {
+    "en": "Stack Clipboard",
+    "zh-Hans": "堆叠剪贴板",
+    "zh-Hant": "堆疊剪貼簿",
+    "ja": "クリップボードにスタック",
+    "fr": "Empiler dans le presse-papiers"
+  },
+  "description": {
+    "en": "Stack selected text onto your clipboard. Right-click or Shift-click to stack on top.",
+    "zh-Hans": "将选中文本堆叠到剪贴板末尾。右键或按住 Shift 单击可堆叠到开头。",
+    "zh-Hant": "將選取文字堆疊至剪貼簿末端。點擊右鍵或按住 Shift 點擊可堆疊至開頭。",
+    "ja": "選択したテキストをクリップボードにスタックします。右クリックまたは Shift+クリックで先頭にスタックします。",
+    "fr": "Empile le texte sélectionné dans le presse-papiers. Clic droit ou Maj-clic pour empiler au début."
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.3.0",
+  "author": "OpenClip Team",
+  "options": [
+    {
+      "identifier": "separator",
+      "label": {
+        "en": "Separator",
+        "zh-Hans": "分隔符",
+        "zh-Hant": "分隔符號",
+        "ja": "区切り文字",
+        "fr": "Séparateur"
+      },
+      "type": "multiple",
+      "default": "newline",
+      "values": [
+        "newline",
+        "space",
+        "comma",
+        "none"
+      ]
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Stack",
+      "zh-Hans": "堆叠",
+      "zh-Hant": "堆疊",
+      "ja": "スタック",
+      "fr": "Empiler"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "toast": {
+      "message": {
+        "en": "Stacked",
+        "zh-Hans": "已堆叠",
+        "zh-Hant": "已堆疊",
+        "ja": "スタックしました",
+        "fr": "Empilé"
+      },
+      "style": "success"
+    },
+    "secondaryToast": {
+      "message": {
+        "en": "Stacked on top",
+        "zh-Hans": "已堆叠至开头",
+        "zh-Hant": "已堆疊至開頭",
+        "ja": "先頭にスタックしました",
+        "fr": "Empilé au début"
+      },
+      "style": "success"
+    },
+    "keywords": ["stack", "append", "prepend", "clipboard", "add", "pasteboard"]
+  }
+}

@@ -53,7 +53,8 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   // OPTIONAL. Minimum OpenClip version this package requires ("1.2.3"). Min-only and decode-only:
   // an incompatible package still loads but is gated "Needs Update" until the app is newer (see
   // §11). Absent or malformed → treated as compatible.
-  "minOpenClipVersion": "1.2.3",
+  // Rule: declare "1.1.0" for localized dictionary syntax; declare "1.3.0" if using openclip.pasteboard API.
+  "minOpenClipVersion": "1.3.0",
 
   // OPTIONAL. Declared runtime capabilities. The host's known-capability set is EMPTY on day one,
   // so any non-empty list here REJECTS the manifest at load time. Reserved for future use; do not
@@ -172,8 +173,13 @@ esbuild". Inline `scriptCode` actions have **no** modules (byte-identical legacy
 contract is `docs/developer-guide/extensions-modules.md`.
 
 **Async mode**: set `"async": true` to run the script asynchronously — the entry function may return
-a `Promise` (which the host awaits) and a `fetch(url, options)` polyfill is available for HTTP calls
+a `Promise` (which the host awaits) and the `openclip.fetch(url, options)` polyfill is available for HTTP calls
 (§7). Without the flag, scripts run synchronously and a promise-like return is ignored.
+
+**JavaScriptCore environment**: scripts run in macOS JavaScriptCore, which does **not** include browser
+DOM globals (`btoa`, `atob`, `document`) or Node built-ins (`Buffer`, `process`). Standalone data
+transformations (such as Base64 encoding/decoding or HTML entity escaping) must be implemented in pure
+JavaScript within the script.
 
 ### 3c. applescript (inline or file)
 
@@ -193,6 +199,14 @@ authoring styles are supported: bare top-level statements **or** an explicit `on
 handler. A non-empty string the script returns becomes `.text` — implicitly returned text, delivered
 per the user's per-click preference (preview/paste/copy, §5b), defaulting to today's paste behavior.
 Errors become `.failure` (shown as an error toast).
+
+**TCC Automation & App Control**: On macOS 10.14+, AppleScript statements targeting other applications
+(`tell application "<Name>"`) require Transparency, Consent, and Control (TCC) AppleEvents consent.
+If the host app does not declare `NSAppleEventsUsageDescription` in its bundle or has not been granted
+Automation access in *System Settings ▸ Privacy & Security ▸ Automation*, the script will fail with
+error `-1743 (Not authorized to send Apple events)`. For running commands in terminal emulators
+(Terminal.app, Ghostty, iTerm2), prefer a **`shell`** action creating a `.command` file or calling the
+terminal binary directly (§3d), which requires zero TCC permissions.
 
 ### 3d. shell (inline or file)
 
@@ -609,6 +623,11 @@ Used in URL templates, text snippets, and AppleScript:
 
 For `url` these are **percent-encoded**; for snippets/AppleScript they are substituted verbatim.
 
+**Option values in URLs**: Placeholder substitution only covers the selection context above; `{option:id}`
+or PopClip's `{popclip option id}` are **not** substituted in static `url` strings. If an action needs dynamic
+option values in a URL, implement it as `type: "javascript"` reading `openclip.option(id)` and calling
+`openclip.openURL(...)` (§7), or as `type: "shell"` reading option environment variables.
+
 ### 6c. Env vars (shell/script-file actions)
 
 A script-file action (`ScriptAction`) and inline shell run with the selection on stdin and these env
@@ -630,6 +649,22 @@ Read-only input context:
 - `openclip.locale` — user's active locale identifier string (e.g. `"zh_CN"`, `"en_US"`, `"fr_FR"`)
 - `openclip.language` — active language code or script tag (e.g. `"zh-Hans"`, `"zh-Hant"`, `"en"`, `"fr"`, `"ja"`)
 - `openclip.i18n(dict)` — returns best localized string from a dictionary of language tags: `openclip.i18n({ en: "Saved", "zh-Hans": "已保存" })`
+- `openclip.pasteboard` — reactive read/write macOS pasteboard bridge (**requires `"minOpenClipVersion": "1.3.0"`**):
+  - **Read**:
+    - `openclip.pasteboard.text` — current plain-text string on pasteboard (`""` if empty)
+    - `openclip.pasteboard.html` — current HTML markup string on pasteboard (`""` if absent)
+    - `openclip.pasteboard.rtf` — current RTF string on pasteboard (`""` if absent)
+    - `openclip.pasteboard.content` — snapshot `{ 'public.utf8-plain-text': text, 'public.html': html, 'public.rtf': rtf }`
+    - `openclip.pasteboard.hasContent` — boolean (`true` if text, HTML, or RTF is present)
+    - `openclip.pasteboard.hasHtml` / `openclip.pasteboard.hasRtf` — booleans
+    - `openclip.pasteboard.types` — array of UTI type strings currently on pasteboard
+    *(Password-manager concealed items, e.g. `org.nspasteboard.ConcealedType` or `com.agilebits.onepassword`, are automatically redacted).*
+  - **Write (reactive property setters)**:
+    - `openclip.pasteboard.text = str` — assigns text and triggers an `openclip.copy(str)` effect
+    - `openclip.pasteboard.html = htmlStr` — assigns HTML and triggers `openclip.copyContent({ html: htmlStr })`
+    - `openclip.pasteboard.rtf = rtfStr` — assigns RTF and triggers `openclip.copyContent({ rtf: rtfStr })`
+    - `openclip.pasteboard.content = obj` — assigns dictionary and triggers `openclip.copyContent(...)`
+  > **Version Rule:** Any extension using `openclip.pasteboard` **MUST** declare `"minOpenClipVersion": "1.3.0"` in `openclip.json`. Older OpenClip versions do not inject this object, and this requirement ensures older apps display a clean "Needs Update" state rather than failing with a runtime JavaScript `TypeError`.
 
 Entry points: the code is wrapped in an IIFE; if you define `action(selection, options)` or
 `main(selection, options)` it is called with the selection and options dict; otherwise the top-level
@@ -640,9 +675,19 @@ the code runs in module mode and `require('./…')` is available for local files
 
 **Async mode (`"async": true`)** — the entry function may return a `Promise`; the host awaits it and
 a rejected promise surfaces as `.toast(.error)`. A script with no entry point (top-level side
-effects only) still settles. Async scripts also get a `fetch(url, options)` polyfill bridged to
-URLSession: `options` = `{ method, headers, body }` (default GET); the response is
-`{ status, ok, text(): Promise<string>, json(): Promise<any> }`; network errors reject the promise.
+effects only) still settles.
+
+**Network Fetch Polyfill (`openclip.fetch`)**: Async scripts get a URLSession-backed fetch polyfill bound to
+`openclip.fetch(url, options)`. Note that the polyfill is on the `openclip` object (calling bare `fetch(...)`
+throws `ReferenceError: Can't find variable: fetch`); write `var fetchFn = openclip.fetch || fetch;` or call
+`openclip.fetch(...)` directly.
+- `options` = `{ method, headers, body }` (default GET, methods uppercase, JSON/text string body).
+- Response object:
+  - `res.status`: HTTP status code (number).
+  - `res.ok`: boolean (`status >= 200 && status < 300`).
+  - `res.text()`: synchronous function returning the response body as a string.
+  - `res.json()`: synchronous function returning parsed JSON. If the body is non-JSON (e.g. error HTML or 500 plain text), it sets a JSContext exception. Tip: inspect `res.text()` first or wrap `res.json()` in try/catch to gracefully handle third-party service outages.
+- Security: HTTP and HTTPS only. SSRF guard rejects loopback, RFC1918 private, link-local, and Unix-local hosts. Network errors reject the promise.
 
 Side effects (each appends an effect; multiple effects run as a `.sequence` in call order):
 
@@ -776,6 +821,15 @@ When OpenClip resolves a localized dictionary:
     ```bash
     LANG="${OPENCLIP_LANGUAGE:-en}"
     ```
+
+### Pasteboard API & Minimum Version ("1.3.0")
+The `openclip.pasteboard` JavaScript object was introduced in OpenClip **v1.3.0**. 
+- When authoring an extension that accesses `openclip.pasteboard` (either for inspecting previous clipboard content or using the reactive property setters), you **MUST** declare:
+  ```json
+  "minOpenClipVersion": "1.3.0"
+  ```
+  in `openclip.json`.
+- On versions prior to v1.3.0, the host does not inject `openclip.pasteboard`. Declaring `"minOpenClipVersion": "1.3.0"` ensures that users on older app builds see a helpful "Needs Update" badge in Preferences rather than encountering an unhandled JavaScript runtime error (`TypeError: undefined is not an object`).
 
 ---
 
