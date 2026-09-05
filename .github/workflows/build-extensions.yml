@@ -154,6 +154,9 @@ jobs:
               identifier="$(echo "$identifier" | tr '[:upper:]' '[:lower:]')"
             fi
 
+            published_at="$(git log -1 --format=%cI -- "$pkg_dir" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")"
+            [ -n "$published_at" ] || published_at="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+
             entry=$(jq -nc \
               --arg id "$identifier" \
               --arg name "$(jq -r '.name // (.action.title // .actions[0].title // empty)' "$manifest")" \
@@ -163,7 +166,8 @@ jobs:
               --arg version "$(jq -r '.version // "1.0.0"' "$manifest")" \
               --arg url "https://github.com/$GITHUB_REPOSITORY/releases/download/${identifier}@$(jq -r '.version // "1.0.0"' "$manifest")/$pkg_name.zip" \
               --arg iconURL "https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@main/published/icons/${identifier}.svg" \
-              '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: 0, downloadURL: $url, iconURL: $iconURL}')
+              --arg publishedAt "$published_at" \
+              '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: 0, downloadURL: $url, iconURL: $iconURL, publishedAt: $publishedAt}')
 
             jq --argjson entry "$entry" '.extensions += [$entry]' "$CATALOG" > "$CATALOG.tmp"
             mv "$CATALOG.tmp" "$CATALOG"
