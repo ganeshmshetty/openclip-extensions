@@ -1,0 +1,140 @@
+{
+  "identifier": "com.leafy.openclip",
+  "name": "Leafy",
+  "description": {
+    "en": "Look up, translate, or save the selected word with Leafy.",
+    "zh-Hans": "用 Leafy 查询、翻译或保存选中的单词。",
+    "zh-Hant": "用 Leafy 查詢、翻譯或儲存選取的單字。",
+    "fr": "Recherchez, traduisez ou enregistrez le mot sélectionné avec Leafy.",
+    "ja": "選択した単語を Leafy で調べる、翻訳する、保存する。"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Jtobin",
+  "keywords": [
+    "leafy",
+    "dictionary",
+    "vocabulary",
+    "translate",
+    "anki",
+    "language learning"
+  ],
+  "actions": [
+    {
+      "id": "define",
+      "title": {
+        "en": "Look up",
+        "zh-Hans": "查词",
+        "zh-Hant": "查詞",
+        "fr": "Rechercher",
+        "ja": "調べる"
+      },
+      "icon": "leaf.fill",
+      "type": "shell",
+      "scriptCode": "enc() { printf '%s' \"$1\" | /usr/bin/od -An -tx1 -v | /usr/bin/tr ' ' '\\n' | /usr/bin/grep . | /usr/bin/sed 's/^/%/' | /usr/bin/tr -d '\\n'; }\napp=$(/usr/bin/lsappinfo info -only name \"$OPENCLIP_BUNDLE_ID\" 2>/dev/null | /usr/bin/sed -n 's/.*\"LSDisplayName\"=\"\\(.*\\)\".*/\\1/p')\n/usr/bin/open -g \"leafy://lookup?mode=define&text=$(enc \"$OPENCLIP_TEXT\")&app=$(enc \"$app\")\" 2>/dev/null || printf '{\"type\":\"toast\",\"message\":\"Leafy is not installed\",\"style\":\"error\"}'\n",
+      "keywords": [
+        "define",
+        "definition",
+        "dictionary",
+        "meaning",
+        "查词",
+        "词典",
+        "辞書"
+      ],
+      "requirements": {
+        "regex": "^(https?://\\S+|[^\\s@]+@[^\\s@]+\\.[a-z]{2,})$",
+        "regexNegated": true
+      }
+    },
+    {
+      "id": "translate",
+      "title": {
+        "en": "Translate",
+        "zh-Hans": "翻译",
+        "zh-Hant": "翻譯",
+        "fr": "Traduire",
+        "ja": "翻訳"
+      },
+      "icon": "globe",
+      "type": "shell",
+      "scriptCode": "enc() { printf '%s' \"$1\" | /usr/bin/od -An -tx1 -v | /usr/bin/tr ' ' '\\n' | /usr/bin/grep . | /usr/bin/sed 's/^/%/' | /usr/bin/tr -d '\\n'; }\napp=$(/usr/bin/lsappinfo info -only name \"$OPENCLIP_BUNDLE_ID\" 2>/dev/null | /usr/bin/sed -n 's/.*\"LSDisplayName\"=\"\\(.*\\)\".*/\\1/p')\n/usr/bin/open -g \"leafy://lookup?mode=translate&text=$(enc \"$OPENCLIP_TEXT\")&app=$(enc \"$app\")\" 2>/dev/null || printf '{\"type\":\"toast\",\"message\":\"Leafy is not installed\",\"style\":\"error\"}'\n",
+      "keywords": [
+        "translate",
+        "translation",
+        "翻译",
+        "翻訳"
+      ],
+      "requirements": {
+        "regex": "^(https?://\\S+|[^\\s@]+@[^\\s@]+\\.[a-z]{2,})$",
+        "regexNegated": true
+      }
+    },
+    {
+      "id": "save",
+      "title": {
+        "en": "Save",
+        "zh-Hans": "保存",
+        "zh-Hant": "儲存",
+        "fr": "Enregistrer",
+        "ja": "保存"
+      },
+      "icon": "bookmark.fill",
+      "type": "shell",
+      "scriptCode": "enc() { printf '%s' \"$1\" | /usr/bin/od -An -tx1 -v | /usr/bin/tr ' ' '\\n' | /usr/bin/grep . | /usr/bin/sed 's/^/%/' | /usr/bin/tr -d '\\n'; }\napp=$(/usr/bin/lsappinfo info -only name \"$OPENCLIP_BUNDLE_ID\" 2>/dev/null | /usr/bin/sed -n 's/.*\"LSDisplayName\"=\"\\(.*\\)\".*/\\1/p')\n/usr/bin/open -g \"leafy://lookup?mode=save&text=$(enc \"$OPENCLIP_TEXT\")&app=$(enc \"$app\")\" 2>/dev/null || printf '{\"type\":\"toast\",\"message\":\"Leafy is not installed\",\"style\":\"error\"}'\n",
+      "keywords": [
+        "save",
+        "vocabulary",
+        "word list",
+        "生词",
+        "単語帳"
+      ],
+      "requirements": {
+        "regex": "^(https?://\\S+|[^\\s@]+@[^\\s@]+\\.[a-z]{2,})$",
+        "regexNegated": true
+      },
+      "toast": {
+        "message": {
+          "en": "Saved to Leafy",
+          "zh-Hans": "已保存到 Leafy",
+          "zh-Hant": "已儲存到 Leafy",
+          "fr": "Enregistré dans Leafy",
+          "ja": "Leafy に保存しました"
+        },
+        "style": "success"
+      }
+    },
+    {
+      "id": "anki",
+      "title": {
+        "en": "Add to Anki",
+        "zh-Hans": "添加到 Anki",
+        "zh-Hant": "加入 Anki",
+        "fr": "Ajouter à Anki",
+        "ja": "Ankiに追加"
+      },
+      "icon": "rectangle.stack.badge.plus",
+      "type": "shell",
+      "scriptCode": "enc() { printf '%s' \"$1\" | /usr/bin/od -An -tx1 -v | /usr/bin/tr ' ' '\\n' | /usr/bin/grep . | /usr/bin/sed 's/^/%/' | /usr/bin/tr -d '\\n'; }\napp=$(/usr/bin/lsappinfo info -only name \"$OPENCLIP_BUNDLE_ID\" 2>/dev/null | /usr/bin/sed -n 's/.*\"LSDisplayName\"=\"\\(.*\\)\".*/\\1/p')\n/usr/bin/open -g \"leafy://lookup?mode=anki&text=$(enc \"$OPENCLIP_TEXT\")&app=$(enc \"$app\")\" 2>/dev/null || printf '{\"type\":\"toast\",\"message\":\"Leafy is not installed\",\"style\":\"error\"}'\n",
+      "keywords": [
+        "anki",
+        "flashcard",
+        "闪卡",
+        "フラッシュカード"
+      ],
+      "requirements": {
+        "regex": "^(https?://\\S+|[^\\s@]+@[^\\s@]+\\.[a-z]{2,})$",
+        "regexNegated": true
+      },
+      "toast": {
+        "message": {
+          "en": "Saved to Leafy",
+          "zh-Hans": "已保存到 Leafy",
+          "zh-Hant": "已儲存到 Leafy",
+          "fr": "Enregistré dans Leafy",
+          "ja": "Leafy に保存しました"
+        },
+        "style": "success"
+      }
+    }
+  ]
+}
