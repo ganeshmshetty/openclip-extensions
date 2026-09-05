@@ -1,0 +1,31 @@
+name: Validate Extensions PR
+
+on:
+  pull_request:
+    paths:
+      - 'raw/**'
+      - 'scripts/validate.sh'
+      - '.github/workflows/validate-pr.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: validate-pr-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Validate Manifests & Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install Tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq
+
+      - name: Validate All Extensions
+        run: |
+          chmod +x ./scripts/validate.sh
+          ./scripts/validate.sh --all
