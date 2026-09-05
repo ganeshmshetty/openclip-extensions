@@ -61,10 +61,14 @@ jobs:
             tag="${identifier}@${version}"
 
             if gh release view "$tag" --json name >/dev/null 2>&1; then
-              # Same version can be republished: overwrite the release asset in place, so content
-              # changes reach users without a version bump or a new release tag.
-              echo "Release $tag already exists; re-uploading $pkg_name.zip (clobber)."
-              gh release upload "$tag" "$ROOT/published/$pkg_name.zip" --clobber --repo "$GITHUB_REPOSITORY"
+              # Only upload if the release does not already have the zip asset attached.
+              # Clobbering an existing asset deletes it and resets GitHub's download counter to 0.
+              if gh release view "$tag" --json assets --jq '.assets[] | select(.name == "'"$pkg_name.zip"'") | .name' 2>/dev/null | grep -q "$pkg_name.zip"; then
+                echo "Release $tag already has $pkg_name.zip; skipping upload to preserve download counts."
+                continue
+              fi
+              echo "Release $tag missing asset; uploading $pkg_name.zip."
+              gh release upload "$tag" "$ROOT/published/$pkg_name.zip" --repo "$GITHUB_REPOSITORY"
               CHANGED_ZIPS="$CHANGED_ZIPS published/$pkg_name.zip"
               continue
             fi
@@ -140,6 +144,9 @@ jobs:
           # Build catalog.json from the raw extension manifests so the web API
           # serves metadata from a single file instead of walking the GitHub tree.
           CATALOG="$ROOT/published/catalog.json"
+          STATS="$ROOT/published/extension-stats.json"
+          PREV_CATALOG="$ROOT/published/catalog.json.bak"
+          cp "$CATALOG" "$PREV_CATALOG" 2>/dev/null || true
           jq -n '{updatedAt: (now | todateiso8601), extensions: []}' > "$CATALOG"
 
           for pkg_dir in "$RAW_DIR"/*.openclipext; do
@@ -157,6 +164,22 @@ jobs:
             published_at="$(git log -1 --format=%cI -- "$pkg_dir" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")"
             [ -n "$published_at" ] || published_at="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
+            # Retain download counts from extension-stats.json or previous catalog.json
+            dl_count=$(jq -r --arg id "$identifier" \
+              '([.downloads[$id], .downloads[($id | ascii_downcase)]] | map(select(. != null)) | first) // 0' \
+              "$STATS" 2>/dev/null || echo 0)
+            if [ "$dl_count" = "0" ] || [ -z "$dl_count" ] || [ "$dl_count" = "null" ]; then
+              if [ -f "$PREV_CATALOG" ]; then
+                prev_dl=$(jq -r --arg id "$identifier" \
+                  '(.extensions[] | select((.id | ascii_downcase) == ($id | ascii_downcase)) | .downloadCount) // 0' \
+                  "$PREV_CATALOG" 2>/dev/null || echo 0)
+                if [ -n "$prev_dl" ] && [ "$prev_dl" != "null" ] && [ "$prev_dl" -gt 0 ] 2>/dev/null; then
+                  dl_count="$prev_dl"
+                fi
+              fi
+            fi
+            dl_count=${dl_count:-0}
+
             entry=$(jq -nc \
               --arg id "$identifier" \
               --arg name "$(jq -r '.name // (.action.title // .actions[0].title // empty)' "$manifest")" \
@@ -167,11 +190,13 @@ jobs:
               --arg url "https://github.com/$GITHUB_REPOSITORY/releases/download/${identifier}@$(jq -r '.version // "1.0.0"' "$manifest")/$pkg_name.zip" \
               --arg iconURL "https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@main/published/icons/${identifier}.svg" \
               --arg publishedAt "$published_at" \
-              '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: 0, downloadURL: $url, iconURL: $iconURL, publishedAt: $publishedAt}')
+              --argjson downloadCount "$dl_count" \
+              '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: $downloadCount, downloadURL: $url, iconURL: $iconURL, publishedAt: $publishedAt}')
 
             jq --argjson entry "$entry" '.extensions += [$entry]' "$CATALOG" > "$CATALOG.tmp"
             mv "$CATALOG.tmp" "$CATALOG"
           done
+          rm -f "$PREV_CATALOG"
 
           git add published/catalog.json
           if ! git diff --cached --quiet; then

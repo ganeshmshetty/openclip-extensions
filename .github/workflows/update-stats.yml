@@ -33,27 +33,92 @@ jobs:
           TMP="$(mktemp)"
 
           # All releases, paginated. Each release tag is "<identifier>@<version>"
-          # and carries the built <Name>.openclipext.zip as an asset.
+          # and carries the built extension zip as an asset.
           gh api "repos/$GITHUB_REPOSITORY/releases?per_page=100" --paginate > "$TMP"
-          jq -n --arg updatedAt "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-             '{updatedAt: $updatedAt, downloads: {}}' > "$ROOT/published/extension-stats.json"
 
-          jq -r '.[] | select(.tag_name | contains("@")) | .tag_name' "$TMP" \
-            | sed 's/@.*//' | sort -u | while read -r identifier; do
-              count=$(jq -r \
-                --arg ident "$identifier" \
-                '[.[] | select(.tag_name | startswith($ident + "@")) | .assets[] | select(.name | endswith(".openclipext.zip")) | .download_count] | add // 0' \
-                "$TMP")
-              jq --arg id "$identifier" --argjson c "$count" \
-                '.downloads[$id] = $c' "$ROOT/published/extension-stats.json" > "$ROOT/published/extension-stats.json.tmp"
-              mv "$ROOT/published/extension-stats.json.tmp" "$ROOT/published/extension-stats.json"
-            done
+          python3 - << 'EOF'
+import json, os, sys
+from datetime import datetime, timezone
+
+root = os.getcwd()
+stats_path = os.path.join(root, "published", "extension-stats.json")
+catalog_path = os.path.join(root, "published", "catalog.json")
+tmp_path = sys.argv[1]
+
+# Load existing stats (historical high-water marks)
+existing_downloads = {}
+if os.path.exists(stats_path):
+    try:
+        with open(stats_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            existing_downloads = data.get("downloads", {})
+    except Exception as e:
+        print(f"Warning: could not parse existing stats: {e}", file=sys.stderr)
+
+# Load fetched releases
+try:
+    with open(tmp_path, "r", encoding="utf-8") as f:
+        releases = json.load(f)
+except Exception as e:
+    print(f"Error loading releases: {e}", file=sys.stderr)
+    releases = []
+
+# Aggregate API download counts across all release tags
+api_downloads = {}
+for rel in releases:
+    tag = rel.get("tag_name", "")
+    if "@" not in tag:
+        continue
+    identifier = tag.split("@")[0].strip().lower()
+    assets = rel.get("assets", [])
+    dl_for_rel = sum(
+        asset.get("download_count", 0)
+        for asset in assets
+        if asset.get("name", "").endswith(".zip")
+    )
+    api_downloads[identifier] = api_downloads.get(identifier, 0) + dl_for_rel
+
+# Enforce monotonic counts: max(api_count, historical_count)
+all_ids = set(existing_downloads.keys()) | set(api_downloads.keys())
+final_downloads = {}
+for ident in sorted(all_ids):
+    prev = existing_downloads.get(ident, 0)
+    api_val = api_downloads.get(ident, 0)
+    final_downloads[ident] = max(prev, api_val)
+
+new_stats = {
+    "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    "downloads": final_downloads
+}
+
+with open(stats_path, "w", encoding="utf-8") as f:
+    json.dump(new_stats, f, indent=2)
+    f.write("\n")
+
+# Also update catalog.json downloadCount if catalog exists
+if os.path.exists(catalog_path):
+    try:
+        with open(catalog_path, "r", encoding="utf-8") as f:
+            catalog = json.load(f)
+        for ext in catalog.get("extensions", []):
+            ext_id = ext.get("id", "").lower()
+            if ext_id in final_downloads:
+                ext["downloadCount"] = max(ext.get("downloadCount", 0), final_downloads[ext_id])
+        with open(catalog_path, "w", encoding="utf-8") as f:
+            json.dump(catalog, f, indent=2)
+            f.write("\n")
+    except Exception as e:
+        print(f"Warning: could not update catalog: {e}", file=sys.stderr)
+
+print(f"Stats successfully updated for {len(final_downloads)} extensions.")
+EOF "$TMP"
+          rm -f "$TMP"
 
       - name: Commit stats
         run: |
           git config user.name "OpenClip Bot"
           git config user.email "actions@github.com"
-          git add published/extension-stats.json
+          git add published/extension-stats.json published/catalog.json
           if git diff --cached --quiet; then
             echo "No download count changes; skipping commit."
           else
