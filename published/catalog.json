@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T20:45:12Z",
+  "updatedAt": "2026-09-05T20:46:31Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -62,18 +62,6 @@
       "publishedAt": "2026-08-20T22:28:33+05:30"
     },
     {
-      "id": "com.openclip.base64",
-      "name": "Base64",
-      "description": "Encode or decode the selected text as Base64.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.base64@1.0.0/Base64.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.base64.svg",
-      "publishedAt": "2026-09-05T20:45:12Z"
-    },
-    {
       "id": "com.openclip.bearnotes",
       "name": "Bear Notes",
       "description": "Create a new note in Bear.",
@@ -108,18 +96,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bulletlines@1.0.1/BulletLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bulletlines.svg",
       "publishedAt": "2026-08-24T09:49:38+05:30"
-    },
-    {
-      "id": "com.openclip.call",
-      "name": "Call Phone Number",
-      "description": "Call the selected phone number via iPhone or FaceTime.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.call@1.0.0/Call.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.call.svg",
-      "publishedAt": "2026-09-05T20:45:13Z"
     },
     {
       "id": "com.openclip.camelcase",
@@ -228,18 +204,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.0.0/CurlyBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.curlybrackets.svg",
       "publishedAt": "2026-08-20T22:11:59+05:30"
-    },
-    {
-      "id": "com.openclip.dash",
-      "name": "Dash Documentation",
-      "description": "Search API documentation in Dash.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dash@1.0.0/Dash.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.dash.svg",
-      "publishedAt": "2026-09-05T20:45:13Z"
     },
     {
       "id": "com.openclip.deduplicatelines",
@@ -468,18 +432,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headertwo@1.0.1/HeaderTwo.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headertwo.svg",
       "publishedAt": "2026-08-24T09:49:38+05:30"
-    },
-    {
-      "id": "com.openclip.htmlencode",
-      "name": "HTML Entities",
-      "description": "Encode or decode HTML special character entities.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.htmlencode@1.0.0/HTMLEncode.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.htmlencode.svg",
-      "publishedAt": "2026-09-05T20:45:14Z"
     },
     {
       "id": "com.openclip.hyphenate",
@@ -794,18 +746,6 @@
       "publishedAt": "2026-08-24T09:49:38+05:30"
     },
     {
-      "id": "com.openclip.readinglist",
-      "name": "Add to Safari Reading List",
-      "description": "Save the selected URL to Safari Reading List.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.readinglist@1.0.0/ReadingList.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.readinglist.svg",
-      "publishedAt": "2026-09-05T20:45:15Z"
-    },
-    {
       "id": "com.openclip.removeallspaces",
       "name": "Remove All Spaces",
       "description": "Strip all whitespace from the selected text.",
@@ -914,18 +854,6 @@
       "publishedAt": "2026-08-21T22:29:33+05:30"
     },
     {
-      "id": "com.openclip.runcommand",
-      "name": "Run in Terminal",
-      "description": "Run the selected text as a shell command in Terminal or Ghostty.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.runcommand@1.0.0/RunCommand.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.runcommand.svg",
-      "publishedAt": "2026-09-05T20:45:16Z"
-    },
-    {
       "id": "com.openclip.youtube",
       "name": "Search YouTube",
       "description": "Search YouTube for videos matching the selected text.",
@@ -960,18 +888,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sentencecase.svg",
       "publishedAt": "2026-08-21T08:31:01+05:30"
-    },
-    {
-      "id": "com.openclip.shortenlink",
-      "name": "Shorten Link",
-      "description": "Shorten the selected URL using TinyURL, is.gd, or v.gd.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shortenlink@1.0.0/ShortenLink.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.shortenlink.svg",
-      "publishedAt": "2026-09-05T20:45:16Z"
     },
     {
       "id": "com.openclip.shufflelines",
@@ -1130,18 +1046,6 @@
       "publishedAt": "2026-08-21T08:31:01+05:30"
     },
     {
-      "id": "com.openclip.textedit",
-      "name": "New Document in TextEdit",
-      "description": "Create a new TextEdit document containing the selected text.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.1",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.textedit@1.0.1/TextEdit.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.textedit.svg",
-      "publishedAt": "2026-09-05T20:45:16Z"
-    },
-    {
       "id": "com.openclip.things",
       "name": "Things 3",
       "description": "Add a new to-do task to Things 3 inbox.",
@@ -1152,18 +1056,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.0.0/ThingsThree.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.things.svg",
       "publishedAt": "2026-08-20T22:28:33+05:30"
-    },
-    {
-      "id": "com.openclip.timestamp",
-      "name": "Insert Timestamp",
-      "description": "Paste the current date and time at the cursor.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.timestamp@1.0.0/Timestamp.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.timestamp.svg",
-      "publishedAt": "2026-09-05T20:45:17Z"
     },
     {
       "id": "com.openclip.titlecase",
@@ -1188,18 +1080,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.todoist@1.0.0/TodoistTask.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.todoist.svg",
       "publishedAt": "2026-08-21T08:31:01+05:30"
-    },
-    {
-      "id": "com.openclip.tot",
-      "name": "Append to Tot",
-      "description": "Append the selected text to a chosen dot in Tot.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tot@1.0.0/Tot.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.tot.svg",
-      "publishedAt": "2026-09-05T20:45:17Z"
     },
     {
       "id": "com.openclip.trimlines",
@@ -1238,18 +1118,6 @@
       "publishedAt": "2026-08-20T22:00:51+05:30"
     },
     {
-      "id": "com.openclip.unixtime",
-      "name": "Unix Time Converter",
-      "description": "Convert Unix timestamp in seconds or milliseconds to a readable UTC date.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.unixtime@1.0.0/UnixTime.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.unixtime.svg",
-      "publishedAt": "2026-09-05T20:45:17Z"
-    },
-    {
       "id": "com.openclip.uppercase",
       "name": "Uppercase",
       "description": "Convert selected text to uppercase.",
@@ -1260,18 +1128,6 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.0.0/Uppercase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.uppercase.svg",
       "publishedAt": "2026-08-20T22:00:51+05:30"
-    },
-    {
-      "id": "com.openclip.urlencode",
-      "name": "URL Encode",
-      "description": "Percent-encode or decode the selected text.",
-      "author": "OpenClip Team",
-      "icon": "icon.svg",
-      "version": "1.0.0",
-      "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.urlencode@1.0.0/URLEncode.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.urlencode.svg",
-      "publishedAt": "2026-09-05T20:45:17Z"
     },
     {
       "id": "com.openclip.waybackmachine",
