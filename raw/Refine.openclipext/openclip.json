@@ -1,0 +1,33 @@
+{
+  "identifier": "com.openclip.refine",
+  "name": {
+    "en": "Refine",
+    "zh-Hans": "Refine",
+    "zh-Hant": "Refine",
+    "fr": "Refine",
+    "ja": "Refine"
+  },
+  "version": "1.0.1",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Refine",
+  "description": {
+    "en": "Open selected text in Refine to check and improve your writing.",
+    "zh-Hans": "在 Refine 中打开选中文本，检查并改进写作。",
+    "zh-Hant": "在 Refine 中開啟選取文字，檢查並改善寫作。",
+    "fr": "Ouvrez le texte sélectionné dans Refine pour vérifier et améliorer votre rédaction.",
+    "ja": "選択したテキストをRefineで開き、文章をチェック・改善します。"
+  },
+  "action": {
+    "id": "open-in-refine",
+    "title": {
+      "en": "Refine",
+      "zh-Hans": "Refine",
+      "zh-Hant": "Refine",
+      "fr": "Refine",
+      "ja": "Refine"
+    },
+    "icon": "icon.png",
+    "type": "url",
+    "url": "refine://editor?text={text}"
+  }
+}

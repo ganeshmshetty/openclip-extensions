@@ -3,11 +3,10 @@
 // into published/icons/<identifier>.svg during publish (CI or local).
 //
 // Icons stay monochrome/currentColor so they inherit theme color everywhere
-// (website light/dark, app tinting). No rasterization — pure SVG pass-through.
+// (website light/dark, app tinting). SVG paths and PNG alpha are preserved.
 //
 // Source priority per package:
-//   1. Manifest icon references a packaged .svg/.png file → copy its SVG
-//      (normalized: fixed width/height attrs stripped, viewBox kept)
+//   1. Packaged SVG → normalize dimensions; packaged PNG → embed as an alpha mask
 //   2. Manifest icon is a bare SF Symbol name → look up icon-map.json
 //      (Iconify id) and fetch https://api.iconify.design/<prefix>/<name>.svg
 //   3. Nothing resolvable → deterministic colored letter tile (intentionally
@@ -72,6 +71,22 @@ async function findPackagedIcon(pkgDir, iconValue) {
   return anySvg ? path.join(pkgDir, anySvg) : null;
 }
 
+async function packagedPngSvg(pkgDir, iconValue, identifier) {
+  const entries = await fs.readdir(pkgDir);
+  const filename = entries.find((entry) => entry.toLowerCase() === iconValue.toLowerCase());
+  if (!filename) throw new Error(`manifest icon '${iconValue}' does not exist in ${path.basename(pkgDir)}/`);
+  const png = await fs.readFile(path.join(pkgDir, filename));
+  const maskID = `icon-${identifier.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <mask id="${maskID}" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32" style="mask-type:alpha">
+      <image width="32" height="32" href="data:image/png;base64,${png.toString('base64')}"/>
+    </mask>
+  </defs>
+  <rect width="32" height="32" fill="currentColor" mask="url(#${maskID})"/>
+</svg>`;
+}
+
 async function fetchIconifySvg(iconifyId) {
   const [prefix, ...rest] = iconifyId.split(':');
   const name = rest.join(':');
@@ -117,6 +132,8 @@ async function main() {
             `manifest icon '${iconValue}' does not exist in ${pkg}/ — add the file or use an SF Symbol / mapped icon`);
         }
         svgText = normalizePackagedSvg(await fs.readFile(found, 'utf8'));
+      } else if (/\.png$/i.test(iconValue)) {
+        svgText = await packagedPngSvg(pkgDir, iconValue, identifier);
       } else if (iconValue.includes(':')) {
         // Manifest already carries an Iconify-style id.
         svgText = normalizePackagedSvg(await fetchIconifySvg(iconValue));
