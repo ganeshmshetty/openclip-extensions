@@ -12,5 +12,8 @@
   "book": "lucide:book-open",
   "text.alignleft": "lucide:align-left",
   "character.bubble": "lucide:message-circle",
-  "puzzlepiece": "lucide:puzzle"
+  "puzzlepiece": "lucide:puzzle",
+  "leaf.fill": "lucide:leaf",
+  "bookmark.fill": "lucide:bookmark",
+  "rectangle.stack.badge.plus": "lucide:layers"
 }
