@@ -1,6 +1,6 @@
 # Refine
 
-Open selected text in [Refine](https://refine.sh) to check grammar or rewrite it in the floating editor. For example, select a draft email and choose **Open in Refine** to review it before sending.
+Open selected text in [Refine](https://refine.sh) to check grammar or rewrite it in the floating editor. For example, select a draft email and choose **Refine** to review it before sending.
 
 ## Requirements
 
@@ -22,7 +22,7 @@ Enable the extension in OpenClip when prompted. If the action does not appear, r
 ## Usage
 
 1. Select text in an app or on a webpage.
-2. Choose **Open in Refine** from OpenClip.
+2. Choose **Refine** from OpenClip.
 3. Review or rewrite the text in Refine, then use **Copy** or **Paste** when ready.
 
 Opening another selection replaces the current contents of Refine's floating editor. Save or copy any edits you want to keep first.
@@ -40,3 +40,5 @@ Validate the package from the repository root:
 ```sh
 ./scripts/validate.sh raw/Refine.openclipext
 ```
+
+The icon is reused from the [Refine PopClip extension](https://github.com/refine-sh/refine-popclip).

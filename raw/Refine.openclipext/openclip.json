@@ -7,7 +7,7 @@
     "fr": "Refine",
     "ja": "Refine"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.1.0",
   "author": "Refine",
   "description": {
@@ -20,13 +20,13 @@
   "action": {
     "id": "open-in-refine",
     "title": {
-      "en": "Open in Refine",
-      "zh-Hans": "在 Refine 中打开",
-      "zh-Hant": "在 Refine 中開啟",
-      "fr": "Ouvrir dans Refine",
-      "ja": "Refineで開く"
+      "en": "Refine",
+      "zh-Hans": "Refine",
+      "zh-Hant": "Refine",
+      "fr": "Refine",
+      "ja": "Refine"
     },
-    "icon": "character.bubble",
+    "icon": "icon.png",
     "type": "url",
     "url": "refine://editor?text={text}"
   }
