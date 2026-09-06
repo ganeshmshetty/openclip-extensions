@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T17:42:05Z",
+  "updatedAt": "2026-09-06T18:22:38Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -912,6 +912,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sentencecase.svg",
       "publishedAt": "2026-08-21T08:31:01+05:30"
+    },
+    {
+      "id": "com.openclip.shortenlink",
+      "name": "Shorten Link",
+      "description": "Shorten the selected URL using TinyURL, is.gd, or v.gd.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shortenlink@1.0.0/ShortenLink.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.shortenlink.svg",
+      "publishedAt": "2026-09-06T23:51:16+05:30"
     },
     {
       "id": "com.openclip.shufflelines",
