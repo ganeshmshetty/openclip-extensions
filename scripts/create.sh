@@ -185,9 +185,22 @@ EOF
         ;;
 esac
 
+cat > "$DEST_DIR/README.md" <<EOF
+# $NAME
+
+OpenClip extension for $NAME.
+
+## Features
+- Describe the action and what it does to the selected text.
+
+## Usage
+Select text in any application, invoke OpenClip, and choose **$NAME**.
+EOF
+
 echo "✓ Created $NAME ($TYPE) at raw/$NAME.openclipext"
 echo ""
 echo "Next steps:"
 echo "  1. Edit logic in raw/$NAME.openclipext/"
-echo "  2. Test locally:  ./scripts/install.sh raw/$NAME.openclipext"
-echo "  3. Validate:      ./scripts/validate.sh raw/$NAME.openclipext"
+echo "  2. Update raw/$NAME.openclipext/README.md"
+echo "  3. Test locally:  ./scripts/install.sh raw/$NAME.openclipext"
+echo "  4. Validate:      ./scripts/validate.sh raw/$NAME.openclipext"

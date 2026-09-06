@@ -46,6 +46,12 @@ To provide a great experience worldwide, localize user-facing strings (`name`, `
 - Network requests in JavaScript must use `openclip.fetch(url, options)`. Requests to private networks, loopback addresses, and link-local IPs (SSRF protection) are blocked by the host.
 - Script paths must stay strictly within the extension folder (no absolute paths or `../` path traversal).
 
+### 6. Documentation (`README.md`)
+Every extension folder should include a `README.md` describing:
+- **What it does**: A clear explanation and example use cases.
+- **Requirements or Configuration**: Required options, external app requirements, or shortcuts (if any).
+- **Build / Development Notes**: If the extension uses npm/bundling (`--with-npm`, TypeScript, etc.), specify build instructions (`npm install && npm run build`).
+
 ---
 
 ## Tooling & Validation
@@ -72,8 +78,9 @@ Use the repository scripts under `scripts/` to create, test, and validate extens
 
 1. Fork this repository.
 2. Add your extension folder under `raw/<Name>.openclipext/`.
-3. Verify that `./scripts/validate.sh raw/<Name>.openclipext` passes with zero errors.
-4. Test that the action works as expected in OpenClip via `./scripts/install.sh`.
-5. Open a Pull Request.
+3. Include a concise `README.md` inside `raw/<Name>.openclipext/` explaining its functionality and usage.
+4. Verify that `./scripts/validate.sh raw/<Name>.openclipext` passes with zero errors.
+5. Test that the action works as expected in OpenClip via `./scripts/install.sh`.
+6. Open a Pull Request.
 
 All pull requests run automated CI validation (`validate-pr.yml`). Once merged, your extension is automatically built, released, and published to the live OpenClip store.

@@ -16,12 +16,12 @@ that root file wins (it is the higher-level, always-loaded contract); open an is
 ## 1. What an extension is
 
 An extension is a **directory** (conventionally named `<name>.openclipext`) containing an
-`openclip.json` manifest plus optional script files and local image assets, copied into
-`~/.openclip/extensions`. On startup the app scans that directory, decodes each manifest, and
-registers one action (or, for a `group`, a group row plus its sub-actions) into the action menu.
-Installing = placing the folder under `~/.openclip/extensions`; uninstalling = removing it. There
-is no compilation, framework, or approval step — a manifest plus an optional script is a complete
-extension.
+`openclip.json` manifest plus optional script files, local image assets, and a `README.md`
+documenting the extension, copied into `~/.openclip/extensions`. On startup the app scans that directory,
+decodes each manifest, and registers one action (or, for a `group`, a group row plus its sub-actions) into
+the action menu. Installing = placing the folder under `~/.openclip/extensions`; uninstalling = removing
+it. There is no compilation, framework, or approval step — a manifest plus an optional script and documentation
+is a complete extension.
 
 ---
 
