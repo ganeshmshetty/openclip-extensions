@@ -1,8 +1,9 @@
 # Leafy
 
-Adds four actions for [Leafy](https://leafyapp.uk), a vocabulary app for macOS.
+Adds a **Leafy** button to the popup bar for [Leafy](https://leafyapp.uk), a
+vocabulary app for macOS.
 
-Select a word anywhere on your Mac and OpenClip offers:
+Select a word anywhere on your Mac, open the Leafy menu, and you get:
 
 - **Look up** — look the word up and show the definition in place
 - **Translate** — translate the selection into your chosen language
