@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T20:46:31Z",
+  "updatedAt": "2026-09-06T03:39:37Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -724,7 +724,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
@@ -744,6 +744,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.0.1/QuoteLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quotelines.svg",
       "publishedAt": "2026-08-24T09:49:38+05:30"
+    },
+    {
+      "id": "com.openclip.refine",
+      "name": "Refine",
+      "description": "Open selected text in Refine to check and improve your writing.",
+      "author": "Refine",
+      "icon": "icon.png",
+      "version": "1.0.1",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.refine@1.0.1/Refine.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.refine.svg",
+      "publishedAt": "2026-09-06T09:08:26+05:30"
     },
     {
       "id": "com.openclip.removeallspaces",
