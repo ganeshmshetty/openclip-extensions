@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T03:39:37Z",
+  "updatedAt": "2026-09-06T11:42:09Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -494,6 +494,18 @@
       "publishedAt": "2026-08-24T09:49:38+05:30"
     },
     {
+      "id": "com.leafy.openclip",
+      "name": "Leafy",
+      "description": "Look up, translate, or save the selected word with Leafy.",
+      "author": "Jtobin",
+      "icon": "leaf.fill",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.leafy.openclip@1.0.0/Leafy.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.leafy.openclip.svg",
+      "publishedAt": "2026-09-06T17:11:07+05:30"
+    },
+    {
       "id": "com.openclip.linecount",
       "name": "Line Count",
       "description": "Display line count as a transient toast.",
@@ -724,7 +736,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
