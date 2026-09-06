@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T11:42:09Z",
+  "updatedAt": "2026-09-06T17:42:05Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -767,7 +767,7 @@
       "downloadCount": 4,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.refine@1.0.1/Refine.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.refine.svg",
-      "publishedAt": "2026-09-06T09:08:26+05:30"
+      "publishedAt": "2026-09-06T23:01:00+05:30"
     },
     {
       "id": "com.openclip.removeallspaces",
