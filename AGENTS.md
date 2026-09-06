@@ -283,7 +283,7 @@ surfaces as an error status.
 
 `serviceName`, when set, is treated as a **sharing-service identifier** and invokes that service
 directly via `NSSharingService(named:)` — e.g. `com.apple.Notes.SharingExtension` opens the Notes
-**inline popup** with the selected text (the analogue of PopClip's `popclip.share`). If the name is
+**inline popup** with the selected text. If the name is
 not a registered sharing service it falls back to a service-menu service via `NSPerformService`
 (legacy service-menu names). Without `serviceName`, the kind maps to the generic macOS **share
 picker** (`showServices`) on the selected text. Nothing is required.
@@ -624,7 +624,7 @@ Used in URL templates, text snippets, and AppleScript:
 For `url` these are **percent-encoded**; for snippets/AppleScript they are substituted verbatim.
 
 **Option values in URLs**: Placeholder substitution only covers the selection context above; `{option:id}`
-or PopClip's `{popclip option id}` are **not** substituted in static `url` strings. If an action needs dynamic
+placeholders are **not** substituted in static `url` strings. If an action needs dynamic
 option values in a URL, implement it as `type: "javascript"` reading `openclip.option(id)` and calling
 `openclip.openURL(...)` (§7), or as `type: "shell"` reading option environment variables.
 

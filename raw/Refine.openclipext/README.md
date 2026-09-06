@@ -41,4 +41,4 @@ Validate the package from the repository root:
 ./scripts/validate.sh raw/Refine.openclipext
 ```
 
-The icon is reused from the [Refine PopClip extension](https://github.com/refine-sh/refine-popclip).
+The icon is provided courtesy of [Refine](https://refine.sh).
