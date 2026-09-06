@@ -1,0 +1,63 @@
+{
+  "identifier": "com.openclip.shortenlink",
+  "name": {
+    "en": "Shorten Link",
+    "zh-Hans": "缩短网址",
+    "zh-Hant": "縮短網址",
+    "ja": "短縮リンク作成",
+    "fr": "Raccourcir le lien"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Shorten the selected URL using TinyURL, is.gd, or v.gd.",
+    "zh-Hans": "使用 TinyURL、is.gd 或 v.gd 缩短选中的网址。",
+    "zh-Hant": "使用 TinyURL、is.gd 或 v.gd 縮短選取的網址。",
+    "ja": "TinyURL、is.gd または v.gd を使用して選択した URL を短縮します。",
+    "fr": "Raccourcir l'URL sélectionnée avec TinyURL, is.gd ou v.gd."
+  },
+  "options": [
+    {
+      "identifier": "domain",
+      "label": {
+        "en": "Shortening Service",
+        "zh-Hans": "短链接服务",
+        "zh-Hant": "短網址服務",
+        "ja": "短縮サービス",
+        "fr": "Service de raccourcissement"
+      },
+      "type": "multiple",
+      "default": "TinyURL",
+      "values": [
+        "TinyURL",
+        "is.gd",
+        "v.gd"
+      ]
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Shorten Link",
+      "zh-Hans": "缩短链接",
+      "zh-Hant": "縮短網址",
+      "ja": "リンク短縮",
+      "fr": "Raccourcir"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "async": true,
+    "script": "main.js",
+    "loading": true,
+    "loadingMessage": {
+      "en": "Shortening…",
+      "zh-Hans": "正在缩短…",
+      "zh-Hant": "正在縮短…",
+      "ja": "短縮中…",
+      "fr": "Raccourcissement…"
+    },
+    "requirements": {
+      "regex": "^https?://\\S+$"
+    }
+  }
+}
