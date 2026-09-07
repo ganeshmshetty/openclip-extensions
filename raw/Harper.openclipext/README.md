@@ -10,6 +10,7 @@ completes in well under a second.
 | :--- | :--- |
 | **Fix Writing** | Applies Harper's top suggestion for every issue and returns the corrected text (paste or copy, per your OpenClip preference). |
 | **Check Writing** | Shows a toast with the number of issues Harper found, e.g. `Harper found 3 issues`. |
+| **Copy Report** | Copies a detailed report (line, column, category, message, suggestions) to the clipboard. |
 | **Add to Dictionary** | Appends the selected word to your Harper user dictionary, so Harper and `harper-ls` stop flagging it. Only offered when a single word is selected. |
 
 **Fix Writing** understands all three of Harper's suggestion kinds — replace, insert, and remove —
@@ -51,8 +52,8 @@ From the root of this repository, run:
 
 1. Select some prose anywhere on your Mac.
 2. Open the OpenClip popup and choose **Harper**.
-3. Pick **Fix Writing** to rewrite the selection, or **Check Writing** to see how many issues
-   Harper found first.
+3. Pick **Fix Writing** to rewrite the selection, or **Check Writing** / **Copy Report** to review
+   the issues first.
 
 ## Notes
 
