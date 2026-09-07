@@ -61,3 +61,10 @@ From the root of this repository, run:
   file `harper-ls` uses in your editor.
 - OpenClip stores option values per action, so the dialect is read from the action you configured
   and reused by the other Harper actions.
+
+## Credits
+
+The icon is Harper's own logo, taken from
+[`packages/obsidian-plugin/logo.svg`](https://github.com/Automattic/harper/blob/master/packages/obsidian-plugin/logo.svg)
+in the [Automattic/harper](https://github.com/Automattic/harper) repository (Apache-2.0), recentred
+into a square viewBox and left monochrome so it inherits the OpenClip theme colour.
