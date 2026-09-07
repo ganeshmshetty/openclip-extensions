@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T18:22:38Z",
+  "updatedAt": "2026-09-07T19:02:03Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -398,6 +398,18 @@
       "publishedAt": "2026-08-20T08:37:35+05:30"
     },
     {
+      "id": "com.openclip.harper",
+      "name": "Harper",
+      "description": "Proofread the selection with Harper, the offline grammar checker.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.harper@1.0.0/Harper.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.harper.svg",
+      "publishedAt": "2026-09-08T00:30:46+05:30"
+    },
+    {
       "id": "com.openclip.headerone",
       "name": "Header One",
       "description": "Format selected text as Markdown Header 1.",
@@ -736,7 +748,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
