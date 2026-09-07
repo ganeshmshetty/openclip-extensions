@@ -1,0 +1,29 @@
+{
+  "identifier": "io.github.s010s.openclip.bob",
+  "name": "Bob",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.3.1",
+  "description": {
+    "en": "Translate selected text in Bob using your existing translation services.",
+    "zh-Hans": "使用 Bob 和已有翻译服务翻译选中文字。",
+    "zh-Hant": "使用 Bob 和既有翻譯服務翻譯選取文字。",
+    "fr": "Traduisez le texte sélectionné avec Bob et vos services de traduction.",
+    "ja": "選択したテキストを Bob と設定済みの翻訳サービスで翻訳します。"
+  },
+  "actions": [
+    {
+      "id": "translate",
+      "title": {
+        "en": "Translate with Bob",
+        "zh-Hans": "用 Bob 翻译",
+        "zh-Hant": "用 Bob 翻譯",
+        "fr": "Traduire avec Bob",
+        "ja": "Bob で翻訳"
+      },
+      "icon": "symbol(character.bubble)",
+      "type": "applescript",
+      "script": "translate.applescript"
+    }
+  ],
+  "author": "s010s"
+}
