@@ -1,0 +1,31 @@
+{
+  "identifier": "local.hidemydata.redact",
+  "name": "HideMyData",
+  "description": "Redact personal data locally, review the result, and add custom redactions.",
+  "version": "1.0.2",
+  "minOpenClipVersion": "1.3.1",
+  "actions": [
+    {
+      "id": "review",
+      "title": "Redact personal data",
+      "icon": "symbol(eye.slash)",
+      "type": "scriptfile",
+      "script": "redact.sh",
+      "loading": true,
+      "loadingMessage": "Opening redaction review\u2026",
+      "requirements": {
+        "requiresSelection": true
+      }
+    },
+    {
+      "id": "manual",
+      "title": "Redact entire selection",
+      "icon": "symbol(eraser.fill)",
+      "type": "javascript",
+      "scriptCode": "function action(text) { if (!text || !text.trim()) return; return '[REDACTED]'; }",
+      "requirements": {
+        "requiresSelection": true
+      }
+    }
+  ]
+}
