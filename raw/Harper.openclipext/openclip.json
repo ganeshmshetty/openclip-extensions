@@ -140,6 +140,31 @@
           "dictionnaire",
           "辞書"
         ]
+      },
+      {
+        "id": "forget",
+        "title": {
+          "en": "Remove from Dictionary",
+          "zh-Hans": "从词典中移除",
+          "zh-Hant": "從詞典中移除",
+          "fr": "Retirer du dictionnaire",
+          "ja": "辞書から削除"
+        },
+        "icon": "trash",
+        "type": "shell",
+        "scriptCode": "jqbin=\"\"\nfor candidate in /usr/bin/jq /opt/homebrew/bin/jq /usr/local/bin/jq \"$(command -v jq 2>/dev/null)\"; do\n  if [ -n \"$candidate\" ] && [ -x \"$candidate\" ]; then jqbin=\"$candidate\"; break; fi\ndone\nif [ -z \"$jqbin\" ]; then\n  printf '%s' '{\"type\":\"toast\",\"message\":\"jq is not installed. Run: brew install jq\",\"style\":\"error\"}'\n  exit 0\nfi\nword=\"$(printf '%s' \"$OPENCLIP_TEXT\" | tr -d '[:space:]')\"\nif [ -z \"$word\" ]; then\n  printf '%s' '{\"type\":\"toast\",\"message\":\"Select a single word to remove from your dictionary\",\"style\":\"error\"}'\n  exit 0\nfi\ndictionary=\"$HOME/Library/Application Support/harper-ls/dictionary.txt\"\nif [ ! -f \"$dictionary\" ] || ! grep -qxF \"$word\" \"$dictionary\" 2>/dev/null; then\n  \"$jqbin\" -nc --arg w \"$word\" '{type:\"toast\",message:(\"“\\($w)” is not in your Harper dictionary\"),style:\"info\"}'\n  exit 0\nfi\nremaining=\"$(mktemp \"${TMPDIR:-/tmp}/harper-dictionary.XXXXXX\")\" || exit 1\ngrep -vxF \"$word\" \"$dictionary\" > \"$remaining\" 2>/dev/null\ngrep_status=$?\nif [ \"$grep_status\" -gt 1 ]; then\n  rm -f \"$remaining\"\n  \"$jqbin\" -nc --arg w \"$word\" '{type:\"toast\",message:(\"Could not remove “\\($w)” from your Harper dictionary\"),style:\"error\"}'\n  exit 0\nfi\ncat \"$remaining\" > \"$dictionary\" && rm -f \"$remaining\"\n\"$jqbin\" -nc --arg w \"$word\" '{type:\"toast\",message:(\"Removed “\\($w)” from your Harper dictionary\"),style:\"success\"}'\n",
+        "requirements": {
+          "regex": "^\\s*[\\p{L}][\\p{L}\\p{M}'’.-]*\\s*$"
+        },
+        "keywords": [
+          "remove",
+          "delete",
+          "forget",
+          "dictionary",
+          "移除",
+          "supprimer",
+          "削除"
+        ]
       }
     ]
   }

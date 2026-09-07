@@ -12,6 +12,7 @@ completes in well under a second.
 | **Check Writing** | Shows a toast with the number of issues Harper found, e.g. `Harper found 3 issues`. |
 | **Copy Report** | Copies a detailed report (line, column, category, message, suggestions) to the clipboard. |
 | **Add to Dictionary** | Appends the selected word to your Harper user dictionary, so Harper and `harper-ls` stop flagging it. Only offered when a single word is selected. |
+| **Remove from Dictionary** | Deletes the selected word from your Harper user dictionary again. Also limited to single-word selections. |
 
 **Fix Writing** understands all three of Harper's suggestion kinds — replace, insert, and remove —
 and applies them from the end of the selection backwards, so character offsets stay correct with
@@ -59,6 +60,9 @@ From the root of this repository, run:
 
 - The user dictionary lives at `~/Library/Application Support/harper-ls/dictionary.txt`, the same
   file `harper-ls` uses in your editor.
+- OpenClip decides which actions to show from the selection alone, so **Remove from Dictionary** is
+  offered for any single word rather than only for words already in the dictionary. Picking it for a
+  word that is not there just reports that, and changes nothing.
 - OpenClip stores option values per action, so the dialect is read from the action you configured
   and reused by the other Harper actions.
 
