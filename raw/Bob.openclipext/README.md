@@ -32,4 +32,4 @@ The extension sends the selected text to the installed Bob app through local App
 
 [Source, releases, and issues](https://github.com/s010s/openclip-bob) · [Bob integration documentation](https://bobtranslate.com/guide/integration/applescript.html)
 
-MIT licensed. This independent integration is not affiliated with or endorsed by Bob or OpenClip. It uses an SF Symbol and does not bundle their logos or the PopClip extension's code.
+The integration code is MIT licensed. The bundled Bob icon is adapted from the official Bob–PopClip integration and distributed under GPL-3.0; see [third-party attribution](THIRD_PARTY_NOTICES.md). No PopClip integration code is copied. This independent integration is not affiliated with or endorsed by Bob or OpenClip.
