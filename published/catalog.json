@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T09:54:25Z",
+  "updatedAt": "2026-09-08T15:01:42Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -24,6 +24,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.0.0/AngleBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.anglebrackets.svg",
       "publishedAt": "2026-08-20T22:11:59+05:30"
+    },
+    {
+      "id": "com.openclip.antinote",
+      "name": "Antinote",
+      "description": "Create a new note in Antinote or append to the current note.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.antinote@1.0.0/Antinote.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.antinote.svg",
+      "publishedAt": "2026-09-08T20:29:52+05:30"
     },
     {
       "id": "com.openclip.applemessages",
