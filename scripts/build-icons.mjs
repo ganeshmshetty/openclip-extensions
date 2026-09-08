@@ -57,7 +57,13 @@ function normalizePackagedSvg(svgText) {
   let svg = svgText.trim();
   if (!svg.startsWith('<svg')) throw new Error('not an SVG document');
   if (!/viewBox=/i.test(svg)) throw new Error('SVG has no viewBox (cannot scale safely)');
-  svg = svg.replace(/\swidth="[^"]*"/i, '').replace(/\sheight="[^"]*"/i, '');
+  // Only strip width/height from the root <svg> tag, never from child elements (e.g. <rect>)
+  svg = svg.replace(/^<svg\b([^>]*)>/i, (_, attrs) => {
+    const cleaned = attrs
+      .replace(/\swidth="[^"]*"/gi, '')
+      .replace(/\sheight="[^"]*"/gi, '');
+    return `<svg${cleaned}>`;
+  });
   if (!/xmlns=/.test(svg)) svg = svg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
   return svg;
 }

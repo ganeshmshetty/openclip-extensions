@@ -1,0 +1,82 @@
+{
+  "identifier": "com.openclip.quickshell",
+  "name": {
+    "en": "Quick Shell",
+    "zh-Hans": "快速 Shell",
+    "zh-Hant": "快速 Shell",
+    "ja": "クイックShell",
+    "fr": "Quick Shell"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Run shell commands silently in the background with adaptive visual feedback, status toasts, and prepend/append options.",
+    "zh-Hans": "在后台静默运行 Shell 命令，具有自适应视觉反馈、状态提示以及前置/追加命令选项。",
+    "zh-Hant": "在背景靜默執行 Shell 命令，具有自適應視覺反饋、狀態提示以及前置/追加命令選項。",
+    "ja": "バックグラウンドでシェルコマンドをサイレント実行し、結果をトースト通知で表示します。",
+    "fr": "Exécutez des commandes shell silencieusement en arrière-plan avec retour visuel adaptatif et options préfixe/suffixe."
+  },
+  "keywords": [
+    "shell",
+    "terminal",
+    "command",
+    "bash",
+    "zsh",
+    "run",
+    "cli",
+    "background"
+  ],
+  "options": [
+    {
+      "identifier": "prepend",
+      "label": {
+        "en": "Prepend Command",
+        "zh-Hans": "前置命令",
+        "zh-Hant": "前置命令",
+        "ja": "コマンドの前に追加",
+        "fr": "Préfixer la commande"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "append",
+      "label": {
+        "en": "Append Command",
+        "zh-Hans": "后置命令",
+        "zh-Hant": "後置命令",
+        "ja": "コマンドの後に追加",
+        "fr": "Suffixer la commande"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Quick Shell",
+      "zh-Hans": "快速 Shell",
+      "zh-Hant": "快速 Shell",
+      "ja": "クイックShell",
+      "fr": "Quick Shell"
+    },
+    "icon": "icon.svg",
+    "type": "applescript",
+    "script": "main.applescript",
+    "loading": true,
+    "loadingMessage": {
+      "en": "Running command…",
+      "zh-Hans": "正在执行命令…",
+      "zh-Hant": "正在執行命令…",
+      "ja": "コマンドを実行中…",
+      "fr": "Exécution de la commande…"
+    },
+    "toast": {
+      "message": "Command completed"
+    },
+    "requirements": {
+      "requiresSelection": true
+    }
+  }
+}
