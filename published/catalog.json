@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T09:13:40Z",
+  "updatedAt": "2026-09-08T09:54:25Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -756,6 +756,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pypisearch@1.0.0/PypiSearch.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pypisearch.svg",
       "publishedAt": "2026-08-20T22:24:26+05:30"
+    },
+    {
+      "id": "com.openclip.quickshell",
+      "name": "Quick Shell",
+      "description": "Run shell commands silently in the background with adaptive visual feedback, status toasts, and prepend/append options.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quickshell@1.0.0/QuickShell.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quickshell.svg",
+      "publishedAt": "2026-09-08T15:23:03+05:30"
     },
     {
       "id": "com.openclip.quick-translate",
