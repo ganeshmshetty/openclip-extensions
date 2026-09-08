@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T02:46:56Z",
+  "updatedAt": "2026-09-08T08:10:11Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -760,7 +760,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
@@ -900,6 +900,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.roundbrackets@1.0.0/RoundBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.roundbrackets.svg",
       "publishedAt": "2026-08-21T22:29:33+05:30"
+    },
+    {
+      "id": "com.openclip.runcommand",
+      "name": "Run in Terminal",
+      "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp, Ghostty, kitty, and cmux.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.runcommand@1.0.0/RunCommand.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.runcommand.svg",
+      "publishedAt": "2026-09-08T13:38:44+05:30"
     },
     {
       "id": "com.openclip.youtube",
