@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T19:02:03Z",
+  "updatedAt": "2026-09-08T02:46:56Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -72,6 +72,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.0.0/BearNotes.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bearnotes.svg",
       "publishedAt": "2026-08-20T22:28:33+05:30"
+    },
+    {
+      "id": "io.github.s010s.openclip.bob",
+      "name": "Bob",
+      "description": "Translate selected text in Bob using your existing translation services.",
+      "author": "s010s",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.github.s010s.openclip.bob@1.0.0/Bob.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/io.github.s010s.openclip.bob.svg",
+      "publishedAt": "2026-09-08T08:15:57+05:30"
     },
     {
       "id": "com.openclip.bold",
