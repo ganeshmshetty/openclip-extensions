@@ -47,10 +47,10 @@ To provide a great experience worldwide, localize user-facing strings (`name`, `
 - Script paths must stay strictly within the extension folder (no absolute paths or `../` path traversal).
 
 ### 6. Documentation (`README.md`)
-Every extension folder should include a `README.md` describing:
-- **What it does**: A clear explanation and example use cases.
-- **Requirements or Configuration**: Required options, external app requirements, or shortcuts (if any).
-- **Build / Development Notes**: If the extension uses npm/bundling (`--with-npm`, TypeScript, etc.), specify build instructions (`npm install && npm run build`).
+Every extension folder must include a concise, standalone `README.md` written for end users. **This file is displayed directly on the OpenClip Web Store / extension page**, so:
+- **Write for end users**: Explain what the extension does, supported apps/features, clear usage examples, and configurable options.
+- **Do not include repository-internal instructions**: Never include repo-specific setup commands (such as `git clone`, `./scripts/install.sh`, or `./scripts/create.sh`), as visitors browsing the store cannot run them. Keep it focused purely on the extension's capabilities.
+- **Keep it small and clean**: Use concise bullet points and standard markdown headings (`## Features`, `## Usage Examples`, `## Configuration`). Avoid boilerplate or redundant download buttons (the store UI renders the install buttons and icon automatically).
 
 ---
 

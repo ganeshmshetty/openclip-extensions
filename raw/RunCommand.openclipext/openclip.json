@@ -1,0 +1,92 @@
+{
+  "identifier": "com.openclip.runcommand",
+  "name": {
+    "en": "Run in Terminal",
+    "zh-Hans": "在终端中运行",
+    "zh-Hant": "在終端機中執行",
+    "ja": "ターミナルで実行",
+    "fr": "Exécuter dans le Terminal"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp, Ghostty, kitty, and cmux.",
+    "zh-Hans": "在活动终端窗口中将选中文本作为命令运行，支持可选的前置/后置文本。支持 Terminal、iTerm2、Warp、Ghostty、kitty 和 cmux。",
+    "zh-Hant": "在作用中終端機視窗中將選取文字作為命令執行，支援可選的前置/後置文字。支援 Terminal、iTerm2、Warp、Ghostty、kitty 和 cmux。",
+    "ja": "選択したテキストをアクティブなターミナルウィンドウでコマンドとして実行します。Terminal、iTerm2、Warp、Ghostty、kitty、cmux をサポートしています。",
+    "fr": "Exécuter le texte sélectionné comme commande dans la fenêtre de terminal active avec texte préfixé/suffixé optionnel. Prend en charge Terminal, iTerm2, Warp, Ghostty, kitty et cmux."
+  },
+  "keywords": ["terminal", "iterm2", "warp", "ghostty", "kitty", "cmux", "run", "command", "bash", "zsh", "sh"],
+  "options": [
+    {
+      "identifier": "term",
+      "label": {
+        "en": "Terminal Emulator",
+        "zh-Hans": "终端模拟器",
+        "zh-Hant": "終端機模擬器",
+        "ja": "ターミナルエミュレータ",
+        "fr": "Émulateur de terminal"
+      },
+      "type": "multiple",
+      "default": "Auto-detect",
+      "values": [
+        "Auto-detect",
+        "Terminal",
+        "iTerm2",
+        "Warp",
+        "Ghostty",
+        "kitty",
+        "cmux"
+      ]
+    },
+    {
+      "identifier": "prepend",
+      "label": {
+        "en": "Prepend Command",
+        "zh-Hans": "前置命令",
+        "zh-Hant": "前置命令",
+        "ja": "コマンドの前に追加",
+        "fr": "Préfixer la commande"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "append",
+      "label": {
+        "en": "Append Command",
+        "zh-Hans": "后置命令",
+        "zh-Hant": "後置命令",
+        "ja": "コマンドの後に追加",
+        "fr": "Suffixer la commande"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "newtab",
+      "label": {
+        "en": "Use New Tab",
+        "zh-Hans": "使用新标签页",
+        "zh-Hant": "使用新標籤頁",
+        "ja": "新しいタブを使用",
+        "fr": "Ouvrir dans un nouvel onglet"
+      },
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Run in Terminal",
+      "zh-Hans": "终端运行",
+      "zh-Hant": "終端機執行",
+      "ja": "コマンド実行",
+      "fr": "Exécuter"
+    },
+    "icon": "icon.svg",
+    "type": "applescript",
+    "script": "main.applescript"
+  }
+}

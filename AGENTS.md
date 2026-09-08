@@ -23,6 +23,15 @@ the action menu. Installing = placing the folder under `~/.openclip/extensions`;
 it. There is no compilation, framework, or approval step — a manifest plus an optional script and documentation
 is a complete extension.
 
+### 1b. Extension documentation (`README.md` for Web Store)
+
+Every package folder should include a concise, standalone `README.md`. **This file is parsed and rendered directly on the OpenClip Web Store / extension detail page** (at `getopenclip.app/extensions/<id>`):
+
+- **End-user focus**: Describe what the extension does, its key features, and practical usage examples.
+- **Document options & requirements**: List any configurable settings (`options`), prerequisites, or external apps.
+- **Zero repository coupling**: Do **NOT** reference internal repository paths or development commands (e.g. `./scripts/install.sh`, `./scripts/create.sh`, `git clone`). Visitors browsing the web store cannot run internal repo tooling.
+- **Keep it compact**: Avoid boilerplate, raw SVG code, or manual download buttons — the web store UI automatically renders the extension icon, metadata pill, and install/download buttons around the README.
+
 ---
 
 ## 2. Manifest structure
