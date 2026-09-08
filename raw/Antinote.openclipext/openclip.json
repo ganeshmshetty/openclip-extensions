@@ -1,0 +1,39 @@
+{
+  "identifier": "com.openclip.antinote",
+  "name": "Antinote",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Create a new note in Antinote or append to the current note.",
+    "zh-Hans": "在 Antinote 中新建笔记或追加到当前笔记。",
+    "zh-Hant": "在 Antinote 中新增筆記或附加到目前筆記。",
+    "ja": "Antinote で新規ノートを作成、または現在のノートに追記します。",
+    "fr": "Créer une nouvelle note dans Antinote ou ajouter à la note active."
+  },
+  "options": [
+    {
+      "identifier": "defaultAction",
+      "label": {
+        "en": "Left-Click Action",
+        "zh-Hans": "左键点击操作",
+        "zh-Hant": "左鍵點擊操作",
+        "ja": "左クリックの動作",
+        "fr": "Action du clic gauche"
+      },
+      "type": "multiple",
+      "default": "create",
+      "values": [
+        "create",
+        "append"
+      ]
+    }
+  ],
+  "action": {
+    "title": "Antinote",
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "keywords": ["antinote", "note", "scratchpad", "append", "memo"]
+  }
+}
