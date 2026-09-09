@@ -123,15 +123,6 @@ From the root of this repository, run:
 ./scripts/install.sh raw/AppwriteFunctionRunner.openclipext
 ```
 
-## Development
-
-`test/run.mjs` exercises `main.js` against a mocked `openclip` bridge (success, JSON replies,
-failed executions, 401/404, network errors, raw payload, secondary click, missing config):
-
-```sh
-node raw/AppwriteFunctionRunner.openclipext/test/run.mjs
-```
-
 ## Credits
 
 Built by [Matej "Meldiron" Bačo](https://github.com/meldiron). The icon is the Appwrite logomark
