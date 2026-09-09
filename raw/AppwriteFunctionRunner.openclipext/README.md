@@ -1,7 +1,7 @@
 # Appwrite Function Runner
 
 Send the selected text to **your own [Appwrite](https://appwrite.io) Function** and use whatever
-it replies with. Select text anywhere on your Mac, click **Run Appwrite Function**, and the
+it replies with. Select text anywhere on your Mac, open the **Appwrite** group, click **Execute Function**, and the
 Function's output lands in OpenClip's result card, is pasted, or is copied — whichever you chose
 under *Preferences → General → "When an action returns text"*. A right-click (or ⇧-click) always
 copies the reply without opening a card.
@@ -15,7 +15,7 @@ something up in your database, post to Slack — anything you can write in a Fun
    below, or use any Function that accepts a POST body).
 2. Either set the Function's **Execute access** to `Any`, **or** create an API key with the
    `execution.write` scope only, dedicated to this extension.
-3. Install the extension, then open **Preferences → Actions → Run Appwrite Function** and fill in:
+3. Install the extension, then open **Preferences → Actions → Execute Function** (under **Appwrite**) and fill in:
 
 | Option | Value |
 | :--- | :--- |

@@ -17,7 +17,14 @@
     "fr": "Envoyez la sélection à une fonction Appwrite et utilisez sa réponse.",
     "ja": "選択テキストを Appwrite 関数に送信し、その応答を利用します。"
   },
-  "keywords": ["appwrite", "function", "serverless", "cloud", "api", "webhook"],
+  "keywords": [
+    "appwrite",
+    "function",
+    "serverless",
+    "cloud",
+    "api",
+    "webhook"
+  ],
   "options": [
     {
       "identifier": "endpoint",
@@ -75,26 +82,48 @@
       },
       "type": "multiple",
       "default": "json",
-      "values": ["json", "raw"]
+      "values": [
+        "json",
+        "raw"
+      ]
     }
   ],
   "action": {
-    "id": "run",
-    "title": {
-      "en": "Run Appwrite Function",
-      "zh-Hans": "运行 Appwrite 函数",
-      "zh-Hant": "執行 Appwrite 函式",
-      "fr": "Exécuter la fonction Appwrite",
-      "ja": "Appwrite 関数を実行"
-    },
+    "id": "appwrite",
+    "title": "Appwrite",
     "icon": "icon.svg",
-    "type": "javascript",
-    "script": "main.js",
-    "async": true,
-    "loading": true,
-    "loadingMessage": "Running function…",
-    "requirements": {
-      "requiredOptions": ["endpoint", "projectId", "functionId"]
-    }
+    "type": "group",
+    "subActions": [
+      {
+        "id": "execute",
+        "title": {
+          "en": "Execute Function",
+          "zh-Hans": "执行函数",
+          "zh-Hant": "執行函式",
+          "fr": "Exécuter la fonction",
+          "ja": "関数を実行"
+        },
+        "icon": "function",
+        "type": "javascript",
+        "script": "main.js",
+        "async": true,
+        "loading": true,
+        "loadingMessage": "Executing function…",
+        "requirements": {
+          "requiredOptions": [
+            "endpoint",
+            "projectId",
+            "functionId"
+          ]
+        },
+        "keywords": [
+          "execute",
+          "run",
+          "function",
+          "appwrite",
+          "serverless"
+        ]
+      }
+    ]
   }
 }
