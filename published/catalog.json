@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T15:01:42Z",
+  "updatedAt": "2026-09-09T19:19:09Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -72,6 +72,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applereminders@1.0.0/AppleReminders.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applereminders.svg",
       "publishedAt": "2026-08-20T22:28:33+05:30"
+    },
+    {
+      "id": "io.appwrite.openclip",
+      "name": "Appwrite",
+      "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
+      "author": "Matej \"Meldiron\" Bačo",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.appwrite.openclip@1.0.0/Appwrite.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/io.appwrite.openclip.svg",
+      "publishedAt": "2026-09-10T00:47:52+05:30"
     },
     {
       "id": "com.openclip.bearnotes",
@@ -784,7 +796,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
