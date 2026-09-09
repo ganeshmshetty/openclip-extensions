@@ -30,12 +30,15 @@ in a Function.
 | **Endpoint** | Your API endpoint, e.g. `https://fra.cloud.appwrite.io/v1` (copy it from *Project → Settings*). Defaults to `https://cloud.appwrite.io/v1`. Self-hosted works the same: `https://appwrite.example.com/v1`. |
 | **Project ID** | From *Project → Settings*. |
 | **Function ID** | From the Function's *Settings* tab. |
+| **HTTP method** | Method the Function sees on `req.method`. Defaults to `GET`; `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, and `HEAD` are available. The selection is sent as the body with every method. |
+| **Path** | Path the Function sees on `req.path`, e.g. `/summarise` or `/search?lang=en` (query strings are allowed and land in `req.query`). Defaults to `/`. |
 | **API key (optional)** | Only needed if the Function's execute access is not `Any`. Stored in OpenClip's secret store (`~/.openclip/secrets.json`, mode 0600), never in UserDefaults. Also unlocks Appwrite's error output in failure toasts. |
 
 ## What your Function receives
 
 **Execute Function** creates a **synchronous execution**
-(`POST /v1/functions/{functionId}/executions`, `method: POST`, `path: /`). The request body is
+(`POST /v1/functions/{functionId}/executions`) using the configured **HTTP method** and **Path**
+(defaults `GET` and `/`). The request body is
 **the selected text, verbatim** — no wrapper — so any Function that reads `req.bodyText` works,
 whether or not it was written with OpenClip in mind.
 

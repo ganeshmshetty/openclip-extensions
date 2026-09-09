@@ -90,6 +90,39 @@
             "type": "string"
           },
           {
+            "identifier": "method",
+            "label": {
+              "en": "HTTP method",
+              "zh-Hans": "HTTP 方法",
+              "zh-Hant": "HTTP 方法",
+              "fr": "Méthode HTTP",
+              "ja": "HTTP メソッド"
+            },
+            "type": "multiple",
+            "default": "GET",
+            "values": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "OPTIONS",
+              "HEAD"
+            ]
+          },
+          {
+            "identifier": "path",
+            "label": {
+              "en": "Path",
+              "zh-Hans": "路径",
+              "zh-Hant": "路徑",
+              "fr": "Chemin",
+              "ja": "パス"
+            },
+            "type": "string",
+            "default": "/"
+          },
+          {
             "identifier": "apiKey",
             "label": {
               "en": "API key (optional)",

@@ -7,6 +7,7 @@
 // and copy. A secondary click (right-click / ⇧-click) copies the reply instead.
 //
 // Contract (kept identical to the starter template's README):
+//   method   → the "HTTP method" option (default GET); path → the "Path" option (default /)
 //   body     → the selection, verbatim. Sent as application/json when the selection
 //              is a JSON object or array, otherwise as text/plain.
 //   headers  → x-openclip-version: 1
@@ -19,6 +20,9 @@
 var RESPONSE_FORMAT = '2.0.0';
 var CONTRACT_VERSION = '1';
 var SYNC_EXECUTION_LIMIT_SECONDS = 30;
+var METHODS = ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"];
+var DEFAULT_METHOD = "GET";
+var DEFAULT_PATH = "/";
 
 function option(id) {
   var value = typeof openclip.option === 'function'
@@ -32,6 +36,17 @@ function normalizeEndpoint(raw) {
   if (!/^https?:\/\//i.test(endpoint)) endpoint = 'https://' + endpoint;
   if (!/\/v1$/i.test(endpoint)) endpoint += '/v1';
   return endpoint;
+}
+
+function normalizeMethod(raw) {
+  var method = raw.toUpperCase();
+  return METHODS.indexOf(method) === -1 ? DEFAULT_METHOD : method;
+}
+
+function normalizePath(raw) {
+  var path = raw.trim();
+  if (!path) return DEFAULT_PATH;
+  return path.charAt(0) === "/" ? path : "/" + path;
 }
 
 function hostOf(url) {
@@ -108,6 +123,8 @@ async function action(selection) {
   var projectId = option('projectId');
   var functionId = option('functionId');
   var apiKey = option('apiKey');
+  var method = normalizeMethod(option('method'));
+  var path = normalizePath(option('path'));
 
   var missing = [];
   if (!endpoint) missing.push('endpoint');
@@ -142,8 +159,8 @@ async function action(selection) {
   var execution = {
     body: text,
     async: false,
-    path: '/',
-    method: 'POST',
+    path: path,
+    method: method,
     headers: functionHeaders
   };
 
