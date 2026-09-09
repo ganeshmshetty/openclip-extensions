@@ -1,4 +1,5 @@
-// Appwrite Function Runner — OpenClip extension
+// Appwrite — OpenClip extension
+// Command: Execute Function
 //
 // Sends the current selection to a user-chosen Appwrite Function through the
 // Executions API and hands the reply back to OpenClip as text, so the user's

@@ -1,29 +1,23 @@
 {
-  "identifier": "io.appwrite.openclip.function-runner",
-  "name": {
-    "en": "Appwrite Function Runner",
-    "zh-Hans": "Appwrite 函数运行器",
-    "zh-Hant": "Appwrite 函式執行器",
-    "fr": "Exécuteur de fonction Appwrite",
-    "ja": "Appwrite 関数ランナー"
-  },
+  "identifier": "io.appwrite.openclip",
+  "name": "Appwrite",
   "version": "1.0.0",
   "minOpenClipVersion": "1.1.0",
   "author": "Matej \"Meldiron\" Bačo",
   "description": {
-    "en": "Send the selection to an Appwrite Function and use the reply.",
-    "zh-Hans": "将选中的文本发送到 Appwrite 函数，并使用其返回结果。",
-    "zh-Hant": "將選取的文字傳送到 Appwrite 函式，並使用其回傳結果。",
-    "fr": "Envoyez la sélection à une fonction Appwrite et utilisez sa réponse.",
-    "ja": "選択テキストを Appwrite 関数に送信し、その応答を利用します。"
+    "en": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
+    "zh-Hans": "将选中的文本用于你的 Appwrite 项目：以此执行函数并使用其返回结果。",
+    "zh-Hant": "將選取的文字用於你的 Appwrite 專案：以此執行函式並使用其回傳結果。",
+    "fr": "Utilisez la sélection avec votre projet Appwrite : exécutez une fonction dessus et utilisez la réponse.",
+    "ja": "選択テキストを Appwrite プロジェクトで活用：関数を実行し、その応答を利用します。"
   },
   "keywords": [
     "appwrite",
     "function",
     "serverless",
     "cloud",
-    "api",
-    "webhook"
+    "backend",
+    "api"
   ],
   "action": {
     "id": "appwrite",
@@ -32,7 +26,7 @@
     "type": "group",
     "subActions": [
       {
-        "id": "execute",
+        "id": "execute-function",
         "title": {
           "en": "Execute Function",
           "zh-Hans": "执行函数",
