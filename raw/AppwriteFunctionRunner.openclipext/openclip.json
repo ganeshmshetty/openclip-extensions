@@ -105,22 +105,6 @@
               "ja": "API キー（任意）"
             },
             "type": "secret"
-          },
-          {
-            "identifier": "payload",
-            "label": {
-              "en": "Payload format",
-              "zh-Hans": "请求体格式",
-              "zh-Hant": "請求內容格式",
-              "fr": "Format de la charge utile",
-              "ja": "ペイロード形式"
-            },
-            "type": "multiple",
-            "default": "json",
-            "values": [
-              "json",
-              "raw"
-            ]
           }
         ]
       }

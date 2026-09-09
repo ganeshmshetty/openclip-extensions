@@ -1,10 +1,10 @@
 # Appwrite Function Runner
 
 Send the selected text to **your own [Appwrite](https://appwrite.io) Function** and use whatever
-it replies with. Select text anywhere on your Mac, open the **Appwrite** group, click **Execute Function**, and the
-Function's output lands in OpenClip's result card, is pasted, or is copied — whichever you chose
-under *Preferences → General → "When an action returns text"*. A right-click (or ⇧-click) always
-copies the reply without opening a card.
+it replies with. Select text anywhere on your Mac, open the **Appwrite** group, click
+**Execute Function**, and the Function's output lands in OpenClip's result card, is pasted, or is
+copied — whichever you chose under *Preferences → General → "When an action returns text"*.
+A right-click (or ⇧-click) always copies the reply without opening a card.
 
 Any Appwrite Function becomes a text tool: summarise, translate, rewrite with an LLM, look
 something up in your database, post to Slack — anything you can write in a Function.
@@ -12,10 +12,12 @@ something up in your database, post to Slack — anything you can write in a Fun
 ## Setup
 
 1. **Create a Function** in the [Appwrite Console](https://cloud.appwrite.io) (see the starter
-   below, or use any Function that accepts a POST body).
+   below, or use any Function that reads its request body as text).
 2. Either set the Function's **Execute access** to `Any`, **or** create an API key with the
    `execution.write` scope only, dedicated to this extension.
-3. Install the extension, then open **Preferences → Actions → Execute Function** (under **Appwrite**) and fill in:
+3. Install the extension, then configure **Execute Function** (under **Appwrite** in
+   *Preferences → Actions*, or just run it once — OpenClip opens the configuration sheet for the
+   missing values):
 
 | Option | Value |
 | :--- | :--- |
@@ -23,29 +25,23 @@ something up in your database, post to Slack — anything you can write in a Fun
 | **Project ID** | From *Project → Settings*. |
 | **Function ID** | From the Function's *Settings* tab. |
 | **API key (optional)** | Only needed if the Function's execute access is not `Any`. Stored in OpenClip's secret store (`~/.openclip/secrets.json`, mode 0600), never in UserDefaults. Also unlocks Appwrite's error output in failure toasts. |
-| **Payload format** | `json` (default, the contract below) or `raw` (the selection as `text/plain`, for Functions that already expect a bare string). |
 
-Missing endpoint, project ID, or function ID opens the configuration sheet instead of running.
-
-## Payload contract
+## What your Function receives
 
 The extension creates a **synchronous execution** (`POST /v1/functions/{functionId}/executions`,
-`method: POST`, `path: /`). Your Function receives this JSON body when the payload format is
-`json`:
+`method: POST`, `path: /`). The request body is **the selected text, verbatim** — no wrapper —
+so any Function that reads `req.bodyText` works, whether or not it was written with OpenClip in
+mind.
 
-```json
-{
-  "version": 1,
-  "source": "openclip",
-  "text": "<the selected text>",
-  "secondary": false
-}
-```
+- If the selection is a JSON object or array, it is sent as `content-type: application/json`, so
+  `req.bodyJson` parses it directly. Anything else is sent as `text/plain; charset=utf-8`.
+- Everything OpenClip knows about the run travels in request headers:
 
-`secondary` is `true` for a right-click / ⇧-click, in case your Function wants to behave
-differently for "copy" runs.
-
-With payload format `raw`, the body is the selection as-is with `content-type: text/plain`.
+| Header | Value |
+| :--- | :--- |
+| `x-openclip-version` | `1`. Bumped if this contract ever changes. |
+| `x-openclip-secondary` | `true` for a right-click / ⇧-click ("copy" run), otherwise `false`. |
+| `x-openclip-app` | Bundle ID of the app the text was selected in, e.g. `com.apple.Notes`. |
 
 Your Function may reply with any of:
 
@@ -63,8 +59,8 @@ the transform for a call to your favourite model to make it smart.
 
 ```js
 export default async ({ req, res, log }) => {
-  const payload = req.bodyJson ?? {};
-  const text = typeof payload.text === 'string' ? payload.text : req.bodyText ?? '';
+  const text = req.bodyText ?? '';
+  const isCopyRun = req.headers['x-openclip-secondary'] === 'true';
 
   if (!text.trim()) {
     return res.json({ error: 'Nothing selected' }, 400);
@@ -106,8 +102,9 @@ is planned; until then, paste the snippet above into a new Node.js Function.
 
 **The selected text leaves your Mac.** It is sent over HTTPS to the Appwrite project *you*
 configured — Appwrite Cloud in the region of your endpoint, or your own self-hosted instance —
-and nowhere else. The extension keeps no logs and sends no analytics. The API key is stored in
-OpenClip's secret store, not in plain preferences.
+and nowhere else, together with the bundle ID of the app it was selected in. The extension keeps
+no logs and sends no analytics. The API key is stored in OpenClip's secret store, not in plain
+preferences.
 
 ## Requirements
 

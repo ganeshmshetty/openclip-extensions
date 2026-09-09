@@ -5,14 +5,18 @@
 // "When an action returns text" preference decides between result card, paste,
 // and copy. A secondary click (right-click / ⇧-click) copies the reply instead.
 //
-// Payload contract (kept identical to the starter template's README):
-//   request  → { "version": 1, "source": "openclip", "text": "<selection>", "secondary": false }
+// Contract (kept identical to the starter template's README):
+//   body     → the selection, verbatim. Sent as application/json when the selection
+//              is a JSON object or array, otherwise as text/plain.
+//   headers  → x-openclip-version: 1
+//              x-openclip-secondary: true | false
+//              x-openclip-app: <bundle id of the app the text was selected in>
 //   reply    → plain text, or JSON { "text": "..." }, or JSON { "error": "..." }
 
 // Appwrite API version this extension was tested against. Pinning the response
 // format keeps the execution object shape stable if Appwrite ships breaking changes.
 var RESPONSE_FORMAT = '2.0.0';
-var CONTRACT_VERSION = 1;
+var CONTRACT_VERSION = '1';
 var SYNC_EXECUTION_LIMIT_SECONDS = 30;
 
 function option(id) {
@@ -54,6 +58,15 @@ function isPlainObject(value) {
   return value !== null && typeof value === 'object' && !Array.isArray(value);
 }
 
+// A selection counts as JSON when it is a well-formed object or array. Bare
+// numbers/strings/booleans are deliberately treated as text.
+function looksLikeJson(text) {
+  var trimmed = text.trim();
+  var first = trimmed.charAt(0);
+  if (first !== '{' && first !== '[') return false;
+  return parseJson(trimmed) !== undefined;
+}
+
 function fail(message) {
   openclip.toast(message, 'error');
 }
@@ -88,12 +101,12 @@ async function action(selection) {
   var input = openclip.input || {};
   var text = typeof selection === 'string' ? selection : (input.text || '');
   var secondary = !!input.isSecondaryClick;
+  var sourceApp = input.app && input.app.bundleID ? String(input.app.bundleID) : '';
 
   var endpoint = option('endpoint');
   var projectId = option('projectId');
   var functionId = option('functionId');
   var apiKey = option('apiKey');
-  var payloadMode = option('payload') || 'json';
 
   var missing = [];
   if (!endpoint) missing.push('endpoint');
@@ -111,11 +124,6 @@ async function action(selection) {
   var host = hostOf(base);
   var url = base + '/functions/' + encodeURIComponent(functionId) + '/executions';
 
-  var jsonPayload = payloadMode !== 'raw';
-  var functionBody = jsonPayload
-    ? JSON.stringify({ version: CONTRACT_VERSION, source: 'openclip', text: text, secondary: secondary })
-    : text;
-
   var headers = {
     'Content-Type': 'application/json',
     'X-Appwrite-Project': projectId,
@@ -123,12 +131,19 @@ async function action(selection) {
   };
   if (apiKey) headers['X-Appwrite-Key'] = apiKey;
 
+  var functionHeaders = {
+    'content-type': looksLikeJson(text) ? 'application/json' : 'text/plain; charset=utf-8',
+    'x-openclip-version': CONTRACT_VERSION,
+    'x-openclip-secondary': secondary ? 'true' : 'false'
+  };
+  if (sourceApp) functionHeaders['x-openclip-app'] = sourceApp;
+
   var execution = {
-    body: functionBody,
+    body: text,
     async: false,
     path: '/',
     method: 'POST',
-    headers: { 'content-type': jsonPayload ? 'application/json' : 'text/plain; charset=utf-8' }
+    headers: functionHeaders
   };
 
   var res;
