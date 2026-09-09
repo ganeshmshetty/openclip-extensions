@@ -1,0 +1,140 @@
+{
+  "identifier": "io.appwrite.openclip",
+  "name": "Appwrite",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Matej \"Meldiron\" Bačo",
+  "description": {
+    "en": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
+    "zh-Hans": "将选中的文本用于你的 Appwrite 项目：以此执行函数并使用其返回结果。",
+    "zh-Hant": "將選取的文字用於你的 Appwrite 專案：以此執行函式並使用其回傳結果。",
+    "fr": "Utilisez la sélection avec votre projet Appwrite : exécutez une fonction dessus et utilisez la réponse.",
+    "ja": "選択テキストを Appwrite プロジェクトで活用：関数を実行し、その応答を利用します。"
+  },
+  "keywords": [
+    "appwrite",
+    "function",
+    "serverless",
+    "cloud",
+    "backend",
+    "api"
+  ],
+  "action": {
+    "id": "appwrite",
+    "title": "Appwrite",
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "execute-function",
+        "title": {
+          "en": "Execute Function",
+          "zh-Hans": "执行函数",
+          "zh-Hant": "執行函式",
+          "fr": "Exécuter la fonction",
+          "ja": "関数を実行"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "main.js",
+        "async": true,
+        "loading": true,
+        "loadingMessage": "Executing function…",
+        "requirements": {
+          "requiredOptions": [
+            "endpoint",
+            "projectId",
+            "functionId"
+          ]
+        },
+        "keywords": [
+          "execute",
+          "run",
+          "function",
+          "appwrite",
+          "serverless"
+        ],
+        "options": [
+          {
+            "identifier": "endpoint",
+            "label": {
+              "en": "Endpoint",
+              "zh-Hans": "端点",
+              "zh-Hant": "端點",
+              "fr": "Point de terminaison",
+              "ja": "エンドポイント"
+            },
+            "type": "string",
+            "default": "https://cloud.appwrite.io/v1"
+          },
+          {
+            "identifier": "projectId",
+            "label": {
+              "en": "Project ID",
+              "zh-Hans": "项目 ID",
+              "zh-Hant": "專案 ID",
+              "fr": "ID du projet",
+              "ja": "プロジェクト ID"
+            },
+            "type": "string"
+          },
+          {
+            "identifier": "functionId",
+            "label": {
+              "en": "Function ID",
+              "zh-Hans": "函数 ID",
+              "zh-Hant": "函式 ID",
+              "fr": "ID de la fonction",
+              "ja": "関数 ID"
+            },
+            "type": "string"
+          },
+          {
+            "identifier": "method",
+            "label": {
+              "en": "HTTP method",
+              "zh-Hans": "HTTP 方法",
+              "zh-Hant": "HTTP 方法",
+              "fr": "Méthode HTTP",
+              "ja": "HTTP メソッド"
+            },
+            "type": "multiple",
+            "default": "GET",
+            "values": [
+              "GET",
+              "POST",
+              "PUT",
+              "PATCH",
+              "DELETE",
+              "OPTIONS",
+              "HEAD"
+            ]
+          },
+          {
+            "identifier": "path",
+            "label": {
+              "en": "Path",
+              "zh-Hans": "路径",
+              "zh-Hant": "路徑",
+              "fr": "Chemin",
+              "ja": "パス"
+            },
+            "type": "string",
+            "default": "/"
+          },
+          {
+            "identifier": "apiKey",
+            "label": {
+              "en": "API key (optional)",
+              "zh-Hans": "API 密钥（可选）",
+              "zh-Hant": "API 金鑰（選填）",
+              "fr": "Clé API (facultatif)",
+              "ja": "API キー（任意）"
+            },
+            "type": "secret"
+          }
+        ]
+      }
+    ]
+  }
+}
