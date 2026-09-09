@@ -25,69 +25,6 @@
     "api",
     "webhook"
   ],
-  "options": [
-    {
-      "identifier": "endpoint",
-      "label": {
-        "en": "Endpoint",
-        "zh-Hans": "端点",
-        "zh-Hant": "端點",
-        "fr": "Point de terminaison",
-        "ja": "エンドポイント"
-      },
-      "type": "string",
-      "default": "https://cloud.appwrite.io/v1"
-    },
-    {
-      "identifier": "projectId",
-      "label": {
-        "en": "Project ID",
-        "zh-Hans": "项目 ID",
-        "zh-Hant": "專案 ID",
-        "fr": "ID du projet",
-        "ja": "プロジェクト ID"
-      },
-      "type": "string"
-    },
-    {
-      "identifier": "functionId",
-      "label": {
-        "en": "Function ID",
-        "zh-Hans": "函数 ID",
-        "zh-Hant": "函式 ID",
-        "fr": "ID de la fonction",
-        "ja": "関数 ID"
-      },
-      "type": "string"
-    },
-    {
-      "identifier": "apiKey",
-      "label": {
-        "en": "API key (optional)",
-        "zh-Hans": "API 密钥（可选）",
-        "zh-Hant": "API 金鑰（選填）",
-        "fr": "Clé API (facultatif)",
-        "ja": "API キー（任意）"
-      },
-      "type": "secret"
-    },
-    {
-      "identifier": "payload",
-      "label": {
-        "en": "Payload format",
-        "zh-Hans": "请求体格式",
-        "zh-Hant": "請求內容格式",
-        "fr": "Format de la charge utile",
-        "ja": "ペイロード形式"
-      },
-      "type": "multiple",
-      "default": "json",
-      "values": [
-        "json",
-        "raw"
-      ]
-    }
-  ],
   "action": {
     "id": "appwrite",
     "title": "Appwrite",
@@ -122,6 +59,69 @@
           "function",
           "appwrite",
           "serverless"
+        ],
+        "options": [
+          {
+            "identifier": "endpoint",
+            "label": {
+              "en": "Endpoint",
+              "zh-Hans": "端点",
+              "zh-Hant": "端點",
+              "fr": "Point de terminaison",
+              "ja": "エンドポイント"
+            },
+            "type": "string",
+            "default": "https://cloud.appwrite.io/v1"
+          },
+          {
+            "identifier": "projectId",
+            "label": {
+              "en": "Project ID",
+              "zh-Hans": "项目 ID",
+              "zh-Hant": "專案 ID",
+              "fr": "ID du projet",
+              "ja": "プロジェクト ID"
+            },
+            "type": "string"
+          },
+          {
+            "identifier": "functionId",
+            "label": {
+              "en": "Function ID",
+              "zh-Hans": "函数 ID",
+              "zh-Hant": "函式 ID",
+              "fr": "ID de la fonction",
+              "ja": "関数 ID"
+            },
+            "type": "string"
+          },
+          {
+            "identifier": "apiKey",
+            "label": {
+              "en": "API key (optional)",
+              "zh-Hans": "API 密钥（可选）",
+              "zh-Hant": "API 金鑰（選填）",
+              "fr": "Clé API (facultatif)",
+              "ja": "API キー（任意）"
+            },
+            "type": "secret"
+          },
+          {
+            "identifier": "payload",
+            "label": {
+              "en": "Payload format",
+              "zh-Hans": "请求体格式",
+              "zh-Hant": "請求內容格式",
+              "fr": "Format de la charge utile",
+              "ja": "ペイロード形式"
+            },
+            "type": "multiple",
+            "default": "json",
+            "values": [
+              "json",
+              "raw"
+            ]
+          }
         ]
       }
     ]
