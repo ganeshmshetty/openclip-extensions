@@ -40,7 +40,7 @@
           "fr": "Exécuter la fonction",
           "ja": "関数を実行"
         },
-        "icon": "function",
+        "icon": "icon.svg",
         "type": "javascript",
         "script": "main.js",
         "async": true,
