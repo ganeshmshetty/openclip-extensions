@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T01:59:22Z",
+  "updatedAt": "2026-09-10T02:04:01Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1163,7 +1163,7 @@
       "downloadCount": 5,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.1.0/ThingsThree.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.things.svg",
-      "publishedAt": "2026-09-10T07:27:45+05:30"
+      "publishedAt": "2026-09-10T07:32:21+05:30"
     },
     {
       "id": "com.openclip.titlecase",
