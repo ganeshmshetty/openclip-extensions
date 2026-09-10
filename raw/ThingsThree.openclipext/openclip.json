@@ -1,14 +1,92 @@
 {
   "identifier": "com.openclip.things",
   "name": "Things 3",
-  "version": "1.0.0",
-  "minOpenClipVersion": "1.0.0",
+  "version": "1.1.0",
+  "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
-  "description": "Add a new to-do task to Things 3 inbox.",
+  "description": {
+    "en": "Quickly add a to-do to Things 3, or right-click to open Quick Entry.",
+    "zh-Hans": "快速添加待办事项至 Things 3，或右键打开快捷输入面板。",
+    "zh-Hant": "快速新增待辦事項至 Things 3，或按右鍵開啟快速輸入面板。",
+    "ja": "Things 3 にすばやくタスクを追加。右クリックでクイック入力を表示します。",
+    "fr": "Ajoutez rapidement une tâche à Things 3, ou faites un clic droit pour ouvrir la saisie rapide."
+  },
+  "keywords": [
+    "things",
+    "things3",
+    "todo",
+    "task",
+    "task manager",
+    "inbox",
+    "reminders"
+  ],
+  "options": [
+    {
+      "identifier": "when",
+      "label": {
+        "en": "Schedule for",
+        "zh-Hans": "计划时间",
+        "zh-Hant": "排程時間",
+        "ja": "スケジュール",
+        "fr": "Planifier pour"
+      },
+      "type": "multiple",
+      "default": "inbox",
+      "values": [
+        "inbox",
+        "today",
+        "evening",
+        "tomorrow",
+        "someday"
+      ]
+    },
+    {
+      "identifier": "splitNotes",
+      "label": {
+        "en": "First line as title (rest as notes)",
+        "zh-Hans": "首行作为标题（其余作为备注）",
+        "zh-Hant": "首行作為標題（其餘作為備忘）",
+        "ja": "1行目をタイトルにする（残りをメモにする）",
+        "fr": "Première ligne comme titre (le reste en notes)"
+      },
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "identifier": "list",
+      "label": {
+        "en": "Project or Area (optional)",
+        "zh-Hans": "项目或区域（可选）",
+        "zh-Hant": "專案或區域（選填）",
+        "ja": "プロジェクトまたはエリア（任意）",
+        "fr": "Projet ou Domaine (facultatif)"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "tags",
+      "label": {
+        "en": "Tags (optional)",
+        "zh-Hans": "标签（可选）",
+        "zh-Hant": "標籤（選填）",
+        "ja": "タグ（任意）",
+        "fr": "Étiquettes (facultatif)"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
   "action": {
     "title": "Things 3",
     "icon": "icon.svg",
-    "type": "url",
-    "url": "things:///add?title={text}"
+    "type": "javascript",
+    "script": "main.js",
+    "keywords": [
+      "things",
+      "todo",
+      "task",
+      "inbox"
+    ]
   }
 }
