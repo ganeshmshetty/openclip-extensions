@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T19:19:09Z",
+  "updatedAt": "2026-09-10T01:59:22Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1156,14 +1156,14 @@
     {
       "id": "com.openclip.things",
       "name": "Things 3",
-      "description": "Add a new to-do task to Things 3 inbox.",
+      "description": "Quickly add a to-do to Things 3, or right-click to open Quick Entry.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 5,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.0.0/ThingsThree.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.1.0/ThingsThree.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.things.svg",
-      "publishedAt": "2026-08-20T22:28:33+05:30"
+      "publishedAt": "2026-09-10T07:27:45+05:30"
     },
     {
       "id": "com.openclip.titlecase",
