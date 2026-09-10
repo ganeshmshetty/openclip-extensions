@@ -1,6 +1,12 @@
 {
   "identifier": "com.openclip.things",
-  "name": "Things 3",
+  "name": {
+    "en": "Things 3",
+    "zh-Hans": "Things 3",
+    "zh-Hant": "Things 3",
+    "ja": "Things 3",
+    "fr": "Things 3"
+  },
   "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
@@ -18,7 +24,14 @@
     "task",
     "task manager",
     "inbox",
-    "reminders"
+    "reminders",
+    "待办",
+    "待办事项",
+    "任务",
+    "タスク",
+    "リマインダー",
+    "tâche",
+    "rappels"
   ],
   "options": [
     {
@@ -78,7 +91,13 @@
     }
   ],
   "action": {
-    "title": "Things 3",
+    "title": {
+      "en": "Things 3",
+      "zh-Hans": "Things 3",
+      "zh-Hant": "Things 3",
+      "ja": "Things 3",
+      "fr": "Things 3"
+    },
     "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js",
@@ -86,7 +105,9 @@
       "things",
       "todo",
       "task",
-      "inbox"
+      "inbox",
+      "待办",
+      "タスク"
     ]
   }
 }
