@@ -1,8 +1,11 @@
 function action(selection, options) {
-    var text = selection || "";
-    var words = text.trim() ? text.trim().split(/\s+/).length : 0;
-    var chars = text.length;
-    var lines = text.split("\n").length;
+    var text = (selection || "").trim();
+    if (!text) return null;
+    var words = text.split(/\s+/).length;
+    return words + (words === 1 ? " word" : " words");
+}
 
-    return words + " words  •  " + chars + " chars  •  " + lines + " lines";
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = action;
+    module.exports.action = action;
 }

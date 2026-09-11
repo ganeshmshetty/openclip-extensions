@@ -1,6 +1,8 @@
 [
   "com.openclip.quick-translate",
-  "com.openclip.wordcount",
-  "com.openclip.speakselection",
-  "com.openclip.obsidiancapture"
+  "com.openclip.runcommand",
+  "com.openclip.copy-as-markdown",
+  "com.openclip.applereminders",
+  "com.openclip.obsidiancapture",
+  "com.openclip.shortenlink"
 ]
