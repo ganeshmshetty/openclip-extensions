@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T02:04:01Z",
+  "updatedAt": "2026-09-11T10:10:14Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -77,7 +77,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 2,
@@ -172,14 +172,14 @@
     {
       "id": "com.openclip.charactercount",
       "name": "Character Count",
-      "description": "Display character count as a transient toast.",
+      "description": "Count the characters in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 29,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.0.1/CharacterCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.1.0/CharacterCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.charactercount.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-11T15:37:00+05:30"
     },
     {
       "id": "com.openclip.codeblock",
@@ -796,7 +796,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
@@ -1275,15 +1275,15 @@
     },
     {
       "id": "com.openclip.wordcount",
-      "name": "Word & Character Count",
-      "description": "Count the words and characters in the selected text.",
+      "name": "Word Count",
+      "description": "Count the words in the selected text.",
       "author": "OpenClip Team",
       "icon": "text.alignleft",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "downloadCount": 225,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.0.2/WordCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.1.0/WordCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wordcount.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-11T15:37:00+05:30"
     }
   ]
 }
