@@ -76,9 +76,10 @@ var STRINGS = {
     moreAlerts: { en: '… and {count} more', 'zh-Hans': '… 还有 {count} 条', 'zh-Hant': '… 還有 {count} 則', fr: '… et {count} de plus', ja: '… 他 {count} 件' }
   },
   history: {
-    headerMany: { en: '{count} past scans of {domain}', 'zh-Hans': '{domain} 的 {count} 次历史扫描', 'zh-Hant': '{domain} 的 {count} 次歷史掃描', fr: '{count} analyses précédentes de {domain}', ja: '{domain} の過去のスキャン {count} 件' },
-    headerOne: { en: '1 past scan of {domain}', 'zh-Hans': '{domain} 的 1 次历史扫描', 'zh-Hant': '{domain} 的 1 次歷史掃描', fr: '1 analyse précédente de {domain}', ja: '{domain} の過去のスキャン 1 件' },
-    none: { en: 'No scans of {domain} yet · use Scan to create one', 'zh-Hans': '{domain} 尚无扫描记录 · 使用“扫描”创建一个', 'zh-Hant': '{domain} 尚無掃描記錄 · 使用「掃描」建立一個', fr: 'Aucune analyse de {domain} · utilisez Analyser pour en créer une', ja: '{domain} のスキャンはまだありません · 「スキャン」で作成できます' },
+    headerMany: { en: '{count} past scans of {target}', 'zh-Hans': '{target} 的 {count} 次历史扫描', 'zh-Hant': '{target} 的 {count} 次歷史掃描', fr: '{count} analyses précédentes de {target}', ja: '{target} の過去のスキャン {count} 件' },
+    headerOne: { en: '1 past scan of {target}', 'zh-Hans': '{target} 的 1 次历史扫描', 'zh-Hant': '{target} 的 1 次歷史掃描', fr: '1 analyse précédente de {target}', ja: '{target} の過去のスキャン 1 件' },
+    headerTruncated: { en: '{total} past scans of {target} · newest {count}', 'zh-Hans': '{target} 的 {total} 次历史扫描 · 最新 {count} 次', 'zh-Hant': '{target} 的 {total} 次歷史掃描 · 最新 {count} 次', fr: '{total} analyses précédentes de {target} · les {count} plus récentes', ja: '{target} の過去のスキャン {total} 件 · 最新 {count} 件' },
+    none: { en: 'No scans of {target} yet · use Scan to create one', 'zh-Hans': '{target} 尚无扫描记录 · 使用“扫描”创建一个', 'zh-Hant': '{target} 尚無掃描記錄 · 使用「掃描」建立一個', fr: 'Aucune analyse de {target} · utilisez Analyser pour en créer une', ja: '{target} のスキャンはまだありません · 「スキャン」で作成できます' },
     alertsMany: { en: '{count} alerts', 'zh-Hans': '{count} 条警报', 'zh-Hant': '{count} 則警報', fr: '{count} alertes', ja: '警告 {count} 件' },
     alertsOne: { en: '1 alert', 'zh-Hans': '1 条警报', 'zh-Hant': '1 則警報', fr: '1 alerte', ja: '警告 1 件' },
     noAlerts: { en: 'no alerts', 'zh-Hans': '无警报', 'zh-Hant': '無警報', fr: 'aucune alerte', ja: '警告なし' },
@@ -297,18 +298,22 @@ function historyAlerts(count) {
   return fill(t(STRINGS.history.alertsMany), { count: count });
 }
 
-// Text card listing past scans of a domain, newest first.
-function historyReport(domain, reports, searchLink) {
+// Text card listing past scans of a hostname or IP, newest first. `totalHits`
+// is the number urlquery matched, which can exceed the number listed.
+function historyReport(target, reports, searchLink, totalHits) {
   var sorted = reports.slice().sort(function (a, b) {
     var da = toDate(a && a.date), db = toDate(b && b.date);
     return (db ? db.getTime() : 0) - (da ? da.getTime() : 0);
   });
-  var lines = [fill(t(sorted.length === 1 ? STRINGS.history.headerOne : STRINGS.history.headerMany), { count: sorted.length, domain: domain })];
+  var header = totalHits != null && totalHits > sorted.length
+    ? fill(t(STRINGS.history.headerTruncated), { total: totalHits, target: target, count: sorted.length })
+    : fill(t(sorted.length === 1 ? STRINGS.history.headerOne : STRINGS.history.headerMany), { count: sorted.length, target: target });
+  var lines = [header];
   sorted.forEach(function (r) {
     var counts = alertCounts(r);
     var when = r && r.date ? formatAbsolute(r.date) : '';
-    var target = urlAddr(r && r.url) || urlAddr(r && r.final && r.final.url);
-    var head = [when, historyAlerts(counts.total), target].filter(Boolean).join(' · ');
+    var scanned = urlAddr(r && r.url) || urlAddr(r && r.final && r.final.url);
+    var head = [when, historyAlerts(counts.total), scanned].filter(Boolean).join(' · ');
     lines.push('• ' + head);
     var id = str(r && (r.report_id || r.id));
     if (id) lines.push('  ' + api.reportURL(id));

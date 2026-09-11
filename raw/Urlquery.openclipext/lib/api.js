@@ -123,18 +123,22 @@ async function reputation(query) {
   return (await request('/reputation/check/?query=' + encodeURIComponent(query))).data || {};
 }
 
-// GET /recent/reports/domain/{domain}?limit= → list of report overviews.
-async function recentByDomain(domain, limit) {
-  return listFrom((await request('/recent/reports/domain/' + encodeURIComponent(domain) + '?limit=' + (limit || 10))).data);
+// GET /search/reports/?query=&limit= → { query, total_hits, reports: [...] }
+//
+// Used instead of /recent/reports/domain/{domain} because the search fields are
+// documented (https://urlquery.net/help/search): `url.fqdn` matches the full
+// hostname while `url.domain` holds only the registrable domain. The recent
+// endpoint takes a bare "domain" whose matching rule is unspecified, so it
+// cannot be relied on to keep a subdomain intact.
+async function search(query, limit) {
+  var data = (await request('/search/reports/?query=' + encodeURIComponent(query) + '&limit=' + (limit || 10))).data;
+  var reports = listFrom(data);
+  var total = data && typeof data === 'object' ? Number(data.total_hits) : NaN;
+  return { reports: reports, totalHits: isNaN(total) ? reports.length : total };
 }
 
-// GET /recent/reports/ip/{ip}?limit= → list of report overviews.
-async function recentByIp(ip, limit) {
-  return listFrom((await request('/recent/reports/ip/' + encodeURIComponent(ip) + '?limit=' + (limit || 10))).data);
-}
-
-// The recent/search endpoints return either a bare array or an envelope
-// ({ reports: [...] } like the search endpoint). Accept both.
+// The search endpoint returns an envelope ({ reports: [...] }); accept a bare
+// array too in case a deployment answers with one.
 function listFrom(data) {
   if (Array.isArray(data)) return data;
   if (data && typeof data === 'object') {
@@ -199,8 +203,7 @@ module.exports = {
   reportOverview: reportOverview,
   report: report,
   reputation: reputation,
-  recentByDomain: recentByDomain,
-  recentByIp: recentByIp,
+  search: search,
   isDone: isDone,
   isFailed: isFailed,
   reportURL: reportURL,
