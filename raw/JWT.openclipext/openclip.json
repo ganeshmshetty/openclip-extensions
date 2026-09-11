@@ -1,0 +1,148 @@
+{
+  "identifier": "com.openclip.jwt",
+  "name": "JWT",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Decode, inspect and verify JSON Web Tokens offline. Shows expiry at a glance.",
+    "zh-Hans": "离线解码、检查和验证 JSON Web Token，一眼看清有效期。",
+    "zh-Hant": "離線解碼、檢查和驗證 JSON Web Token，一眼看清有效期。",
+    "fr": "Décodez, inspectez et vérifiez des JSON Web Tokens hors ligne. L’expiration en un coup d’œil.",
+    "ja": "JSON Web Token をオフラインでデコード・確認・検証。有効期限が一目でわかります。"
+  },
+  "keywords": [
+    "jwt",
+    "token",
+    "json web token",
+    "bearer",
+    "oauth",
+    "oidc",
+    "claims",
+    "decode",
+    "expiry",
+    "signature"
+  ],
+  "action": {
+    "id": "jwt",
+    "title": "JWT",
+    "icon": "icon.svg",
+    "type": "group",
+    "requirements": {
+      "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
+    },
+    "subActions": [
+      {
+        "id": "inspect",
+        "title": {
+          "en": "Inspect",
+          "zh-Hans": "检查令牌",
+          "zh-Hant": "檢查權杖",
+          "fr": "Inspecter",
+          "ja": "トークンを確認"
+        },
+        "icon": "doc.text.magnifyingglass",
+        "type": "javascript",
+        "script": "inspect.js",
+        "requirements": {
+          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
+        },
+        "keywords": ["inspect", "claims", "report", "status", "expiry", "检查", "inspecter", "確認"]
+      },
+      {
+        "id": "decode-payload",
+        "title": {
+          "en": "Decode Payload",
+          "zh-Hans": "解码载荷",
+          "zh-Hant": "解碼載荷",
+          "fr": "Décoder la charge utile",
+          "ja": "ペイロードをデコード"
+        },
+        "icon": "curlybraces",
+        "type": "javascript",
+        "script": "decode-payload.js",
+        "requirements": {
+          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
+        },
+        "keywords": ["decode", "payload", "claims", "json", "解码", "décoder", "デコード"]
+      },
+      {
+        "id": "decode-header",
+        "title": {
+          "en": "Decode Header",
+          "zh-Hans": "解码头部",
+          "zh-Hant": "解碼標頭",
+          "fr": "Décoder l’en-tête",
+          "ja": "ヘッダーをデコード"
+        },
+        "icon": "list.bullet.rectangle",
+        "type": "javascript",
+        "script": "decode-header.js",
+        "requirements": {
+          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
+        },
+        "keywords": ["decode", "header", "alg", "kid", "jose", "头部", "en-tête", "ヘッダー"]
+      },
+      {
+        "id": "check-expiry",
+        "title": {
+          "en": "Check Expiry",
+          "zh-Hans": "检查有效期",
+          "zh-Hant": "檢查有效期",
+          "fr": "Vérifier l’expiration",
+          "ja": "有効期限を確認"
+        },
+        "icon": "clock.badge.exclamationmark",
+        "type": "javascript",
+        "script": "check-expiry.js",
+        "requirements": {
+          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
+        },
+        "keywords": ["expiry", "expired", "exp", "valid", "ttl", "有效期", "expiration", "有効期限"]
+      },
+      {
+        "id": "verify",
+        "title": {
+          "en": "Verify Signature",
+          "zh-Hans": "验证签名",
+          "zh-Hant": "驗證簽名",
+          "fr": "Vérifier la signature",
+          "ja": "署名を検証"
+        },
+        "icon": "checkmark.seal",
+        "type": "javascript",
+        "script": "verify.js",
+        "requirements": {
+          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$",
+          "requiredOptions": ["secret"]
+        },
+        "options": [
+          {
+            "identifier": "secret",
+            "label": {
+              "en": "Secret",
+              "zh-Hans": "密钥",
+              "zh-Hant": "密鑰",
+              "fr": "Secret",
+              "ja": "シークレット"
+            },
+            "type": "secret"
+          },
+          {
+            "identifier": "secretIsBase64",
+            "label": {
+              "en": "Secret is base64 encoded",
+              "zh-Hans": "密钥为 Base64 编码",
+              "zh-Hant": "密鑰為 Base64 編碼",
+              "fr": "Secret encodé en base64",
+              "ja": "シークレットは Base64 エンコード済み"
+            },
+            "type": "boolean",
+            "default": "false"
+          }
+        ],
+        "keywords": ["verify", "signature", "hmac", "hs256", "secret", "验证", "vérifier", "検証"]
+      }
+    ]
+  }
+}
