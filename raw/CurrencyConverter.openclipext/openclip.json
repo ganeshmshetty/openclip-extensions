@@ -1,0 +1,101 @@
+{
+  "identifier": "com.openclip.currency-converter",
+  "name": {
+    "en": "Currency Converter",
+    "zh-Hans": "货币转换器",
+    "zh-Hant": "貨幣轉換器",
+    "ja": "通貨換算",
+    "fr": "Convertisseur de devises"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Convert world currencies directly inline based on current exchange rates.",
+    "zh-Hans": "直接在弹窗栏中实时转换全球主流货币汇率。",
+    "zh-Hant": "直接在彈窗欄中即時轉換全球主流貨幣匯率。",
+    "ja": "世界各国の主要通貨レートをインラインで直接換算します。",
+    "fr": "Convertissez les principales devises mondiales directement en ligne."
+  },
+  "keywords": [
+    "currency",
+    "money",
+    "convert",
+    "usd",
+    "eur",
+    "gbp",
+    "jpy",
+    "inr",
+    "cny",
+    "cad",
+    "aud",
+    "chf",
+    "czk",
+    "sgd",
+    "hkd"
+  ],
+  "options": [
+    {
+      "identifier": "targetCurrency",
+      "label": {
+        "en": "Target Currency",
+        "zh-Hans": "目标货币",
+        "zh-Hant": "目標貨幣",
+        "ja": "変換先通貨",
+        "fr": "Devise cible"
+      },
+      "type": "multiple",
+      "default": "USD",
+      "values": [
+        "USD",
+        "EUR",
+        "GBP",
+        "JPY",
+        "CNY",
+        "CAD",
+        "AUD",
+        "INR",
+        "CHF",
+        "HKD",
+        "SGD",
+        "SEK",
+        "KRW",
+        "NOK",
+        "NZD",
+        "MXN",
+        "TWD",
+        "ZAR",
+        "BRL",
+        "DKK",
+        "PLN",
+        "THB",
+        "ILS",
+        "IDR",
+        "CZK",
+        "AED",
+        "SAR",
+        "TRY",
+        "MYR",
+        "PHP",
+        "VND",
+        "HUF"
+      ]
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Convert Currency",
+      "zh-Hans": "货币换算",
+      "zh-Hant": "貨幣換算",
+      "ja": "通貨換算",
+      "fr": "Convertir la devise"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "inline": true,
+    "requirements": {
+      "regex": "(?:A\\$|AU\\$|C\\$|CA\\$|NZ\\$|HK\\$|S\\$|NT\\$|R\\$|Mex\\$|RM|Rp|Kč|zł|[\\$€£¥元₹₩₺฿₪₫₱])\\s*\\d+(?:[.,]\\d+)?|\\d+(?:[.,]\\d+)?\\s*(?:A\\$|AU\\$|C\\$|CA\\$|NZ\\$|HK\\$|S\\$|NT\\$|R\\$|Mex\\$|RM|Rp|Kč|zł|[\\$€£¥元₹₩₺฿₪₫₱]|USD|EUR|GBP|JPY|CNY|AUD|CAD|CHF|HKD|SGD|SEK|KRW|NOK|NZD|INR|MXN|TWD|ZAR|BRL|DKK|PLN|THB|ILS|IDR|CZK|AED|SAR|TRY|MYR|PHP|VND|HUF)\\b|\\b(?:USD|EUR|GBP|JPY|CNY|AUD|CAD|CHF|HKD|SGD|SEK|KRW|NOK|NZD|INR|MXN|TWD|ZAR|BRL|DKK|PLN|THB|ILS|IDR|CZK|AED|SAR|TRY|MYR|PHP|VND|HUF)\\s*\\d+(?:[.,]\\d+)?\\b"
+    }
+  }
+}
