@@ -84,3 +84,10 @@ Use the repository scripts under `scripts/` to create, test, and validate extens
 6. Open a Pull Request.
 
 All pull requests run automated CI validation (`validate-pr.yml`). Once merged, your extension is automatically built, released, and published to the live OpenClip store.
+
+---
+
+## License
+
+The OpenClip Extension Catalog and all extensions contributed here are released under the [MIT License](LICENSE). Copyright (c) 2026 Ganesh M and OpenClip Contributors.
+

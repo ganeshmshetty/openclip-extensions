@@ -1,14 +1,15 @@
 {
   "identifier": "com.openclip.wordcount",
-  "name": "Word & Character Count",
-  "version": "1.0.2",
+  "name": "Word Count",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Count the words and characters in the selected text.",
+  "description": "Count the words in the selected text.",
   "action": {
     "title": "Word Count",
     "icon": "text.alignleft",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "inline": true
   }
 }
