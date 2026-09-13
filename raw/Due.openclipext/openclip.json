@@ -4,7 +4,7 @@
     "en": "Due",
     "zh-Hans": "Due"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "echohn",
   "description": {
@@ -18,7 +18,7 @@
         "en": "Add Reminder",
         "zh-Hans": "添加提醒"
       },
-      "icon": "icon.svg",
+      "icon": "due.svg",
       "type": "url",
       "url": "due://x-callback-url/add?title={query}"
     }
