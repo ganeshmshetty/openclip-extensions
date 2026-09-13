@@ -1,0 +1,77 @@
+{
+  "identifier": "com.echohn.openclip.douban",
+  "name": {
+    "en": "Douban",
+    "zh-Hans": "豆瓣"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "echohn",
+  "description": {
+    "en": "Search Douban for books, movies, music and events from the selected text.",
+    "zh-Hans": "用选中的文字在豆瓣搜索图书、电影、音乐和同城活动。"
+  },
+  "actions": [
+    {
+      "id": "douban",
+      "title": {
+        "en": "Douban",
+        "zh-Hans": "豆瓣"
+      },
+      "icon": "icon.svg",
+      "type": "group",
+      "subActions": [
+        {
+          "id": "book",
+          "title": {
+            "en": "Search Books",
+            "zh-Hans": "搜索图书"
+          },
+          "icon": "book",
+          "type": "url",
+          "url": "http://book.douban.com/subject_search?search_text={query}"
+        },
+        {
+          "id": "movie",
+          "title": {
+            "en": "Search Movies",
+            "zh-Hans": "搜索电影"
+          },
+          "icon": "film",
+          "type": "url",
+          "url": "http://movie.douban.com/subject_search?search_text={query}"
+        },
+        {
+          "id": "music",
+          "title": {
+            "en": "Search Music",
+            "zh-Hans": "搜索音乐"
+          },
+          "icon": "music.note",
+          "type": "url",
+          "url": "http://music.douban.com/subject_search?search_text={query}"
+        },
+        {
+          "id": "event",
+          "title": {
+            "en": "Search Events",
+            "zh-Hans": "搜索同城活动"
+          },
+          "icon": "calendar",
+          "type": "url",
+          "url": "http://www.douban.com/event/search?search_text={query}"
+        },
+        {
+          "id": "all",
+          "title": {
+            "en": "Search Douban",
+            "zh-Hans": "综合搜索"
+          },
+          "icon": "magnifyingglass",
+          "type": "url",
+          "url": "http://www.douban.com/search?q={query}"
+        }
+      ]
+    }
+  ]
+}
