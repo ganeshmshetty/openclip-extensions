@@ -1,0 +1,26 @@
+{
+  "identifier": "com.echohn.openclip.due",
+  "name": {
+    "en": "Due",
+    "zh-Hans": "Due"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "echohn",
+  "description": {
+    "en": "Create a new reminder in Due from the selected text.",
+    "zh-Hans": "用选中的文字在 Due 中创建一条新提醒。"
+  },
+  "actions": [
+    {
+      "id": "add",
+      "title": {
+        "en": "Add Reminder",
+        "zh-Hans": "添加提醒"
+      },
+      "icon": "icon.svg",
+      "type": "url",
+      "url": "due://x-callback-url/add?title={query}"
+    }
+  ]
+}
