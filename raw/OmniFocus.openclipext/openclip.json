@@ -4,7 +4,7 @@
     "en": "OmniFocus",
     "zh-Hans": "OmniFocus"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "echohn",
   "description": {
@@ -18,7 +18,7 @@
         "en": "OmniFocus",
         "zh-Hans": "OmniFocus"
       },
-      "icon": "icon.svg",
+      "icon": "omnitick.svg",
       "type": "group",
       "subActions": [
         {
@@ -27,7 +27,7 @@
             "en": "Add to Inbox",
             "zh-Hans": "添加到收件箱"
           },
-          "icon": "tray.full",
+          "icon": "omnitick.svg",
           "type": "applescript",
           "script": "omnifocus.applescript",
           "loading": true,
@@ -42,7 +42,7 @@
             "en": "Quick Entry",
             "zh-Hans": "快速添加"
           },
-          "icon": "square.and.pencil",
+          "icon": "omnitick.svg",
           "type": "applescript",
           "script": "omnifocus-quickentry.applescript",
           "loading": true,
