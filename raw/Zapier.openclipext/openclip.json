@@ -1,0 +1,88 @@
+{
+  "identifier": "com.openclip.zapier",
+  "name": {
+    "en": "Zapier",
+    "zh-Hans": "Zapier",
+    "zh-Hant": "Zapier",
+    "fr": "Zapier",
+    "ja": "Zapier"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Community",
+  "description": {
+    "en": "Send selected text directly to automated Zapier workflows and webhooks.",
+    "zh-Hans": "将选中的文本直接发送到 Zapier 自动化工作流和 Webhook。",
+    "zh-Hant": "將選取的文字直接傳送到 Zapier 自動化工作流程和 Webhook。",
+    "fr": "Envoyez le texte sélectionné directement à des flux de travail et webhooks Zapier automatisés.",
+    "ja": "選択テキストを Zapier の自動化ワークフローや Webhook に直接送信します。"
+  },
+  "keywords": [
+    "zapier",
+    "automation",
+    "webhook",
+    "workflow",
+    "integration",
+    "api",
+    "cloud"
+  ],
+  "action": {
+    "id": "trigger-zap",
+    "title": {
+      "en": "Send to Zapier",
+      "zh-Hans": "发送到 Zapier",
+      "zh-Hant": "傳送到 Zapier",
+      "fr": "Envoyer à Zapier",
+      "ja": "Zapier に送信"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "async": true,
+    "loading": true,
+    "loadingMessage": {
+      "en": "Sending to Zapier…",
+      "zh-Hans": "正在发送到 Zapier…",
+      "zh-Hant": "正在傳送到 Zapier…",
+      "fr": "Envoi à Zapier…",
+      "ja": "Zapier に送信中…"
+    },
+    "requirements": {
+      "requiresSelection": true,
+      "requiredOptions": [
+        "webhookUrl"
+      ]
+    },
+    "keywords": [
+      "zapier",
+      "zap",
+      "trigger",
+      "webhook",
+      "automation"
+    ],
+    "options": [
+      {
+        "identifier": "webhookUrl",
+        "label": {
+          "en": "Webhook URL (Catch Hook)",
+          "zh-Hans": "Webhook URL（Catch Hook）",
+          "zh-Hant": "Webhook URL（Catch Hook）",
+          "fr": "URL du webhook (Catch Hook)",
+          "ja": "Webhook URL (Catch Hook)"
+        },
+        "type": "string"
+      },
+      {
+        "identifier": "secretHeader",
+        "label": {
+          "en": "Secret Token (Optional)",
+          "zh-Hans": "密钥令牌（可选）",
+          "zh-Hant": "金鑰權杖（選填）",
+          "fr": "Jeton secret (facultatif)",
+          "ja": "シークレットトークン（任意）"
+        },
+        "type": "secret"
+      }
+    ]
+  }
+}
