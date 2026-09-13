@@ -4,7 +4,7 @@
     "en": "Alfred",
     "zh-Hans": "Alfred"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "echohn",
   "description": {
@@ -18,7 +18,7 @@
         "en": "Search in Alfred",
         "zh-Hans": "用 Alfred 搜索"
       },
-      "icon": "icon.svg",
+      "icon": "bowler.svg",
       "type": "applescript",
       "script": "alfred.applescript",
       "loading": true,
