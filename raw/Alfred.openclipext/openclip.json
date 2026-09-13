@@ -1,0 +1,31 @@
+{
+  "identifier": "com.echohn.openclip.alfred",
+  "name": {
+    "en": "Alfred",
+    "zh-Hans": "Alfred"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "echohn",
+  "description": {
+    "en": "Activate Alfred's search with the selected text.",
+    "zh-Hans": "用选中的文字激活 Alfred 搜索。"
+  },
+  "actions": [
+    {
+      "id": "search",
+      "title": {
+        "en": "Search in Alfred",
+        "zh-Hans": "用 Alfred 搜索"
+      },
+      "icon": "icon.svg",
+      "type": "applescript",
+      "script": "alfred.applescript",
+      "loading": true,
+      "loadingMessage": {
+        "en": "Opening Alfred…",
+        "zh-Hans": "正在打开 Alfred…"
+      }
+    }
+  ]
+}
