@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T10:10:14Z",
+  "updatedAt": "2026-09-13T16:08:38Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -77,7 +77,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 3,
@@ -180,6 +180,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.1.0/CharacterCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.charactercount.svg",
       "publishedAt": "2026-09-11T15:37:00+05:30"
+    },
+    {
+      "id": "com.openclip.cleanemdashes",
+      "name": "Clean Em Dashes",
+      "description": "Clean up excessive AI-generated em-dashes and convert them into natural punctuation.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.cleanemdashes@1.0.0/CleanEmDashes.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.cleanemdashes.svg",
+      "publishedAt": "2026-09-13T21:36:54+05:30"
     },
     {
       "id": "com.openclip.codeblock",
@@ -796,7 +808,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
