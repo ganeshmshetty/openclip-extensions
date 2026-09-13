@@ -1,0 +1,57 @@
+{
+  "identifier": "com.echohn.openclip.omnifocus",
+  "name": {
+    "en": "OmniFocus",
+    "zh-Hans": "OmniFocus"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "echohn",
+  "description": {
+    "en": "Send selected text to OmniFocus 4 as an Inbox task or via Quick Entry.",
+    "zh-Hans": "将选中文字作为收件箱任务发送到 OmniFocus 4，或通过快速添加录入。"
+  },
+  "actions": [
+    {
+      "id": "omnifocus",
+      "title": {
+        "en": "OmniFocus",
+        "zh-Hans": "OmniFocus"
+      },
+      "icon": "icon.svg",
+      "type": "group",
+      "subActions": [
+        {
+          "id": "inbox",
+          "title": {
+            "en": "Add to Inbox",
+            "zh-Hans": "添加到收件箱"
+          },
+          "icon": "tray.full",
+          "type": "applescript",
+          "script": "omnifocus.applescript",
+          "loading": true,
+          "loadingMessage": {
+            "en": "Adding to Inbox…",
+            "zh-Hans": "正在添加到收件箱…"
+          }
+        },
+        {
+          "id": "quickentry",
+          "title": {
+            "en": "Quick Entry",
+            "zh-Hans": "快速添加"
+          },
+          "icon": "square.and.pencil",
+          "type": "applescript",
+          "script": "omnifocus-quickentry.applescript",
+          "loading": true,
+          "loadingMessage": {
+            "en": "Opening Quick Entry…",
+            "zh-Hans": "正在打开快速添加…"
+          }
+        }
+      ]
+    }
+  ]
+}
