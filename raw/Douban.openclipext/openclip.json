@@ -4,7 +4,7 @@
     "en": "Douban",
     "zh-Hans": "豆瓣"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "echohn",
   "description": {
@@ -18,7 +18,7 @@
         "en": "Douban",
         "zh-Hans": "豆瓣"
       },
-      "icon": "icon.svg",
+      "icon": "Douban.svg",
       "type": "group",
       "subActions": [
         {
@@ -27,7 +27,7 @@
             "en": "Search Books",
             "zh-Hans": "搜索图书"
           },
-          "icon": "book",
+          "icon": "Douban-book.svg",
           "type": "url",
           "url": "http://book.douban.com/subject_search?search_text={query}"
         },
@@ -37,7 +37,7 @@
             "en": "Search Movies",
             "zh-Hans": "搜索电影"
           },
-          "icon": "film",
+          "icon": "Douban-movie.svg",
           "type": "url",
           "url": "http://movie.douban.com/subject_search?search_text={query}"
         },
@@ -47,7 +47,7 @@
             "en": "Search Music",
             "zh-Hans": "搜索音乐"
           },
-          "icon": "music.note",
+          "icon": "Douban-music.svg",
           "type": "url",
           "url": "http://music.douban.com/subject_search?search_text={query}"
         },
@@ -57,7 +57,7 @@
             "en": "Search Events",
             "zh-Hans": "搜索同城活动"
           },
-          "icon": "calendar",
+          "icon": "Douban-event.svg",
           "type": "url",
           "url": "http://www.douban.com/event/search?search_text={query}"
         },
@@ -67,7 +67,7 @@
             "en": "Search Douban",
             "zh-Hans": "综合搜索"
           },
-          "icon": "magnifyingglass",
+          "icon": "Douban.svg",
           "type": "url",
           "url": "http://www.douban.com/search?q={query}"
         }
