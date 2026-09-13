@@ -1,0 +1,100 @@
+{
+  "identifier": "com.openclip.cleanemdashes",
+  "name": {
+    "en": "Clean Em Dashes",
+    "zh-Hans": "清理破折号",
+    "zh-Hant": "清理破折號",
+    "ja": "em ダッシュを整理",
+    "fr": "Nettoyer les tirets cadratins"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Clean up excessive AI-generated em-dashes and convert them into natural punctuation.",
+    "zh-Hans": "清理 AI 生成文本中过多的破折号并转换为自然的标点符号。",
+    "zh-Hant": "清理 AI 生成文字中過多的破折號並轉換為自然的標點符號。",
+    "ja": "AIが生成したテキスト内の過剰なemダッシュを整理し、自然な句読点に変換します。",
+    "fr": "Nettoyez les tirets cadratins excessifs générés par l'IA et convertissez-les en ponctuation naturelle."
+  },
+  "keywords": [
+    "em dash",
+    "emdash",
+    "dash",
+    "hyphen",
+    "clean",
+    "ai",
+    "llm",
+    "claude",
+    "chatgpt",
+    "punctuation",
+    "text",
+    "writing",
+    "破折号",
+    "ダッシュ",
+    "tiret"
+  ],
+  "options": [
+    {
+      "identifier": "style",
+      "label": {
+        "en": "Replacement style",
+        "zh-Hans": "替换样式",
+        "zh-Hant": "替換樣式",
+        "ja": "置換スタイル",
+        "fr": "Style de remplacement"
+      },
+      "type": "multiple",
+      "default": "commas",
+      "values": [
+        "commas",
+        "parentheses",
+        "hyphens",
+        "remove"
+      ]
+    },
+    {
+      "identifier": "cleanEnDashes",
+      "label": {
+        "en": "Clean spaced en-dashes ( – )",
+        "zh-Hans": "清理带空格的短破折号 ( – )",
+        "zh-Hant": "清理帶空格的短破折號 ( – )",
+        "ja": "スペース付き en ダッシュ（ – ）を整理",
+        "fr": "Nettoyer les tirets moyens espacés ( – )"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "cleanDoubleHyphens",
+      "label": {
+        "en": "Clean double hyphens (--)",
+        "zh-Hans": "清理双连字符 (--)",
+        "zh-Hant": "清理雙連字符 (--)",
+        "ja": "二重ハイフン（--）を整理",
+        "fr": "Nettoyer les doubles traits d'union (--)"
+      },
+      "type": "boolean",
+      "default": "true"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Clean Em Dashes",
+      "zh-Hans": "清理破折号",
+      "zh-Hant": "清理破折號",
+      "ja": "em ダッシュを整理",
+      "fr": "Nettoyer les tirets cadratins"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "keywords": [
+      "em dash",
+      "emdash",
+      "clean",
+      "ai",
+      "punctuation"
+    ]
+  }
+}
