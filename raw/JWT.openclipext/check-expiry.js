@@ -1,7 +1,7 @@
 // JWT · Check Expiry
-// One-line toast: "Expires in 14 minutes · Sep 10, 2026, 22:15" (success),
-// "Expired 3 hours ago · …" (error), "Not valid yet …" (info), or a note that
-// the token has no exp claim. A secondary click copies the message instead.
+// One-line toast with relative time only: "Expires in 52 minutes" (success),
+// "Expired 3 hours ago" (error), "Becomes valid in 5 minutes" (info), or
+// "No expiry claim" (info). A secondary click copies the message instead.
 
 var jwt = require('./lib/jwt.js');
 var fmt = require('./lib/format.js');

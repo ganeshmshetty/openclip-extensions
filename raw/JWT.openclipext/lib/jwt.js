@@ -12,8 +12,6 @@ var LOOKUP = (function () {
   return table;
 })();
 
-var TIME_CLAIMS = ['exp', 'nbf', 'iat', 'auth_time', 'updated_at'];
-
 function JwtError(code, detail) {
   this.name = 'JwtError';
   this.code = code;
@@ -37,52 +35,6 @@ function base64UrlDecodeBytes(input) {
     if (bits >= 8) {
       bits -= 8;
       bytes.push((buffer >> bits) & 0xff);
-    }
-  }
-  return bytes;
-}
-
-function base64UrlEncodeBytes(bytes) {
-  var out = '';
-  var i;
-  for (i = 0; i + 2 < bytes.length; i += 3) {
-    var n = (bytes[i] << 16) | (bytes[i + 1] << 8) | bytes[i + 2];
-    out += ALPHABET.charAt((n >> 18) & 63) + ALPHABET.charAt((n >> 12) & 63) +
-      ALPHABET.charAt((n >> 6) & 63) + ALPHABET.charAt(n & 63);
-  }
-  var rest = bytes.length - i;
-  if (rest === 1) {
-    var n1 = bytes[i] << 16;
-    out += ALPHABET.charAt((n1 >> 18) & 63) + ALPHABET.charAt((n1 >> 12) & 63);
-  } else if (rest === 2) {
-    var n2 = (bytes[i] << 16) | (bytes[i + 1] << 8);
-    out += ALPHABET.charAt((n2 >> 18) & 63) + ALPHABET.charAt((n2 >> 12) & 63) +
-      ALPHABET.charAt((n2 >> 6) & 63);
-  }
-  return out;
-}
-
-function utf8Encode(str) {
-  var bytes = [];
-  var text = String(str == null ? '' : str);
-  for (var i = 0; i < text.length; i++) {
-    var code = text.charCodeAt(i);
-    if (code >= 0xd800 && code <= 0xdbff && i + 1 < text.length) {
-      var next = text.charCodeAt(i + 1);
-      if (next >= 0xdc00 && next <= 0xdfff) {
-        code = 0x10000 + ((code - 0xd800) << 10) + (next - 0xdc00);
-        i++;
-      }
-    }
-    if (code < 0x80) {
-      bytes.push(code);
-    } else if (code < 0x800) {
-      bytes.push(0xc0 | (code >> 6), 0x80 | (code & 63));
-    } else if (code < 0x10000) {
-      bytes.push(0xe0 | (code >> 12), 0x80 | ((code >> 6) & 63), 0x80 | (code & 63));
-    } else {
-      bytes.push(0xf0 | (code >> 18), 0x80 | ((code >> 12) & 63),
-        0x80 | ((code >> 6) & 63), 0x80 | (code & 63));
     }
   }
   return bytes;
@@ -173,7 +125,6 @@ function parse(text) {
   return {
     token: token,
     segments: segments,
-    signingInput: segments[0] + '.' + segments[1],
     signature: segments[2],
     header: header.value,
     headerText: headerText,
@@ -181,10 +132,6 @@ function parse(text) {
     payloadText: payloadText,
     payloadIsJson: payloadIsJson
   };
-}
-
-function isTimeClaim(name) {
-  return TIME_CLAIMS.indexOf(name) !== -1;
 }
 
 // Seconds since the epoch for a numeric-date claim, or null when unusable.
@@ -210,15 +157,11 @@ function status(payload, nowSeconds) {
 
 module.exports = {
   JwtError: JwtError,
-  TIME_CLAIMS: TIME_CLAIMS,
   base64UrlDecodeBytes: base64UrlDecodeBytes,
-  base64UrlEncodeBytes: base64UrlEncodeBytes,
   base64UrlDecodeText: base64UrlDecodeText,
-  utf8Encode: utf8Encode,
   utf8Decode: utf8Decode,
   normalizeToken: normalizeToken,
   parse: parse,
-  isTimeClaim: isTimeClaim,
   claimSeconds: claimSeconds,
   status: status
 };
