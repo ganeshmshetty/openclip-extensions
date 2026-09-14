@@ -715,6 +715,9 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 - `openclip.toast(message, style?, options?)` — transient toast; style `"success"`|`"error"`|`"info"`
   (else `"info"`); `options = { keepVisible }` — `keepVisible: true` keeps the popup open (no
   auto-dismiss)
+- `openclip.file(payload)` — display a native file preview card (`.file`) or immediately copy/save it (`payload = { path?, data?, filename?, mimeType?, action?: "copy" | "copyfile" | "save" | "savefile" }`). Either provide `path` to an existing file or `data` containing base64 encoded content (safely written to `~/.openclip/cache/outputs/`). Filenames are sanitized with `lastPathComponent`.
+- `openclip.copyFile(path)` — copy the file at `path` to the macOS pasteboard (`.copyFile`)
+- `openclip.saveFile(path)` — save the file at `path` to the user's configured save location (`.saveFile`)
 - `openclip.showContent(...)` / `h()` — **removed**: the interactive-canvas bridge no longer
   exists; calling these names surfaces a JS error (`.toast(.error)`).
 - `openclip.requireConfiguration({ reason, missing: ["optID"] })` — open config sheet for this action
@@ -722,7 +725,7 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 Deterministic resolution order (`OpenClipJSHost.run`): **JS exception → `.toast(.error)`** (JS throws
 never propagate as Swift errors); else `requireConfiguration` → `.openConfiguration`; a `toast`
 alone → `.toast`, or coexisting with effects → `.sequence([.toast, …effects])`; effects →
-single/`sequence`; function string return → `.text(returnValue)` (implicitly returned text, resolved
+single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; function string return → `.text(returnValue)` (implicitly returned text, resolved
 per the click's preference); else `.success`.
 
 > Execution runs on a background thread (never the `MainActor`); async scripts are guarded by a
@@ -865,10 +868,14 @@ outcomes, or kind runtimes):
 | `.sequence([ActionResult])` | run in order; popup hides only if all dismiss |
 | `.keyPress(KeyPressSpec)` | post synthetic key event |
 | `.runShortcut(name:, input:)` | run a Shortcuts shortcut with input |
+| `.file(FileOutputPayload)` | display native file result card (image preview or system icon + file metadata, drag-and-drop, Open / Copy / Save actions); **popup stays open** |
+| `.copyFile(URL)` | copy file to macOS pasteboard |
+| `.saveFile(URL)` | save file to user's configured save location (`SettingsStore.fileSaveLocation`, defaulting to `~/Downloads`) with duplicate collision handling |
 | `.none` | no effect |
 
 Dismissal: `.toast` dismisses the popup by default (`keepVisible: true` keeps it open); `.sequence`
 dismisses only when non-empty and all items dismiss (a `keepVisible` toast forces it open);
+`.file` keeps the popup open; `.copyFile` and `.saveFile` dismiss;
 everything else (including `.openConfiguration`) dismisses. `.text` never auto-dismisses (preview
 keeps the popup open; paste/copy dismiss via the resolved outcome).
 
@@ -888,14 +895,22 @@ except `shareService`'s `identifier`, which is required):
 { "type": "pasteContent", "value": "text", "html": "<b>...</b>", "rtf": "..." } // .pasteContent (rich multi-type paste)
 { "type": "copyContent",  "value": "text", "html": "<b>...</b>", "rtf": "..." } // .copyContent (rich multi-type copy)
 { "type": "openURL", "value": "https://..." }                         // .openURL
+{ "type": "file", "path": "/path/to/file.png" }                       // .file — shows file result card in popup
+{ "type": "file", "data": "<base64>", "filename": "out.png" }         // .file — saves base64 data to cache and previews
+{ "type": "file", "path": "/path/to/file.png", "action": "copy" }     // .copyFile — bypasses preview, copies file to clipboard
+{ "type": "file", "path": "/path/to/file.png", "action": "save" }     // .saveFile — bypasses preview, saves file to destination
+{ "type": "copyFile", "path": "/path/to/file.png" }                   // .copyFile — copy file to clipboard ("copy-file" accepted)
+{ "type": "saveFile", "path": "/path/to/file.png" }                   // .saveFile — save file to configured save location ("save-file" accepted)
 { "type": "toast", "message": "Done", "style": "success", "keepVisible": true } // .toast — style "success"|"error"|"info"; keepVisible optional (default false)
 { "type": "configure", "reason": "...", "missing": ["opt"] }          // .openConfiguration
 { "type": "shareService", "identifier": "com.apple.Notes.SharingExtension", "value": "text" } // .shareService — identifier REQUIRED
 ```
 
-Unknown `type` → `.success`. If stdout is **not** valid JSON, the plain text is **implicitly
-returned** (`.text`, delivered per the user's per-click preference); empty
-stdout → `.success`. A non-zero exit (or hitting the 60 s watchdog) becomes an error status. These
+Unknown `type` → `.success`. If stdout is **not** valid JSON:
+1. If the action does not replace selection (`replaceSelection: false`), OpenClip checks if the trimmed output is a valid existing regular file path or `file://` URL. If so, it returns `.file(FileOutputPayload)` to render the native file card.
+2. Otherwise, the plain text is **implicitly returned** (`.text`, delivered per the user's per-click preference); empty stdout → `.success`.
+
+A non-zero exit (or hitting the 60 s watchdog) becomes an error status. These
 are the *only* script JSON `type` values the runtime accepts. **`"showContent"` is not one of
 them** — a `"showContent"` type falls into the unknown branch and maps to `.success`.
 
