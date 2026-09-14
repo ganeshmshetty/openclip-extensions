@@ -1,0 +1,36 @@
+{
+  "identifier": "com.openclip.unixtime",
+  "name": {
+    "en": "Unix Time Converter",
+    "zh-Hans": "Unix 时间戳转换",
+    "zh-Hant": "Unix 時間戳轉換",
+    "ja": "Unix タイムスタンプ変換",
+    "fr": "Convertisseur horodatage Unix"
+  },
+  "version": "1.1.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Convert Unix timestamp in seconds or milliseconds to a readable UTC date.",
+    "zh-Hans": "将秒或毫秒级的 Unix 时间戳转换为可读 UTC 日期时间。",
+    "zh-Hant": "將秒或毫秒級的 Unix 時間戳轉換為可读 UTC 日期时间。",
+    "ja": "秒またはミリ秒単位の Unix タイムスタンプを読みやすい UTC 日時に変換します。",
+    "fr": "Convertir l'horodatage Unix en date UTC lisible."
+  },
+  "action": {
+    "title": {
+      "en": "Unix Time",
+      "zh-Hans": "时间戳转换",
+      "zh-Hant": "時間戳轉換",
+      "ja": "日時変換",
+      "fr": "Convertir l'heure"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "inline": true,
+    "requirements": {
+      "regex": "^\\d{9,13}$"
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "identifier": "com.openclip.base64",
+  "name": {
+    "en": "Base64",
+    "zh-Hans": "Base64 编解码",
+    "zh-Hant": "Base64 編解碼",
+    "ja": "Base64 変換",
+    "fr": "Base64"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Encode or decode the selected text as Base64.",
+    "zh-Hans": "将选中文本编码或解码为 Base64。",
+    "zh-Hant": "將選中文本編碼或解碼為 Base64。",
+    "ja": "選択したテキストを Base64 にエンコードまたはデコードします。",
+    "fr": "Encoder ou décoder le texte sélectionné en Base64."
+  },
+  "action": {
+    "title": {
+      "en": "Base64",
+      "zh-Hans": "Base64",
+      "zh-Hant": "Base64",
+      "ja": "Base64",
+      "fr": "Base64"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "encode",
+        "title": {
+          "en": "Base64 Encode",
+          "zh-Hans": "Base64 编码",
+          "zh-Hant": "Base64 編碼",
+          "ja": "Base64 エンコード",
+          "fr": "Encoder en Base64"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "encode.js"
+      },
+      {
+        "id": "decode",
+        "title": {
+          "en": "Base64 Decode",
+          "zh-Hans": "Base64 解码",
+          "zh-Hant": "Base64 解碼",
+          "ja": "Base64 デコード",
+          "fr": "Décoder Base64"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "decode.js",
+        "requirements": {
+          "regex": "^[A-Za-z0-9+_/=-]+$"
+        }
+      }
+    ]
+  }
+}

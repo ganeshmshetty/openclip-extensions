@@ -1,0 +1,32 @@
+{
+  "identifier": "com.openclip.textedit",
+  "name": {
+    "en": "New Document in TextEdit",
+    "zh-Hans": "新建文本编辑文稿",
+    "zh-Hant": "新增文字編輯文件",
+    "ja": "TextEdit で新規作成",
+    "fr": "Nouveau document TextEdit"
+  },
+  "version": "1.0.1",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Create a new TextEdit document containing the selected text.",
+    "zh-Hans": "使用选中文本创建新的文本编辑文稿。",
+    "zh-Hant": "使用選取文字建立新的文字編輯文件。",
+    "ja": "選択したテキストを含む新しい TextEdit ドキュメントを作成します。",
+    "fr": "Créer un nouveau document TextEdit avec le texte sélectionné."
+  },
+  "action": {
+    "title": {
+      "en": "TextEdit",
+      "zh-Hans": "文本编辑",
+      "zh-Hant": "文字編輯",
+      "ja": "テキストエディット",
+      "fr": "TextEdit"
+    },
+    "icon": "icon.svg",
+    "type": "shell",
+    "script": "main.sh"
+  }
+}

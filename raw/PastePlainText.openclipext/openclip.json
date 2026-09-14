@@ -1,0 +1,57 @@
+{
+  "identifier": "com.openclip.pasteplaintext",
+  "name": {
+    "en": "Paste as Plain Text",
+    "zh-Hans": "纯文本粘贴",
+    "zh-Hant": "純文字貼上",
+    "ja": "プレーンテキストとして貼り付け",
+    "fr": "Coller en texte brut"
+  },
+  "description": {
+    "en": "Paste clipboard content as plain text, stripping formatting. Right-click or Shift-click to convert clipboard in place.",
+    "zh-Hans": "以纯文本形式粘贴剪贴板内容并去除格式。右键或按住 Shift 单击可直接转换剪贴板。",
+    "zh-Hant": "以純文字形式貼上剪貼簿內容並去除格式。右鍵或按住 Shift 點擊可直接轉換剪貼簿。",
+    "ja": "書式を削除してクリップボードの内容をプレーンテキストとして貼り付けます。右クリックまたはShift+クリックで直接変換します。",
+    "fr": "Colle le contenu du presse-papiers en texte brut sans mise en forme. Clic droit ou Maj-clic pour convertir sur place."
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.3.0",
+  "author": "OpenClip Team",
+  "keywords": [
+    "paste",
+    "plain text",
+    "clean",
+    "format",
+    "clipboard",
+    "pasteboard",
+    "粘贴",
+    "纯文本",
+    "无格式",
+    "剪贴板"
+  ],
+  "action": {
+    "title": {
+      "en": "Paste Plain Text",
+      "zh-Hans": "纯文本粘贴",
+      "zh-Hant": "純文字貼上",
+      "ja": "プレーンテキスト貼り付け",
+      "fr": "Coller texte brut"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "requirements": {
+      "requiresSelection": false
+    },
+    "keywords": [
+      "paste",
+      "plain text",
+      "clean",
+      "format",
+      "clipboard",
+      "粘贴",
+      "纯文本",
+      "无格式"
+    ]
+  }
+}

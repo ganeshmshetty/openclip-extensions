@@ -1,0 +1,55 @@
+{
+  "identifier": "com.openclip.timestamp",
+  "name": {
+    "en": "Insert Timestamp",
+    "zh-Hans": "插入时间戳",
+    "zh-Hant": "插入時間戳",
+    "ja": "タイムスタンプ挿入",
+    "fr": "Insérer un horodatage"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Paste the current date and time at the cursor.",
+    "zh-Hans": "在光标处粘贴当前日期与时间。",
+    "zh-Hant": "在游標處貼上當前日期與時間。",
+    "ja": "カーソル位置に現在の日時を貼り付けます。",
+    "fr": "Coller la date et l'heure actuelles au niveau du curseur."
+  },
+  "options": [
+    {
+      "identifier": "format",
+      "label": {
+        "en": "Format",
+        "zh-Hans": "日期格式",
+        "zh-Hant": "日期格式",
+        "ja": "日付形式",
+        "fr": "Format"
+      },
+      "type": "multiple",
+      "default": "iso",
+      "values": [
+        "iso",
+        "datetime",
+        "date",
+        "time"
+      ]
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Insert Timestamp",
+      "zh-Hans": "插入时间戳",
+      "zh-Hant": "插入時間戳",
+      "ja": "タイムスタンプ",
+      "fr": "Insérer l'heure"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "requirements": {
+      "requiresSelection": false
+    }
+  }
+}
