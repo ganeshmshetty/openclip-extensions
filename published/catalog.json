@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T02:34:59Z",
+  "updatedAt": "2026-09-15T02:46:19Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -252,6 +252,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.0.0/CurlyBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.curlybrackets.svg",
       "publishedAt": "2026-08-20T22:11:59+05:30"
+    },
+    {
+      "id": "com.openclip.currency-converter",
+      "name": "Currency Converter",
+      "description": "Convert world currencies directly inline based on current exchange rates.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.currency-converter@1.0.0/CurrencyConverter.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.currency-converter.svg",
+      "publishedAt": "2026-09-15T08:13:23+05:30"
     },
     {
       "id": "com.openclip.deduplicatelines",
