@@ -1,0 +1,106 @@
+{
+  "identifier": "com.openclip.timezone-converter",
+  "name": {
+    "en": "Time Zone Converter",
+    "zh-Hans": "时区转换器",
+    "zh-Hant": "時區轉換器",
+    "ja": "タイムゾーン変換",
+    "fr": "Convertisseur de fuseau horaire"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Convert times across global time zones directly inline.",
+    "zh-Hans": "直接在弹窗栏中实时转换世界各地时区时间。",
+    "zh-Hant": "直接在彈窗欄中即時轉換世界各地時區時間。",
+    "ja": "世界各国のタイムゾーンの日時をインラインで直接変換します。",
+    "fr": "Convertissez les heures entre fuseaux horaires directement en ligne."
+  },
+  "keywords": [
+    "time",
+    "timezone",
+    "zone",
+    "convert",
+    "utc",
+    "clock",
+    "gmt",
+    "est",
+    "pst"
+  ],
+  "options": [
+    {
+      "identifier": "targetZone",
+      "label": {
+        "en": "Target Time Zone",
+        "zh-Hans": "目标时区",
+        "zh-Hant": "目標時區",
+        "ja": "変換先タイムゾーン",
+        "fr": "Fuseau horaire cible"
+      },
+      "type": "multiple",
+      "default": "UTC",
+      "values": [
+        "UTC",
+        "Local",
+        "ET",
+        "CT",
+        "MT",
+        "PT",
+        "GMT",
+        "CET",
+        "GST",
+        "IST",
+        "SGT",
+        "JST",
+        "KST",
+        "AEST",
+        "NZST"
+      ]
+    },
+    {
+      "identifier": "timeFormat",
+      "label": {
+        "en": "Time Format",
+        "zh-Hans": "时间格式",
+        "zh-Hant": "時間格式",
+        "ja": "時間形式",
+        "fr": "Format de l'heure"
+      },
+      "type": "multiple",
+      "default": "12h",
+      "values": [
+        "12h",
+        "24h"
+      ]
+    },
+    {
+      "identifier": "includeDate",
+      "label": {
+        "en": "Include Date Shift",
+        "zh-Hans": "显示日期变更",
+        "zh-Hant": "顯示日期變更",
+        "ja": "日付シフトを表示",
+        "fr": "Inclure le décalage de date"
+      },
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Convert Time",
+      "zh-Hans": "时区转换",
+      "zh-Hant": "時區轉換",
+      "ja": "時間変換",
+      "fr": "Convertir l'heure"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "inline": true,
+    "requirements": {
+      "regex": "\\b\\d{1,2}(?::\\d{2})?\\s*(?:am|pm|AM|PM)(?:\\s*(?:UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|BST|SGT|HKT|[A-Za-z]{2,5}|[+-]\\d{1,2}(?::?\\d{2})?))?\\b|\\b\\d{1,2}:\\d{2}(?::\\d{2})?(?:\\s*(?:am|pm|AM|PM|UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|BST|SGT|HKT|[A-Za-z]{2,5}|[+-]\\d{1,2}(?::?\\d{2})?))?\\b|\\b\\d{1,2}\\s*(?:UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|BST|SGT|HKT)\\b"
+    }
+  }
+}
