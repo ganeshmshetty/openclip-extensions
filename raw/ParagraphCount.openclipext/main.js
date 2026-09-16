@@ -5,16 +5,16 @@ function action(selection) {
         .trim();
     if (!text) return null;
     var count = text.split(/\n\s*\n+|\u2029+/).filter(Boolean).length;
-    var unit = (typeof openclip !== "undefined" && openclip.i18n)
+    var label = (typeof openclip !== "undefined" && openclip.i18n)
         ? openclip.i18n({
-            en: count === 1 ? "paragraph" : "paragraphs",
+            en: "para",
             "zh-Hans": "个段落",
             "zh-Hant": "個段落",
             ja: "段落",
-            fr: count === 1 ? "paragraphe" : "paragraphes"
+            fr: "para"
         })
-        : (count === 1 ? "paragraph" : "paragraphs");
-    return count + " " + unit;
+        : "para";
+    return count + " " + label;
 }
 
 if (typeof module !== "undefined" && module.exports) {

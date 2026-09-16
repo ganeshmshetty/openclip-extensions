@@ -10,5 +10,5 @@ Count the paragraphs in any selected text instantly inline inside OpenClip.
 
 ## Examples
 
-- Select two paragraphs separated by a blank line → Displays **`2 paragraphs`** inline.
-- Select a single paragraph → Displays **`1 paragraph`** inline.
+- Select two paragraphs separated by a blank line → Displays **`2 para`** inline.
+- Select a single paragraph → Displays **`1 para`** inline.
