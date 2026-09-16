@@ -1,14 +1,15 @@
 {
   "identifier": "com.openclip.paragraphcount",
   "name": "Paragraph Count",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Display paragraph count as a transient toast.",
+  "description": "Count the paragraphs in the selected text.",
   "action": {
     "title": "Paragraph Count",
     "icon": "icon.svg",
     "type": "javascript",
-    "scriptCode": "function action(selection) {\n    var text = (selection || \"\")\n        .replace(/\\r\\n?/g, \"\\n\")\n        .replace(/[\\u0085\\u000b\\u000c\\u2028]/g, \"\\n\")\n        .trim();\n    var paragraphs = text.length > 0\n        ? text.split(/\\n\\s*\\n+|\\u2029+/).filter(Boolean).length\n        : 0;\n    return paragraphs + (paragraphs === 1 ? \" paragraph\" : \" paragraphs\");\n}"
+    "script": "main.js",
+    "inline": true
   }
 }
