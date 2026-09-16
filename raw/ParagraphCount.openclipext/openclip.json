@@ -1,12 +1,41 @@
 {
   "identifier": "com.openclip.paragraphcount",
-  "name": "Paragraph Count",
-  "version": "1.1.0",
-  "minOpenClipVersion": "1.0.0",
+  "name": {
+    "en": "Paragraph Count",
+    "zh-Hans": "段落计数",
+    "zh-Hant": "段落計數",
+    "ja": "段落数カウント",
+    "fr": "Nombre de paragraphes"
+  },
+  "version": "1.2.0",
+  "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
-  "description": "Count the paragraphs in the selected text.",
+  "description": {
+    "en": "Count the paragraphs in the selected text.",
+    "zh-Hans": "统计选中文本中的段落数。",
+    "zh-Hant": "統計選取文字中的段落數。",
+    "ja": "選択したテキストの段落数をカウントします。",
+    "fr": "Compte les paragraphes du texte sélectionné."
+  },
+  "keywords": [
+    "paragraph",
+    "paragraphs",
+    "count",
+    "text",
+    "段落",
+    "個段落",
+    "统计",
+    "カウント",
+    "paragraphes"
+  ],
   "action": {
-    "title": "Paragraph Count",
+    "title": {
+      "en": "Paragraph Count",
+      "zh-Hans": "段落计数",
+      "zh-Hant": "段落計數",
+      "ja": "段落数をカウント",
+      "fr": "Compter les paragraphes"
+    },
     "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js",
