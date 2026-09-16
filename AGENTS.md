@@ -133,9 +133,23 @@ Common action fields (all OPTIONAL unless noted):
   "options": [ /* per-action option overrides, see §4 */ ],
   "keywords": ["uppercase", "all caps", "majuscule", "大写", "大文字"], // search palette keywords
   "loading": true,                       // slow action: early-close + spinner toast, see §5d
-  "loadingMessage": "Searching…"         // loading toast text; defaults to "Opening <title>…"
+  "loadingMessage": "Searching…",        // loading toast text; defaults to "Opening <title>…"
+  "inline": true                         // synchronous javascript only: live inline result preview (see below)
 }
 ```
+
+**Inline results (`inline`).** Set `"inline": true` on a **synchronous `javascript`** action
+(kind `js`/`javascript`, *without* `"async": true`) to have OpenClip evaluate it live as the
+selection is read and render its returned text directly in the popup bar button / search palette —
+the same inline surface as the built-in Calculate action. The preview is the action's `.text`
+output (a non-null, non-blank string), truncated to a single line at the popup's shared max width;
+any other result (`.copy`, `.openURL`, …) or a thrown/empty result shows no preview and the icon
+stays. Clicking still performs the action normally, so the `.text` is delivered per the user's
+per-click preference (§5b — primary pastes / secondary copies by default). Evaluation is prewarmed
+during selection retrieval, memoized per selection, and bounded by a hard timeout, so the popup
+never blocks. `inline` on a non-JS kind, or together with `"async": true`, **rejects the package**
+at validation (`invalidInlineAction`); apps that predate inline results simply ignore the key.
+Reference implementations: `WordCount`, `CharacterCount`.
 
 **Icons** (`parseIcon`): `symbol(Name)` → SF Symbol; a bare string (e.g. `"textformat.upper"`) is
 treated as an SF Symbol too; a string ending in `.png`/`.jpg`/`.jpeg`/`.icns`/`.gif`/`.svg` is read
@@ -1134,6 +1148,8 @@ so pre-existing extensions keep working with zero action.
   `ConfigurationRequest.swift`).
 - Delivery model (primary/secondary + per-click toasts): `Sources/Core/Actions/ActionDelivery.swift`,
   `Sources/Core/Actions/ActionResultDelivery.swift`, `Sources/Core/Actions/DeliveryDecoratedAction.swift`.
+- Inline result preview (`inline`): `Sources/OpenClip/Platform/Inline/InlineResultEvaluator.swift`,
+  `Sources/Core/Actions/ActionChrome.swift` (`isInlineResult`), `Sources/Core/Extensions/Manifest/ManifestValidation.swift`.
 - Result card (native SwiftUI, any text-returning action): `Sources/OpenClip/UI/Popup/ResultCardView.swift`.
 - Visibility/required options: `Sources/Core/Actions/ActionVisibility.swift`, `ExtensionActionRules.swift`.
 - Options storage: `Sources/Core/Settings/ActionOptionStore.swift`, `SettingKey.swift`,
