@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T02:46:19Z",
+  "updatedAt": "2026-09-16T12:01:39Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -77,7 +77,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 3,
@@ -338,6 +338,18 @@
       "publishedAt": "2026-08-20T22:28:33+05:30"
     },
     {
+      "id": "com.echohn.openclip.due",
+      "name": "Due",
+      "description": "Create a new reminder in Due from the selected text.",
+      "author": "echohn",
+      "icon": "due.svg",
+      "version": "1.0.1",
+      "downloadCount": 2,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.echohn.openclip.due@1.0.1/Due.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.echohn.openclip.due.svg",
+      "publishedAt": "2026-09-13T19:06:37+08:00"
+    },
+    {
       "id": "com.openclip.extractemails",
       "name": "Extract Emails",
       "description": "Regex-extract all email addresses into a clean list.",
@@ -592,14 +604,14 @@
     {
       "id": "com.openclip.linecount",
       "name": "Line Count",
-      "description": "Display line count as a transient toast.",
+      "description": "Count the lines in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.2.0",
       "downloadCount": 8,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.0.1/LineCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.2.0/LineCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.linecount.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-16T17:15:40+05:30"
     },
     {
       "id": "com.openclip.logseqcapture",
@@ -770,16 +782,28 @@
       "publishedAt": "2026-08-20T22:28:33+05:30"
     },
     {
+      "id": "com.echohn.openclip.omnifocus",
+      "name": "OmniFocus",
+      "description": "Send selected text to OmniFocus 4 as an Inbox task or via Quick Entry.",
+      "author": "echohn",
+      "icon": "omnitick.svg",
+      "version": "1.0.1",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.echohn.openclip.omnifocus@1.0.1/OmniFocus.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.echohn.openclip.omnifocus.svg",
+      "publishedAt": "2026-09-13T19:06:27+08:00"
+    },
+    {
       "id": "com.openclip.paragraphcount",
       "name": "Paragraph Count",
-      "description": "Display paragraph count as a transient toast.",
+      "description": "Count the paragraphs in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.2.0",
       "downloadCount": 5,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.0.1/ParagraphCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.2.0/ParagraphCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.paragraphcount.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-16T17:26:53+05:30"
     },
     {
       "id": "com.openclip.pascalcase",
@@ -832,7 +856,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
