@@ -55,6 +55,16 @@ function letterTileSvg(id, name) {
 //  - keep viewBox (required), xmlns (required), and currentColor paint untouched
 function normalizePackagedSvg(svgText) {
   let svg = svgText.trim();
+  // Tolerate a leading XML prolog / DOCTYPE / comments (e.g. potrace output) before the root <svg>.
+  for (;;) {
+    const stripped = svg
+      .replace(/^<\?xml[\s\S]*?\?>/i, '')
+      .replace(/^<!DOCTYPE[^>]*>/i, '')
+      .replace(/^<!--[\s\S]*?-->/, '')
+      .trim();
+    if (stripped === svg) break;
+    svg = stripped;
+  }
   if (!svg.startsWith('<svg')) throw new Error('not an SVG document');
   if (!/viewBox=/i.test(svg)) throw new Error('SVG has no viewBox (cannot scale safely)');
   // Only strip width/height from the root <svg> tag, never from child elements (e.g. <rect>)
