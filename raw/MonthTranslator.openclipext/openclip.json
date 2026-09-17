@@ -11,11 +11,11 @@
   "minOpenClipVersion": "1.1.0",
   "author": "Matej Bačo",
   "description": {
-    "en": "Show a selected month name from any language in your language, inline and offline.",
-    "zh-Hans": "在弹出栏中离线显示任意语言的月份名称的翻译。",
-    "zh-Hant": "在彈出列中離線顯示任意語言的月份名稱的翻譯。",
-    "ja": "任意の言語の月名を、オフラインでインライン翻訳表示します。",
-    "fr": "Affiche en ligne et hors connexion le nom d'un mois écrit dans n'importe quelle langue."
+    "en": "Translate a selected month name both ways between two languages, inline and offline.",
+    "zh-Hans": "在两种语言之间离线双向翻译所选月份名称，直接显示在弹出栏中。",
+    "zh-Hant": "在兩種語言之間離線雙向翻譯所選月份名稱，直接顯示在彈出列中。",
+    "ja": "選択した月名を 2 つの言語間で双方向に、オフラインでインライン翻訳します。",
+    "fr": "Traduit en ligne et hors connexion un nom de mois dans les deux sens entre deux langues."
   },
   "keywords": [
     "month", "months", "translate", "translation", "calendar", "date", "language", "cldr",
@@ -23,28 +23,28 @@
   ],
   "options": [
     {
-      "identifier": "target",
+      "identifier": "languageA",
       "label": {
-        "en": "Target language (BCP-47 tag, e.g. en, de-AT, zh-Hans; empty = app language)",
-        "zh-Hans": "目标语言（BCP-47 标签，如 en、de-AT、zh-Hans；留空 = 应用语言）",
-        "zh-Hant": "目標語言（BCP-47 標籤，如 en、de-AT、zh-Hans；留空 = 應用程式語言）",
-        "ja": "翻訳先の言語（BCP-47 タグ、例: en、de-AT、zh-Hans。空欄 = アプリの言語）",
-        "fr": "Langue cible (code BCP-47, ex. en, de-AT, zh-Hans ; vide = langue de l'app)"
+        "en": "Language A (BCP-47 tag, e.g. cs, de-AT, zh-Hans; empty = app language)",
+        "zh-Hans": "语言 A（BCP-47 标签，如 cs、de-AT、zh-Hans；留空 = 应用语言）",
+        "zh-Hant": "語言 A（BCP-47 標籤，如 cs、de-AT、zh-Hans；留空 = 應用程式語言）",
+        "ja": "言語 A（BCP-47 タグ、例: cs、de-AT、zh-Hans。空欄 = アプリの言語）",
+        "fr": "Langue A (code BCP-47, ex. cs, de-AT, zh-Hans ; vide = langue de l’app)"
       },
       "type": "string",
       "default": ""
     },
     {
-      "identifier": "source",
+      "identifier": "languageB",
       "label": {
-        "en": "Source languages (optional, comma-separated, e.g. cs, sk; empty = detect any)",
-        "zh-Hans": "源语言（可选，逗号分隔，如 cs, sk；留空 = 自动检测）",
-        "zh-Hant": "來源語言（可選，逗號分隔，如 cs, sk；留空 = 自動偵測）",
-        "ja": "元の言語（任意、カンマ区切り、例: cs, sk。空欄 = 自動検出）",
-        "fr": "Langues source (facultatif, séparées par des virgules, ex. cs, sk ; vide = détection)"
+        "en": "Language B (BCP-47 tag; default en)",
+        "zh-Hans": "语言 B（BCP-47 标签；默认 en）",
+        "zh-Hant": "語言 B（BCP-47 標籤；預設 en）",
+        "ja": "言語 B（BCP-47 タグ。既定値 en）",
+        "fr": "Langue B (code BCP-47 ; par défaut en)"
       },
       "type": "string",
-      "default": ""
+      "default": "en"
     }
   ],
   "action": {

@@ -99,63 +99,57 @@ function entryFor(tag) {
   }
   return langHit >= 0 ? langHit : prefixHit;
 }
-function parseLanguageList(value) {
-  return String(value || "").split(/[\s,;]+/).map(languageOf).filter(Boolean);
+function pushUnique(list, value) {
+  if (list.indexOf(value) < 0) list.push(value);
+}
+function numeric(a, b) {
+  return a - b;
 }
 function translate(text, settings) {
   settings = settings || {};
   var tokens = String(text || "").trim().split(/\s+/);
   if (tokens.length === 0 || tokens.length > MAX_TOKENS) return null;
-  var restrict = parseLanguageList(settings.source);
-  var preferred = parseLanguageList(settings.preferred);
-  var months = [], preferredMonths = [], words = [];
+  var entryA = entryFor(settings.languageA);
+  if (entryA < 0) entryA = entryFor("en");
+  var entryB = entryFor(settings.languageB);
+  if (entryB < 0) entryB = entryFor("en");
+  var langA = languageOf(DATA.entries[entryA].l[0]);
+  var langB = languageOf(DATA.entries[entryB].l[0]);
+  var toB = [], toA = [], other = [];
   for (var t = 0; t < tokens.length; t++) {
     var token = tokens[t].replace(TRIM, "");
     if (!token) continue;
-    words.push(fold(token));
-    var hits = lookup(token), tokenMonths = [], tokenPreferred = [];
+    var hits = lookup(token), inA = [], inB = [], elsewhere = [];
     for (var h = 0; h < hits.length; h++) {
       var langs = DATA.entries[hits[h].e].l.map(languageOf);
-      var allowed = restrict.length === 0 || langs.some(function(l) {
-        return restrict.indexOf(l) >= 0;
-      });
-      if (!allowed) continue;
-      if (tokenMonths.indexOf(hits[h].m) < 0) tokenMonths.push(hits[h].m);
-      if (tokenPreferred.indexOf(hits[h].m) < 0 && langs.some(function(l) {
-        return preferred.indexOf(l) >= 0;
-      })) {
-        tokenPreferred.push(hits[h].m);
-      }
+      if (langs.indexOf(langA) >= 0) pushUnique(inA, hits[h].m);
+      if (langs.indexOf(langB) >= 0) pushUnique(inB, hits[h].m);
+      if (langs.indexOf(langA) < 0 && langs.indexOf(langB) < 0) pushUnique(elsewhere, hits[h].m);
     }
-    tokenMonths.sort(numeric).forEach(function(m) {
-      if (months.indexOf(m) < 0) months.push(m);
+    inA.sort(numeric).forEach(function(m) {
+      pushUnique(toB, m);
     });
-    tokenPreferred.sort(numeric).forEach(function(m) {
-      if (preferredMonths.indexOf(m) < 0) preferredMonths.push(m);
+    inB.sort(numeric).forEach(function(m) {
+      pushUnique(toA, m);
+    });
+    if (inA.length === 0 && inB.length === 0) elsewhere.sort(numeric).forEach(function(m) {
+      pushUnique(other, m);
     });
   }
-  if (preferredMonths.length > 0) months = preferredMonths;
-  if (months.length === 0 || months.length > MAX_MONTHS) return null;
-  var target = entryFor(settings.target);
-  if (target < 0) target = entryFor("en");
-  var names = namesFor(target, months);
-  var sameWord = names.every(function(name) {
-    return words.indexOf(fold(name)) >= 0;
+  var names = [];
+  toB.forEach(function(m) {
+    pushUnique(names, DATA.entries[entryB].w[m]);
   });
-  if (sameWord) {
-    var english = entryFor("en");
-    if (english !== target) names = namesFor(english, months);
+  toA.forEach(function(m) {
+    pushUnique(names, DATA.entries[entryA].w[m]);
+  });
+  if (toB.length === 0 && toA.length === 0) {
+    other.forEach(function(m) {
+      pushUnique(names, DATA.entries[entryA].w[m]);
+    });
   }
+  if (names.length === 0 || names.length > MAX_MONTHS) return null;
   return names.join(" / ");
-}
-function numeric(a, b) {
-  return a - b;
-}
-function namesFor(entryIndex, months) {
-  var table = DATA.entries[entryIndex].w;
-  return months.map(function(m) {
-    return table[m];
-  });
 }
 function action(selection) {
   var host = typeof openclip !== "undefined" ? openclip : {};
@@ -163,9 +157,8 @@ function action(selection) {
     return host.options && host.options[id] ? String(host.options[id]) : "";
   };
   return translate(selection, {
-    target: option("target") || host.language || host.locale || "en",
-    source: option("source"),
-    preferred: [host.language, host.locale].filter(Boolean).join(",")
+    languageA: option("languageA") || host.language || host.locale || "en",
+    languageB: option("languageB") || "en"
   });
 }
 module.exports = action;

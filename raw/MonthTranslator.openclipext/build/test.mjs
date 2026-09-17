@@ -3,59 +3,50 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 const ext = require("../dist/main.js");
 
-const en = (text, extra) => ext.translate(text, { target: "en", preferred: "en", ...extra });
+// Czech <-> English pair (A = cs, B = en): Czech shows English, English shows Czech, others show Czech.
+const cs = (text) => ext.translate(text, { languageA: "cs", languageB: "en" });
+// English-only user (A = en, B = en): everything shows English.
+const en = (text) => ext.translate(text, { languageA: "en", languageB: "en" });
+const pair = (text, a, b) => ext.translate(text, { languageA: a, languageB: b });
 
 const cases = [
-    // Czech: nominative, genitive, locative with preposition, adjectives, dates, casing, no diacritics
-    [en("srpen"), "August"], [en("srpna"), "August"], [en("v srpnu"), "August"], [en("ve srpnu"), "August"],
-    [en("srpnový"), "August"], [en("srpnová"), "August"], [en("SRPEN"), "August"], [en("Srpen,"), "August"],
-    [en("5. srpna 2024"), "August"], [en("„srpna“"), "August"],
-    [en("leden"), "January"], [en("ledna"), "January"], [en("v lednu"), "January"], [en("lednový"), "January"], [en("lednem"), "January"],
-    [en("únor"), "February"], [en("unora"), "February"], [en("únorový"), "February"],
-    [en("březen"), "March"], [en("brezen"), "March"], [en("březnový"), "March"], [en("v breznu"), "March"],
-    [en("dubna"), "April"], [en("května"), "May"], [en("cerven"), "June"], [en("července"), "July"], [en("červencový"), "July"],
-    [en("září"), "September"], [en("zari"), "September"], [en("zářijový"), "September"],
-    [en("v říjnu"), "October"], [en("říjnový"), "October"], [en("prosinec"), "December"], [en("v prosinci"), "December"], [en("prosincový"), "December"],
-    [en("led."), "January"], [en("pro."), "December"], [en("čvc"), "July"],
-    // Slovak
-    [en("august"), "August"], [en("v auguste"), "August"], [en("augustový"), "August"],
-    [en("január"), "January"], [en("januára"), "January"], [en("v januári"), "January"], [en("januárový"), "January"],
-    // Polish
-    [en("sierpień"), "August"], [en("w sierpniu"), "August"], [en("sierpniowy"), "August"], [en("stycznia"), "January"],
-    [en("październik"), "October"], [en("pazdziernik"), "October"], [en("w październiku"), "October"],
-    // Russian and Ukrainian
-    [en("август"), "August"], [en("в августе"), "August"], [en("августовский"), "August"],
-    [en("Сентябрь"), "September"], [en("сентябрьский"), "September"], [en("січень"), "January"], [en("січня"), "January"], [en("січневий"), "January"],
-    // Croatian
-    [en("kolovoz"), "August"], [en("u kolovozu"), "August"], [en("siječnja"), "January"],
-    // German, French, Spanish, Finnish, Japanese, Chinese
-    [en("August"), "August"], [en("im August"), "August"], [en("Jänner"), "January"], [en("März"), "March"], [en("Dez."), "December"],
-    [en("août"), "August"], [en("aout"), "August"], [en("en août"), "August"], [en("janv."), "January"],
-    [en("agosto"), "August"], [en("en agosto"), "August"], [en("ago."), "August"],
-    [en("tammikuu"), "January"], [en("tammikuussa"), "January"], [en("tammikuuta"), "January"],
-    [en("8月"), "August"], [en("八月"), "August"],
-    // Ambiguity across languages resolves to the user's own language when possible
-    [en("listopad", { preferred: "cs" }), "November"], [en("listopad", { preferred: "hr" }), "October"],
-    [en("listopad", { preferred: "en" }), "October / November"],
-    [en("listopad", { source: "pl" }), "November"], [en("listopad", { source: "hr, sl" }), "October"],
-    // Target language selection
-    [ext.translate("srpen", { target: "cs" }), "August"], [ext.translate("srpen", { target: "de" }), "August"],
-    [ext.translate("leden", { target: "de-AT" }), "Jänner"], [ext.translate("leden", { target: "de_AT" }), "Jänner"],
-    [ext.translate("srpen", { target: "zh-Hans" }), "八月"], [ext.translate("srpen", { target: "pt-BR" }), "agosto"],
-    [ext.translate("srpen", { target: "ja" }), "8月"], [ext.translate("srpen", { target: "xx-nonsense" }), "August"],
-    [ext.translate("srpen", {}), "August"],
-    // Same-language selection falls back to English; English selection stays English
-    [ext.translate("listopad", { target: "cs", preferred: "cs" }), "November"],
-    [ext.translate("v srpnu", { target: "cs", preferred: "cs" }), "srpen"],
-    [ext.translate("sierpień", { target: "cs", preferred: "cs" }), "srpen"],
-    [ext.translate("August", { target: "en", preferred: "en" }), "August"],
-    [ext.translate("August", { target: "de", preferred: "de" }), "August"],
-    // Ranges
-    [en("srpen únor"), "August / February"], [en("leden–únor"), null],
+    // A -> B: Czech nominative, genitive, locative with preposition, adjectives, dates, casing, no diacritics
+    [cs("srpen"), "August"], [cs("srpna"), "August"], [cs("v srpnu"), "August"], [cs("ve srpnu"), "August"],
+    [cs("srpnový"), "August"], [cs("srpnová"), "August"], [cs("SRPEN"), "August"], [cs("Srpen,"), "August"],
+    [cs("5. srpna 2024"), "August"], [cs("„srpna“"), "August"],
+    [cs("leden"), "January"], [cs("ledna"), "January"], [cs("v lednu"), "January"], [cs("lednový"), "January"], [cs("lednem"), "January"],
+    [cs("únor"), "February"], [cs("unora"), "February"], [cs("únorový"), "February"],
+    [cs("březen"), "March"], [cs("brezen"), "March"], [cs("březnový"), "March"], [cs("v breznu"), "March"],
+    [cs("dubna"), "April"], [cs("května"), "May"], [cs("cerven"), "June"], [cs("července"), "July"], [cs("červencový"), "July"],
+    [cs("září"), "September"], [cs("zari"), "September"], [cs("zářijový"), "September"],
+    [cs("v říjnu"), "October"], [cs("říjnový"), "October"], [cs("prosinec"), "December"], [cs("v prosinci"), "December"], [cs("prosincový"), "December"],
+    [cs("led."), "January"], [cs("pro."), "December"], [cs("čvc"), "July"],
+    // B -> A: English shows Czech
+    [cs("August"), "srpen"], [cs("in August"), "srpen"], [cs("Aug"), "srpen"], [cs("JANUARY"), "leden"], [cs("Sept."), "září"],
+    // Other languages -> A (Czech)
+    [cs("august"), "srpen"], [cs("v auguste"), "srpen"], [cs("augustový"), "srpen"], [cs("január"), "leden"], [cs("v januári"), "leden"],
+    [cs("sierpień"), "srpen"], [cs("w sierpniu"), "srpen"], [cs("sierpniowy"), "srpen"], [cs("stycznia"), "leden"],
+    [cs("październik"), "říjen"], [cs("pazdziernik"), "říjen"], [cs("w październiku"), "říjen"],
+    [cs("август"), "srpen"], [cs("в августе"), "srpen"], [cs("августовский"), "srpen"], [cs("сентябрьский"), "září"], [cs("січневий"), "leden"],
+    [cs("kolovoz"), "srpen"], [cs("u kolovozu"), "srpen"], [cs("Jänner"), "leden"], [cs("im August"), "srpen"], [cs("août"), "srpen"],
+    [cs("en agosto"), "srpen"], [cs("tammikuussa"), "leden"], [cs("8月"), "srpen"], [cs("八月"), "srpen"],
+    // A configured language wins over other readings of the same word
+    [cs("listopad"), "November"], [pair("listopad", "hr", "en"), "October"], [pair("listopad", "en", "cs"), "November"],
+    [en("listopad"), "October / November"],
+    // Other pairs, both directions
+    [pair("srpen", "en", "cs"), "August"], [pair("August", "en", "cs"), "srpen"],
+    [pair("leden", "cs", "de-AT"), "Jänner"], [pair("Jänner", "cs", "de_AT"), "leden"], [pair("leden", "cs", "de"), "Januar"],
+    [pair("srpen", "cs", "zh-Hans"), "八月"], [pair("八月", "cs", "zh-Hans"), "srpen"], [pair("srpen", "cs", "ja"), "8月"],
+    [pair("srpen", "cs", "pt-BR"), "agosto"], [pair("agosto", "cs", "pt-BR"), "srpen"],
+    [pair("August", "de", "en"), "August"], [pair("srpen", "xx-nonsense", "yy-nonsense"), "August"],
+    // English-only user
+    [en("srpen"), "August"], [en("August"), "August"], [en("w sierpniu"), "August"],
+    // Ranges and mixed directions
+    [cs("srpen únor"), "August / February"], [cs("srpen August"), "August / srpen"], [cs("leden–únor"), null],
     // Non-months and near misses
-    [en("hello"), null], [en("ledový"), null], [en("březový"), null], [en("květový"), null], [en("dubová"), null],
-    [en("the quick brown fox jumps"), null], [en(""), null], [en("   "), null], [en(null), null], [en("1 2 3 4"), null],
-    [en("ledna2"), null], [en("srpnovýchch"), null],
+    [cs("hello"), null], [cs("ledový"), null], [cs("březový"), null], [cs("květový"), null], [cs("dubová"), null],
+    [cs("the quick brown fox jumps"), null], [cs(""), null], [cs("   "), null], [cs(null), null], [cs("1 2 3 4"), null],
+    [cs("ledna2"), null], [cs("srpnovýchch"), null],
 ];
 
 let failed = 0;
