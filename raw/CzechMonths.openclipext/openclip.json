@@ -40,7 +40,7 @@
       "ja": "チェコ語の月",
       "fr": "Mois tchèque"
     },
-    "icon": "calendar",
+    "icon": "translate",
     "type": "javascript",
     "script": "main.js",
     "inline": true,
