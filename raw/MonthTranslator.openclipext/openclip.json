@@ -1,0 +1,66 @@
+{
+  "identifier": "com.openclip.monthtranslator",
+  "name": {
+    "en": "Month Translator",
+    "zh-Hans": "月份翻译",
+    "zh-Hant": "月份翻譯",
+    "ja": "月名翻訳",
+    "fr": "Traducteur de mois"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Matej Bačo",
+  "description": {
+    "en": "Show a selected month name from any language in your language, inline and offline.",
+    "zh-Hans": "在弹出栏中离线显示任意语言的月份名称的翻译。",
+    "zh-Hant": "在彈出列中離線顯示任意語言的月份名稱的翻譯。",
+    "ja": "任意の言語の月名を、オフラインでインライン翻訳表示します。",
+    "fr": "Affiche en ligne et hors connexion le nom d'un mois écrit dans n'importe quelle langue."
+  },
+  "keywords": [
+    "month", "months", "translate", "translation", "calendar", "date", "language", "cldr",
+    "měsíc", "mesiac", "miesiąc", "месяц", "Monat", "mois", "mes", "月份", "月"
+  ],
+  "options": [
+    {
+      "identifier": "target",
+      "label": {
+        "en": "Target language (BCP-47 tag, e.g. en, de-AT, zh-Hans; empty = app language)",
+        "zh-Hans": "目标语言（BCP-47 标签，如 en、de-AT、zh-Hans；留空 = 应用语言）",
+        "zh-Hant": "目標語言（BCP-47 標籤，如 en、de-AT、zh-Hans；留空 = 應用程式語言）",
+        "ja": "翻訳先の言語（BCP-47 タグ、例: en、de-AT、zh-Hans。空欄 = アプリの言語）",
+        "fr": "Langue cible (code BCP-47, ex. en, de-AT, zh-Hans ; vide = langue de l'app)"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "source",
+      "label": {
+        "en": "Source languages (optional, comma-separated, e.g. cs, sk; empty = detect any)",
+        "zh-Hans": "源语言（可选，逗号分隔，如 cs, sk；留空 = 自动检测）",
+        "zh-Hant": "來源語言（可選，逗號分隔，如 cs, sk；留空 = 自動偵測）",
+        "ja": "元の言語（任意、カンマ区切り、例: cs, sk。空欄 = 自動検出）",
+        "fr": "Langues source (facultatif, séparées par des virgules, ex. cs, sk ; vide = détection)"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Translate Month",
+      "zh-Hans": "翻译月份",
+      "zh-Hant": "翻譯月份",
+      "ja": "月名を翻訳",
+      "fr": "Traduire le mois"
+    },
+    "icon": "translate",
+    "type": "javascript",
+    "script": "dist/main.js",
+    "inline": true,
+    "requirements": {
+      "regex": "^\\S{1,40}(?:\\s+\\S{1,40}){0,3}$"
+    }
+  }
+}

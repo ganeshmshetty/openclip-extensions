@@ -1,0 +1,15 @@
+{
+  "name": "com-openclip-monthtranslator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build:data": "node build/generate-data.mjs",
+    "build": "npm run build:data && esbuild src/main.js --bundle --format=cjs --platform=neutral --target=es2020 --outfile=dist/main.js",
+    "test": "node build/test.mjs"
+  },
+  "devDependencies": {
+    "cldr-dates-full": "^48.2.0",
+    "esbuild": "^0.28.0"
+  }
+}
