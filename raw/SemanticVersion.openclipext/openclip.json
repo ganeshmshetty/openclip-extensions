@@ -1,0 +1,177 @@
+{
+  "identifier": "com.openclip.semanticversion",
+  "name": {
+    "en": "Semantic Version",
+    "zh-Hans": "语义化版本",
+    "zh-Hant": "語意化版本",
+    "fr": "Version sémantique",
+    "ja": "セマンティックバージョン"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Bump the major, minor, patch or pre-release part of a selected semantic version.",
+    "zh-Hans": "递增所选语义化版本的主版本号、次版本号、修订号或先行版本号。",
+    "zh-Hant": "遞增所選語意化版本的主版本號、次版本號、修訂號或預先發布版本號。",
+    "fr": "Incrémente la partie majeure, mineure, corrective ou de pré-version d’une version sémantique sélectionnée.",
+    "ja": "選択したセマンティックバージョンのメジャー・マイナー・パッチ・プレリリースを上げます。"
+  },
+  "keywords": [
+    "semver",
+    "semantic version",
+    "version",
+    "bump",
+    "increment",
+    "major",
+    "minor",
+    "patch",
+    "prerelease",
+    "release candidate",
+    "版本",
+    "バージョン"
+  ],
+  "options": [
+    {
+      "identifier": "preid",
+      "label": {
+        "en": "Pre-release identifier (e.g. alpha, beta, rc)",
+        "zh-Hans": "先行版本标识符（如 alpha、beta、rc）",
+        "zh-Hant": "預先發布版本識別碼（如 alpha、beta、rc）",
+        "fr": "Identifiant de pré-version (ex. alpha, beta, rc)",
+        "ja": "プレリリース識別子（例：alpha、beta、rc）"
+      },
+      "type": "string",
+      "default": "rc"
+    },
+    {
+      "identifier": "prestart",
+      "label": {
+        "en": "First pre-release number",
+        "zh-Hans": "先行版本起始编号",
+        "zh-Hant": "預先發布版本起始編號",
+        "fr": "Premier numéro de pré-version",
+        "ja": "プレリリースの開始番号"
+      },
+      "type": "multiple",
+      "values": [
+        "1",
+        "0"
+      ],
+      "default": "1"
+    }
+  ],
+  "action": {
+    "id": "semver",
+    "title": {
+      "en": "Semantic Version",
+      "zh-Hans": "语义化版本",
+      "zh-Hant": "語意化版本",
+      "fr": "Version sémantique",
+      "ja": "セマンティックバージョン"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "requirements": {
+      "regex": "^[\\s\"'`]*[vV]?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?[\\s\"'`]*$"
+    },
+    "subActions": [
+      {
+        "id": "bump-major",
+        "title": {
+          "en": "Bump Major",
+          "zh-Hans": "递增主版本号",
+          "zh-Hant": "遞增主版本號",
+          "fr": "Incrémenter la majeure",
+          "ja": "メジャーを上げる"
+        },
+        "icon": "arrow.up.to.line.circle",
+        "type": "javascript",
+        "script": "bump-major.js",
+        "requirements": {
+          "regex": "^[\\s\"'`]*[vV]?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?[\\s\"'`]*$"
+        },
+        "keywords": [
+          "major",
+          "breaking",
+          "主版本",
+          "majeure",
+          "メジャー"
+        ]
+      },
+      {
+        "id": "bump-minor",
+        "title": {
+          "en": "Bump Minor",
+          "zh-Hans": "递增次版本号",
+          "zh-Hant": "遞增次版本號",
+          "fr": "Incrémenter la mineure",
+          "ja": "マイナーを上げる"
+        },
+        "icon": "arrow.up.circle",
+        "type": "javascript",
+        "script": "bump-minor.js",
+        "requirements": {
+          "regex": "^[\\s\"'`]*[vV]?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?[\\s\"'`]*$"
+        },
+        "keywords": [
+          "minor",
+          "feature",
+          "次版本",
+          "mineure",
+          "マイナー"
+        ]
+      },
+      {
+        "id": "bump-patch",
+        "title": {
+          "en": "Bump Patch",
+          "zh-Hans": "递增修订号",
+          "zh-Hant": "遞增修訂號",
+          "fr": "Incrémenter le correctif",
+          "ja": "パッチを上げる"
+        },
+        "icon": "plus.circle",
+        "type": "javascript",
+        "script": "bump-patch.js",
+        "requirements": {
+          "regex": "^[\\s\"'`]*[vV]?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?[\\s\"'`]*$"
+        },
+        "keywords": [
+          "patch",
+          "fix",
+          "hotfix",
+          "修订",
+          "correctif",
+          "パッチ"
+        ]
+      },
+      {
+        "id": "bump-prerelease",
+        "title": {
+          "en": "Bump Pre-release",
+          "zh-Hans": "递增先行版本号",
+          "zh-Hant": "遞增預先發布版本號",
+          "fr": "Incrémenter la pré-version",
+          "ja": "プレリリースを上げる"
+        },
+        "icon": "testtube.2",
+        "type": "javascript",
+        "script": "bump-prerelease.js",
+        "requirements": {
+          "regex": "^[\\s\"'`]*[vV]?(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?[\\s\"'`]*$"
+        },
+        "keywords": [
+          "prerelease",
+          "pre-release",
+          "alpha",
+          "beta",
+          "rc",
+          "先行版本",
+          "pré-version",
+          "プレリリース"
+        ]
+      }
+    ]
+  }
+}
