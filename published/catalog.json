@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T13:32:41Z",
+  "updatedAt": "2026-09-18T14:41:52Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1039,11 +1039,11 @@
       "description": "Bump the major, minor, patch or pre-release part of a selected semantic version.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.semanticversion@1.0.0/SemanticVersion.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.semanticversion@1.0.1/SemanticVersion.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.semanticversion.svg",
-      "publishedAt": "2026-09-18T19:01:06+05:30"
+      "publishedAt": "2026-09-18T20:10:18+05:30"
     },
     {
       "id": "com.openclip.sentencecase",
