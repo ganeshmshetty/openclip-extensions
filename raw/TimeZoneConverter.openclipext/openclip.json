@@ -7,7 +7,7 @@
     "ja": "タイムゾーン変換",
     "fr": "Convertisseur de fuseau horaire"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
