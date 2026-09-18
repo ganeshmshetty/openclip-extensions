@@ -1,8 +1,6 @@
 [
   "com.openclip.cleanemdashes",
-  "com.openclip.runcommand",
-  "com.openclip.copy-as-markdown",
-  "com.openclip.applereminders",
-  "com.openclip.obsidiancapture",
+  "com.openclip.quickshell",
+  "com.openclip.semanticversion",
   "com.openclip.shortenlink"
 ]
