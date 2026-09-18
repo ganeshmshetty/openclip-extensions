@@ -7,7 +7,7 @@
     "fr": "Version sémantique",
     "ja": "セマンティックバージョン"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -30,36 +30,6 @@
     "release candidate",
     "版本",
     "バージョン"
-  ],
-  "options": [
-    {
-      "identifier": "preid",
-      "label": {
-        "en": "Pre-release identifier (e.g. alpha, beta, rc)",
-        "zh-Hans": "先行版本标识符（如 alpha、beta、rc）",
-        "zh-Hant": "預先發布版本識別碼（如 alpha、beta、rc）",
-        "fr": "Identifiant de pré-version (ex. alpha, beta, rc)",
-        "ja": "プレリリース識別子（例：alpha、beta、rc）"
-      },
-      "type": "string",
-      "default": "rc"
-    },
-    {
-      "identifier": "prestart",
-      "label": {
-        "en": "First pre-release number",
-        "zh-Hans": "先行版本起始编号",
-        "zh-Hant": "預先發布版本起始編號",
-        "fr": "Premier numéro de pré-version",
-        "ja": "プレリリースの開始番号"
-      },
-      "type": "multiple",
-      "values": [
-        "1",
-        "0"
-      ],
-      "default": "1"
-    }
   ],
   "action": {
     "id": "semver",
@@ -170,6 +140,36 @@
           "先行版本",
           "pré-version",
           "プレリリース"
+        ],
+        "options": [
+          {
+            "identifier": "preid",
+            "label": {
+              "en": "Pre-release identifier (e.g. alpha, beta, rc)",
+              "zh-Hans": "先行版本标识符（如 alpha、beta、rc）",
+              "zh-Hant": "預先發布版本識別碼（如 alpha、beta、rc）",
+              "fr": "Identifiant de pré-version (ex. alpha, beta, rc)",
+              "ja": "プレリリース識別子（例：alpha、beta、rc）"
+            },
+            "type": "string",
+            "default": "rc"
+          },
+          {
+            "identifier": "prestart",
+            "label": {
+              "en": "First pre-release number",
+              "zh-Hans": "先行版本起始编号",
+              "zh-Hant": "預先發布版本起始編號",
+              "fr": "Premier numéro de pré-version",
+              "ja": "プレリリースの開始番号"
+            },
+            "type": "multiple",
+            "values": [
+              "1",
+              "0"
+            ],
+            "default": "1"
+          }
         ]
       }
     ]
