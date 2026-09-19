@@ -61,6 +61,13 @@ jobs:
             fi
             tag="${identifier}@${version}"
 
+            # Optional one-line release note authored in the manifest; falls back to
+            # the generic auto-generated note when absent.
+            release_notes="$(jq -r '.releaseNotes // empty' "$manifest")"
+            if [ -z "$release_notes" ]; then
+              release_notes="Release $pkg_name v$version built automatically from raw/$pkg_name."
+            fi
+
             if gh release view "$tag" --json name >/dev/null 2>&1; then
               # Only upload if the release does not already have the zip asset attached.
               # Clobbering an existing asset deletes it and resets GitHub's download counter to 0.
@@ -79,7 +86,7 @@ jobs:
               "$ROOT/published/$pkg_name.zip" \
               --repo "$GITHUB_REPOSITORY" \
               --title "$pkg_name v$version" \
-              --notes "Release $pkg_name v$version built automatically from raw/$pkg_name."
+              --notes "$release_notes"
             CHANGED_ZIPS="$CHANGED_ZIPS published/$pkg_name.zip"
           done
 
