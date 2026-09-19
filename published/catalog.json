@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T18:15:03Z",
+  "updatedAt": "2026-09-19T20:42:51Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -336,6 +336,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.drafts@1.0.0/DraftsNote.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.drafts.svg",
       "publishedAt": "2026-08-20T22:28:33+05:30"
+    },
+    {
+      "id": "com.openclip.droppy",
+      "name": "Send to Droppy",
+      "description": "Instantly stage selected links, files, and text notes into Droppy in one click.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.2.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.droppy@1.2.0/Droppy.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.droppy.svg",
+      "publishedAt": "2026-09-20T02:11:26+05:30"
     },
     {
       "id": "com.echohn.openclip.due",
