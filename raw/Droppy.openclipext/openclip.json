@@ -1,0 +1,76 @@
+{
+  "identifier": "com.openclip.droppy",
+  "name": {
+    "en": "Send to Droppy",
+    "zh-Hans": "发送到 Droppy",
+    "zh-Hant": "傳送至 Droppy",
+    "ja": "Droppy に送信",
+    "fr": "Envoyer à Droppy"
+  },
+  "version": "1.2.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Instantly stage selected links, files, and text notes into Droppy in one click.",
+    "zh-Hans": "一键将选中的链接、文件或文本笔记暂存到 Droppy 中。",
+    "zh-Hant": "一鍵將選取的連結、檔案或文字筆記暫存到 Droppy 中。",
+    "ja": "選択したリンク、ファイル、テキストノートをワンクリックで Droppy にステージングします。",
+    "fr": "Déposez instantanément les liens, fichiers et notes sélectionnés dans Droppy en un seul clic."
+  },
+  "keywords": [
+    "droppy",
+    "shelf",
+    "basket",
+    "notch",
+    "drag",
+    "drop",
+    "stage",
+    "file",
+    "link",
+    "url",
+    "note"
+  ],
+  "options": [
+    {
+      "identifier": "target",
+      "label": {
+        "en": "Target Destination",
+        "zh-Hans": "目标位置",
+        "zh-Hant": "目標位置",
+        "ja": "保存先",
+        "fr": "Destination cible"
+      },
+      "type": "multiple",
+      "default": "shelf",
+      "values": [
+        "shelf",
+        "basket"
+      ]
+    }
+  ],
+  "action": {
+    "id": "send",
+    "title": {
+      "en": "Droppy",
+      "zh-Hans": "Droppy",
+      "zh-Hant": "Droppy",
+      "ja": "Droppy",
+      "fr": "Droppy"
+    },
+    "icon": "icon.svg",
+    "type": "applescript",
+    "script": "main.applescript",
+    "toast": {
+      "message": {
+        "en": "Added to Droppy",
+        "zh-Hans": "已添加到 Droppy",
+        "zh-Hant": "已新增至 Droppy",
+        "ja": "Droppy に追加しました",
+        "fr": "Ajouté à Droppy"
+      }
+    },
+    "requirements": {
+      "requiresSelection": true
+    }
+  }
+}
