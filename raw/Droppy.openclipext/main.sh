@@ -39,6 +39,7 @@ export DROPPY_INPUT_TEXT="$INPUT_TEXT"
 /usr/bin/python3 - <<'EOF'
 import os
 import sys
+import uuid
 import urllib.parse
 from datetime import datetime
 
@@ -96,7 +97,8 @@ else:
     scratch_dir = os.path.expanduser("~/.openclip/droppy-snippets")
     os.makedirs(scratch_dir, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    snippet_file = os.path.join(scratch_dir, f"Snippet-{timestamp}.txt")
+    unique_suffix = uuid.uuid4().hex[:6]
+    snippet_file = os.path.join(scratch_dir, f"Snippet-{timestamp}-{unique_suffix}.txt")
     with open(snippet_file, "w", encoding="utf-8") as f:
         f.write(text)
     droppy_url = f"droppy://add?target={target}&path={urllib.parse.quote(snippet_file, safe='')}"
