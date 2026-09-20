@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T20:42:51Z",
+  "updatedAt": "2026-09-20T08:44:12Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -77,7 +77,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.0.0",
       "downloadCount": 5,
@@ -343,11 +343,11 @@
       "description": "Instantly stage selected links, files, and text notes into Droppy in one click.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.2.0",
+      "version": "1.0.0",
       "downloadCount": 1,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.droppy@1.2.0/Droppy.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.droppy@1.0.0/Droppy.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.droppy.svg",
-      "publishedAt": "2026-09-20T02:11:26+05:30"
+      "publishedAt": "2026-09-20T14:12:49+05:30"
     },
     {
       "id": "com.echohn.openclip.due",
@@ -868,7 +868,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.0.0",
