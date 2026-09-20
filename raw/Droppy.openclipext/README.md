@@ -8,8 +8,8 @@ Droppy is a macOS productivity utility that adds a drag-and-drop shelf to your M
 
 - **1-Click Staging**: Highlight anything, click **Droppy**, and it immediately queues into Droppy.
 - **Smart Detection**:
-  - **Web links (`https://...`)**: Detected automatically and added as clickable links to Droppy.
-  - **Local file paths (`/Users/...`)**: Directly loaded into Droppy without opening Finder.
+  - **Web links**: Detected automatically and added as clickable links to Droppy.
+  - **Local file paths**: Directly loaded into Droppy without opening Finder.
   - **Text & code snippets**: Automatically saved as a clean `.txt` scratch file in `~/.openclip/droppy-snippets/` and passed to Droppy as a ready-to-drag file.
 - **Configurable Target**: Select whether items default to the **Notch Shelf** or the **Floating Basket** in OpenClip Preferences.
 
