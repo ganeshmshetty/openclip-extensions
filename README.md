@@ -1,10 +1,54 @@
-# OpenClip Extensions
+<div align="center">
 
-Guidelines and standards for authoring official and community extensions for [OpenClip](https://www.getopenclip.app).
+<img src="./assets/store-icon.png" width="96" height="96" alt="The Clip Store" />
 
-> To browse or install extensions, visit the [Web Store](https://www.getopenclip.app/extensions) or open **OpenClip -> Preferences -> Store** in the app.
+<br />
 
-Refer to AGENTS.md for proper guidance on creating new extensions.
+<img src="./assets/title.png" height="48" alt="The Clip Store" />
+
+<p>The Store for <strong><a href="https://getopenclip.app">OpenClip</a></strong>, as a repository.</p>
+
+<br />
+
+<img src="./assets/banner.png" alt="The Clip Store Banner" width="640" />
+
+<br />
+<br />
+
+<p align="center">
+  <a href="https://getopenclip.app"><img src="https://img.shields.io/badge/Get%20OpenClip-212124?style=for-the-badge&logo=apple&logoColor=white" alt="Get OpenClip" /></a>
+  <a href="https://getopenclip.app/extensions"><img src="https://img.shields.io/badge/Browse%20the%20Store-212124?style=for-the-badge&logo=safari&logoColor=white" alt="Browse the Store" /></a>
+  <a href="AGENTS.md"><img src="https://img.shields.io/badge/Author%20an%20Extension-212124?style=for-the-badge&logo=terminal&logoColor=white" alt="Author an Extension" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/ganeshmshetty/openclip"><img src="https://img.shields.io/badge/Read%20the%20Docs-212124?style=for-the-badge&logo=readme&logoColor=white" alt="Read the Docs" /></a>
+  <a href="https://discord.gg/sy4MeFxf8"><img src="https://img.shields.io/badge/Join%20the%20Community-212124?style=for-the-badge&logo=discord&logoColor=white" alt="Join the Community" /></a>
+  <a href="https://getopenclip.app/support"><img src="https://img.shields.io/badge/Sponsor%20OpenClip-212124?style=for-the-badge&logo=githubsponsors&logoColor=EA4AAA" alt="Sponsor OpenClip" /></a>
+</p>
+
+</div>
+
+Every extension in OpenClip's Store lives in this repository, one folder each under `raw/`. Merging a change here is publishing it: the automated pipeline validates the manifest, builds the `.openclipext` package, generates web catalog assets, and publishes it directly to the live [OpenClip Web Store](https://getopenclip.app/extensions) and in-app Store, with no app release in between.
+
+> **Authoring an extension?** Consult **[AGENTS.md](AGENTS.md)** — the single source of truth for the extension manifest schema, runtime contracts, and host capabilities.
+
+---
+
+## Quick Start
+
+Create, test, and validate a new extension in seconds:
+
+```bash
+# 1. Scaffold a new extension
+./scripts/create.sh MyAction --type js
+
+# 2. Test live in OpenClip (copies to ~/.openclip/extensions with hot reload)
+./scripts/install.sh raw/MyAction.openclipext
+
+# 3. Validate manifest schema, script paths, and icons
+./scripts/validate.sh raw/MyAction.openclipext
+```
+
 ---
 
 ## Design Principles
@@ -49,8 +93,8 @@ To provide a great experience worldwide, localize user-facing strings (`name`, `
 ### 6. Documentation (`README.md`)
 Every extension folder must include a concise, standalone `README.md` written for end users. **This file is displayed directly on the OpenClip Web Store / extension page**, so:
 - **Write for end users**: Explain what the extension does, supported apps/features, clear usage examples, and configurable options.
-- **Do not include repository-internal instructions**: Never include repo-specific setup commands (such as `git clone`, `./scripts/install.sh`, or `./scripts/create.sh`), as visitors browsing the store cannot run them. Keep it focused purely on the extension's capabilities.
-- **Keep it small and clean**: Use concise bullet points and standard markdown headings (`## Features`, `## Usage Examples`, `## Configuration`). Avoid boilerplate or redundant download buttons (the store UI renders the install buttons and icon automatically).
+- **Do not include repository-internal instructions**: Never include repo-specific setup commands (such as `git clone`, `./scripts/install.sh`, or `./scripts/create.sh`), as visitors browsing the store cannot run them.
+- **Keep it small and clean**: Use concise bullet points and standard markdown headings (`## Features`, `## Usage Examples`, `## Configuration`).
 
 ---
 
@@ -90,4 +134,3 @@ All pull requests run automated CI validation (`validate-pr.yml`). Once merged, 
 ## License
 
 The OpenClip Extension Catalog and all extensions contributed here are released under the [MIT License](LICENSE). Copyright (c) 2026 Ganesh M and OpenClip Contributors.
-
