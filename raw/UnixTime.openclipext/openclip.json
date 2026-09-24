@@ -29,8 +29,9 @@
     "type": "javascript",
     "script": "main.js",
     "inline": true,
+    "output": "text",
     "requirements": {
-      "regex": "^\\d{9,13}$"
+      "regex": "^-?\\d{1,13}$"
     }
   }
 }
