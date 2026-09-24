@@ -14,7 +14,7 @@
     "ja": "選択したテキストをクリップボードにスタックします。右クリックまたは Shift+クリックで先頭にスタックします。",
     "fr": "Empile le texte sélectionné dans le presse-papiers. Clic droit ou Maj-clic pour empiler au début."
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.3.0",
   "author": "OpenClip Team",
   "options": [
@@ -68,6 +68,14 @@
       },
       "style": "success"
     },
-    "keywords": ["stack", "append", "prepend", "clipboard", "add", "pasteboard"]
+    "keywords": [
+      "stack",
+      "append",
+      "prepend",
+      "clipboard",
+      "add",
+      "pasteboard"
+    ],
+    "output": "none"
   }
 }

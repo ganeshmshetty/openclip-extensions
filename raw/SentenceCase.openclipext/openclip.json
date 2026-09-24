@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.sentencecase",
   "name": "Sentence Case",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Capitalize the first letter of each sentence.",
@@ -9,6 +9,7 @@
     "title": "Sentence Case",
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

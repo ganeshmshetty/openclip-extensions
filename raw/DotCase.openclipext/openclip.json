@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.dotcase",
   "name": "Dot Case",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Convert selected text to dot.case.",
@@ -9,6 +9,7 @@
     "title": "Dot Case",
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

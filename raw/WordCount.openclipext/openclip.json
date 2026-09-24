@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.wordcount",
   "name": "Word Count",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Count the words in the selected text.",
@@ -10,6 +10,7 @@
     "icon": "text.alignleft",
     "type": "javascript",
     "script": "main.js",
-    "inline": true
+    "inline": true,
+    "output": "text"
   }
 }

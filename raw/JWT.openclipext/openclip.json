@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.jwt",
   "name": "JWT",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -46,7 +46,16 @@
         "requirements": {
           "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
         },
-        "keywords": ["decode", "payload", "claims", "json", "解码", "décoder", "デコード"]
+        "keywords": [
+          "decode",
+          "payload",
+          "claims",
+          "json",
+          "解码",
+          "décoder",
+          "デコード"
+        ],
+        "output": "text"
       },
       {
         "id": "decode-header",
@@ -63,7 +72,17 @@
         "requirements": {
           "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
         },
-        "keywords": ["decode", "header", "alg", "kid", "jose", "头部", "en-tête", "ヘッダー"]
+        "keywords": [
+          "decode",
+          "header",
+          "alg",
+          "kid",
+          "jose",
+          "头部",
+          "en-tête",
+          "ヘッダー"
+        ],
+        "output": "text"
       },
       {
         "id": "check-expiry",
@@ -80,7 +99,17 @@
         "requirements": {
           "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
         },
-        "keywords": ["expiry", "expired", "exp", "valid", "ttl", "有效期", "expiration", "有効期限"]
+        "keywords": [
+          "expiry",
+          "expired",
+          "exp",
+          "valid",
+          "ttl",
+          "有效期",
+          "expiration",
+          "有効期限"
+        ],
+        "output": "none"
       }
     ]
   }

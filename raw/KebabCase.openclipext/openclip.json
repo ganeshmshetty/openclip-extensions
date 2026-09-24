@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.kebabcase",
   "name": "kebab-case",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Convert selected text to kebab-case.",
@@ -9,6 +9,7 @@
     "title": "kebab-case",
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

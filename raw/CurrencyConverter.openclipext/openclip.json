@@ -7,7 +7,7 @@
     "ja": "通貨換算",
     "fr": "Convertisseur de devises"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -96,6 +96,7 @@
     "inline": true,
     "requirements": {
       "regex": "(?:A\\$|AU\\$|C\\$|CA\\$|NZ\\$|HK\\$|S\\$|NT\\$|R\\$|Mex\\$|RM|Rp|Kč|zł|[\\$€£¥元₹₩₺฿₪₫₱])\\s*\\d+(?:[.,]\\d+)?|\\d+(?:[.,]\\d+)?\\s*(?:A\\$|AU\\$|C\\$|CA\\$|NZ\\$|HK\\$|S\\$|NT\\$|R\\$|Mex\\$|RM|Rp|Kč|zł|[\\$€£¥元₹₩₺฿₪₫₱]|USD|EUR|GBP|JPY|CNY|AUD|CAD|CHF|HKD|SGD|SEK|KRW|NOK|NZD|INR|MXN|TWD|ZAR|BRL|DKK|PLN|THB|ILS|IDR|CZK|AED|SAR|TRY|MYR|PHP|VND|HUF)\\b|\\b(?:USD|EUR|GBP|JPY|CNY|AUD|CAD|CHF|HKD|SGD|SEK|KRW|NOK|NZD|INR|MXN|TWD|ZAR|BRL|DKK|PLN|THB|ILS|IDR|CZK|AED|SAR|TRY|MYR|PHP|VND|HUF)\\s*\\d+(?:[.,]\\d+)?\\b"
-    }
+    },
+    "output": "text"
   }
 }

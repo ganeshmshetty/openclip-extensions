@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.charactercount",
   "name": "Character Count",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Count the characters in the selected text.",
@@ -10,6 +10,7 @@
     "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js",
-    "inline": true
+    "inline": true,
+    "output": "text"
   }
 }

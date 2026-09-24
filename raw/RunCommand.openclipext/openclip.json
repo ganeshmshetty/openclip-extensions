@@ -7,7 +7,7 @@
     "ja": "ターミナルで実行",
     "fr": "Exécuter dans le Terminal"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -17,7 +17,19 @@
     "ja": "選択したテキストをアクティブなターミナルウィンドウでコマンドとして実行します。Terminal、iTerm2、Warp、Ghostty、kitty、cmux をサポートしています。",
     "fr": "Exécuter le texte sélectionné comme commande dans la fenêtre de terminal active avec texte préfixé/suffixé optionnel. Prend en charge Terminal, iTerm2, Warp, Ghostty, kitty et cmux."
   },
-  "keywords": ["terminal", "iterm2", "warp", "ghostty", "kitty", "cmux", "run", "command", "bash", "zsh", "sh"],
+  "keywords": [
+    "terminal",
+    "iterm2",
+    "warp",
+    "ghostty",
+    "kitty",
+    "cmux",
+    "run",
+    "command",
+    "bash",
+    "zsh",
+    "sh"
+  ],
   "options": [
     {
       "identifier": "term",
@@ -87,6 +99,7 @@
     },
     "icon": "icon.svg",
     "type": "applescript",
-    "script": "main.applescript"
+    "script": "main.applescript",
+    "output": "none"
   }
 }

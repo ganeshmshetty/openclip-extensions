@@ -1,13 +1,14 @@
 {
   "identifier": "com.openclip.wikipedia",
   "name": "Wikipedia Search",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Look up the selected text on Wikipedia.",
   "action": {
     "title": "Wikipedia",
     "icon": "book",
-    "url": "https://en.wikipedia.org/wiki/Special:Search?search={text}"
+    "url": "https://en.wikipedia.org/wiki/Special:Search?search={text}",
+    "type": "url"
   }
 }

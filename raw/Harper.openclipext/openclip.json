@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.harper",
   "name": "Harper",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -69,7 +69,8 @@
           "修正",
           "corriger",
           "校正"
-        ]
+        ],
+        "output": "text"
       },
       {
         "id": "check",
@@ -92,7 +93,8 @@
           "检查",
           "vérifier",
           "チェック"
-        ]
+        ],
+        "output": "none"
       },
       {
         "id": "report",
@@ -115,7 +117,8 @@
           "报告",
           "rapport",
           "レポート"
-        ]
+        ],
+        "output": "none"
       },
       {
         "id": "dictionary",
@@ -139,7 +142,8 @@
           "词典",
           "dictionnaire",
           "辞書"
-        ]
+        ],
+        "output": "none"
       },
       {
         "id": "forget",
@@ -164,7 +168,8 @@
           "移除",
           "supprimer",
           "削除"
-        ]
+        ],
+        "output": "none"
       }
     ]
   }

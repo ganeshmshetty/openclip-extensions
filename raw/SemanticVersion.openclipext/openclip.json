@@ -7,7 +7,7 @@
     "fr": "Version sémantique",
     "ja": "セマンティックバージョン"
   },
-  "version": "1.0.1",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -67,7 +67,8 @@
           "主版本",
           "majeure",
           "メジャー"
-        ]
+        ],
+        "output": "text"
       },
       {
         "id": "bump-minor",
@@ -90,7 +91,8 @@
           "次版本",
           "mineure",
           "マイナー"
-        ]
+        ],
+        "output": "text"
       },
       {
         "id": "bump-patch",
@@ -114,7 +116,8 @@
           "修订",
           "correctif",
           "パッチ"
-        ]
+        ],
+        "output": "text"
       },
       {
         "id": "bump-prerelease",
@@ -170,7 +173,8 @@
             ],
             "default": "1"
           }
-        ]
+        ],
+        "output": "text"
       }
     ]
   }

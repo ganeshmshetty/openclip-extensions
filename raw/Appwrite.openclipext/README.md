@@ -121,14 +121,6 @@ preferences.
 - An Appwrite project (Cloud or self-hosted 1.4+). Execute Function needs a deployed Function.
 - Internet access to your endpoint.
 
-## Installation
-
-From the root of this repository, run:
-
-```sh
-./scripts/install.sh raw/Appwrite.openclipext
-```
-
 ## Credits
 
 Built by [Matej "Meldiron" Bačo](https://github.com/meldiron). The icon is the Appwrite logomark

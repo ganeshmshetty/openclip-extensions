@@ -1,15 +1,21 @@
 # Slugify
 
-OpenClip extension scaffolded with `--with-npm`. TypeScript entry at `src/main.ts`; the
-manifest points at the bundled `dist/main.js`.
+Transform selected text into a clean, URL-friendly slug.
 
-## Build contract
+Select any text, title, or headline anywhere on your Mac and trigger **Slugify** in OpenClip to instantly convert it into a lowercase, hyphenated slug stripped of special characters.
 
-The shipped artifact is `dist/main.js` (the manifest's `script`). Always rebuild before installing:
+## Features
 
-    npm install        # once
-    npm run build      # after every edit to src/
+- **URL-Safe Slugs**: Converts spaces to hyphens and strips illegal URL characters.
+- **Strict & Clean**: Lowercases text and normalizes accented characters.
+- **Fast Local Execution**: Runs locally using pure JavaScript.
 
-Install (after build):
+## Usage Examples
 
-    ./scripts/install_extension.sh <this-folder>
+- `Hello World!` → `hello-world`
+- `OpenClip: The Extensible Clipboard for macOS` → `openclip-the-extensible-clipboard-for-macos`
+- `What is 100% Love?` → `what-is-100-love`
+
+## Requirements
+
+- OpenClip 1.0.0 or later.

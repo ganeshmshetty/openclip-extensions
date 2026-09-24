@@ -1,7 +1,7 @@
 {
   "identifier": "com.openclip.extractemails",
   "name": "Extract Emails",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": "Regex-extract all email addresses into a clean list.",
@@ -9,6 +9,7 @@
     "title": "Extract Emails",
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

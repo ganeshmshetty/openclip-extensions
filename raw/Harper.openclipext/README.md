@@ -41,14 +41,6 @@ silently.
 The selection is piped to the local `harper-cli` process on stdin and never leaves your machine.
 Harper does no telemetry and needs no network access.
 
-## Installation
-
-From the root of this repository, run:
-
-```sh
-./scripts/install.sh raw/Harper.openclipext
-```
-
 ## Usage
 
 1. Select some prose anywhere on your Mac.
