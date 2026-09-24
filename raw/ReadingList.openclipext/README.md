@@ -7,11 +7,11 @@ Save highlighted URLs directly to Safari's Reading List for offline reading.
 - **One-Click Save**: Instantly adds any link to your Safari Reading List without opening Safari or interrupting your workflow.
 - **Smart URL Detection**: Automatically surfaces when the highlighted text is a valid web address (`http://` or `https://`).
 - **Native macOS Sharing**: Integrates directly with Apple's built-in sharing service for Safari Reading List.
-- **iCloud Sync**: Articles added to your Reading List sync automatically to all your devices via iCloud.
+- **iCloud Sync**: Pages added to your Reading List sync to your other devices when iCloud is enabled in Safari.
 
 ## Requirements
 
-- macOS 14.0 or later with Safari.
+- macOS with Safari. Offline availability and iCloud syncing depend on your Safari and iCloud settings.
 
 ## Usage
 

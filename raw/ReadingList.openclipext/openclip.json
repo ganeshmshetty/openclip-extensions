@@ -28,8 +28,9 @@
     "icon": "icon.svg",
     "type": "service",
     "serviceName": "com.apple.share.System.add-to-safari-reading-list",
+    "output": "none",
     "requirements": {
-      "regex": "^https?://\\S+$"
+      "regex": "^https?://([^\\s/.]+\\.[^\\s/]+|localhost)(:\\d+)?([/?#]\\S*)?$"
     },
     "toast": {
       "message": {
