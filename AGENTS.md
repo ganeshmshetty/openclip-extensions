@@ -63,7 +63,7 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   // an incompatible package still loads but is gated "Needs Update" until the app is newer (see
   // §11). Absent or malformed → treated as compatible.
   // Rule: declare "1.1.0" for localized dictionary syntax; declare "1.3.0" if using the
-  // openclip.pasteboard API; declare "1.6.2" if using the native file-output API
+  // openclip.pasteboard API; declare "1.7.0" if using the native file-output API
   // (openclip.file / openclip.copyFile / openclip.saveFile). See §7.
   "minOpenClipVersion": "1.3.0",
 
@@ -751,7 +751,7 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 - `openclip.file(payload)` — display a native file preview card (`.file`) or immediately copy/save it (`payload = { path?, data?, filename?, mimeType?, action?: "copy" | "copyfile" | "save" | "savefile" }`). Either provide `path` to an existing file or `data` containing base64 encoded content (safely written to `~/.openclip/cache/outputs/`). Filenames are sanitized with `lastPathComponent`.
 - `openclip.copyFile(path)` — copy the file at `path` to the macOS pasteboard (`.copyFile`)
 - `openclip.saveFile(path)` — save the file at `path` to the user's configured save location (`.saveFile`)
-  > **Version Rule:** Any extension using the native file-output API (`openclip.file` / `openclip.copyFile` / `openclip.saveFile`, or a script returning a `file`/`copyFile`/`saveFile` object) **MUST** declare `"minOpenClipVersion": "1.6.2"` in `openclip.json`. Prior versions do not expose `openclip.file` or route a returned file payload, so the action would load and appear but silently fail to render a result. Declaring `"1.6.2"` gates it to a "Needs Update" state instead.
+  > **Version Rule:** Any extension using the native file-output API (`openclip.file` / `openclip.copyFile` / `openclip.saveFile`, or a script returning a `file`/`copyFile`/`saveFile` object) **MUST** declare `"minOpenClipVersion": "1.7.0"` in `openclip.json`. Prior versions do not expose `openclip.file` or route a returned file payload, so the action would load and appear but silently fail to render a result. Declaring `"1.7.0"` gates it to a "Needs Update" state instead.
 - `openclip.showContent(...)` / `h()` — **removed**: the interactive-canvas bridge no longer
   exists; calling these names surfaces a JS error (`.toast(.error)`).
 - `openclip.requireConfiguration({ reason, missing: ["optID"] })` — open config sheet for this action
@@ -877,14 +877,14 @@ The `openclip.pasteboard` JavaScript object was introduced in OpenClip **v1.3.0*
   in `openclip.json`.
 - On versions prior to v1.3.0, the host does not inject `openclip.pasteboard`. Declaring `"minOpenClipVersion": "1.3.0"` ensures that users on older app builds see a helpful "Needs Update" badge in Preferences rather than encountering an unhandled JavaScript runtime error (`TypeError: undefined is not an object`).
 
-### Native File Output & Minimum Version ("1.6.2")
-The native file-output API (`openclip.file`, `openclip.copyFile`, `openclip.saveFile`, and the `file` / `copyFile` / `saveFile` result objects) was introduced in OpenClip **v1.6.2**.
+### Native File Output & Minimum Version ("1.7.0")
+The native file-output API (`openclip.file`, `openclip.copyFile`, `openclip.saveFile`, and the `file` / `copyFile` / `saveFile` result objects) was introduced in OpenClip **v1.7.0**.
 - When authoring an extension that produces a file result, you **MUST** declare:
   ```json
-  "minOpenClipVersion": "1.6.2"
+  "minOpenClipVersion": "1.7.0"
   ```
   in `openclip.json`.
-- On versions prior to v1.6.2, the host neither injects `openclip.file` nor recognizes a returned `file` object: the action still loads and appears, but produces no card and no effect. Declaring `"1.6.2"` gates it to a clean "Needs Update" state in Preferences instead. This is required by §3b's `openclip.file` entry as well.
+- On versions prior to v1.7.0, the host neither injects `openclip.file` nor recognizes a returned `file` object: the action still loads and appears, but produces no card and no effect. Declaring `"1.7.0"` gates it to a clean "Needs Update" state in Preferences instead. This is required by §3b's `openclip.file` entry as well.
 
 ---
 
