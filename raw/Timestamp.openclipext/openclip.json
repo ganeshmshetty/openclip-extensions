@@ -48,6 +48,8 @@
     "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js",
+    "output": "text",
+    "result": "paste",
     "requirements": {
       "requiresSelection": false
     }

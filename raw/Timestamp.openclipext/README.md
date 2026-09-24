@@ -14,7 +14,7 @@ Customize formatting in *OpenClip Preferences → Actions → Insert Timestamp*:
 
 | Option | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **Format** (`format`) | Picker | `iso` | Choose between `iso` (ISO 8601), `datetime` (`YYYY-MM-DD HH:MM:SS`), `date` (`YYYY-MM-DD`), or `time` (`HH:MM:SS`). |
+| **Format** (`format`) | Picker | `iso` | Choose between `iso` (ISO 8601 in UTC, including milliseconds and `Z`), `datetime` (local `YYYY-MM-DD HH:MM:SS`), `date` (local `YYYY-MM-DD`), or `time` (local `HH:MM:SS`). |
 
 ## Usage
 
