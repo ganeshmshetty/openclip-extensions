@@ -171,19 +171,22 @@ function stringToUTF8Bytes(str) {
 
 // --- Entry Point ---
 function action(text, options) {
-    var rawText = (text || "").trim();
-    if (!rawText) return;
+    var rawText = text || "";
+    if (!rawText.trim()) return;
 
     var ec = (options && options.errorCorrection) || "M";
     var fmt = ((options && options.format) || "png").toLowerCase();
 
     var qr = qrcode(0, ec);
+    if (qrcode.stringToBytesFuncs && qrcode.stringToBytesFuncs["UTF-8"]) {
+        qrcode.stringToBytes = qrcode.stringToBytesFuncs["UTF-8"];
+    }
     qr.addData(rawText, "Byte");
     qr.make();
 
     var filePayload;
     if (fmt === "svg") {
-        var svgStr = qr.createSvgTag({ cellSize: 8, margin: 4 });
+        var svgStr = qr.createSvgTag({ cellSize: 8, margin: 32 });
         var svgBytes = stringToUTF8Bytes(svgStr);
         var base64SVG = toBase64(svgBytes);
         filePayload = {
