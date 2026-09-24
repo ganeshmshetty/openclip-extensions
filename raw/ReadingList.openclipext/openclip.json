@@ -1,0 +1,44 @@
+{
+  "identifier": "com.openclip.readinglist",
+  "name": {
+    "en": "Add to Safari Reading List",
+    "zh-Hans": "加入 Safari 阅读列表",
+    "zh-Hant": "加入 Safari 閱讀清單",
+    "ja": "Safari リーディングリストに追加",
+    "fr": "Ajouter à la liste de lecture Safari"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Save the selected URL to Safari Reading List.",
+    "zh-Hans": "将选中的链接保存到 Safari 阅读列表。",
+    "zh-Hant": "將選取的連結儲存到 Safari 閱讀清單。",
+    "ja": "選択した URL を Safari のリーディングリストに保存します。",
+    "fr": "Enregistrer l'URL sélectionnée dans la liste de lecture Safari."
+  },
+  "action": {
+    "title": {
+      "en": "Reading List",
+      "zh-Hans": "阅读列表",
+      "zh-Hant": "閱讀清單",
+      "ja": "リーディングリスト",
+      "fr": "Liste de lecture"
+    },
+    "icon": "icon.svg",
+    "type": "service",
+    "serviceName": "com.apple.share.System.add-to-safari-reading-list",
+    "requirements": {
+      "regex": "^https?://\\S+$"
+    },
+    "toast": {
+      "message": {
+        "en": "Added to Reading List",
+        "zh-Hans": "已加入阅读列表",
+        "zh-Hant": "已加入閱讀清單",
+        "ja": "リーディングリストに追加しました",
+        "fr": "Ajouté à la liste de lecture"
+      }
+    }
+  }
+}
