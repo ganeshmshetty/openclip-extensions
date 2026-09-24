@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.rot13",
-  "name": "ROT13 Cipher",
-  "version": "1.0.0",
+  "name": {
+    "en": "ROT13 Cipher",
+    "zh-Hans": "ROT13 密码",
+    "zh-Hant": "ROT13 密碼",
+    "ja": "ROT13 暗号",
+    "fr": "Chiffrement ROT13"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Apply ROT13 substitution cipher to selected text.",
+  "description": {
+    "en": "Apply ROT13 substitution cipher to selected text.",
+    "zh-Hans": "对选中文本应用 ROT13 替换式密码。",
+    "zh-Hant": "對選取文字套用 ROT13 替換式密碼。",
+    "ja": "選択したテキストに ROT13 換字式暗号を適用します。",
+    "fr": "Appliquer le chiffrement par substitution ROT13 au texte sélectionné."
+  },
   "action": {
-    "title": "ROT13",
+    "title": {
+      "en": "ROT13",
+      "zh-Hans": "ROT13",
+      "zh-Hant": "ROT13",
+      "ja": "ROT13",
+      "fr": "ROT13"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

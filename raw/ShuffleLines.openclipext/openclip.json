@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.shufflelines",
-  "name": "Shuffle Lines",
-  "version": "1.0.0",
+  "name": {
+    "en": "Shuffle Lines",
+    "zh-Hans": "打乱行序",
+    "zh-Hant": "打亂行序",
+    "ja": "行をシャッフル",
+    "fr": "Mélanger les lignes"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Randomize the order of lines.",
+  "description": {
+    "en": "Randomize the order of lines in the selected text.",
+    "zh-Hans": "随机打乱选中文本中的行顺序。",
+    "zh-Hant": "隨機打亂選取文字中的行順序。",
+    "ja": "選択したテキストの行の順序をランダムに並べ替えます。",
+    "fr": "Mélange aléatoirement l'ordre des lignes du texte sélectionné."
+  },
   "action": {
-    "title": "Shuffle Lines",
+    "title": {
+      "en": "Shuffle Lines",
+      "zh-Hans": "打乱行序",
+      "zh-Hant": "打亂行序",
+      "ja": "行をシャッフル",
+      "fr": "Mélanger les lignes"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

@@ -1,6 +1,12 @@
 {
   "identifier": "com.leafy.openclip",
-  "name": "Leafy",
+  "name": {
+    "en": "Leafy",
+    "zh-Hans": "Leafy",
+    "zh-Hant": "Leafy",
+    "ja": "Leafy",
+    "fr": "Leafy"
+  },
   "description": {
     "en": "Look up, translate, or save the selected word with Leafy.",
     "zh-Hans": "用 Leafy 查询、翻译或保存选中的单词。",
@@ -8,7 +14,7 @@
     "fr": "Recherchez, traduisez ou enregistrez le mot sélectionné avec Leafy.",
     "ja": "選択した単語を Leafy で調べる、翻訳する、保存する。"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "Jtobin",
   "keywords": [
@@ -20,7 +26,13 @@
     "language learning"
   ],
   "action": {
-    "title": "Leafy",
+    "title": {
+      "en": "Leafy",
+      "zh-Hans": "Leafy",
+      "zh-Hant": "Leafy",
+      "ja": "Leafy",
+      "fr": "Leafy"
+    },
     "icon": "leaf.fill",
     "type": "group",
     "subActions": [
@@ -48,7 +60,8 @@
         "requirements": {
           "regex": "^(https?://\\S+|[^\\s@]+@[^\\s@]+\\.[a-z]{2,})$",
           "regexNegated": true
-        }
+        },
+        "output": "none"
       },
       {
         "id": "translate",
@@ -71,7 +84,8 @@
         "requirements": {
           "regex": "^(https?://\\S+|[^\\s@]+@[^\\s@]+\\.[a-z]{2,})$",
           "regexNegated": true
-        }
+        },
+        "output": "none"
       },
       {
         "id": "save",
@@ -105,7 +119,8 @@
             "ja": "Leafy に保存しました"
           },
           "style": "success"
-        }
+        },
+        "output": "none"
       },
       {
         "id": "anki",
@@ -138,7 +153,8 @@
             "ja": "Leafy に保存しました"
           },
           "style": "success"
-        }
+        },
+        "output": "none"
       }
     ]
   }

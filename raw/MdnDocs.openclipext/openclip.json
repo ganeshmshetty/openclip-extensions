@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.mdndocs",
-  "name": "MDN Docs",
-  "version": "1.0.0",
+  "name": {
+    "en": "MDN Docs",
+    "zh-Hans": "MDN 文档",
+    "zh-Hant": "MDN 文件",
+    "ja": "MDN ドキュメント",
+    "fr": "Documentation MDN"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Search Web API, JavaScript, and CSS documentation on MDN.",
+  "description": {
+    "en": "Search Web API, JavaScript, and CSS documentation on MDN.",
+    "zh-Hans": "在 MDN 上搜索 Web API、JavaScript 和 CSS 文档。",
+    "zh-Hant": "在 MDN 上搜尋 Web API、JavaScript 和 CSS 文件。",
+    "ja": "MDN で Web API、JavaScript、CSS のドキュメントを検索します。",
+    "fr": "Rechercher la documentation Web API, JavaScript et CSS sur MDN."
+  },
   "action": {
-    "title": "MDN Docs",
+    "title": {
+      "en": "MDN Docs",
+      "zh-Hans": "MDN 文档",
+      "zh-Hant": "MDN 文件",
+      "ja": "MDN ドキュメント",
+      "fr": "Documentation MDN"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://developer.mozilla.org/en-US/search?q={text}"

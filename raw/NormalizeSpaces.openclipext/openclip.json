@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.normalizespaces",
-  "name": "Normalize Spaces",
-  "version": "1.0.0",
+  "name": {
+    "en": "Normalize Spaces",
+    "zh-Hans": "规范化空格",
+    "zh-Hant": "規格化空格",
+    "ja": "スペースを正規化",
+    "fr": "Normaliser les espaces"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Collapse consecutive whitespace into single spaces.",
+  "description": {
+    "en": "Collapse consecutive whitespace into single spaces.",
+    "zh-Hans": "将连续空格合并为单个空格。",
+    "zh-Hant": "將連續空格合併為單個空格。",
+    "ja": "連続する空白を単一のスペースにまとめます。",
+    "fr": "Réduit les espaces consécutifs en un seul espace."
+  },
   "action": {
-    "title": "Normalize Spaces",
+    "title": {
+      "en": "Normalize Spaces",
+      "zh-Hans": "规范化空格",
+      "zh-Hant": "規格化空格",
+      "ja": "スペースを正規化",
+      "fr": "Normaliser les espaces"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

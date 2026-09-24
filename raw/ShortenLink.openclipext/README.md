@@ -22,14 +22,6 @@ Select a URL anywhere on your Mac and choose **Shorten Link** from OpenClip to g
 - OpenClip 1.1.0 or later.
 - Active internet connection.
 
-## Installation
-
-From the root of this repository, run:
-
-```sh
-./scripts/install.sh raw/ShortenLink.openclipext
-```
-
 ## Usage
 
 1. Select a URL (e.g. `https://example.com/very/long/path`).

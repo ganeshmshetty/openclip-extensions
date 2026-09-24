@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.craftdocs",
-  "name": "Craft Docs",
-  "version": "1.0.0",
+  "name": {
+    "en": "Craft Docs",
+    "zh-Hans": "Craft 文档",
+    "zh-Hant": "Craft 文件",
+    "ja": "Craft ドキュメント",
+    "fr": "Documents Craft"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Add selected text to Craft documents.",
+  "description": {
+    "en": "Add selected text to Craft documents.",
+    "zh-Hans": "将选中的文本添加到 Craft 文档。",
+    "zh-Hant": "將選取的文字新增至 Craft 文件。",
+    "ja": "選択したテキストを Craft ドキュメントに追加します。",
+    "fr": "Ajoute le texte sélectionné aux documents Craft."
+  },
   "action": {
-    "title": "Craft Docs",
+    "title": {
+      "en": "Craft Docs",
+      "zh-Hans": "Craft 文档",
+      "zh-Hant": "Craft 文件",
+      "ja": "Craft ドキュメント",
+      "fr": "Documents Craft"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "craftdocs://createdocument?content={text}"

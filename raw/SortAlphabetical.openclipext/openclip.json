@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.sortalphabetical",
-  "name": "Sort Alphabetical",
-  "version": "1.0.1",
+  "name": {
+    "en": "Sort Alphabetically",
+    "zh-Hans": "按字母排序",
+    "zh-Hant": "按字母排序",
+    "ja": "アルファベット順にソート",
+    "fr": "Trier par ordre alphabétique"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Sort selected lines from A to Z.",
+  "description": {
+    "en": "Sort lines alphabetically (A to Z).",
+    "zh-Hans": "按字母顺序（A 到 Z）对各行进行排序。",
+    "zh-Hant": "按字母順序（A 到 Z）對各行進行排序。",
+    "ja": "行をアルファベット順（A〜Z）に並べ替えます。",
+    "fr": "Trie les lignes par ordre alphabétique (de A à Z)."
+  },
   "action": {
-    "title": "Sort Alphabetical",
+    "title": {
+      "en": "Sort Alphabetical",
+      "zh-Hans": "按字母排序",
+      "zh-Hant": "按字母排序",
+      "ja": "アルファベット順ソート",
+      "fr": "Tri alphabétique"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

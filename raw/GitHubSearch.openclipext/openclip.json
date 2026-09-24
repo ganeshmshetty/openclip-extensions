@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.githubsearch",
-  "name": "GitHub Search",
-  "version": "1.0.0",
+  "name": {
+    "en": "GitHub Search",
+    "zh-Hans": "GitHub 搜索",
+    "zh-Hant": "GitHub 搜尋",
+    "ja": "GitHub 検索",
+    "fr": "Recherche GitHub"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Search GitHub code and repositories.",
+  "description": {
+    "en": "Search GitHub code and repositories.",
+    "zh-Hans": "在 GitHub 上搜索代码和仓库。",
+    "zh-Hant": "在 GitHub 上搜尋程式碼與儲存庫。",
+    "ja": "GitHub でコードやリポジトリを検索します。",
+    "fr": "Rechercher du code et des dépôts sur GitHub."
+  },
   "action": {
-    "title": "GitHub Search",
+    "title": {
+      "en": "GitHub Search",
+      "zh-Hans": "GitHub 搜索",
+      "zh-Hant": "GitHub 搜尋",
+      "ja": "GitHub 検索",
+      "fr": "Recherche GitHub"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://github.com/search?q={text}"

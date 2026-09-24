@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.splitcommas",
-  "name": "Split Commas",
-  "version": "1.0.0",
+  "name": {
+    "en": "Split by Commas",
+    "zh-Hans": "按逗号拆分行",
+    "zh-Hant": "按逗號拆分行",
+    "ja": "カンマで分割",
+    "fr": "Diviser par virgules"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Split comma-separated values into individual lines.",
+  "description": {
+    "en": "Split a comma-separated list into separate lines.",
+    "zh-Hans": "将逗号分隔的文本拆分成多行独立项目。",
+    "zh-Hant": "將逗號分隔的文字拆分成多行獨立項目。",
+    "ja": "カンマ区切りのリストを複数行に分割します。",
+    "fr": "Divise une liste séparée par des virgules en lignes distinctes."
+  },
   "action": {
-    "title": "Split Commas",
+    "title": {
+      "en": "Split by Commas",
+      "zh-Hans": "按逗号拆分",
+      "zh-Hant": "按逗號拆分",
+      "ja": "カンマで分割",
+      "fr": "Diviser par virgules"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

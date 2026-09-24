@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.hyphenate",
-  "name": "Hyphenate",
-  "version": "1.0.0",
+  "name": {
+    "en": "Hyphenate",
+    "zh-Hans": "连字符连接",
+    "zh-Hant": "連字號連接",
+    "ja": "ハイフン繋ぎ",
+    "fr": "Remplacer par des traits d’union"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Replace spaces with hyphens.",
+  "description": {
+    "en": "Replace spaces with hyphens.",
+    "zh-Hans": "将文本中的空格替换为连字符。",
+    "zh-Hant": "將文字中的空格取代為連字號。",
+    "ja": "スペースをハイフンに置き換えます。",
+    "fr": "Remplace les espaces par des traits d’union."
+  },
   "action": {
-    "title": "Hyphenate",
+    "title": {
+      "en": "Hyphenate",
+      "zh-Hans": "连字符连接",
+      "zh-Hant": "連字號連接",
+      "ja": "ハイフン繋ぎ",
+      "fr": "Remplacer par des traits d’union"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

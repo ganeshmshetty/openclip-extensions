@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.npmsearch",
-  "name": "npm Search",
-  "version": "1.0.0",
+  "name": {
+    "en": "npm Search",
+    "zh-Hans": "npm 搜索",
+    "zh-Hant": "npm 搜尋",
+    "ja": "npm 検索",
+    "fr": "Recherche npm"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Search JavaScript packages on npm registry.",
+  "description": {
+    "en": "Search JavaScript packages on npm registry.",
+    "zh-Hans": "在 npm 仓库中搜索 JavaScript 软件包。",
+    "zh-Hant": "在 npm 倉庫中搜尋 JavaScript 套件。",
+    "ja": "npm レジストリで JavaScript パッケージを検索します。",
+    "fr": "Rechercher des paquets JavaScript sur le registre npm."
+  },
   "action": {
-    "title": "npm Search",
+    "title": {
+      "en": "npm Search",
+      "zh-Hans": "npm 搜索",
+      "zh-Hant": "npm 搜尋",
+      "ja": "npm 検索",
+      "fr": "Recherche npm"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://www.npmjs.com/search?q={text}"

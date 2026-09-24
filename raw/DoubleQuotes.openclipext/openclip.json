@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.doublequotes",
-  "name": "Double Quotes",
-  "version": "1.0.0",
+  "name": {
+    "en": "Double Quotes",
+    "zh-Hans": "双引号",
+    "zh-Hant": "雙引號",
+    "ja": "二重引用符",
+    "fr": "Guillemets doubles"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Wrap selected text in double quotes.",
+  "description": {
+    "en": "Wrap selected text in double quotes.",
+    "zh-Hans": "用双引号包裹选中文本。",
+    "zh-Hant": "用雙引號包裹選取文字。",
+    "ja": "選択したテキストを二重引用符（ダブルクォート）で囲みます。",
+    "fr": "Entoure le texte sélectionné de guillemets doubles."
+  },
   "action": {
-    "title": "Double Quotes",
+    "title": {
+      "en": "Double Quotes",
+      "zh-Hans": "双引号",
+      "zh-Hant": "雙引號",
+      "ja": "二重引用符",
+      "fr": "Guillemets doubles"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

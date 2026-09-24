@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.bold",
-  "name": "Bold",
-  "version": "1.0.0",
+  "name": {
+    "en": "Bold",
+    "zh-Hans": "加粗",
+    "zh-Hant": "粗體",
+    "ja": "太字",
+    "fr": "Gras"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Toggle bold formatting in rich text editors.",
+  "description": {
+    "en": "Toggle bold formatting in rich text editors.",
+    "zh-Hans": "在富文本编辑器中切换粗体格式。",
+    "zh-Hant": "在格式化文字編輯器中切換粗體格式。",
+    "ja": "リッチテキストエディタで太字の書式設定を切り替えます。",
+    "fr": "Bascule la mise en gras dans les éditeurs de texte enrichi."
+  },
   "action": {
-    "title": "Bold",
+    "title": {
+      "en": "Bold",
+      "zh-Hans": "加粗",
+      "zh-Hant": "粗體",
+      "ja": "太字",
+      "fr": "Gras"
+    },
     "icon": "bold",
     "type": "keypress",
     "keyPress": "command+b"

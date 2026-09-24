@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.todoist",
-  "name": "Todoist Task",
-  "version": "1.0.0",
+  "name": {
+    "en": "Todoist Task",
+    "zh-Hans": "添加 Todoist 任务",
+    "zh-Hant": "新增 Todoist 任務",
+    "ja": "Todoist タスク追加",
+    "fr": "Tâche Todoist"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Add a quick task to Todoist.",
+  "description": {
+    "en": "Add a quick task to Todoist.",
+    "zh-Hans": "将选中文本快速添加到 Todoist 待办清单中。",
+    "zh-Hant": "將選取文字快速新增至 Todoist 待辦清單中。",
+    "ja": "Todoist にすばやくタスクを追加します。",
+    "fr": "Ajoute une tâche rapide dans Todoist."
+  },
   "action": {
-    "title": "Todoist Task",
+    "title": {
+      "en": "Todoist Task",
+      "zh-Hans": "添加 Todoist 任务",
+      "zh-Hant": "新增 Todoist 任務",
+      "ja": "Todoist タスク追加",
+      "fr": "Tâche Todoist"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "todoist://addtask?content={text}"

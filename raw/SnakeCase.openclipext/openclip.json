@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.snakecase",
-  "name": "snake_case",
-  "version": "1.0.1",
+  "name": {
+    "en": "Snake Case",
+    "zh-Hans": "蛇形命名",
+    "zh-Hant": "蛇形命名",
+    "ja": "スネークケース",
+    "fr": "Snake case"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to snake_case.",
+  "description": {
+    "en": "Convert selected text to snake_case.",
+    "zh-Hans": "将选中文本转换为 snake_case 下划线形式。",
+    "zh-Hant": "將選取文字轉換為 snake_case 底線形式。",
+    "ja": "選択したテキストを snake_case に変換します。",
+    "fr": "Convertit le texte sélectionné en snake_case."
+  },
   "action": {
-    "title": "snake_case",
+    "title": {
+      "en": "snake_case",
+      "zh-Hans": "蛇形命名",
+      "zh-Hant": "蛇形命名",
+      "ja": "スネークケース",
+      "fr": "snake_case"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

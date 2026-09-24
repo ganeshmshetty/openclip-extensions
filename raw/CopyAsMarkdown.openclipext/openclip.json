@@ -1,51 +1,116 @@
 {
   "identifier": "com.openclip.copy-as-markdown",
-  "name": "Copy as Markdown",
-  "version": "1.0.0",
+  "name": {
+    "en": "Copy as Markdown",
+    "zh-Hans": "复制为 Markdown",
+    "zh-Hant": "複製為 Markdown",
+    "ja": "Markdown としてコピー",
+    "fr": "Copier en Markdown"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert the selection's HTML to Markdown and copy it.",
+  "description": {
+    "en": "Convert the selection's HTML to Markdown and copy it.",
+    "zh-Hans": "将选中文本的 HTML 转换为 Markdown 并复制到剪贴板。",
+    "zh-Hant": "將選取文字的 HTML 轉換為 Markdown 並複製到剪貼簿。",
+    "ja": "選択範囲の HTML を Markdown に変換してコピーします。",
+    "fr": "Convertit le code HTML sélectionné en Markdown et le copie."
+  },
   "action": {
-    "title": "Copy as Markdown",
+    "title": {
+      "en": "Copy as Markdown",
+      "zh-Hans": "复制为 Markdown",
+      "zh-Hant": "複製為 Markdown",
+      "ja": "Markdown としてコピー",
+      "fr": "Copier en Markdown"
+    },
     "icon": "icon.svg",
     "type": "javascript",
     "script": "dist/main.js",
     "options": [
       {
         "identifier": "headingStyle",
-        "label": "Heading Style",
+        "label": {
+          "en": "Heading Style",
+          "zh-Hans": "标题样式",
+          "zh-Hant": "標題樣式",
+          "ja": "見出しスタイル",
+          "fr": "Style d'en-tête"
+        },
         "type": "multiple",
-        "values": ["atx", "setext"],
+        "values": [
+          "atx",
+          "setext"
+        ],
         "default": "atx"
       },
       {
         "identifier": "bulletListMarker",
-        "label": "Bullet List Marker",
+        "label": {
+          "en": "Bullet List Marker",
+          "zh-Hans": "项目符号标记",
+          "zh-Hant": "項目符號標記",
+          "ja": "箇条書きマーカー",
+          "fr": "Marqueur de liste à puces"
+        },
         "type": "multiple",
-        "values": ["*", "-", "+"],
+        "values": [
+          "*",
+          "-",
+          "+"
+        ],
         "default": "*"
       },
       {
         "identifier": "emDelimiter",
-        "label": "Emphasis Delimiter",
+        "label": {
+          "en": "Emphasis Delimiter",
+          "zh-Hans": "斜体定界符",
+          "zh-Hant": "斜體定界符",
+          "ja": "強調区切り文字",
+          "fr": "Délimiteur d'emphase"
+        },
         "type": "multiple",
-        "values": ["*", "_"],
+        "values": [
+          "*",
+          "_"
+        ],
         "default": "*"
       },
       {
         "identifier": "strongDelimiter",
-        "label": "Strong Delimiter",
+        "label": {
+          "en": "Strong Delimiter",
+          "zh-Hans": "粗体定界符",
+          "zh-Hant": "粗體定界符",
+          "ja": "太字区切り文字",
+          "fr": "Délimiteur de texte gras"
+        },
         "type": "multiple",
-        "values": ["**", "__"],
+        "values": [
+          "**",
+          "__"
+        ],
         "default": "**"
       },
       {
         "identifier": "linkStyle",
-        "label": "Link Style",
+        "label": {
+          "en": "Link Style",
+          "zh-Hans": "链接样式",
+          "zh-Hant": "連結樣式",
+          "ja": "リンクスタイル",
+          "fr": "Style de lien"
+        },
         "type": "multiple",
-        "values": ["inlined", "referenced"],
+        "values": [
+          "inlined",
+          "referenced"
+        ],
         "default": "inlined"
       }
-    ]
+    ],
+    "output": "none"
   }
 }

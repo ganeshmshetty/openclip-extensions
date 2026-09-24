@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.stackoverflow",
-  "name": "Stack Overflow",
-  "version": "1.0.0",
+  "name": {
+    "en": "Stack Overflow Search",
+    "zh-Hans": "Stack Overflow 搜索",
+    "zh-Hant": "Stack Overflow 搜尋",
+    "ja": "Stack Overflow 検索",
+    "fr": "Recherche Stack Overflow"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Search coding questions and answers on Stack Overflow.",
+  "description": {
+    "en": "Search Stack Overflow for the selected code or error message.",
+    "zh-Hans": "在 Stack Overflow 上搜索选中的代码或错误信息。",
+    "zh-Hant": "在 Stack Overflow 上搜尋選取的程式碼或錯誤訊息。",
+    "ja": "選択したコードやエラーメッセージを Stack Overflow で検索します。",
+    "fr": "Rechercher le code ou message d'erreur sélectionné sur Stack Overflow."
+  },
   "action": {
-    "title": "Stack Overflow",
+    "title": {
+      "en": "Stack Overflow",
+      "zh-Hans": "Stack Overflow 搜索",
+      "zh-Hant": "Stack Overflow 搜尋",
+      "ja": "Stack Overflow 検索",
+      "fr": "Stack Overflow"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://stackoverflow.com/search?q={text}"

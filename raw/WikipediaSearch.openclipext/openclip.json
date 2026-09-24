@@ -1,13 +1,32 @@
 {
   "identifier": "com.openclip.wikipedia",
-  "name": "Wikipedia Search",
-  "version": "1.0.1",
+  "name": {
+    "en": "Wikipedia Search",
+    "zh-Hans": "维基百科搜索",
+    "zh-Hant": "維基百科搜尋",
+    "ja": "Wikipedia 検索",
+    "fr": "Recherche Wikipédia"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Look up the selected text on Wikipedia.",
+  "description": {
+    "en": "Look up the selected text on Wikipedia.",
+    "zh-Hans": "在维基百科上查询选中的词条内容。",
+    "zh-Hant": "在維基百科上查詢選取的詞條內容。",
+    "ja": "選択したテキストを Wikipedia で調べます。",
+    "fr": "Rechercher le texte sélectionné sur Wikipédia."
+  },
   "action": {
-    "title": "Wikipedia",
+    "title": {
+      "en": "Wikipedia",
+      "zh-Hans": "维基百科",
+      "zh-Hant": "維基百科",
+      "ja": "Wikipedia",
+      "fr": "Wikipédia"
+    },
     "icon": "book",
-    "url": "https://en.wikipedia.org/wiki/Special:Search?search={text}"
+    "url": "https://en.wikipedia.org/wiki/Special:Search?search={text}",
+    "type": "url"
   }
 }

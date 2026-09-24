@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.italic",
-  "name": "Italic",
-  "version": "1.0.0",
+  "name": {
+    "en": "Italic",
+    "zh-Hans": "斜体",
+    "zh-Hant": "斜體",
+    "ja": "斜体",
+    "fr": "Italique"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Toggle italic formatting in rich text editors.",
+  "description": {
+    "en": "Toggle italic formatting in rich text editors.",
+    "zh-Hans": "在富文本编辑器中切换斜体格式。",
+    "zh-Hant": "在富文字編輯器中切換斜體格式。",
+    "ja": "リッチテキストエディタで斜体（イタリック）を切り替えます。",
+    "fr": "Bascule la mise en forme italique dans les éditeurs de texte enrichi."
+  },
   "action": {
-    "title": "Italic",
+    "title": {
+      "en": "Italic",
+      "zh-Hans": "斜体",
+      "zh-Hant": "斜體",
+      "ja": "斜体",
+      "fr": "Italique"
+    },
     "icon": "italic",
     "type": "keypress",
     "keyPress": "command+i"

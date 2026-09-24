@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.quotelines",
-  "name": "Quote Lines",
-  "version": "1.0.1",
+  "name": {
+    "en": "Quote Lines",
+    "zh-Hans": "行加引号",
+    "zh-Hant": "行加引號",
+    "ja": "各行を引用符で囲む",
+    "fr": "Guillemets par ligne"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Enclose every individual line in double quotes.",
+  "description": {
+    "en": "Enclose every individual line in double quotes.",
+    "zh-Hans": "给每一行文本分别加上双引号。",
+    "zh-Hant": "為每一行文字分別加上雙引號。",
+    "ja": "各行をダブルクォートで囲みます。",
+    "fr": "Entoure chaque ligne individuelle de guillemets doubles."
+  },
   "action": {
-    "title": "Quote Lines",
+    "title": {
+      "en": "Quote Lines",
+      "zh-Hans": "行加引号",
+      "zh-Hant": "行加引號",
+      "ja": "各行を引用符で囲む",
+      "fr": "Guillemets par ligne"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.applemessages",
-  "name": "Apple Messages",
-  "version": "1.0.0",
+  "name": {
+    "en": "Apple Messages",
+    "zh-Hans": "信息",
+    "zh-Hant": "訊息",
+    "ja": "メッセージ",
+    "fr": "Messages Apple"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Share selected text directly via Apple Messages.",
+  "description": {
+    "en": "Share selected text directly via Apple Messages.",
+    "zh-Hans": "通过信息直接分享选中文本。",
+    "zh-Hant": "透過訊息直接分享選取文字。",
+    "ja": "選択したテキストを Apple メッセージで直接共有します。",
+    "fr": "Partage directement le texte sélectionné via Apple Messages."
+  },
   "action": {
-    "title": "Apple Messages",
+    "title": {
+      "en": "Apple Messages",
+      "zh-Hans": "信息",
+      "zh-Hant": "訊息",
+      "ja": "メッセージ",
+      "fr": "Messages Apple"
+    },
     "icon": "icon.svg",
     "type": "service",
     "serviceName": "com.apple.messages.ShareExtension"

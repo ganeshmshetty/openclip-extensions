@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.sortnumerical",
-  "name": "Sort Numerical",
-  "version": "1.0.0",
+  "name": {
+    "en": "Sort Numerically",
+    "zh-Hans": "按数字排序",
+    "zh-Hant": "按數字排序",
+    "ja": "数値順にソート",
+    "fr": "Trier par ordre numérique"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Sort lines by leading numbers.",
+  "description": {
+    "en": "Sort lines in numerical order.",
+    "zh-Hans": "按数值大小对各行进行升序排序。",
+    "zh-Hant": "按數值大小對各行進行升序排序。",
+    "ja": "行を数値順に並べ替えます。",
+    "fr": "Trie les lignes par ordre numérique."
+  },
   "action": {
-    "title": "Sort Numerical",
+    "title": {
+      "en": "Sort Numerical",
+      "zh-Hans": "按数字排序",
+      "zh-Hant": "按數字排序",
+      "ja": "数値順ソート",
+      "fr": "Tri numérique"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

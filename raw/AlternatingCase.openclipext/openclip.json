@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.alternatingcase",
-  "name": "Alternating Case",
-  "version": "1.0.0",
+  "name": {
+    "en": "Alternating Case",
+    "zh-Hans": "交替大小写",
+    "zh-Hant": "交替大小寫",
+    "ja": "大文字小文字交互",
+    "fr": "Casse alternée"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to aLtErNaTiNg CaSe.",
+  "description": {
+    "en": "Convert selected text to aLtErNaTiNg CaSe.",
+    "zh-Hans": "将选中的文本转换为 aLtErNaTiNg CaSe 交替大小写。",
+    "zh-Hant": "將選取的文字轉換為 aLtErNaTiNg CaSe 交替大小寫。",
+    "ja": "選択したテキストを aLtErNaTiNg CaSe（大文字小文字の交互）に変換します。",
+    "fr": "Convertit le texte sélectionné en aLtErNaTiNg CaSe."
+  },
   "action": {
-    "title": "Alternating Case",
+    "title": {
+      "en": "Alternating Case",
+      "zh-Hans": "交替大小写",
+      "zh-Hant": "交替大小寫",
+      "ja": "大文字小文字交互",
+      "fr": "Casse alternée"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.reverselines",
-  "name": "Reverse Lines",
-  "version": "1.0.0",
+  "name": {
+    "en": "Reverse Lines",
+    "zh-Hans": "行倒序",
+    "zh-Hant": "行倒序",
+    "ja": "行を反転",
+    "fr": "Inverser les lignes"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Reverse the vertical order of lines.",
+  "description": {
+    "en": "Reverse the vertical order of lines.",
+    "zh-Hans": "颠倒文本行的垂直先后顺序。",
+    "zh-Hant": "顛倒文字行的垂直先後順序。",
+    "ja": "行の垂直方向の並び順を反転します。",
+    "fr": "Inverse l'ordre vertical des lignes."
+  },
   "action": {
-    "title": "Reverse Lines",
+    "title": {
+      "en": "Reverse Lines",
+      "zh-Hans": "行倒序",
+      "zh-Hant": "行倒序",
+      "ja": "行を反転",
+      "fr": "Inverser les lignes"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

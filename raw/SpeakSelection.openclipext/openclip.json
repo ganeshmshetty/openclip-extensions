@@ -1,16 +1,35 @@
 {
   "identifier": "com.openclip.speakselection",
-  "name": "Speak Selection",
-  "version": "1.0.1",
+  "name": {
+    "en": "Speak Selection",
+    "zh-Hans": "朗读选中文本",
+    "zh-Hant": "朗讀選取文字",
+    "ja": "選択テキストを読み上げ",
+    "fr": "Énoncer la sélection"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Text-to-speech using system voice.",
+  "description": {
+    "en": "Text-to-speech using system voice.",
+    "zh-Hans": "使用系统内置语音朗读选中的文本。",
+    "zh-Hant": "使用系統內建語音朗讀選取的文字。",
+    "ja": "システムの音声を使ってテキストを読み上げます。",
+    "fr": "Synthèse vocale utilisant la voix du système."
+  },
   "action": {
-    "title": "Speak Selection",
+    "title": {
+      "en": "Speak Selection",
+      "zh-Hans": "朗读选中文本",
+      "zh-Hant": "朗讀選取文字",
+      "ja": "テキストを読み上げ",
+      "fr": "Énoncer la sélection"
+    },
     "icon": "icon.svg",
     "type": "applescript",
     "scriptCode": "say OPENCLIP_TEXT",
     "loading": true,
-    "loadingMessage": "Speaking…"
+    "loadingMessage": "Speaking…",
+    "output": "none"
   }
 }

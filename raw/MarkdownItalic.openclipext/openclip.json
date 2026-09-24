@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.markdownitalic",
-  "name": "Markdown Italic",
-  "version": "1.0.0",
+  "name": {
+    "en": "Markdown Italic",
+    "zh-Hans": "Markdown 斜体",
+    "zh-Hant": "Markdown 斜體",
+    "ja": "Markdown 斜体",
+    "fr": "Italique Markdown"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as Markdown italic.",
+  "description": {
+    "en": "Format selected text as Markdown italic.",
+    "zh-Hans": "将选中文本格式化为 Markdown 斜体。",
+    "zh-Hant": "將選取文字格式化為 Markdown 斜體。",
+    "ja": "選択したテキストを Markdown の斜体としてフォーマットします。",
+    "fr": "Formate le texte sélectionné en italique Markdown."
+  },
   "action": {
-    "title": "Markdown Italic",
+    "title": {
+      "en": "Markdown Italic",
+      "zh-Hans": "Markdown 斜体",
+      "zh-Hant": "Markdown 斜體",
+      "ja": "Markdown 斜体",
+      "fr": "Italique Markdown"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.pypisearch",
-  "name": "PyPI Search",
-  "version": "1.0.0",
+  "name": {
+    "en": "PyPI Search",
+    "zh-Hans": "PyPI 搜索",
+    "zh-Hant": "PyPI 搜尋",
+    "ja": "PyPI 検索",
+    "fr": "Recherche PyPI"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Search Python packages on PyPI.",
+  "description": {
+    "en": "Search Python packages on PyPI.",
+    "zh-Hans": "在 PyPI 上搜索 Python 软件包。",
+    "zh-Hant": "在 PyPI 上搜尋 Python 套件。",
+    "ja": "PyPI で Python パッケージを検索します。",
+    "fr": "Rechercher des paquets Python sur PyPI."
+  },
   "action": {
-    "title": "PyPI Search",
+    "title": {
+      "en": "PyPI Search",
+      "zh-Hans": "PyPI 搜索",
+      "zh-Hant": "PyPI 搜尋",
+      "ja": "PyPI 検索",
+      "fr": "Recherche PyPI"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://pypi.org/search/?q={text}"

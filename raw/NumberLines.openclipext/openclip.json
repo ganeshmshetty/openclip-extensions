@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.numberlines",
-  "name": "Number Lines",
-  "version": "1.0.1",
+  "name": {
+    "en": "Number Lines",
+    "zh-Hans": "行号标记",
+    "zh-Hant": "行號標記",
+    "ja": "行番号を追加",
+    "fr": "Numéroter les lignes"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Prefix each line with sequential numbers.",
+  "description": {
+    "en": "Prefix each line with sequential numbers.",
+    "zh-Hans": "为每一行添加递增行号前缀。",
+    "zh-Hant": "為每一行加入遞增行號前綴。",
+    "ja": "各行の先頭に連番を付加します。",
+    "fr": "Préfixe chaque ligne avec des numéros séquentiels."
+  },
   "action": {
-    "title": "Number Lines",
+    "title": {
+      "en": "Number Lines",
+      "zh-Hans": "添加行号",
+      "zh-Hant": "加入行號",
+      "ja": "行番号を追加",
+      "fr": "Numéroter les lignes"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

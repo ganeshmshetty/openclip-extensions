@@ -5,19 +5,9 @@ Open selected text in [Refine](https://refine.sh) to check grammar or rewrite it
 ## Requirements
 
 - OpenClip 1.1.0 or later.
-- Refine installed, with its initial setup completed and writing features configured.
+- [Refine](https://refine.sh) installed, with its initial setup completed and writing features configured.
 
-The extension has no settings. Writing checks and rewrites use your existing Refine configuration.
-
-## Installation
-
-From the root of this repository, run:
-
-```sh
-./scripts/install.sh raw/Refine.openclipext
-```
-
-Enable the extension in OpenClip when prompted. If the action does not appear, reload extensions in OpenClip or quit and reopen it.
+The extension has no additional settings. Writing checks and rewrites use your existing Refine configuration.
 
 ## Usage
 
@@ -30,15 +20,3 @@ Opening another selection replaces the current contents of Refine's floating edi
 If Refine was closed, the extension can launch it with the text, but Refine may not return to the original app for Paste. Use Copy, return to the source app, and paste manually. Use Copy for text selected on a webpage or another read-only surface too.
 
 OpenClip can use clipboard text when invoked without a live selection. The action is unavailable for empty or whitespace-only input. Clicking the action opens Refine for review; replacing text is a separate step you control.
-
-## Development
-
-This is a URL action using Refine's existing editor link. OpenClip encodes the selected text for the URL. No build step or script runtime is required.
-
-Validate the package from the repository root:
-
-```sh
-./scripts/validate.sh raw/Refine.openclipext
-```
-
-The icon is provided courtesy of [Refine](https://refine.sh).

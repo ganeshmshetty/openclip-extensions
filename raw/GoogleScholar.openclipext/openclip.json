@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.googlescholar",
-  "name": "Google Scholar",
-  "version": "1.0.0",
+  "name": {
+    "en": "Google Scholar",
+    "zh-Hans": "Google 学术搜索",
+    "zh-Hant": "Google 學術搜尋",
+    "ja": "Google Scholar",
+    "fr": "Google Scholar"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Search academic papers and scholarly research on Google Scholar.",
+  "description": {
+    "en": "Search academic papers and scholarly research on Google Scholar.",
+    "zh-Hans": "在 Google 学术中搜索学术论文和研究资料。",
+    "zh-Hant": "在 Google 學術中搜尋學術論文與研究文獻。",
+    "ja": "Google Scholar で学術論文や研究資料を検索します。",
+    "fr": "Rechercher des articles universitaires et des publications sur Google Scholar."
+  },
   "action": {
-    "title": "Google Scholar",
+    "title": {
+      "en": "Google Scholar",
+      "zh-Hans": "Google 学术搜索",
+      "zh-Hant": "Google 學術搜尋",
+      "ja": "Google Scholar",
+      "fr": "Google Scholar"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://scholar.google.com/scholar?q={text}"

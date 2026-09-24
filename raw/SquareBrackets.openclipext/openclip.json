@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.squarebrackets",
-  "name": "Square Brackets",
-  "version": "1.0.0",
+  "name": {
+    "en": "Square Brackets",
+    "zh-Hans": "方括号",
+    "zh-Hant": "方括號",
+    "ja": "角括弧",
+    "fr": "Crochets"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Wrap selected text in square brackets.",
+  "description": {
+    "en": "Wrap selected text in square brackets.",
+    "zh-Hans": "用方括号 [ ] 包裹选中的文本。",
+    "zh-Hant": "用方括號 [ ] 包裹選取的文字。",
+    "ja": "選択したテキストを角括弧 [ ] で囲みます。",
+    "fr": "Entoure le texte sélectionné de crochets [ ]."
+  },
   "action": {
-    "title": "Square Brackets",
+    "title": {
+      "en": "Square Brackets",
+      "zh-Hans": "方括号",
+      "zh-Hant": "方括號",
+      "ja": "角括弧",
+      "fr": "Crochets"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

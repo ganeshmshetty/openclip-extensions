@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.wolframalpha",
-  "name": "Wolfram Alpha",
-  "version": "1.0.0",
+  "name": {
+    "en": "Wolfram Alpha",
+    "zh-Hans": "Wolfram Alpha 计算",
+    "zh-Hant": "Wolfram Alpha 計算",
+    "ja": "Wolfram Alpha",
+    "fr": "Wolfram Alpha"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Computational knowledge engine queries on Wolfram Alpha.",
+  "description": {
+    "en": "Computational knowledge engine queries on Wolfram Alpha.",
+    "zh-Hans": "使用 Wolfram Alpha 计算知识引擎查询所选内容。",
+    "zh-Hant": "使用 Wolfram Alpha 計算知識引擎查詢所選內容。",
+    "ja": "Wolfram Alpha 計算知識エンジンでクエリを実行します。",
+    "fr": "Requêtes sur le moteur de connaissances computationnelles Wolfram Alpha."
+  },
   "action": {
-    "title": "Wolfram Alpha",
+    "title": {
+      "en": "Wolfram Alpha",
+      "zh-Hans": "Wolfram Alpha",
+      "zh-Hant": "Wolfram Alpha",
+      "ja": "Wolfram Alpha",
+      "fr": "Wolfram Alpha"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://www.wolframalpha.com/input?i={text}"

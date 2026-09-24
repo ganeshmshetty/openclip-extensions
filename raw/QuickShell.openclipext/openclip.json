@@ -7,7 +7,7 @@
     "ja": "クイックShell",
     "fr": "Quick Shell"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -77,6 +77,7 @@
     },
     "requirements": {
       "requiresSelection": true
-    }
+    },
+    "output": "none"
   }
 }

@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.fantasticalevent",
-  "name": "Fantastical Event",
-  "version": "1.0.0",
+  "name": {
+    "en": "Fantastical Event",
+    "zh-Hans": "Fantastical 日程",
+    "zh-Hant": "Fantastical 行程",
+    "ja": "Fantastical イベント",
+    "fr": "Événement Fantastical"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Parse natural language calendar events in Fantastical.",
+  "description": {
+    "en": "Parse natural language calendar events in Fantastical.",
+    "zh-Hans": "使用 Fantastical 解析自然语言日历事件。",
+    "zh-Hant": "使用 Fantastical 解析自然語言行事曆行程。",
+    "ja": "Fantastical で自然言語のカレンダーイベントを解析します。",
+    "fr": "Créer des événements de calendrier en langage naturel dans Fantastical."
+  },
   "action": {
-    "title": "Fantastical Event",
+    "title": {
+      "en": "Fantastical Event",
+      "zh-Hans": "Fantastical 日程",
+      "zh-Hant": "Fantastical 行程",
+      "ja": "Fantastical イベント",
+      "fr": "Événement Fantastical"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "fantastical2://x-callback-url/parse?sentence={text}"

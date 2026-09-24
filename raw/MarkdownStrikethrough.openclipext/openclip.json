@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.markdownstrikethrough",
-  "name": "Markdown Strikethrough",
-  "version": "1.0.0",
+  "name": {
+    "en": "Markdown Strikethrough",
+    "zh-Hans": "Markdown 删除线",
+    "zh-Hant": "Markdown 刪除線",
+    "ja": "Markdown 取り消し線",
+    "fr": "Barré Markdown"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as Markdown strikethrough.",
+  "description": {
+    "en": "Format selected text as Markdown strikethrough.",
+    "zh-Hans": "将选中文本格式化为 Markdown 删除线。",
+    "zh-Hant": "將選取文字格式化為 Markdown 刪除線。",
+    "ja": "選択したテキストを Markdown の取り消し線としてフォーマットします。",
+    "fr": "Formate le texte sélectionné en texte barré Markdown."
+  },
   "action": {
-    "title": "Markdown Strikethrough",
+    "title": {
+      "en": "Markdown Strikethrough",
+      "zh-Hans": "Markdown 删除线",
+      "zh-Hant": "Markdown 刪除線",
+      "ja": "Markdown 取り消し線",
+      "fr": "Barré Markdown"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

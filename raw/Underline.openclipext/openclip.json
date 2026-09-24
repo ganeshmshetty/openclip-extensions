@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.underline",
-  "name": "Underline",
-  "version": "1.0.0",
+  "name": {
+    "en": "Underline",
+    "zh-Hans": "下划线",
+    "zh-Hant": "底線",
+    "ja": "下線",
+    "fr": "Souligné"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Toggle underline formatting in rich text editors.",
+  "description": {
+    "en": "Toggle underline formatting in rich text editors.",
+    "zh-Hans": "在富文本编辑器中切换文本下划线格式。",
+    "zh-Hant": "在富文字編輯器中切換文字底線格式。",
+    "ja": "リッチテキストエディタで下線の書式を切り替えます。",
+    "fr": "Bascule le soulignement dans les éditeurs de texte enrichi."
+  },
   "action": {
-    "title": "Underline",
+    "title": {
+      "en": "Underline",
+      "zh-Hans": "下划线",
+      "zh-Hant": "底線",
+      "ja": "下線",
+      "fr": "Souligné"
+    },
     "icon": "underline",
     "type": "keypress",
     "keyPress": "command+u"

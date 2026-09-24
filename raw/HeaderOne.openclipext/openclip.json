@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.headerone",
-  "name": "Header One",
-  "version": "1.0.1",
+  "name": {
+    "en": "Header One",
+    "zh-Hans": "一级标题",
+    "zh-Hant": "一級標題",
+    "ja": "見出し 1",
+    "fr": "Titre 1"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as Markdown Header 1.",
+  "description": {
+    "en": "Format selected text as Markdown Header 1.",
+    "zh-Hans": "将选中文本格式化为 Markdown 一级标题。",
+    "zh-Hant": "將選取文字格式化為 Markdown 一級標題。",
+    "ja": "選択したテキストを Markdown の見出し 1（H1）に設定します。",
+    "fr": "Formater le texte sélectionné en titre Markdown 1."
+  },
   "action": {
-    "title": "Header 1",
+    "title": {
+      "en": "Header 1",
+      "zh-Hans": "一级标题",
+      "zh-Hant": "一級標題",
+      "ja": "見出し 1",
+      "fr": "Titre 1"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

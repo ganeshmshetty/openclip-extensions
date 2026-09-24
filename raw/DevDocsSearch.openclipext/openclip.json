@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.devdocs",
-  "name": "DevDocs Search",
-  "version": "1.0.0",
+  "name": {
+    "en": "DevDocs Search",
+    "zh-Hans": "DevDocs 搜索",
+    "zh-Hant": "DevDocs 搜尋",
+    "ja": "DevDocs 検索",
+    "fr": "Recherche DevDocs"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Instant unified API documentation search on DevDocs.",
+  "description": {
+    "en": "Instant unified API documentation search on DevDocs.",
+    "zh-Hans": "在 DevDocs 上即时检索多语言 API 文档。",
+    "zh-Hant": "在 DevDocs 上即時檢索多語言 API 文件。",
+    "ja": "DevDocs で統合 API ドキュメントを即座に検索します。",
+    "fr": "Recherche instantanée et unifiée de documentation d'API sur DevDocs."
+  },
   "action": {
-    "title": "DevDocs Search",
+    "title": {
+      "en": "DevDocs Search",
+      "zh-Hans": "DevDocs 搜索",
+      "zh-Hant": "DevDocs 搜尋",
+      "ja": "DevDocs 検索",
+      "fr": "Recherche DevDocs"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "https://devdocs.io/#q={text}"

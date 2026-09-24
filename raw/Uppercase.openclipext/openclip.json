@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.uppercase",
-  "name": "Uppercase",
-  "version": "1.0.0",
+  "name": {
+    "en": "Uppercase",
+    "zh-Hans": "大写",
+    "zh-Hant": "大寫",
+    "ja": "大文字",
+    "fr": "Majuscules"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to uppercase.",
+  "description": {
+    "en": "Convert selected text to uppercase.",
+    "zh-Hans": "将选中文本全部转换为大写字母。",
+    "zh-Hant": "將選取文字全部轉換為大寫字母。",
+    "ja": "選択したテキストを大文字に変換します。",
+    "fr": "Convertit le texte sélectionné en majuscules."
+  },
   "action": {
-    "title": "UPPERCASE",
+    "title": {
+      "en": "UPPERCASE",
+      "zh-Hans": "大写",
+      "zh-Hant": "大寫",
+      "ja": "大文字",
+      "fr": "MAJUSCULES"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

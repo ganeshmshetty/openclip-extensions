@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.roundbrackets",
-  "name": "Round Brackets",
-  "version": "1.0.0",
+  "name": {
+    "en": "Round Brackets",
+    "zh-Hans": "圆括号",
+    "zh-Hant": "圓括號",
+    "ja": "丸括弧",
+    "fr": "Parenthèses"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Wrap selected text in round brackets.",
+  "description": {
+    "en": "Wrap selected text in round brackets.",
+    "zh-Hans": "用圆括号包围选中文本。",
+    "zh-Hant": "用圓括號包圍選取文字。",
+    "ja": "選択したテキストを丸括弧で囲みます。",
+    "fr": "Entourer le texte sélectionné de parenthèses."
+  },
   "action": {
-    "title": "Round Brackets",
+    "title": {
+      "en": "Round Brackets",
+      "zh-Hans": "圆括号",
+      "zh-Hant": "圓括號",
+      "ja": "丸括弧",
+      "fr": "Parenthèses"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

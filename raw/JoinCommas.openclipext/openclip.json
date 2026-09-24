@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.joincommas",
-  "name": "Join Commas",
-  "version": "1.0.0",
+  "name": {
+    "en": "Join Commas",
+    "zh-Hans": "逗号连接",
+    "zh-Hant": "逗號連接",
+    "ja": "カンマ区切りで結合",
+    "fr": "Joindre par des virgules"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Join lines into a comma-separated string.",
+  "description": {
+    "en": "Join lines into a comma-separated string.",
+    "zh-Hans": "将多行文本连接为逗号分隔的单行字符串。",
+    "zh-Hant": "將多行文字連接為逗號分隔的單行字串。",
+    "ja": "複数行をカンマ区切りの文字列に結合します。",
+    "fr": "Joint les lignes en une chaîne séparée par des virgules."
+  },
   "action": {
-    "title": "Join Commas",
+    "title": {
+      "en": "Join Commas",
+      "zh-Hans": "逗号连接",
+      "zh-Hant": "逗號連接",
+      "ja": "カンマ区切りで結合",
+      "fr": "Joindre par des virgules"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

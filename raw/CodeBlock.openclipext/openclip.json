@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.codeblock",
-  "name": "Code Block",
-  "version": "1.0.0",
+  "name": {
+    "en": "Code Block",
+    "zh-Hans": "代码块",
+    "zh-Hant": "程式碼區塊",
+    "ja": "コードブロック",
+    "fr": "Bloc de code"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as a Markdown code block.",
+  "description": {
+    "en": "Format selected text as a Markdown code block.",
+    "zh-Hans": "将选中的文本格式化为 Markdown 代码块。",
+    "zh-Hant": "將選取的文字格式化為 Markdown 程式碼區塊。",
+    "ja": "選択したテキストを Markdown コードブロックとして整形します。",
+    "fr": "Formate le texte sélectionné sous forme de bloc de code Markdown."
+  },
   "action": {
-    "title": "Code Block",
+    "title": {
+      "en": "Code Block",
+      "zh-Hans": "代码块",
+      "zh-Hant": "程式碼區塊",
+      "ja": "コードブロック",
+      "fr": "Bloc de code"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

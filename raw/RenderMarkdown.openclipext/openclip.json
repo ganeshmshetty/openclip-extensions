@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.render-markdown",
-  "name": "Render Markdown",
-  "version": "1.0.0",
+  "name": {
+    "en": "Render Markdown",
+    "zh-Hans": "渲染 Markdown",
+    "zh-Hant": "渲染 Markdown",
+    "ja": "Markdown をレンダリング",
+    "fr": "Rendre le Markdown"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Interpret the selected Markdown source and paste it as rendered rich text.",
+  "description": {
+    "en": "Interpret the selected Markdown source and paste it as rendered rich text.",
+    "zh-Hans": "解析所选 Markdown 源码并将其作为富文本渲染粘贴。",
+    "zh-Hant": "解析所選 Markdown 原始碼並將其作為格式化文字渲染貼上。",
+    "ja": "選択した Markdown ソースを解釈し、リッチテキストとして貼り付けます。",
+    "fr": "Interprète la source Markdown sélectionnée et la colle sous forme de texte enrichi."
+  },
   "action": {
-    "title": "Render Markdown",
+    "title": {
+      "en": "Render Markdown",
+      "zh-Hans": "渲染 Markdown",
+      "zh-Hant": "渲染 Markdown",
+      "ja": "Markdown をレンダリング",
+      "fr": "Rendre le Markdown"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "dist/main.js"
+    "script": "dist/main.js",
+    "output": "none"
   }
 }

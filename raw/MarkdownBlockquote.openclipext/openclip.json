@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.markdownblockquote",
-  "name": "Markdown Blockquote",
-  "version": "1.0.1",
+  "name": {
+    "en": "Markdown Blockquote",
+    "zh-Hans": "Markdown 引用块",
+    "zh-Hant": "Markdown 引用區塊",
+    "ja": "Markdown 引用ブロック",
+    "fr": "Bloc de citation Markdown"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as a Markdown blockquote.",
+  "description": {
+    "en": "Format selected text as a Markdown blockquote.",
+    "zh-Hans": "将选中文本格式化为 Markdown 引用块。",
+    "zh-Hant": "將選取文字格式化為 Markdown 引用區塊。",
+    "ja": "選択したテキストを Markdown の引用ブロックとしてフォーマットします。",
+    "fr": "Formate le texte sélectionné en bloc de citation Markdown."
+  },
   "action": {
-    "title": "Markdown Quote",
+    "title": {
+      "en": "Markdown Quote",
+      "zh-Hans": "Markdown 引用",
+      "zh-Hant": "Markdown 引用",
+      "ja": "Markdown 引用",
+      "fr": "Citation Markdown"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

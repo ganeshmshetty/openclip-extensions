@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.tasklines",
-  "name": "Task Lines",
-  "version": "1.0.0",
+  "name": {
+    "en": "Task Lines",
+    "zh-Hans": "Markdown 待办清单",
+    "zh-Hant": "Markdown 待辦清單",
+    "ja": "タスクリスト化",
+    "fr": "Lignes de tâches"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert lines into Markdown task checkboxes.",
+  "description": {
+    "en": "Prefix each line with a Markdown task checkbox.",
+    "zh-Hans": "为每一行添加 Markdown 任务待办复选框前缀 `- [ ] `。",
+    "zh-Hant": "為每一行加入 Markdown 任務待辦核取方塊前綴 `- [ ] `。",
+    "ja": "各行の先頭に Markdown のタスクチェックボックス `- [ ] ` を追加します。",
+    "fr": "Préfixe chaque ligne avec une case à cocher de tâche Markdown `- [ ] `."
+  },
   "action": {
-    "title": "Task Lines",
+    "title": {
+      "en": "Task Lines",
+      "zh-Hans": "待办清单",
+      "zh-Hant": "待辦清單",
+      "ja": "タスクリスト化",
+      "fr": "Lignes de tâches"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

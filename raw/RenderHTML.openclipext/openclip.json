@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.render-html",
-  "name": "Render HTML",
-  "version": "1.1.0",
+  "name": {
+    "en": "Render HTML",
+    "zh-Hans": "渲染 HTML",
+    "zh-Hant": "渲染 HTML",
+    "ja": "HTML をレンダリング",
+    "fr": "Rendre le HTML"
+  },
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Interpret the selected HTML markup and paste it as rendered rich text.",
+  "description": {
+    "en": "Interpret the selected HTML markup and paste it as rendered rich text.",
+    "zh-Hans": "解析所选 HTML 标记并将其作为富文本渲染粘贴。",
+    "zh-Hant": "解析所選 HTML 標記並將其作為格式化文字渲染貼上。",
+    "ja": "選択した HTML マークアップを解釈し、リッチテキストとして貼り付けます。",
+    "fr": "Interprète le balisage HTML sélectionné et le colle sous forme de texte enrichi."
+  },
   "action": {
-    "title": "Render HTML",
+    "title": {
+      "en": "Render HTML",
+      "zh-Hans": "渲染 HTML",
+      "zh-Hant": "渲染 HTML",
+      "ja": "HTML をレンダリング",
+      "fr": "Rendre le HTML"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "none"
   }
 }

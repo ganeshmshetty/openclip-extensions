@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.sentencecase",
-  "name": "Sentence Case",
-  "version": "1.0.0",
+  "name": {
+    "en": "Sentence Case",
+    "zh-Hans": "句首大写",
+    "zh-Hant": "句首大寫",
+    "ja": "センテンスケース",
+    "fr": "Casse de phrase"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Capitalize the first letter of each sentence.",
+  "description": {
+    "en": "Capitalize the first letter of each sentence.",
+    "zh-Hans": "将每个句子的首字母大写。",
+    "zh-Hant": "將每個句子的首字母大寫。",
+    "ja": "各文の最初の文字を大文字にします。",
+    "fr": "Met en majuscule la première lettre de chaque phrase."
+  },
   "action": {
-    "title": "Sentence Case",
+    "title": {
+      "en": "Sentence case",
+      "zh-Hans": "句首大写",
+      "zh-Hant": "句首大寫",
+      "ja": "センテンスケース",
+      "fr": "Casse de phrase"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

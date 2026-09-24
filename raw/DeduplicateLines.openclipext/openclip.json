@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.deduplicatelines",
-  "name": "Deduplicate Lines",
-  "version": "1.0.0",
+  "name": {
+    "en": "Deduplicate Lines",
+    "zh-Hans": "行去重",
+    "zh-Hant": "行去重",
+    "ja": "行の重複を削除",
+    "fr": "Dédupliquer les lignes"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Remove all duplicate lines from the selection.",
+  "description": {
+    "en": "Remove all duplicate lines from the selection.",
+    "zh-Hans": "移除选中文本中的所有重复行。",
+    "zh-Hant": "移除選取文字中的所有重複行。",
+    "ja": "選択範囲から重複する行をすべて削除します。",
+    "fr": "Supprime toutes les lignes en double du texte sélectionné."
+  },
   "action": {
-    "title": "Deduplicate Lines",
+    "title": {
+      "en": "Deduplicate Lines",
+      "zh-Hans": "行去重",
+      "zh-Hant": "行去重",
+      "ja": "行の重複を削除",
+      "fr": "Dédupliquer les lignes"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

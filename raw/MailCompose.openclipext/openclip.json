@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.mailcompose",
-  "name": "Mail Compose",
-  "version": "1.0.0",
+  "name": {
+    "en": "Mail Compose",
+    "zh-Hans": "撰写邮件",
+    "zh-Hant": "撰寫郵件",
+    "ja": "メール作成",
+    "fr": "Rédiger un e-mail"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Create a new email draft with the selected text.",
+  "description": {
+    "en": "Create a new email draft with the selected text.",
+    "zh-Hans": "以选中文本创建新的邮件草稿。",
+    "zh-Hant": "以選取文字建立新的郵件草稿。",
+    "ja": "選択したテキストで新しいメールの下書きを作成します。",
+    "fr": "Créer un nouveau brouillon d’e-mail avec le texte sélectionné."
+  },
   "action": {
-    "title": "Mail Compose",
+    "title": {
+      "en": "Mail Compose",
+      "zh-Hans": "撰写邮件",
+      "zh-Hant": "撰寫郵件",
+      "ja": "メール作成",
+      "fr": "Rédiger un e-mail"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "mailto:?body={text}"

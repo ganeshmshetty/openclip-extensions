@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.extracthashtags",
-  "name": "Extract Hashtags",
-  "version": "1.0.1",
+  "name": {
+    "en": "Extract Hashtags",
+    "zh-Hans": "提取话题标签",
+    "zh-Hant": "擷取主題標籤",
+    "ja": "ハッシュタグを抽出",
+    "fr": "Extraire les hashtags"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Regex-extract all #hashtags into a clean list.",
+  "description": {
+    "en": "Regex-extract all #hashtags into a clean list.",
+    "zh-Hans": "使用正则表达式提取所有 #话题标签 并整理成列表。",
+    "zh-Hant": "使用正規表示式擷取所有 #主題標籤 並整理成清單。",
+    "ja": "正規表現ですべての #ハッシュタグ を抽出してリスト化します。",
+    "fr": "Extrait tous les #hashtags sous forme de liste propre."
+  },
   "action": {
-    "title": "Extract Hashtags",
+    "title": {
+      "en": "Extract Hashtags",
+      "zh-Hans": "提取话题标签",
+      "zh-Hant": "擷取主題標籤",
+      "ja": "ハッシュタグを抽出",
+      "fr": "Extraire les hashtags"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

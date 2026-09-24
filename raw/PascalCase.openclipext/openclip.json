@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.pascalcase",
-  "name": "PascalCase",
-  "version": "1.0.1",
+  "name": {
+    "en": "PascalCase",
+    "zh-Hans": "大驼峰命名 (PascalCase)",
+    "zh-Hant": "大駝峰命名 (PascalCase)",
+    "ja": "パスカルケース (PascalCase)",
+    "fr": "PascalCase"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to PascalCase.",
+  "description": {
+    "en": "Convert selected text to PascalCase.",
+    "zh-Hans": "将选中文本转换为大驼峰命名 (PascalCase)。",
+    "zh-Hant": "將選取文字轉換為大駝峰命名 (PascalCase)。",
+    "ja": "選択したテキストをパスカルケース (PascalCase) に変換します。",
+    "fr": "Convertir le texte sélectionné en PascalCase."
+  },
   "action": {
-    "title": "PascalCase",
+    "title": {
+      "en": "PascalCase",
+      "zh-Hans": "大驼峰命名",
+      "zh-Hant": "大駝峰命名",
+      "ja": "パスカルケース",
+      "fr": "PascalCase"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

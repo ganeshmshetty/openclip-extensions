@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.markdownlink",
-  "name": "Markdown Link",
-  "version": "1.0.0",
+  "name": {
+    "en": "Markdown Link",
+    "zh-Hans": "Markdown 链接",
+    "zh-Hant": "Markdown 連結",
+    "ja": "Markdown リンク",
+    "fr": "Lien Markdown"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as a Markdown link template.",
+  "description": {
+    "en": "Format selected text as a Markdown link template.",
+    "zh-Hans": "将选中文本格式化为 Markdown 链接模板。",
+    "zh-Hant": "將選取文字格式化為 Markdown 連結範本。",
+    "ja": "選択したテキストを Markdown リンクテンプレートとしてフォーマットします。",
+    "fr": "Formate le texte sélectionné en modèle de lien Markdown."
+  },
   "action": {
-    "title": "Markdown Link",
+    "title": {
+      "en": "Markdown Link",
+      "zh-Hans": "Markdown 链接",
+      "zh-Hant": "Markdown 連結",
+      "ja": "Markdown リンク",
+      "fr": "Lien Markdown"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

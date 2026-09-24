@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.translate",
-  "name": "Google Translate",
-  "version": "1.0.1",
+  "name": {
+    "en": "Google Translate",
+    "zh-Hans": "Google 翻译",
+    "zh-Hant": "Google 翻譯",
+    "ja": "Google 翻訳",
+    "fr": "Google Traduction"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Translate the selected text into English with Google Translate.",
+  "description": {
+    "en": "Translate the selected text into English with Google Translate.",
+    "zh-Hans": "使用 Google 翻译将选中文本翻译为英文。",
+    "zh-Hant": "使用 Google 翻譯將選取文字翻譯為英文。",
+    "ja": "Google 翻訳で選択したテキストを英語に翻訳します。",
+    "fr": "Traduire le texte sélectionné en anglais avec Google Traduction."
+  },
   "action": {
-    "title": "Translate",
+    "title": {
+      "en": "Translate",
+      "zh-Hans": "翻译",
+      "zh-Hant": "翻譯",
+      "ja": "翻訳",
+      "fr": "Traduire"
+    },
     "icon": "globe",
     "url": "https://translate.google.com/?sl=auto&tl=en&text={text}"
   }

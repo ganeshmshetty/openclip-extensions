@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.capitalizewords",
-  "name": "Capitalize Words",
-  "version": "1.0.1",
+  "name": {
+    "en": "Capitalize Words",
+    "zh-Hans": "词首字母大写",
+    "zh-Hant": "字首大寫",
+    "ja": "単語の先頭を大文字化",
+    "fr": "Majuscule à chaque mot"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Capitalize the first letter of every word.",
+  "description": {
+    "en": "Capitalize the first letter of every word.",
+    "zh-Hans": "将每个单词的首字母转换为大写。",
+    "zh-Hant": "將每個單字的首字母轉換為大寫。",
+    "ja": "すべての単語の先頭文字を大文字に変換します。",
+    "fr": "Met en majuscule la première lettre de chaque mot."
+  },
   "action": {
-    "title": "Capitalize Words",
+    "title": {
+      "en": "Capitalize Words",
+      "zh-Hans": "词首字母大写",
+      "zh-Hant": "字首大寫",
+      "ja": "単語の先頭を大文字化",
+      "fr": "Majuscule à chaque mot"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

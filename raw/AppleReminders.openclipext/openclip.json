@@ -1,16 +1,38 @@
 {
   "identifier": "com.openclip.applereminders",
-  "name": "Apple Reminders",
-  "version": "1.0.1",
+  "name": {
+    "en": "Apple Reminders",
+    "zh-Hans": "提醒事项",
+    "zh-Hant": "提醒事項",
+    "ja": "リマインダー",
+    "fr": "Rappels Apple"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Quick add a new reminder task to Apple Reminders.",
+  "description": {
+    "en": "Quick add a new reminder task to Apple Reminders.",
+    "zh-Hans": "快速添加新提醒任务到提醒事项。",
+    "zh-Hant": "快速新增提醒事項至提醒事項。",
+    "ja": "Apple リマインダーに新規タスクを素早く追加します。",
+    "fr": "Ajoute rapidement un nouveau rappel dans Rappels Apple."
+  },
   "releaseNotes": "Fixes the created reminder's ID being pasted into the frontmost app; adds a confirmation toast.",
   "action": {
-    "title": "Apple Reminders",
+    "title": {
+      "en": "Apple Reminders",
+      "zh-Hans": "提醒事项",
+      "zh-Hant": "提醒事項",
+      "ja": "リマインダー",
+      "fr": "Rappels Apple"
+    },
     "icon": "icon.svg",
     "type": "applescript",
     "scriptCode": "tell application \"Reminders\"\n\tset defaultList to default list\n\ttell defaultList\n\t\tmake new reminder with properties {name:OPENCLIP_TEXT}\n\tend tell\nend tell\nreturn \"\"",
-    "toast": { "message": "Reminder added", "style": "success" }
+    "toast": {
+      "message": "Reminder added",
+      "style": "success"
+    },
+    "output": "none"
   }
 }

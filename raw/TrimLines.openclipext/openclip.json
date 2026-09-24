@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.trimlines",
-  "name": "Trim Lines",
-  "version": "1.0.0",
+  "name": {
+    "en": "Trim Lines",
+    "zh-Hans": "修剪每行空格",
+    "zh-Hant": "修剪每行空格",
+    "ja": "各行の空白をトリム",
+    "fr": "Élaguer les lignes"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Strip leading and trailing whitespace from every line.",
+  "description": {
+    "en": "Strip leading and trailing whitespace from every line.",
+    "zh-Hans": "清除选中文本中每一行的首尾多余空白。",
+    "zh-Hant": "清除選取文字中每一行的首尾多餘空白。",
+    "ja": "すべての行の先頭と末尾の空白を削除します。",
+    "fr": "Supprime les espaces au début et à la fin de chaque ligne."
+  },
   "action": {
-    "title": "Trim Lines",
+    "title": {
+      "en": "Trim Lines",
+      "zh-Hans": "修剪行空白",
+      "zh-Hant": "修剪行空白",
+      "ja": "各行の空白をトリム",
+      "fr": "Élaguer les lignes"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

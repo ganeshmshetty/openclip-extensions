@@ -1,12 +1,30 @@
 {
   "identifier": "com.openclip.bearnotes",
-  "name": "Bear Notes",
-  "version": "1.0.0",
+  "name": {
+    "en": "Bear Notes",
+    "zh-Hans": "Bear 笔记",
+    "zh-Hant": "Bear 筆記",
+    "ja": "Bear ノート",
+    "fr": "Notes Bear"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Create a new note in Bear.",
+  "description": {
+    "en": "Create a new note in Bear.",
+    "zh-Hans": "在 Bear 中创建新笔记。",
+    "zh-Hant": "在 Bear 中建立新筆記。",
+    "ja": "Bear で新規ノートを作成します。",
+    "fr": "Crée une nouvelle note dans Bear."
+  },
   "action": {
-    "title": "Bear Notes",
+    "title": {
+      "en": "Bear Notes",
+      "zh-Hans": "Bear 笔记",
+      "zh-Hant": "Bear 筆記",
+      "ja": "Bear ノート",
+      "fr": "Notes Bear"
+    },
     "icon": "icon.svg",
     "type": "url",
     "url": "bear://x-callback-url/create?text={text}"

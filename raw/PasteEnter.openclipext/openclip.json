@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.pasteenter",
-  "name": "Paste Enter",
-  "version": "1.0.0",
+  "name": {
+    "en": "Paste Enter",
+    "zh-Hans": "粘贴并回车",
+    "zh-Hant": "貼上並按 Enter",
+    "ja": "ペーストして Enter",
+    "fr": "Coller et Entrée"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Paste clipboard text and press Return.",
+  "description": {
+    "en": "Paste clipboard text and press Return.",
+    "zh-Hans": "粘贴剪贴板文本并按下回车键。",
+    "zh-Hant": "貼上剪貼簿文字並按下 Enter 鍵。",
+    "ja": "クリップボードのテキストを貼り付けて Return を押します。",
+    "fr": "Colle le texte du presse-papiers et appuie sur Entrée."
+  },
   "action": {
-    "title": "Paste Enter",
+    "title": {
+      "en": "Paste Enter",
+      "zh-Hans": "粘贴并回车",
+      "zh-Hant": "貼上並按 Enter",
+      "ja": "ペーストして Enter",
+      "fr": "Coller et Entrée"
+    },
     "icon": "icon.svg",
     "type": "applescript",
-    "scriptCode": "tell application \"System Events\"\n\tkeystroke \"v\" using command down\n\tdelay 0.05\n\tkey code 36\nend tell"
+    "scriptCode": "tell application \"System Events\"\n\tkeystroke \"v\" using command down\n\tdelay 0.05\n\tkey code 36\nend tell",
+    "output": "none"
   }
 }

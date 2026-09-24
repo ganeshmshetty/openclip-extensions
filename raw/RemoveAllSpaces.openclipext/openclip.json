@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.removeallspaces",
-  "name": "Remove All Spaces",
-  "version": "1.0.0",
+  "name": {
+    "en": "Remove All Spaces",
+    "zh-Hans": "删除所有空格",
+    "zh-Hant": "刪除所有空格",
+    "ja": "すべてのスペースを削除",
+    "fr": "Supprimer tous les espaces"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Strip all whitespace from the selected text.",
+  "description": {
+    "en": "Strip all whitespace from the selected text.",
+    "zh-Hans": "移除选中文本中的所有空白字符。",
+    "zh-Hant": "移除選取文字中的所有空白字元。",
+    "ja": "選択したテキストからすべての空白文字を削除します。",
+    "fr": "Supprime tous les espaces du texte sélectionné."
+  },
   "action": {
-    "title": "Remove All Spaces",
+    "title": {
+      "en": "Remove All Spaces",
+      "zh-Hans": "删除所有空格",
+      "zh-Hant": "刪除所有空格",
+      "ja": "すべてのスペースを削除",
+      "fr": "Supprimer tous les espaces"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

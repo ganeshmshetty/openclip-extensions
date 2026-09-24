@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.strikethrough",
-  "name": "Strikethrough",
-  "version": "1.0.0",
+  "name": {
+    "en": "Strikethrough",
+    "zh-Hans": "删除线",
+    "zh-Hant": "刪除線",
+    "ja": "取り消し線",
+    "fr": "Barré"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Toggle strikethrough formatting across rich text editors.",
+  "description": {
+    "en": "Toggle strikethrough formatting in rich text editors.",
+    "zh-Hans": "在富文本编辑器中切换文本删除线格式。",
+    "zh-Hant": "在富文字編輯器中切換文字刪除線格式。",
+    "ja": "リッチテキストエディタで取り消し線の書式を切り替えます。",
+    "fr": "Bascule le formatage barré dans les éditeurs de texte enrichi."
+  },
   "action": {
-    "title": "Strikethrough",
+    "title": {
+      "en": "Strikethrough",
+      "zh-Hans": "删除线",
+      "zh-Hant": "刪除線",
+      "ja": "取り消し線",
+      "fr": "Barré"
+    },
     "icon": "strikethrough",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "none"
   }
 }

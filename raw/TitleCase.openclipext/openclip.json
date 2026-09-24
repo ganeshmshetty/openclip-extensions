@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.titlecase",
-  "name": "Title Case",
-  "version": "1.0.1",
+  "name": {
+    "en": "Title Case",
+    "zh-Hans": "标题大写",
+    "zh-Hant": "標題大寫",
+    "ja": "タイトルケース",
+    "fr": "Casse de titre"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Capitalize words according to English title conventions.",
+  "description": {
+    "en": "Capitalize words according to English title conventions.",
+    "zh-Hans": "按照英语标准标题格式将单词首字母大写。",
+    "zh-Hant": "按照英語標準標題格式將單字首字母大寫。",
+    "ja": "英語のタイトル規則に従って単語の頭文字を大文字にします。",
+    "fr": "Met en majuscule les mots selon les conventions des titres anglais."
+  },
   "action": {
-    "title": "Title Case",
+    "title": {
+      "en": "Title Case",
+      "zh-Hans": "标题大写",
+      "zh-Hant": "標題大寫",
+      "ja": "タイトルケース",
+      "fr": "Casse de titre"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

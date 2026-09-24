@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.kebabcase",
-  "name": "kebab-case",
-  "version": "1.0.1",
+  "name": {
+    "en": "kebab-case",
+    "zh-Hans": "kebab-case 短横线命名",
+    "zh-Hant": "kebab-case 短橫線命名",
+    "ja": "kebab-case（ケバブケース）",
+    "fr": "kebab-case"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to kebab-case.",
+  "description": {
+    "en": "Convert selected text to kebab-case.",
+    "zh-Hans": "将选中文本转换为 kebab-case 短横线命名。",
+    "zh-Hant": "將選取文字轉換為 kebab-case 短橫線命名。",
+    "ja": "選択したテキストを kebab-case に変換します。",
+    "fr": "Convertit le texte sélectionné en kebab-case."
+  },
   "action": {
-    "title": "kebab-case",
+    "title": {
+      "en": "kebab-case",
+      "zh-Hans": "kebab-case",
+      "zh-Hant": "kebab-case",
+      "ja": "kebab-case",
+      "fr": "kebab-case"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.camelcase",
-  "name": "camelCase",
-  "version": "1.0.1",
+  "name": {
+    "en": "camelCase",
+    "zh-Hans": "驼峰命名",
+    "zh-Hant": "駝峰命名",
+    "ja": "キャメルケース",
+    "fr": "camelCase"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to camelCase.",
+  "description": {
+    "en": "Convert selected text to camelCase.",
+    "zh-Hans": "将选中的文本转换为 camelCase 驼峰命名。",
+    "zh-Hant": "將選取的文字轉換為 camelCase 駝峰命名。",
+    "ja": "選択したテキストを camelCase に変換します。",
+    "fr": "Convertit le texte sélectionné en camelCase."
+  },
   "action": {
-    "title": "camelCase",
+    "title": {
+      "en": "camelCase",
+      "zh-Hans": "驼峰命名",
+      "zh-Hant": "駝峰命名",
+      "ja": "キャメルケース",
+      "fr": "camelCase"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

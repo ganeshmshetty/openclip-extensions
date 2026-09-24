@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.constantcase",
-  "name": "CONSTANT_CASE",
-  "version": "1.0.0",
+  "name": {
+    "en": "CONSTANT_CASE",
+    "zh-Hans": "常量命名",
+    "zh-Hant": "常數命名",
+    "ja": "定数ケース",
+    "fr": "CONSTANT_CASE"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Convert selected text to CONSTANT_CASE (screaming snake case).",
+  "description": {
+    "en": "Convert selected text to CONSTANT_CASE (screaming snake case).",
+    "zh-Hans": "将选中的文本转换为 CONSTANT_CASE 常量命名（全大写下划线）。",
+    "zh-Hant": "將選取的文字轉換為 CONSTANT_CASE 常數命名（全大寫底線）。",
+    "ja": "選択したテキストを CONSTANT_CASE（全大文字のスネークケース）に変換します。",
+    "fr": "Convertit le texte sélectionné en CONSTANT_CASE (snake case en majuscules)."
+  },
   "action": {
-    "title": "CONSTANT_CASE",
+    "title": {
+      "en": "CONSTANT_CASE",
+      "zh-Hans": "常量命名",
+      "zh-Hant": "常數命名",
+      "ja": "定数ケース",
+      "fr": "CONSTANT_CASE"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

@@ -1,14 +1,33 @@
 {
   "identifier": "com.openclip.headertwo",
-  "name": "Header Two",
-  "version": "1.0.1",
+  "name": {
+    "en": "Header Two",
+    "zh-Hans": "二级标题",
+    "zh-Hant": "二級標題",
+    "ja": "見出し 2",
+    "fr": "Titre 2"
+  },
+  "version": "1.1.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
-  "description": "Format selected text as Markdown Header 2.",
+  "description": {
+    "en": "Format selected text as Markdown Header 2.",
+    "zh-Hans": "将选中文本格式化为 Markdown 二级标题。",
+    "zh-Hant": "將選取文字格式化為 Markdown 二級標題。",
+    "ja": "選択したテキストを Markdown の見出し 2（H2）に設定します。",
+    "fr": "Formater le texte sélectionné en titre Markdown 2."
+  },
   "action": {
-    "title": "Header 2",
+    "title": {
+      "en": "Header 2",
+      "zh-Hans": "二级标题",
+      "zh-Hant": "二級標題",
+      "ja": "見出し 2",
+      "fr": "Titre 2"
+    },
     "icon": "icon.svg",
     "type": "javascript",
-    "script": "main.js"
+    "script": "main.js",
+    "output": "text"
   }
 }

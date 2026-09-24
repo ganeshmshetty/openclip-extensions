@@ -1,30 +1,84 @@
 {
   "identifier": "com.openclip.quick-translate",
-  "name": "Quick Translate",
-  "version": "1.0.0",
+  "name": {
+    "en": "Quick Translate",
+    "zh-Hans": "快捷翻译",
+    "zh-Hant": "快速翻譯",
+    "ja": "クイック翻訳",
+    "fr": "Traduction rapide"
+  },
+  "version": "1.1.0",
   "author": "OpenClip Team",
-  "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+  "description": {
+    "en": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+    "zh-Hans": "即时翻译选中文本 — 在弹窗中预览结果或直接就地粘贴。完全免密钥：自动检测源语言，在 Google、LibreTranslate、SimplyTranslate 和 Lingva 节点间自动故障切换。",
+    "zh-Hant": "即時翻譯選取文字 — 在彈窗中預覽結果或直接就地貼上。完全免金鑰：自動偵測來源語言，在 Google、LibreTranslate、SimplyTranslate 和 Lingva 節點間自動容錯移轉。",
+    "ja": "選択したテキストを瞬時に翻訳 — ポップアップで結果をプレビューまたはその場で貼り付け。APIキー不要：言語自動検出に対応し、Google、LibreTranslate、SimplyTranslate、Lingva を順にフォールバック。",
+    "fr": "Traduisez instantanément le texte sélectionné — résultat prévisualisé dans la popup ou collé sur place. Sans clé API : cascade entre Google, LibreTranslate, SimplyTranslate et Lingva avec détection automatique de la langue source."
+  },
   "options": [
     {
       "identifier": "targetLang",
-      "label": "Translate to",
+      "label": {
+        "en": "Translate to",
+        "zh-Hans": "翻译目标语言",
+        "zh-Hant": "翻譯目標語言",
+        "ja": "翻訳先言語",
+        "fr": "Traduire en"
+      },
       "type": "multiple",
       "default": "en",
       "values": [
-        "en", "hi", "es", "fr", "de", "ja", "zh-Hans", "zh-Hant", "ko", "pt",
-        "ru", "ar", "it", "tr", "nl", "pl", "sv", "da", "fi", "no",
-        "cs", "el", "he", "th", "vi", "id", "uk", "bn", "ta", "te", "ml", "ur", "fa"
+        "en",
+        "hi",
+        "es",
+        "fr",
+        "de",
+        "ja",
+        "zh-Hans",
+        "zh-Hant",
+        "ko",
+        "pt",
+        "ru",
+        "ar",
+        "it",
+        "tr",
+        "nl",
+        "pl",
+        "sv",
+        "da",
+        "fi",
+        "no",
+        "cs",
+        "el",
+        "he",
+        "th",
+        "vi",
+        "id",
+        "uk",
+        "bn",
+        "ta",
+        "te",
+        "ml",
+        "ur",
+        "fa"
       ]
     }
   ],
   "action": {
-    "title": "Quick Translate",
+    "title": {
+      "en": "Quick Translate",
+      "zh-Hans": "快捷翻译",
+      "zh-Hant": "快速翻譯",
+      "ja": "クイック翻訳",
+      "fr": "Traduction rapide"
+    },
     "icon": "character.bubble",
     "type": "javascript",
     "script": "main.js",
     "async": true,
     "loading": true,
-    "loadingMessage": "Translating…"
+    "loadingMessage": "Translating…",
+    "output": "text"
   }
 }
-
