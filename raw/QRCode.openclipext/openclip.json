@@ -8,7 +8,7 @@
     "fr": "Code QR"
   },
   "version": "1.0.0",
-  "minOpenClipVersion": "1.1.0",
+  "minOpenClipVersion": "1.6.2",
   "author": "OpenClip Team",
   "description": {
     "en": "Generate a QR code from text or URL with live preview, save, copy, and drag support.",
