@@ -73,6 +73,12 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   // OPTIONAL. Package-level search keywords for the action palette (array or comma-separated string).
   "keywords": ["words", "text", "case"],
 
+  // OPTIONAL. Package-level output contract defaults inherited by all actions in the package:
+  // "output": "text" | "file" | "none" | "dynamic"
+  "output": "text",
+  // "result": "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
+  "result": "paste-or-copy",
+
   // REQUIRED. Either an ARRAY of action objects ("actions"),
   // or a SINGLE action object ("action"). Alias: "Actions".
   "actions": [ /* ...one object per Action kind in §3... */ ],
@@ -126,6 +132,8 @@ Common action fields (all OPTIONAL unless noted):
   "icon": "symbol(textformat.upper)",  // SF Symbol / local image / bare name (see below)
   "type": "javascript",                // default "url"
   "regex": ".*",                       // LEGACY pre-rules visibility gate (see §5)
+  "output": "text",                    // REQUIRED for output-producing kinds: "text" | "file" | "none" | "dynamic" (see below)
+  "result": "preview",                 // author recommended delivery: "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
   "secondary": { "type": "copy", "value": "Copied text" },  // secondary-click outcome; literal value, NON-JS kinds only (see §5b)
   "toast": { "message": "Copied" },    // primary-click toast (see §5b)
   "secondaryToast": { "message": "Copied" },  // secondary-click toast (see §5b)
@@ -137,6 +145,13 @@ Common action fields (all OPTIONAL unless noted):
   "inline": true                         // synchronous javascript only: live inline result preview (see below)
 }
 ```
+
+**Output contracts (`output` and `result`).** Every action declares what kind of output it yields:
+- `"output"`: `"text"`, `"file"`, `"none"`, or `"dynamic"`. **Authoring rule: declare `output` explicitly on every output-producing action** (all kinds except `url`/`keypress`/`shortcut`/`service`, which are structurally `none`). The runtime does fall back to sniffing the returned value, but an explicit declaration makes a manifest self-documenting: a reader can tell what an action produces without opening its script. Set `output` on each **sub-action** of a `group`, never on the structural group row.
+- `"result"`: Author recommendation for delivery: `"preview"` (result card), `"paste"`, `"copy"`, `"paste-or-copy"` (paste if target app allows, else copy), `"open"` (open file), `"save"` (save file). Optional — omit to inherit the output kind's default.
+  - Incompatible pairs (e.g. `output: "text"` with `result: "save"`) produce a non-fatal validation warning, drop the invalid result, and safely fall back to the output kind's default (`paste-or-copy` for text, `preview` for file).
+  - Unknown enum strings fail open to `nil` (preserving future-compatibility).
+  - Users can configure per-action overrides in Settings (`Show in card`, `Paste`, `Copy`).
 
 **Inline results (`inline`).** Set `"inline": true` on a **synchronous `javascript`** action
 (kind `js`/`javascript`, *without* `"async": true`) to have OpenClip evaluate it live as the
@@ -245,7 +260,7 @@ terminal binary directly (§3d), which requires zero TCC permissions.
 - `type` `script`/`scriptfile`, or any unknown non-url kind with **no** `url`/`scriptCode`, reads the
   file named by `"script"` (default `script.sh`) from the package dir and runs it directly.
 
-The command is executed **with a 60-second kill watchdog** (`Constants.scriptTimeout`, cancellable anytime by clicking the loading toast) and a
+The command runs **with no watchdog by default** (cancellable anytime by clicking the loading toast) and a
 non-zero exit surfaces as an error status. Selection/match data arrive via env vars (`$OPENCLIP_TEXT`, `$OPENCLIP_HTML`, `$OPENCLIP_RTF`, §6c), and
 stdout is interpreted per §8 (JSON effects, plain-text implicit return, or empty-text success).
 
@@ -444,22 +459,24 @@ also request configuration at script time via `openclip.requireConfiguration` �
 A malformed regex **enables** the action (defensive — a bad manifest never hides an action). With
 **no** rules attached, every extension action defaults to "enabled iff a non-blank selection exists".
 
-### 5b. Primary/secondary result delivery (`secondary`, `toast`, `secondaryToast`)
+### 5b. Primary/secondary result delivery (`output`, `result`, `secondary`, `toast`, `secondaryToast`)
 
 Every action run is a **delivery decision**: which result wins, and which companion toast (if any)
 surfaces. The pipeline — **Select → Probe → Toast** — is decided once per run by
 `ActionResultDelivery` (`Sources/Core/Actions/ActionResultDelivery.swift`) before the effect door
 runs:
 
-1. **Select** — a **secondary** activation (right-click or ⇧-click) uses the action's declared
-   `secondary` outcome when one is declared; otherwise the raw runtime result wins, except a
-   secondary click on a `.paste` primary derives `.copy` (**the paste→copy default**). A primary
-   click always uses the raw result, so a non-paste primary with no declaration behaves the same on
-   both clicks. An **implicitly returned `.text`** (JS string return, AppleScript output, shell
-   stdout, text snippet) is resolved to preview/paste/copy by the **per-click preference** — the
-   General tab's "When an action returns text" pickers (`primaryClickBehavior` for a primary click,
-   `secondaryClickBehavior` for a secondary click; defaults primary=paste, secondary=copy); a
-   `.preview` preference keeps the popup open for the card render instead of delivering.
+1. **Select** — 
+   - **Primary delivery**: For actions returning text (or file results), primary outcome is resolved
+     from the author's declared output contract (`output` and `result` in manifest), user per-action
+     override in Settings (`ActionCustomizationManager`), or output kind defaults (`paste-or-copy` for
+     text, `preview` for file). The former global General tab settings (`primaryClickBehavior`/`secondaryClickBehavior`)
+     are removed in favor of these author defaults and per-action customizations.
+   - **Secondary activation (right-click or ⇧-click)**:
+     - An explicit declared `secondary` outcome (`ActionDelivery.secondary`) wins if present.
+     - Otherwise, the universal **Clipboard Invariant** applies:
+       - If primary outcome is paste, paste-or-copy, preview, save, or open: deliver as **copy** (`.copy` or `.copyFile`).
+       - If primary outcome is copy: deliver as **preview** (`.preview`, keeping the popup open for card presentation).
 2. **Apply probe** — a chosen `.paste` is downgraded to `.copy` whenever the target cannot paste,
    and the rich analogue downgrades `.pasteContent` to `.copyContent`. The **probe always applies**:
    to primary *and* secondary clicks, and to declared *and* derived pastes alike — a paste is never
@@ -742,9 +759,9 @@ alone → `.toast`, or coexisting with effects → `.sequence([.toast, …effect
 single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; function string return → `.text(returnValue)` (implicitly returned text, resolved
 per the click's preference); else `.success`.
 
-> Execution runs on a background thread (never the `MainActor`); async scripts are guarded by a
-> 60-second watchdog (`Constants.scriptTimeout`, `TimeoutFlag` pattern) — a never-settling promise
-> surfaces as an error toast. Users can click the loading toast anytime to cancel running scripts immediately.
+> Execution runs on a background thread (never the `MainActor`); async scripts run with no timer by
+> default — a never-settling promise keeps waiting. Users can click the loading toast anytime to
+> cancel running scripts immediately.
 > Note the resolution above: a toast followed by an effect yields a sequence of both.
 
 ---
@@ -1053,6 +1070,10 @@ are rejected at build time by esbuild's browser platform. See
   (`shell`/`shellinline`); to get JS you must use `"js"`/`"javascript"` (inline) or an actual
   `.js` file. Unused keys are ignored, not an error — but an **unknown** `type` string rejects the
   package.
+- **Missing `output`.** A manifest that omits `output` on an output-producing action still loads
+  (the runtime sniffs the returned value), but it is non-conforming: declare `output` explicitly so
+  the manifest is self-documenting. Non-output kinds (`url`/`keypress`/`shortcut`/`service`) are
+  structurally `none` and need no declaration.
 - **`requiresSelection` gating.** With no `requirements` the default requires a non-blank selection;
   a selected-empty/app with no selection won't show the action. Set
   `requirements.requiresSelection: false` for always-on actions.
@@ -1113,8 +1134,10 @@ so pre-existing extensions keep working with zero action.
   types in `Sources/Core/` are pure; keep them free of UI imports.
 - **Do not write to `UserDefaults` directly** in extension code paths — Option storage goes through
   `ActionOptionStore`/`SettingKey`; secrets go through `SecretStore`.
-- **Do not skip the subprocess watchdog** — any new action that spawns a subprocess must terminate
-  it past `Constants.scriptTimeout` (60 s). Existing shell/shortcut runtimes already do.
+- **Do not spawn a subprocess outside the shared runner** — any new action that spawns a subprocess
+  must route through `ShellProcessRunner`; an explicit `timeout` arms its kill watchdog, and with
+  none the child runs until it exits or the loading toast cancels it. Existing shell/shortcut
+  runtimes already do.
 - **Do not `switch action.id`** for presentation decisions — use `action.chrome`, icons, and
   data-driven fields. The `chrome`/`rowStyle`/`popupBehavior`/`source` you may see in the code are
   **computed by the app**, not manifest keys: a manifest has **no** `chrome`, `subtitle`, `badge`,
@@ -1123,9 +1146,9 @@ so pre-existing extensions keep working with zero action.
 - **Do not write a `parentGroupID`** — groups use the id-prefix convention only (§3i); it was
   deliberately deferred.
 - **Do not invent JSON effect `type` strings** — the shell protocol accepts only the types in §8a.
-- **Do not block inside JS** — the async watchdog kills never-settling promises after 60 s
-  (`Constants.scriptTimeout`), but keep scripts fast; `"async": true` is required for any script
-  that needs `fetch` or to await a promise.
+- **Do not block inside JS** — a never-settling promise now has no default timer (the user cancels
+  via the loading toast), so a buggy await can hang the run; keep scripts fast. `"async": true` is
+  required for any script that needs `fetch` or to await a promise.
 - **Do not `require` bare or Node-builtin specifiers from a file script** — the host rejects them
   (Node builtins with a "Node builtin" message, other bare names with a "bundle npm libraries with
   esbuild" message); inline `scriptCode` has no `require` at all, and `require` may only reach files
