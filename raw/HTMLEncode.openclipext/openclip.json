@@ -1,0 +1,64 @@
+{
+  "identifier": "com.openclip.htmlencode",
+  "name": {
+    "en": "HTML Entities",
+    "zh-Hans": "HTML 实体编解码",
+    "zh-Hant": "HTML 實體編解碼",
+    "ja": "HTML エンティティ変換",
+    "fr": "Entités HTML"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Encode or decode HTML special character entities.",
+    "zh-Hans": "对选中文本进行 HTML 实体编码或解码。",
+    "zh-Hant": "對選中文本進行 HTML 實體編碼或解碼。",
+    "ja": "HTML 特殊文字エンティティをエンコードまたはデコードします。",
+    "fr": "Encoder ou décoder les entités de caractères spéciaux HTML."
+  },
+  "action": {
+    "title": {
+      "en": "HTML Entities",
+      "zh-Hans": "HTML 实体",
+      "zh-Hant": "HTML 實體",
+      "ja": "HTML エンティティ",
+      "fr": "Entités HTML"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "encode",
+        "title": {
+          "en": "HTML Encode",
+          "zh-Hans": "HTML 编码",
+          "zh-Hant": "HTML 編碼",
+          "ja": "HTML エンコード",
+          "fr": "Encoder HTML"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "encode.js",
+        "output": "text"
+      },
+      {
+        "id": "decode",
+        "title": {
+          "en": "HTML Decode",
+          "zh-Hans": "HTML 解码",
+          "zh-Hant": "HTML 解碼",
+          "ja": "HTML デコード",
+          "fr": "Décoder HTML"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "decode.js",
+        "output": "text",
+        "requirements": {
+          "regex": "&(#?[a-zA-Z0-9]+);"
+        }
+      }
+    ]
+  }
+}
