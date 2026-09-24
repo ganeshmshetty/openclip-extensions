@@ -1,0 +1,35 @@
+{
+  "identifier": "com.openclip.call",
+  "name": {
+    "en": "Call Phone Number",
+    "zh-Hans": "拨打电话",
+    "zh-Hant": "撥打電話",
+    "ja": "電話をかける",
+    "fr": "Appeler le numéro"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Call the selected phone number via iPhone or FaceTime.",
+    "zh-Hans": "通过 iPhone 接力或 FaceTime 拨打选中的电话号码。",
+    "zh-Hant": "透過 iPhone 接力或 FaceTime 撥打選取的電話號碼。",
+    "ja": "iPhone または FaceTime 経由で選択した電話番号に発信します。",
+    "fr": "Appeler le numéro de téléphone sélectionné via iPhone ou FaceTime."
+  },
+  "action": {
+    "title": {
+      "en": "Call",
+      "zh-Hans": "拨号",
+      "zh-Hant": "撥號",
+      "ja": "発信",
+      "fr": "Appeler"
+    },
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "tel:{query}",
+    "requirements": {
+      "regex": "^[0-9+*#][0-9*#\\-().,; ]+[0-9*#]$"
+    }
+  }
+}
