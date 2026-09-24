@@ -28,8 +28,9 @@
     "icon": "icon.svg",
     "type": "url",
     "url": "dash://{query}",
+    "output": "none",
     "requirements": {
-      "regex": "^.{1,160}$"
+      "regex": "^.+$"
     }
   }
 }
