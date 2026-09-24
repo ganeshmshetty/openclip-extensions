@@ -1,0 +1,56 @@
+{
+  "identifier": "com.openclip.tot",
+  "name": {
+    "en": "Append to Tot",
+    "zh-Hans": "追加到 Tot",
+    "zh-Hant": "附加至 Tot",
+    "ja": "Tot に追記",
+    "fr": "Ajouter à Tot"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Append the selected text to a chosen dot in Tot.",
+    "zh-Hans": "将选中文本追加到 Tot 的指定页面 (Dot)。",
+    "zh-Hant": "將選取文字附加到 Tot 的指定頁面 (Dot)。",
+    "ja": "選択したテキストを Tot の指定ドットに追記します。",
+    "fr": "Ajouter le texte sélectionné à une page Tot choisie."
+  },
+  "options": [
+    {
+      "identifier": "page",
+      "label": {
+        "en": "Tot Dot",
+        "zh-Hans": "Tot 页面",
+        "zh-Hant": "Tot 頁面",
+        "ja": "Tot ページ",
+        "fr": "Page Tot"
+      },
+      "type": "multiple",
+      "default": "1",
+      "values": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Tot",
+      "zh-Hans": "追加到 Tot",
+      "zh-Hant": "附加至 Tot",
+      "ja": "Tot に追記",
+      "fr": "Ajouter à Tot"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "none"
+  }
+}
