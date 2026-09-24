@@ -39,7 +39,8 @@
         },
         "icon": "icon.svg",
         "type": "javascript",
-        "script": "encode.js"
+        "script": "encode.js",
+        "output": "text"
       },
       {
         "id": "decode",
@@ -53,6 +54,7 @@
         "icon": "icon.svg",
         "type": "javascript",
         "script": "decode.js",
+        "output": "text",
         "requirements": {
           "regex": "^[A-Za-z0-9+_/=-]+$"
         }
