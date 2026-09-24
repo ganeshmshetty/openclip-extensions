@@ -1,0 +1,36 @@
+{
+  "identifier": "com.openclip.dash",
+  "name": {
+    "en": "Dash Documentation",
+    "zh-Hans": "Dash 文档搜索",
+    "zh-Hant": "Dash 文件搜尋",
+    "ja": "Dash ドキュメント検索",
+    "fr": "Documentation Dash"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Search API documentation in Dash.",
+    "zh-Hans": "在 Dash 中搜索开发者 API 文档。",
+    "zh-Hant": "在 Dash 中搜尋開發者 API 文件。",
+    "ja": "Dash で API ドキュメントを検索します。",
+    "fr": "Rechercher dans la documentation Dash."
+  },
+  "action": {
+    "title": {
+      "en": "Dash",
+      "zh-Hans": "Dash",
+      "zh-Hant": "Dash",
+      "ja": "Dash",
+      "fr": "Dash"
+    },
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "dash://{query}",
+    "output": "none",
+    "requirements": {
+      "regex": "^.+$"
+    }
+  }
+}
