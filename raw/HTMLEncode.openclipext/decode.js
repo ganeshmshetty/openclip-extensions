@@ -8,17 +8,26 @@ function action(sel) {
     '&quot;': '"',
     '&#39;': "'",
     '&apos;': "'",
-    '&nbsp;': ' '
+    '&nbsp;': '\u00a0'
   };
-  return text.replace(/&(#?[a-zA-Z0-9]+);/g, function(match) {
-    if (map[match]) return map[match];
-    if (match.startsWith('&#x') || match.startsWith('&#X')) {
-      var code = parseInt(match.slice(3, -1), 16);
-      return !isNaN(code) ? String.fromCharCode(code) : match;
+
+  function codePointToString(code) {
+    if (!isFinite(code) || code <= 0 || code > 0x10ffff ||
+        (code >= 0xd800 && code <= 0xdfff)) {
+      return '\ufffd';
     }
-    if (match.startsWith('&#')) {
-      var code = parseInt(match.slice(2, -1), 10);
-      return !isNaN(code) ? String.fromCharCode(code) : match;
+    if (code <= 0xffff) return String.fromCharCode(code);
+    var cp = code - 0x10000;
+    return String.fromCharCode(0xd800 + (cp >> 10), 0xdc00 + (cp & 0x3ff));
+  }
+
+  return text.replace(/&(#x[0-9a-fA-F]+|#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);/g, function(match) {
+    if (map[match]) return map[match];
+    if (match.slice(0, 3).toLowerCase() === '&#x') {
+      return codePointToString(parseInt(match.slice(3, -1), 16));
+    }
+    if (match.charAt(1) === '#') {
+      return codePointToString(parseInt(match.slice(2, -1), 10));
     }
     return match;
   });
