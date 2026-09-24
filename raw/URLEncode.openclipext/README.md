@@ -4,7 +4,7 @@ Percent-encode or decode query parameters, paths, and URLs.
 
 ## Features
 
-- **URL Encode**: Converts special characters, spaces, and punctuation into standard percent-encoded escape sequences (`%20`, `%26`, `%3D`, etc.).
+- **URL Encode**: Converts special characters, spaces, and punctuation into standard percent-encoded escape sequences (`%20`, `%26`, `%3D`, etc.). The entire selection is encoded as a single component, so delimiters such as `:`, `/`, and `?` in a full URL are encoded too — use it for a value you intend to embed in another URL.
 - **URL Decode**: Converts percent-encoded hex sequences back into readable UTF-8 characters.
 - **Smart Activation**: URL Decode automatically appears when the selection contains percent-encoded characters (`%XX`).
 - **Local & Offline**: Runs directly in OpenClip's JavaScriptCore engine with zero network calls.
