@@ -1,3 +1,6 @@
 #!/bin/zsh
-cmd="${OPENCLIP_TEXT:-$(cat)}"
-printf "%s" "$cmd" | open -f -a TextEdit
+if [[ -n "${OPENCLIP_TEXT:-}" ]]; then
+  printf "%s" "$OPENCLIP_TEXT" | open -f -a TextEdit
+else
+  open -f -a TextEdit
+fi

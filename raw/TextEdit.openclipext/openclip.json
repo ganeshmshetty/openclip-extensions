@@ -27,6 +27,7 @@
     },
     "icon": "icon.svg",
     "type": "shell",
-    "script": "main.sh"
+    "script": "main.sh",
+    "output": "dynamic"
   }
 }
