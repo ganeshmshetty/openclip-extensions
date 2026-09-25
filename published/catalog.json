@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-24T14:43:38Z",
+  "updatedAt": "2026-09-25T02:27:12Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -7,11 +7,11 @@
       "description": "Convert selected text to aLtErNaTiNg CaSe.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 40,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.alternatingcase@1.0.0/AlternatingCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.alternatingcase@1.1.0/AlternatingCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.alternatingcase.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.anglebrackets",
@@ -19,11 +19,11 @@
       "description": "Wrap selected text in angle brackets.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 37,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.0.0/AngleBrackets.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.anglebrackets@1.1.0/AngleBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.anglebrackets.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.antinote",
@@ -31,11 +31,11 @@
       "description": "Create a new note in Antinote or append to the current note.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 54,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.antinote@1.0.0/Antinote.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.antinote@1.1.0/Antinote.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.antinote.svg",
-      "publishedAt": "2026-09-08T20:29:52+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.applemessages",
@@ -43,11 +43,11 @@
       "description": "Share selected text directly via Apple Messages.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 79,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemessages@1.0.0/AppleMessages.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemessages@1.1.0/AppleMessages.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applemessages.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.applemusic",
@@ -55,11 +55,11 @@
       "description": "Search Apple Music for the selected text.",
       "author": "OpenClip Team",
       "icon": "music.note",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "downloadCount": 46,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.1.1/AppleMusic.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applemusic@1.2.0/AppleMusic.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applemusic.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.applereminders",
@@ -67,11 +67,11 @@
       "description": "Quick add a new reminder task to Apple Reminders.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 174,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applereminders@1.0.1/AppleReminders.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.applereminders@1.1.0/AppleReminders.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.applereminders.svg",
-      "publishedAt": "2026-09-19T23:43:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "io.appwrite.openclip",
@@ -79,11 +79,11 @@
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
       "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 6,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.appwrite.openclip@1.0.0/Appwrite.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.appwrite.openclip@1.1.0/Appwrite.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/io.appwrite.openclip.svg",
-      "publishedAt": "2026-09-10T00:47:52+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.bearnotes",
@@ -91,11 +91,11 @@
       "description": "Create a new note in Bear.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 20,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.0.0/BearNotes.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bearnotes@1.1.0/BearNotes.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bearnotes.svg",
-      "publishedAt": "2026-08-20T22:28:33+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "io.github.s010s.openclip.bob",
@@ -103,11 +103,11 @@
       "description": "Translate selected text in Bob using your existing translation services.",
       "author": "s010s",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 98,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.github.s010s.openclip.bob@1.0.0/Bob.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.github.s010s.openclip.bob@1.1.0/Bob.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/io.github.s010s.openclip.bob.svg",
-      "publishedAt": "2026-09-08T08:15:57+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.bold",
@@ -115,11 +115,11 @@
       "description": "Toggle bold formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "bold",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 76,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.0.0/Bold.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.1.0/Bold.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bold.svg",
-      "publishedAt": "2026-08-21T21:29:28+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.bulletlines",
@@ -127,11 +127,11 @@
       "description": "Convert plain lines into a Markdown bullet list.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 109,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bulletlines@1.0.1/BulletLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bulletlines@1.1.0/BulletLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bulletlines.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.camelcase",
@@ -139,11 +139,11 @@
       "description": "Convert selected text to camelCase.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 42,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.camelcase@1.0.1/CamelCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.camelcase@1.1.0/CamelCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.camelcase.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.caniuse",
@@ -151,11 +151,11 @@
       "description": "Browser compatibility table lookup on Can I Use.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 17,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.caniuse@1.0.0/CanIUse.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.caniuse@1.1.0/CanIUse.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.caniuse.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.capitalizewords",
@@ -163,11 +163,11 @@
       "description": "Capitalize the first letter of every word.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 125,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.0.1/CapitalizeWords.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.capitalizewords@1.1.0/CapitalizeWords.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.capitalizewords.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.charactercount",
@@ -175,11 +175,11 @@
       "description": "Count the characters in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 124,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.1.0/CharacterCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.charactercount@1.2.0/CharacterCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.charactercount.svg",
-      "publishedAt": "2026-09-11T15:37:00+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.cleanemdashes",
@@ -187,11 +187,11 @@
       "description": "Clean up excessive AI-generated em-dashes and convert them into natural punctuation.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 316,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.cleanemdashes@1.0.0/CleanEmDashes.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.cleanemdashes@1.1.0/CleanEmDashes.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.cleanemdashes.svg",
-      "publishedAt": "2026-09-13T21:36:54+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.codeblock",
@@ -199,11 +199,11 @@
       "description": "Format selected text as a Markdown code block.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 69,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.codeblock@1.0.0/CodeBlock.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.codeblock@1.1.0/CodeBlock.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.codeblock.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.constantcase",
@@ -211,11 +211,11 @@
       "description": "Convert selected text to CONSTANT_CASE (screaming snake case).",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 26,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.0.0/ConstantCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.constantcase@1.1.0/ConstantCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.constantcase.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.copy-as-markdown",
@@ -223,11 +223,11 @@
       "description": "Convert the selection's HTML to Markdown and copy it.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 310,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.copy-as-markdown@1.0.0/CopyAsMarkdown.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.copy-as-markdown@1.1.0/CopyAsMarkdown.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.copy-as-markdown.svg",
-      "publishedAt": "2026-08-22T10:44:48+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.craftdocs",
@@ -235,11 +235,11 @@
       "description": "Add selected text to Craft documents.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 20,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.craftdocs@1.0.0/CraftDocs.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.craftdocs@1.1.0/CraftDocs.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.craftdocs.svg",
-      "publishedAt": "2026-08-20T22:28:33+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.curlybrackets",
@@ -247,11 +247,11 @@
       "description": "Wrap selected text in curly brackets.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 38,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.0.0/CurlyBrackets.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.curlybrackets@1.1.0/CurlyBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.curlybrackets.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.currency-converter",
@@ -259,11 +259,11 @@
       "description": "Convert world currencies directly inline based on current exchange rates.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 72,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.currency-converter@1.0.0/CurrencyConverter.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.currency-converter@1.1.0/CurrencyConverter.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.currency-converter.svg",
-      "publishedAt": "2026-09-15T08:13:23+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.deduplicatelines",
@@ -271,11 +271,11 @@
       "description": "Remove all duplicate lines from the selection.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 43,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deduplicatelines@1.0.0/DeduplicateLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deduplicatelines@1.1.0/DeduplicateLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.deduplicatelines.svg",
-      "publishedAt": "2026-08-20T22:07:34+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.deleteselection",
@@ -283,11 +283,11 @@
       "description": "Delete the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 52,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.0.0/DeleteSelection.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.1.0/DeleteSelection.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.deleteselection.svg",
-      "publishedAt": "2026-08-20T22:20:25+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.devdocs",
@@ -295,11 +295,11 @@
       "description": "Instant unified API documentation search on DevDocs.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 15,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.devdocs@1.0.0/DevDocsSearch.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.devdocs@1.1.0/DevDocsSearch.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.devdocs.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.dotcase",
@@ -307,11 +307,11 @@
       "description": "Convert selected text to dot.case.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 14,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dotcase@1.0.1/DotCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.dotcase@1.1.0/DotCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.dotcase.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.doublequotes",
@@ -319,11 +319,11 @@
       "description": "Wrap selected text in double quotes.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 76,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.0.0/DoubleQuotes.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.doublequotes@1.1.0/DoubleQuotes.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.doublequotes.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.drafts",
@@ -331,11 +331,11 @@
       "description": "Create a new note in Drafts.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 23,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.drafts@1.0.0/DraftsNote.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.drafts@1.1.0/DraftsNote.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.drafts.svg",
-      "publishedAt": "2026-08-20T22:28:33+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.droppy",
@@ -343,11 +343,11 @@
       "description": "Instantly stage selected links, files, and text notes into Droppy in one click.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 51,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.droppy@1.0.0/Droppy.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.droppy@1.1.0/Droppy.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.droppy.svg",
-      "publishedAt": "2026-09-20T14:12:49+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.echohn.openclip.due",
@@ -355,11 +355,11 @@
       "description": "Create a new reminder in Due from the selected text.",
       "author": "echohn",
       "icon": "due.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 11,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.echohn.openclip.due@1.0.1/Due.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.echohn.openclip.due@1.1.0/Due.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.echohn.openclip.due.svg",
-      "publishedAt": "2026-09-13T19:06:37+08:00"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.extractemails",
@@ -367,11 +367,11 @@
       "description": "Regex-extract all email addresses into a clean list.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 49,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractemails@1.0.0/ExtractEmails.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractemails@1.1.0/ExtractEmails.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extractemails.svg",
-      "publishedAt": "2026-08-20T22:15:43+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.extracthashtags",
@@ -379,11 +379,11 @@
       "description": "Regex-extract all #hashtags into a clean list.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 15,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracthashtags@1.0.1/ExtractHashtags.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracthashtags@1.1.0/ExtractHashtags.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extracthashtags.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.extractips",
@@ -391,11 +391,11 @@
       "description": "Regex-extract all IPv4 addresses into a clean list.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 25,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractips@1.0.0/ExtractIps.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractips@1.1.0/ExtractIps.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extractips.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.extractphones",
@@ -403,11 +403,11 @@
       "description": "Regex-extract all phone numbers into a clean list.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 31,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractphones@1.0.0/ExtractPhones.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extractphones@1.1.0/ExtractPhones.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extractphones.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.extracturls",
@@ -415,11 +415,11 @@
       "description": "Regex-extract all HTTP/HTTPS links into a clean list.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 53,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.0.1/ExtractUrls.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.extracturls@1.1.0/ExtractUrls.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.extracturls.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.fantasticalevent",
@@ -427,11 +427,11 @@
       "description": "Parse natural language calendar events in Fantastical.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 20,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.fantasticalevent@1.0.0/FantasticalEvent.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.fantasticalevent@1.1.0/FantasticalEvent.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.fantasticalevent.svg",
-      "publishedAt": "2026-08-20T22:28:33+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.githubsearch",
@@ -439,11 +439,11 @@
       "description": "Search GitHub code and repositories.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 58,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.githubsearch@1.0.0/GitHubSearch.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.githubsearch@1.1.0/GitHubSearch.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.githubsearch.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.googlemaps",
@@ -451,11 +451,11 @@
       "description": "Open Google Maps with the selected text as a search query.",
       "author": "OpenClip Team",
       "icon": "map",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 129,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlemaps@1.0.1/GoogleMaps.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlemaps@1.1.0/GoogleMaps.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.googlemaps.svg",
-      "publishedAt": "2026-08-20T08:37:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.googlescholar",
@@ -463,11 +463,11 @@
       "description": "Search academic papers and scholarly research on Google Scholar.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 48,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlescholar@1.0.0/GoogleScholar.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.googlescholar@1.1.0/GoogleScholar.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.googlescholar.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.translate",
@@ -475,11 +475,11 @@
       "description": "Translate the selected text into English with Google Translate.",
       "author": "OpenClip Team",
       "icon": "globe",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 206,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.0.1/GoogleTranslate.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.1.0/GoogleTranslate.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.translate.svg",
-      "publishedAt": "2026-08-20T08:37:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.harper",
@@ -487,11 +487,11 @@
       "description": "Proofread the selection with Harper, the offline grammar checker.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 50,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.harper@1.0.0/Harper.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.harper@1.1.0/Harper.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.harper.svg",
-      "publishedAt": "2026-09-08T00:30:46+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.headerone",
@@ -499,11 +499,11 @@
       "description": "Format selected text as Markdown Header 1.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 23,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerone@1.0.1/HeaderOne.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerone@1.1.0/HeaderOne.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headerone.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.headerthree",
@@ -511,11 +511,11 @@
       "description": "Format selected text as Markdown Header 3.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 23,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerthree@1.0.1/HeaderThree.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headerthree@1.1.0/HeaderThree.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headerthree.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.headertwo",
@@ -523,11 +523,11 @@
       "description": "Format selected text as Markdown Header 2.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 22,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headertwo@1.0.1/HeaderTwo.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.headertwo@1.1.0/HeaderTwo.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.headertwo.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.hyphenate",
@@ -535,11 +535,11 @@
       "description": "Replace spaces with hyphens.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 25,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.0.0/Hyphenate.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.hyphenate@1.1.0/Hyphenate.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.hyphenate.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.inlinecode",
@@ -547,11 +547,11 @@
       "description": "Format selected text as inline Markdown code.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 40,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.inlinecode@1.0.0/InlineCode.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.inlinecode@1.1.0/InlineCode.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.inlinecode.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.italic",
@@ -559,11 +559,11 @@
       "description": "Toggle italic formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "italic",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 58,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.0.0/Italic.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.1.0/Italic.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.italic.svg",
-      "publishedAt": "2026-08-21T21:29:28+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.jwt",
@@ -571,11 +571,11 @@
       "description": "Decode JSON Web Tokens offline. Shows expiry at a glance.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 13,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.jwt@1.0.0/JWT.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.jwt@1.1.0/JWT.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.jwt.svg",
-      "publishedAt": "2026-09-14T12:49:27+02:00"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.joincommas",
@@ -583,11 +583,11 @@
       "description": "Join lines into a comma-separated string.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 21,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.joincommas@1.0.0/JoinCommas.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.joincommas@1.1.0/JoinCommas.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.joincommas.svg",
-      "publishedAt": "2026-08-20T22:07:34+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.kebabcase",
@@ -595,11 +595,11 @@
       "description": "Convert selected text to kebab-case.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 27,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.kebabcase@1.0.1/KebabCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.kebabcase@1.1.0/KebabCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.kebabcase.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.leafy.openclip",
@@ -607,11 +607,11 @@
       "description": "Look up, translate, or save the selected word with Leafy.",
       "author": "Jtobin",
       "icon": "leaf.fill",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 43,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.leafy.openclip@1.0.0/Leafy.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.leafy.openclip@1.1.0/Leafy.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.leafy.openclip.svg",
-      "publishedAt": "2026-09-06T17:11:07+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.linecount",
@@ -619,11 +619,11 @@
       "description": "Count the lines in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "downloadCount": 31,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.2.0/LineCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linecount@1.3.0/LineCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.linecount.svg",
-      "publishedAt": "2026-09-16T17:15:40+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.logseqcapture",
@@ -631,11 +631,11 @@
       "description": "Send selected text to Logseq quick capture.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 8,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.logseqcapture@1.0.1/LogseqCapture.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.logseqcapture@1.1.0/LogseqCapture.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.logseqcapture.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.lowercase",
@@ -643,11 +643,11 @@
       "description": "Convert selected text to lowercase.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 98,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.0.0/Lowercase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.lowercase@1.1.0/Lowercase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.lowercase.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.mailcompose",
@@ -655,11 +655,11 @@
       "description": "Create a new email draft with the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 50,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mailcompose@1.0.0/MailCompose.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mailcompose@1.1.0/MailCompose.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.mailcompose.svg",
-      "publishedAt": "2026-08-20T22:20:25+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.markdownblockquote",
@@ -667,11 +667,11 @@
       "description": "Format selected text as a Markdown blockquote.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 23,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownblockquote@1.0.1/MarkdownBlockquote.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownblockquote@1.1.0/MarkdownBlockquote.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownblockquote.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.markdownbold",
@@ -679,11 +679,11 @@
       "description": "Format selected text as Markdown bold.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 22,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownbold@1.0.0/MarkdownBold.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownbold@1.1.0/MarkdownBold.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownbold.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.markdownitalic",
@@ -691,11 +691,11 @@
       "description": "Format selected text as Markdown italic.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 19,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownitalic@1.0.0/MarkdownItalic.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownitalic@1.1.0/MarkdownItalic.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownitalic.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.markdownlink",
@@ -703,11 +703,11 @@
       "description": "Format selected text as a Markdown link template.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 26,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownlink@1.0.0/MarkdownLink.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownlink@1.1.0/MarkdownLink.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownlink.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.markdownstrikethrough",
@@ -715,11 +715,11 @@
       "description": "Format selected text as Markdown strikethrough.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 16,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownstrikethrough@1.0.0/MarkdownStrikethrough.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.markdownstrikethrough@1.1.0/MarkdownStrikethrough.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.markdownstrikethrough.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.mdndocs",
@@ -727,11 +727,11 @@
       "description": "Search Web API, JavaScript, and CSS documentation on MDN.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 9,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mdndocs@1.0.0/MdnDocs.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.mdndocs@1.1.0/MdnDocs.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.mdndocs.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.normalizespaces",
@@ -739,11 +739,11 @@
       "description": "Collapse consecutive whitespace into single spaces.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 48,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.normalizespaces@1.0.0/NormalizeSpaces.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.normalizespaces@1.1.0/NormalizeSpaces.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.normalizespaces.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.notes",
@@ -751,11 +751,11 @@
       "description": "Open the inline Notes popup (New Note) for the selected text.",
       "author": "OpenClip Team",
       "icon": "note.text",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 76,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.0.0/Notes.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.notes@1.1.0/Notes.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.notes.svg",
-      "publishedAt": "2026-08-20T08:37:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.npmsearch",
@@ -763,11 +763,11 @@
       "description": "Search JavaScript packages on npm registry.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 11,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.npmsearch@1.0.0/NpmSearch.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.npmsearch@1.1.0/NpmSearch.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.npmsearch.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.numberlines",
@@ -775,11 +775,11 @@
       "description": "Prefix each line with sequential numbers.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 54,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.0.1/NumberLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.numberlines@1.1.0/NumberLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.numberlines.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.obsidiancapture",
@@ -787,11 +787,11 @@
       "description": "Capture selected text to an Obsidian vault note.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 91,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.obsidiancapture@1.0.0/ObsidianCapture.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.obsidiancapture@1.1.0/ObsidianCapture.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.obsidiancapture.svg",
-      "publishedAt": "2026-08-20T22:28:33+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.echohn.openclip.omnifocus",
@@ -799,11 +799,11 @@
       "description": "Send selected text to OmniFocus 4 as an Inbox task or via Quick Entry.",
       "author": "echohn",
       "icon": "omnitick.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 9,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.echohn.openclip.omnifocus@1.0.1/OmniFocus.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.echohn.openclip.omnifocus@1.1.0/OmniFocus.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.echohn.openclip.omnifocus.svg",
-      "publishedAt": "2026-09-13T19:06:27+08:00"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.paragraphcount",
@@ -811,11 +811,11 @@
       "description": "Count the paragraphs in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "downloadCount": 20,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.2.0/ParagraphCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.paragraphcount@1.3.0/ParagraphCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.paragraphcount.svg",
-      "publishedAt": "2026-09-16T17:26:53+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.pascalcase",
@@ -823,11 +823,11 @@
       "description": "Convert selected text to PascalCase.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 20,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.0.1/PascalCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pascalcase@1.1.0/PascalCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pascalcase.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.pasteenter",
@@ -835,11 +835,11 @@
       "description": "Paste clipboard text and press Return.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 40,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.0.0/PasteEnter.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.1.0/PasteEnter.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pasteenter.svg",
-      "publishedAt": "2026-08-20T22:20:25+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.pasteplaintext",
@@ -847,11 +847,11 @@
       "description": "Paste clipboard content as plain text, stripping formatting.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteplaintext@1.0.0/PastePlainText.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteplaintext@1.1.0/PastePlainText.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pasteplaintext.svg",
-      "publishedAt": "2026-09-24T20:11:50+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.pypisearch",
@@ -859,11 +859,11 @@
       "description": "Search Python packages on PyPI.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 10,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pypisearch@1.0.0/PypiSearch.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pypisearch@1.1.0/PypiSearch.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pypisearch.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.quickshell",
@@ -871,11 +871,11 @@
       "description": "Run shell commands silently in the background with adaptive visual feedback, status toasts, and prepend/append options.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 129,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quickshell@1.0.0/QuickShell.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quickshell@1.1.0/QuickShell.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quickshell.svg",
-      "publishedAt": "2026-09-08T15:23:03+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.quick-translate",
@@ -883,11 +883,11 @@
       "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 576,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quick-translate@1.0.0/QuickTranslate.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quick-translate@1.1.0/QuickTranslate.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quick-translate.svg",
-      "publishedAt": "2026-08-23T13:11:10+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.quotelines",
@@ -895,11 +895,11 @@
       "description": "Enclose every individual line in double quotes.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 27,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.0.1/QuoteLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.1.0/QuoteLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quotelines.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.refine",
@@ -907,11 +907,11 @@
       "description": "Open selected text in Refine to check and improve your writing.",
       "author": "Refine",
       "icon": "icon.png",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 57,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.refine@1.0.1/Refine.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.refine@1.1.0/Refine.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.refine.svg",
-      "publishedAt": "2026-09-06T23:01:00+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.removeallspaces",
@@ -919,11 +919,11 @@
       "description": "Strip all whitespace from the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 37,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removeallspaces@1.0.0/RemoveAllSpaces.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removeallspaces@1.1.0/RemoveAllSpaces.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.removeallspaces.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.removelinebreaks",
@@ -931,11 +931,11 @@
       "description": "Replace line breaks with spaces.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 60,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.0.1/RemoveLineBreaks.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removelinebreaks@1.1.0/RemoveLineBreaks.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.removelinebreaks.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.render-html",
@@ -943,11 +943,11 @@
       "description": "Interpret the selected HTML markup and paste it as rendered rich text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 21,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-html@1.1.0/RenderHTML.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-html@1.2.0/RenderHTML.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.render-html.svg",
-      "publishedAt": "2026-08-22T10:44:48+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.render-markdown",
@@ -955,11 +955,11 @@
       "description": "Interpret the selected Markdown source and paste it as rendered rich text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 28,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-markdown@1.0.0/RenderMarkdown.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-markdown@1.1.0/RenderMarkdown.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.render-markdown.svg",
-      "publishedAt": "2026-08-22T10:44:48+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.reverselines",
@@ -967,11 +967,11 @@
       "description": "Reverse the vertical order of lines.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 14,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reverselines@1.0.0/ReverseLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reverselines@1.1.0/ReverseLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.reverselines.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.reversetext",
@@ -979,11 +979,11 @@
       "description": "Reverse the entire string character-by-character.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 14,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversetext@1.0.0/ReverseText.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversetext@1.1.0/ReverseText.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.reversetext.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.reversewords",
@@ -991,11 +991,11 @@
       "description": "Reverse word order while keeping word characters intact.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 14,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversewords@1.0.0/ReverseWords.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.reversewords@1.1.0/ReverseWords.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.reversewords.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.rot13",
@@ -1003,11 +1003,11 @@
       "description": "Apply ROT13 substitution cipher to selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 8,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.rot13@1.0.0/Rot13.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.rot13@1.1.0/Rot13.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.rot13.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.roundbrackets",
@@ -1015,11 +1015,11 @@
       "description": "Wrap selected text in round brackets.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 46,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.roundbrackets@1.0.0/RoundBrackets.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.roundbrackets@1.1.0/RoundBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.roundbrackets.svg",
-      "publishedAt": "2026-08-21T22:29:33+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.runcommand",
@@ -1027,35 +1027,35 @@
       "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp, Ghostty, kitty, and cmux.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 327,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.runcommand@1.0.0/RunCommand.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.runcommand@1.1.0/RunCommand.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.runcommand.svg",
-      "publishedAt": "2026-09-08T13:38:44+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.youtube",
       "name": "Search YouTube",
-      "description": "Search YouTube for videos matching the selected text.",
+      "description": "Search YouTube for the selected text.",
       "author": "OpenClip Team",
       "icon": "play.circle",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 102,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.0.1/SearchYouTube.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube@1.1.0/SearchYouTube.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.youtube.svg",
-      "publishedAt": "2026-08-20T08:37:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.selectall",
       "name": "Select All",
-      "description": "Select the entire document or text field.",
+      "description": "Select all content in the current application.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 80,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.0.0/SelectAll.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.1.0/SelectAll.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.selectall.svg",
-      "publishedAt": "2026-08-20T22:20:25+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.semanticversion",
@@ -1063,11 +1063,11 @@
       "description": "Bump the major, minor, patch or pre-release part of a selected semantic version.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 20,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.semanticversion@1.0.1/SemanticVersion.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.semanticversion@1.1.0/SemanticVersion.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.semanticversion.svg",
-      "publishedAt": "2026-09-18T20:10:18+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.sentencecase",
@@ -1075,11 +1075,11 @@
       "description": "Capitalize the first letter of each sentence.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 83,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.0.0/SentenceCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sentencecase@1.1.0/SentenceCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sentencecase.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.shortenlink",
@@ -1087,23 +1087,23 @@
       "description": "Shorten the selected URL using TinyURL, is.gd, or v.gd.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 293,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shortenlink@1.0.0/ShortenLink.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shortenlink@1.1.0/ShortenLink.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.shortenlink.svg",
-      "publishedAt": "2026-09-06T23:51:16+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.shufflelines",
       "name": "Shuffle Lines",
-      "description": "Randomize the order of lines.",
+      "description": "Randomize the order of lines in the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 10,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shufflelines@1.0.0/ShuffleLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.shufflelines@1.1.0/ShuffleLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.shufflelines.svg",
-      "publishedAt": "2026-08-20T22:07:34+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.singlequotes",
@@ -1111,59 +1111,59 @@
       "description": "Wrap selected text in single quotes.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 34,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.singlequotes@1.0.0/SingleQuotes.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.singlequotes@1.1.0/SingleQuotes.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.singlequotes.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.opeclip.slugify",
       "name": "Slugify",
-      "description": "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
+      "description": "Replace spaces with hyphens, remove special characters, and downcase.",
       "author": "OpenClip Team",
       "icon": "snail.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 29,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.opeclip.slugify@1.0.0/Slugify.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.opeclip.slugify@1.1.0/Slugify.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.opeclip.slugify.svg",
-      "publishedAt": "2026-08-20T08:37:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.snakecase",
-      "name": "snake_case",
+      "name": "Snake Case",
       "description": "Convert selected text to snake_case.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 30,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.snakecase@1.0.1/SnakeCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.snakecase@1.1.0/SnakeCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.snakecase.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.sortalphabetical",
-      "name": "Sort Alphabetical",
-      "description": "Sort selected lines from A to Z.",
+      "name": "Sort Alphabetically",
+      "description": "Sort lines alphabetically (A to Z).",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 58,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortalphabetical@1.0.1/SortAlphabetical.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortalphabetical@1.1.0/SortAlphabetical.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sortalphabetical.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.sortnumerical",
-      "name": "Sort Numerical",
-      "description": "Sort lines by leading numbers.",
+      "name": "Sort Numerically",
+      "description": "Sort lines in numerical order.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 40,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortnumerical@1.0.0/SortNumerical.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.sortnumerical@1.1.0/SortNumerical.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.sortnumerical.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.speakselection",
@@ -1171,23 +1171,23 @@
       "description": "Text-to-speech using system voice.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 315,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.0.1/SpeakSelection.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.speakselection@1.1.0/SpeakSelection.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.speakselection.svg",
-      "publishedAt": "2026-09-04T17:15:08+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.splitcommas",
-      "name": "Split Commas",
-      "description": "Split comma-separated values into individual lines.",
+      "name": "Split by Commas",
+      "description": "Split a comma-separated list into separate lines.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 36,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.splitcommas@1.0.0/SplitCommas.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.splitcommas@1.1.0/SplitCommas.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.splitcommas.svg",
-      "publishedAt": "2026-08-20T22:07:34+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.squarebrackets",
@@ -1195,11 +1195,11 @@
       "description": "Wrap selected text in square brackets.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 34,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.squarebrackets@1.0.0/SquareBrackets.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.squarebrackets@1.1.0/SquareBrackets.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.squarebrackets.svg",
-      "publishedAt": "2026-08-20T22:11:59+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.stackclipboard",
@@ -1207,47 +1207,47 @@
       "description": "Stack selected text onto your clipboard. Right-click or Shift-click to stack on top.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 46,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackclipboard@1.0.0/StackClipboard.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackclipboard@1.1.0/StackClipboard.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.stackclipboard.svg",
-      "publishedAt": "2026-09-06T01:11:00+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.stackoverflow",
-      "name": "Stack Overflow",
-      "description": "Search coding questions and answers on Stack Overflow.",
+      "name": "Stack Overflow Search",
+      "description": "Search Stack Overflow for the selected code or error message.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 11,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackoverflow@1.0.0/StackOverflow.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.stackoverflow@1.1.0/StackOverflow.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.stackoverflow.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.strikethrough",
       "name": "Strikethrough",
-      "description": "Toggle strikethrough formatting across rich text editors.",
+      "description": "Toggle strikethrough formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "strikethrough",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 32,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.0.0/Strikethrough.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.1.0/Strikethrough.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.strikethrough.svg",
-      "publishedAt": "2026-08-21T21:29:28+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.tasklines",
       "name": "Task Lines",
-      "description": "Convert lines into Markdown task checkboxes.",
+      "description": "Prefix each line with a Markdown task checkbox.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 37,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tasklines@1.0.0/TaskLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tasklines@1.1.0/TaskLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.tasklines.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.things",
@@ -1255,11 +1255,11 @@
       "description": "Quickly add a to-do to Things 3, or right-click to open Quick Entry.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 25,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.1.0/ThingsThree.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.things@1.2.0/ThingsThree.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.things.svg",
-      "publishedAt": "2026-09-10T07:32:21+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.timezone-converter",
@@ -1267,11 +1267,11 @@
       "description": "Convert times across global time zones directly inline.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 33,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.timezone-converter@1.0.1/TimeZoneConverter.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.timezone-converter@1.1.0/TimeZoneConverter.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.timezone-converter.svg",
-      "publishedAt": "2026-09-18T07:26:11+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.titlecase",
@@ -1279,11 +1279,11 @@
       "description": "Capitalize words according to English title conventions.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 94,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.0.1/TitleCase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.titlecase@1.1.0/TitleCase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.titlecase.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.todoist",
@@ -1291,11 +1291,11 @@
       "description": "Add a quick task to Todoist.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 19,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.todoist@1.0.0/TodoistTask.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.todoist@1.1.0/TodoistTask.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.todoist.svg",
-      "publishedAt": "2026-08-21T08:31:01+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.trimlines",
@@ -1303,11 +1303,11 @@
       "description": "Strip leading and trailing whitespace from every line.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 31,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.0.0/TrimLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.1.0/TrimLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.trimlines.svg",
-      "publishedAt": "2026-08-20T22:07:34+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.underline",
@@ -1315,11 +1315,11 @@
       "description": "Toggle underline formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "underline",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 39,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.0.0/Underline.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.1.0/Underline.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.underline.svg",
-      "publishedAt": "2026-08-21T21:29:28+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.underscore",
@@ -1327,11 +1327,11 @@
       "description": "Replace spaces with underscores.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 34,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underscore@1.0.0/Underscore.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underscore@1.1.0/Underscore.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.underscore.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.uppercase",
@@ -1339,11 +1339,11 @@
       "description": "Convert selected text to uppercase.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 91,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.0.0/Uppercase.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.uppercase@1.1.0/Uppercase.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.uppercase.svg",
-      "publishedAt": "2026-08-20T22:00:51+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.waybackmachine",
@@ -1351,11 +1351,11 @@
       "description": "View historical web archives on the Wayback Machine.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 33,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.waybackmachine@1.0.1/WaybackMachine.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.waybackmachine@1.1.0/WaybackMachine.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.waybackmachine.svg",
-      "publishedAt": "2026-08-24T09:49:38+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.wikipedia",
@@ -1363,11 +1363,11 @@
       "description": "Look up the selected text on Wikipedia.",
       "author": "OpenClip Team",
       "icon": "book",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 73,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wikipedia@1.0.1/WikipediaSearch.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wikipedia@1.1.0/WikipediaSearch.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wikipedia.svg",
-      "publishedAt": "2026-08-20T08:37:35+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.wolframalpha",
@@ -1375,11 +1375,11 @@
       "description": "Computational knowledge engine queries on Wolfram Alpha.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "downloadCount": 19,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wolframalpha@1.0.0/WolframAlpha.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wolframalpha@1.1.0/WolframAlpha.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wolframalpha.svg",
-      "publishedAt": "2026-08-20T22:24:26+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
       "id": "com.openclip.wordcount",
@@ -1387,11 +1387,11 @@
       "description": "Count the words in the selected text.",
       "author": "OpenClip Team",
       "icon": "text.alignleft",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 348,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.1.0/WordCount.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.2.0/WordCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wordcount.svg",
-      "publishedAt": "2026-09-11T15:37:00+05:30"
+      "publishedAt": "2026-09-24T23:46:29+05:30"
     }
   ]
 }
