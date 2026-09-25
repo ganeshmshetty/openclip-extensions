@@ -1,0 +1,78 @@
+{
+  "identifier": "com.openclip.text-to-image",
+  "name": {
+    "en": "Text to Image",
+    "zh-Hans": "文本转图片",
+    "zh-Hant": "文字轉圖片",
+    "ja": "テキストを画像に",
+    "fr": "Texte en image"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Render the selected text or code as a shareable image card.",
+    "zh-Hans": "将选中文本或代码渲染为可分享的图片卡片。",
+    "zh-Hant": "將選取文字或程式碼渲染為可分享的圖片卡片。",
+    "ja": "選択したテキストやコードを共有できる画像カードとしてレンダリングします。",
+    "fr": "Transformez le texte ou le code sélectionné en une image partageable."
+  },
+  "keywords": [
+    "image",
+    "screenshot",
+    "code",
+    "share",
+    "card",
+    "png",
+    "render",
+    "snippet"
+  ],
+  "action": {
+    "id": "card",
+    "title": {
+      "en": "Text to Image",
+      "zh-Hans": "文本转图片",
+      "zh-Hant": "文字轉圖片",
+      "ja": "テキストを画像に",
+      "fr": "Texte en image"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "dark",
+        "title": {
+          "en": "Dark Card",
+          "zh-Hans": "深色卡片",
+          "zh-Hant": "深色卡片",
+          "ja": "ダークカード",
+          "fr": "Carte sombre"
+        },
+        "icon": "moon",
+        "type": "shell",
+        "script": "render.sh",
+        "output": "file",
+        "requirements": {
+          "requiresSelection": true
+        }
+      },
+      {
+        "id": "light",
+        "title": {
+          "en": "Light Card",
+          "zh-Hans": "浅色卡片",
+          "zh-Hant": "淺色卡片",
+          "ja": "ライトカード",
+          "fr": "Carte claire"
+        },
+        "icon": "sun.max",
+        "type": "shell",
+        "script": "render.sh",
+        "output": "file",
+        "requirements": {
+          "requiresSelection": true
+        }
+      }
+    ]
+  }
+}
