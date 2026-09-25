@@ -48,6 +48,14 @@ function translateViaGtx(host, text, targetLang) {
       if (!data || !Array.isArray(data[0])) {
         throw new Error('Unexpected gtx response shape');
       }
+      // If the text is already in the target language, optionally translate to
+      // English instead — governed by the `alreadyTarget` option. gtx reports
+      // the detected source language in data[2].
+      var detected = data[2];
+      if (openclip.option('alreadyTarget') === 'Translate to English instead' &&
+          detected && detected === targetLang && targetLang !== 'en') {
+        return translateViaGtx(host, text, 'en');
+      }
       var translated = data[0].map(function (seg) { return seg[0] || ''; }).join('');
       return translated;
     });
@@ -87,6 +95,22 @@ function langFor(code, aliases) {
 }
 var LT_ALIASES      = { 'zh-Hans': 'zh', 'zh-Hant': 'zt' };
 var LINGVA_ALIASES  = { 'zh-Hans': 'zh_HANS', 'zh-Hant': 'zh_HANT' };
+
+// The target picker shows display names; backends need language codes.
+// Anything not in the map (e.g. a legacy saved code like "sv") passes through.
+var TARGET_CODES = {
+  'English': 'en', 'Hindi': 'hi', 'Spanish': 'es', 'French': 'fr', 'German': 'de',
+  'Japanese': 'ja', 'Chinese (Simplified)': 'zh-Hans', 'Chinese (Traditional)': 'zh-Hant',
+  'Korean': 'ko', 'Portuguese': 'pt', 'Russian': 'ru', 'Arabic': 'ar', 'Italian': 'it',
+  'Turkish': 'tr', 'Dutch': 'nl', 'Polish': 'pl', 'Swedish': 'sv', 'Danish': 'da',
+  'Finnish': 'fi', 'Norwegian': 'no', 'Czech': 'cs', 'Greek': 'el', 'Hebrew': 'he',
+  'Thai': 'th', 'Vietnamese': 'vi', 'Indonesian': 'id', 'Ukrainian': 'uk',
+  'Bengali': 'bn', 'Tamil': 'ta', 'Telugu': 'te', 'Malayalam': 'ml', 'Urdu': 'ur',
+  'Persian': 'fa', 'Punjabi': 'pa', 'Marathi': 'mr', 'Filipino': 'tl', 'Swahili': 'sw',
+  'Romanian': 'ro', 'Gujarati': 'gu', 'Hungarian': 'hu', 'Malay': 'ms', 'Slovak': 'sk',
+  'Bulgarian': 'bg', 'Serbian': 'sr', 'Burmese': 'my', 'Kannada': 'kn',
+  'Kashmiri (Koshur)': 'ks'
+};
 
 // LibreTranslate (Argos engine) — keyless community instance, auto-detect via
 // source:"auto". Shape: { detectedLanguage: {language, confidence}, translatedText }.
@@ -183,7 +207,8 @@ async function action() {
     return;
   }
 
-  var targetLang = openclip.option('targetLang') || 'en';
+  var picked = openclip.option('targetLang') || 'English';
+  var targetLang = TARGET_CODES[picked] || picked;
 
   var translated = null;
   var failures = [];
