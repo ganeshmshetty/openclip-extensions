@@ -102,6 +102,10 @@ jobs:
                   break
                 fi
                 echo "Push failed (attempt $attempt); rebasing and retrying..."
+                # Remove untracked build artifacts (e.g. rebuilt zips whose release
+                # asset already existed) so the rebase checkout can't abort with
+                # "untracked working tree files would be overwritten".
+                git clean -fd -- published >/dev/null 2>&1 || true
                 git pull --rebase --autostash origin main
               done
               if [ "$(git rev-list --count origin/main..main)" -ne 0 ]; then
@@ -132,6 +136,10 @@ jobs:
                 break
               fi
               echo "Push failed (attempt $attempt); rebasing and retrying..."
+              # Remove untracked build artifacts (e.g. rebuilt zips whose release
+              # asset already existed) so the rebase checkout can't abort with
+              # "untracked working tree files would be overwritten".
+              git clean -fd -- published >/dev/null 2>&1 || true
               git pull --rebase --autostash origin main
             done
             if [ "$(git rev-list --count origin/main..main)" -ne 0 ]; then
@@ -232,6 +240,10 @@ jobs:
                 break
               fi
               echo "Push failed (attempt $attempt); rebasing and retrying..."
+              # Remove untracked build artifacts (e.g. rebuilt zips whose release
+              # asset already existed) so the rebase checkout can't abort with
+              # "untracked working tree files would be overwritten".
+              git clean -fd -- published >/dev/null 2>&1 || true
               git pull --rebase --autostash origin main
             done
             if [ "$(git rev-list --count origin/main..main)" -ne 0 ]; then
