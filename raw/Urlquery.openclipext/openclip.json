@@ -1,0 +1,190 @@
+{
+  "identifier": "com.openclip.urlquery",
+  "name": "Urlquery",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Check links with urlquery.net: instant reputation verdict, sandbox scan, and past reports.",
+    "zh-Hans": "通过 urlquery.net 检查链接：即时信誉判定、沙箱扫描与历史报告。",
+    "zh-Hant": "透過 urlquery.net 檢查連結：即時信譽判定、沙箱掃描與歷史報告。",
+    "fr": "Vérifiez des liens avec urlquery.net : verdict de réputation instantané, analyse en sandbox et rapports passés.",
+    "ja": "urlquery.net でリンクを確認：即時の評判判定、サンドボックススキャン、過去のレポート。"
+  },
+  "keywords": [
+    "urlquery",
+    "url",
+    "link",
+    "domain",
+    "scan",
+    "malware",
+    "phishing",
+    "reputation",
+    "safe",
+    "security",
+    "sandbox",
+    "threat",
+    "ioc"
+  ],
+  "action": {
+    "id": "urlquery",
+    "title": "Urlquery",
+    "icon": "icon.svg",
+    "type": "group",
+    "requirements": {
+      "regex": "^\\s*(?![^/\\s]+\\.(?:js|mjs|cjs|ts|tsx|jsx|md|txt|png|jpe?g|gif|svg|webp|ico|css|html?|json|ya?ml|xml|csv|pdf|zip|gz|tar|py|rb|go|rs|java|swift|kt|sh|mp3|mp4|mov|exe|dmg|pkg|log|lock|toml|ini|env)[.,;:!?]*\\s*$)[<\"'(\\[]?(?:(?:(?:https?|hxxps?|ftp)(?::|\\[:\\])(?://|\\[//\\]|\\[/\\]/)?)?(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.|\\[\\.\\]|\\(\\.\\)|\\{\\.\\}))+[a-z]{2,63}\\.?|(?:https?(?::|\\[:\\])//)?(?:\\d{1,3}(?:\\.|\\[\\.\\])){3}\\d{1,3})(?::\\d{1,5})?(?:[/?#][^\\s<>\"']*)?[>\"')\\]]?[.,;:!?]*\\s*$"
+    },
+    "subActions": [
+      {
+        "id": "check-reputation",
+        "title": {
+          "en": "Check Reputation",
+          "zh-Hans": "检查信誉",
+          "zh-Hant": "檢查信譽",
+          "fr": "Vérifier la réputation",
+          "ja": "評判を確認"
+        },
+        "icon": "checkmark.shield",
+        "type": "javascript",
+        "script": "check-reputation.js",
+        "async": true,
+        "loading": true,
+        "loadingMessage": {
+          "en": "Checking reputation…",
+          "zh-Hans": "正在检查信誉…",
+          "zh-Hant": "正在檢查信譽…",
+          "fr": "Vérification de la réputation…",
+          "ja": "評判を確認中…"
+        },
+        "requirements": {
+          "regex": "^\\s*(?![^/\\s]+\\.(?:js|mjs|cjs|ts|tsx|jsx|md|txt|png|jpe?g|gif|svg|webp|ico|css|html?|json|ya?ml|xml|csv|pdf|zip|gz|tar|py|rb|go|rs|java|swift|kt|sh|mp3|mp4|mov|exe|dmg|pkg|log|lock|toml|ini|env)[.,;:!?]*\\s*$)[<\"'(\\[]?(?:(?:(?:https?|hxxps?|ftp)(?::|\\[:\\])(?://|\\[//\\]|\\[/\\]/)?)?(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.|\\[\\.\\]|\\(\\.\\)|\\{\\.\\}))+[a-z]{2,63}\\.?|(?:https?(?::|\\[:\\])//)?(?:\\d{1,3}(?:\\.|\\[\\.\\])){3}\\d{1,3})(?::\\d{1,5})?(?:[/?#][^\\s<>\"']*)?[>\"')\\]]?[.,;:!?]*\\s*$",
+          "requiredOptions": ["apiKey"]
+        },
+        "options": [
+          {
+            "identifier": "apiKey",
+            "label": {
+              "en": "API key",
+              "zh-Hans": "API 密钥",
+              "zh-Hant": "API 金鑰",
+              "fr": "Clé API",
+              "ja": "API キー"
+            },
+            "type": "secret"
+          }
+        ],
+        "keywords": ["reputation", "verdict", "safe", "malware", "phishing", "check", "信誉", "réputation", "評判"]
+      },
+      {
+        "id": "scan",
+        "title": {
+          "en": "Scan",
+          "zh-Hans": "扫描",
+          "zh-Hant": "掃描",
+          "fr": "Analyser",
+          "ja": "スキャン"
+        },
+        "icon": "dot.radiowaves.left.and.right",
+        "type": "javascript",
+        "script": "scan.js",
+        "async": true,
+        "loading": true,
+        "loadingMessage": {
+          "en": "Scanning… this can take up to a minute",
+          "zh-Hans": "正在扫描… 最多可能需要一分钟",
+          "zh-Hant": "正在掃描… 最多可能需要一分鐘",
+          "fr": "Analyse en cours… jusqu’à une minute",
+          "ja": "スキャン中… 最大 1 分ほどかかります"
+        },
+        "requirements": {
+          "regex": "^\\s*(?![^/\\s]+\\.(?:js|mjs|cjs|ts|tsx|jsx|md|txt|png|jpe?g|gif|svg|webp|ico|css|html?|json|ya?ml|xml|csv|pdf|zip|gz|tar|py|rb|go|rs|java|swift|kt|sh|mp3|mp4|mov|exe|dmg|pkg|log|lock|toml|ini|env)[.,;:!?]*\\s*$)[<\"'(\\[]?(?:(?:(?:https?|hxxps?|ftp)(?::|\\[:\\])(?://|\\[//\\]|\\[/\\]/)?)?(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.|\\[\\.\\]|\\(\\.\\)|\\{\\.\\}))+[a-z]{2,63}\\.?|(?:https?(?::|\\[:\\])//)?(?:\\d{1,3}(?:\\.|\\[\\.\\])){3}\\d{1,3})(?::\\d{1,5})?(?:[/?#][^\\s<>\"']*)?[>\"')\\]]?[.,;:!?]*\\s*$",
+          "requiredOptions": ["apiKey"]
+        },
+        "options": [
+          {
+            "identifier": "apiKey",
+            "label": {
+              "en": "API key",
+              "zh-Hans": "API 密钥",
+              "zh-Hant": "API 金鑰",
+              "fr": "Clé API",
+              "ja": "API キー"
+            },
+            "type": "secret"
+          },
+          {
+            "identifier": "access",
+            "label": {
+              "en": "Report visibility",
+              "zh-Hans": "报告可见性",
+              "zh-Hant": "報告可見性",
+              "fr": "Visibilité du rapport",
+              "ja": "レポートの公開範囲"
+            },
+            "type": "multiple",
+            "default": "public",
+            "values": ["public", "restricted", "private"]
+          }
+        ],
+        "keywords": ["scan", "sandbox", "analyze", "report", "submit", "扫描", "analyser", "スキャン"]
+      },
+      {
+        "id": "past-scans",
+        "title": {
+          "en": "Past Scans",
+          "zh-Hans": "历史扫描",
+          "zh-Hant": "歷史掃描",
+          "fr": "Analyses précédentes",
+          "ja": "過去のスキャン"
+        },
+        "icon": "clock.arrow.circlepath",
+        "type": "javascript",
+        "script": "past-scans.js",
+        "async": true,
+        "loading": true,
+        "loadingMessage": {
+          "en": "Loading past scans…",
+          "zh-Hans": "正在加载历史扫描…",
+          "zh-Hant": "正在載入歷史掃描…",
+          "fr": "Chargement des analyses…",
+          "ja": "過去のスキャンを読み込み中…"
+        },
+        "requirements": {
+          "regex": "^\\s*(?![^/\\s]+\\.(?:js|mjs|cjs|ts|tsx|jsx|md|txt|png|jpe?g|gif|svg|webp|ico|css|html?|json|ya?ml|xml|csv|pdf|zip|gz|tar|py|rb|go|rs|java|swift|kt|sh|mp3|mp4|mov|exe|dmg|pkg|log|lock|toml|ini|env)[.,;:!?]*\\s*$)[<\"'(\\[]?(?:(?:(?:https?|hxxps?|ftp)(?::|\\[:\\])(?://|\\[//\\]|\\[/\\]/)?)?(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.|\\[\\.\\]|\\(\\.\\)|\\{\\.\\}))+[a-z]{2,63}\\.?|(?:https?(?::|\\[:\\])//)?(?:\\d{1,3}(?:\\.|\\[\\.\\])){3}\\d{1,3})(?::\\d{1,5})?(?:[/?#][^\\s<>\"']*)?[>\"')\\]]?[.,;:!?]*\\s*$",
+          "requiredOptions": ["apiKey"]
+        },
+        "options": [
+          {
+            "identifier": "apiKey",
+            "label": {
+              "en": "API key",
+              "zh-Hans": "API 密钥",
+              "zh-Hant": "API 金鑰",
+              "fr": "Clé API",
+              "ja": "API キー"
+            },
+            "type": "secret"
+          }
+        ],
+        "keywords": ["history", "recent", "reports", "previous", "past", "历史", "historique", "履歴"]
+      },
+      {
+        "id": "open-website",
+        "title": {
+          "en": "Open on urlquery.net",
+          "zh-Hans": "在 urlquery.net 打开",
+          "zh-Hant": "在 urlquery.net 開啟",
+          "fr": "Ouvrir sur urlquery.net",
+          "ja": "urlquery.net で開く"
+        },
+        "icon": "globe",
+        "type": "javascript",
+        "script": "open-website.js",
+        "requirements": {
+          "regex": "^\\s*(?![^/\\s]+\\.(?:js|mjs|cjs|ts|tsx|jsx|md|txt|png|jpe?g|gif|svg|webp|ico|css|html?|json|ya?ml|xml|csv|pdf|zip|gz|tar|py|rb|go|rs|java|swift|kt|sh|mp3|mp4|mov|exe|dmg|pkg|log|lock|toml|ini|env)[.,;:!?]*\\s*$)[<\"'(\\[]?(?:(?:(?:https?|hxxps?|ftp)(?::|\\[:\\])(?://|\\[//\\]|\\[/\\]/)?)?(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\\.|\\[\\.\\]|\\(\\.\\)|\\{\\.\\}))+[a-z]{2,63}\\.?|(?:https?(?::|\\[:\\])//)?(?:\\d{1,3}(?:\\.|\\[\\.\\])){3}\\d{1,3})(?::\\d{1,5})?(?:[/?#][^\\s<>\"']*)?[>\"')\\]]?[.,;:!?]*\\s*$"
+        },
+        "keywords": ["open", "website", "browser", "search", "urlquery.net", "打开", "ouvrir", "開く"]
+      }
+    ]
+  }
+}
