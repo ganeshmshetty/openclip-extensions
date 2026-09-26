@@ -1,0 +1,78 @@
+{
+  "identifier": "com.openclip.qrcode",
+  "name": {
+    "en": "QR Code",
+    "zh-Hans": "二维码",
+    "zh-Hant": "二維碼",
+    "ja": "QRコード",
+    "fr": "Code QR"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Generate a QR code from text or URL with live preview, save, copy, and drag support.",
+    "zh-Hans": "根据文本或网址生成二维码，支持实时预览、保存、复制及拖拽。",
+    "zh-Hant": "根據文本或網址生成二維碼，支援即時預覽、儲存、複製及拖曳。",
+    "ja": "テキストやURLからQRコードを生成し、プレビュー、保存、コピー、ドラッグに対応します。",
+    "fr": "Générez un code QR à partir d'un texte ou d'une URL avec aperçu en direct, enregistrement, copie et glisser-déposer."
+  },
+  "keywords": [
+    "qr",
+    "qrcode",
+    "barcode",
+    "link",
+    "url",
+    "scan",
+    "image",
+    "2d",
+    "二维码",
+    "二維碼",
+    "QRコード"
+  ],
+  "options": [
+    {
+      "identifier": "format",
+      "label": {
+        "en": "Format",
+        "zh-Hans": "格式",
+        "zh-Hant": "格式",
+        "ja": "形式",
+        "fr": "Format"
+      },
+      "type": "multiple",
+      "values": ["png", "svg"],
+      "default": "png"
+    },
+    {
+      "identifier": "errorCorrection",
+      "label": {
+        "en": "Error Correction",
+        "zh-Hans": "容错级别",
+        "zh-Hant": "容錯級別",
+        "ja": "誤り訂正レベル",
+        "fr": "Correction d'erreur"
+      },
+      "type": "multiple",
+      "values": ["M", "L", "Q", "H"],
+      "default": "M"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "QR Code",
+      "zh-Hans": "二维码",
+      "zh-Hant": "二維碼",
+      "ja": "QRコード",
+      "fr": "Code QR"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "file",
+    "result": "preview",
+    "requirements": {
+      "requiresSelection": true
+    }
+  }
+}
