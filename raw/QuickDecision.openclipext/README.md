@@ -1,6 +1,6 @@
 # Quick Decision
 
-Evaluate selected text against custom criteria using AI.
+Make fast binary decisions on selected text.
 
 Check content safety, message urgency, relevance, or test any custom binary question directly from your selection. Works with fast cloud decision models (such as Jev AI / TypeSafe AI) or local models on localhost.
 

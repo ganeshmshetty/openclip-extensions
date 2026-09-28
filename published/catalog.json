@@ -1408,7 +1408,7 @@
     {
       "id": "com.openclip.quickdecision",
       "name": "Quick Decision",
-      "description": "Evaluate selected text against custom criteria using AI.",
+      "description": "Make fast binary decisions on selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
       "version": "1.0.0",
