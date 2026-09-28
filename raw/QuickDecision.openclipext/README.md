@@ -1,8 +1,8 @@
 # Quick Decision
 
-Instantly evaluate selected text or links against any question using AI.
+Evaluate selected text against custom criteria using AI.
 
-Check link safety, content trustworthiness, message urgency, or test any custom binary question directly from your selection. Works with fast cloud decision models (such as Jev AI / TypeSafe AI) or local models on localhost.
+Check content safety, message urgency, relevance, or test any custom binary question directly from your selection. Works with fast cloud decision models (such as Jev AI / TypeSafe AI) or local models on localhost.
 
 ## Features
 

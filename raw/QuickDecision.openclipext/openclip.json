@@ -1,10 +1,22 @@
 {
   "identifier": "com.openclip.quickdecision",
-  "name": "Quick Decision",
+  "name": {
+    "en": "Quick Decision",
+    "zh-Hans": "快速决策",
+    "zh-Hant": "快速決策",
+    "ja": "クイック決定",
+    "fr": "Décision rapide"
+  },
   "version": "1.0.0",
   "minOpenClipVersion": "1.3.0",
-  "author": "OpenClip",
-  "description": "Instantly evaluate selected text against any question using AI.",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Evaluate selected text against custom criteria using AI.",
+    "zh-Hans": "使用 AI 根据自定义条件评估选中文本。",
+    "zh-Hant": "使用 AI 根據自訂條件評估選取文字。",
+    "ja": "AI を使用して、選択したテキストをカスタム基準で評価します。",
+    "fr": "Évalue le texte sélectionné selon des critères personnalisés avec l'IA."
+  },
   "keywords": [
     "decision",
     "quick",
@@ -18,7 +30,13 @@
   ],
   "action": {
     "id": "evaluate",
-    "title": "Quick Decision",
+    "title": {
+      "en": "Quick Decision",
+      "zh-Hans": "快速决策",
+      "zh-Hant": "快速決策",
+      "ja": "クイック決定",
+      "fr": "Décision rapide"
+    },
     "icon": "icon.svg",
     "type": "javascript",
     "async": true,
@@ -28,36 +46,72 @@
     "options": [
       {
         "identifier": "question",
-        "label": "Question",
+        "label": {
+          "en": "Question",
+          "zh-Hans": "评估问题",
+          "zh-Hant": "評估問題",
+          "ja": "質問",
+          "fr": "Question"
+        },
         "type": "string",
         "default": "Is this content safe and trustworthy?"
       },
       {
         "identifier": "affirmativeLabel",
-        "label": "Positive Label (Yes)",
+        "label": {
+          "en": "Positive Label (Yes)",
+          "zh-Hans": "肯定标签（是）",
+          "zh-Hant": "肯定標籤（是）",
+          "ja": "肯定ラベル（はい）",
+          "fr": "Libellé positif (Oui)"
+        },
         "type": "string",
         "default": "Safe"
       },
       {
         "identifier": "negativeLabel",
-        "label": "Negative Label (No)",
+        "label": {
+          "en": "Negative Label (No)",
+          "zh-Hans": "否定标签（否）",
+          "zh-Hant": "否定標籤（否）",
+          "ja": "否定ラベル（いいえ）",
+          "fr": "Libellé négatif (Non)"
+        },
         "type": "string",
         "default": "Suspicious"
       },
       {
         "identifier": "model",
-        "label": "Model",
+        "label": {
+          "en": "Model",
+          "zh-Hans": "模型",
+          "zh-Hant": "模型",
+          "ja": "モデル",
+          "fr": "Modèle"
+        },
         "type": "string",
         "default": "jev-latest"
       },
       {
         "identifier": "apiKey",
-        "label": "API Key",
+        "label": {
+          "en": "API Key",
+          "zh-Hans": "API 密钥",
+          "zh-Hant": "API 金鑰",
+          "ja": "API キー",
+          "fr": "Clé API"
+        },
         "type": "secret"
       },
       {
         "identifier": "endpoint",
-        "label": "Endpoint URL",
+        "label": {
+          "en": "Endpoint URL",
+          "zh-Hans": "端点 URL",
+          "zh-Hant": "端點 URL",
+          "ja": "エンドポイント URL",
+          "fr": "URL du point de terminaison"
+        },
         "type": "string",
         "default": "https://api.typesafe.ai/v1/systemone"
       }
