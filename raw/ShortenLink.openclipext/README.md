@@ -1,20 +1,21 @@
 # Shorten Link
 
-Shorten any selected URL using **TinyURL**, **is.gd**, or **v.gd**.
+Shorten any selected URL using **is.gd** or **v.gd**.
 
 Select a URL anywhere on your Mac and choose **Shorten Link** from OpenClip to generate a shortened URL and replace or copy it.
 
 ## Features
 
 - **Quick URL Shortening**: Automatically detects and shortens HTTP/HTTPS URLs.
-- **Configurable Service**: Choose between TinyURL, is.gd, or v.gd in extension options.
+- **Configurable Service**: Choose between is.gd (the default) and v.gd in extension options.
 - **Async & Responsive**: Displays a loading indicator while fetching the shortened link from the service API.
+
+The extension uses the selected service and reports its errors directly. is.gd and v.gd share an API, so it does not automatically retry through the other service after a rate limit or service error.
 
 ## Options
 
 - **Shortening Service** (`domain`):
-  - **TinyURL** (default) — [tinyurl.com](https://tinyurl.com)
-  - **is.gd** — [is.gd](https://is.gd)
+  - **is.gd** (default) — [is.gd](https://is.gd)
   - **v.gd** — [v.gd](https://v.gd)
 
 ## Requirements

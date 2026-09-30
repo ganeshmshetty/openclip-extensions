@@ -7,15 +7,16 @@
     "ja": "短縮リンク作成",
     "fr": "Raccourcir le lien"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "releaseNotes": "Make is.gd the default, remove TinyURL's deprecated API, and fix async response parsing.",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
-    "en": "Shorten the selected URL using TinyURL, is.gd, or v.gd.",
-    "zh-Hans": "使用 TinyURL、is.gd 或 v.gd 缩短选中的网址。",
-    "zh-Hant": "使用 TinyURL、is.gd 或 v.gd 縮短選取的網址。",
-    "ja": "TinyURL、is.gd または v.gd を使用して選択した URL を短縮します。",
-    "fr": "Raccourcir l'URL sélectionnée avec TinyURL, is.gd ou v.gd."
+    "en": "Shorten the selected URL using is.gd or v.gd.",
+    "zh-Hans": "使用 is.gd 或 v.gd 缩短选中的网址。",
+    "zh-Hant": "使用 is.gd 或 v.gd 縮短選取的網址。",
+    "ja": "is.gd または v.gd を使用して選択した URL を短縮します。",
+    "fr": "Raccourcir l'URL sélectionnée avec is.gd ou v.gd."
   },
   "options": [
     {
@@ -28,9 +29,8 @@
         "fr": "Service de raccourcissement"
       },
       "type": "multiple",
-      "default": "TinyURL",
+      "default": "is.gd",
       "values": [
-        "TinyURL",
         "is.gd",
         "v.gd"
       ]
