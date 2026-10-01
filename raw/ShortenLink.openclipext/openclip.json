@@ -7,8 +7,8 @@
     "ja": "短縮リンク作成",
     "fr": "Raccourcir le lien"
   },
-  "version": "1.2.0",
-  "releaseNotes": "Simplify provider choices to is.gd and v.gd with optional automatic fallback.",
+  "version": "1.2.1",
+  "releaseNotes": "Try the other free provider after HTTP 502 rate-limit responses.",
   "minOpenClipVersion": "1.3.0",
   "author": "OpenClip Team",
   "description": {

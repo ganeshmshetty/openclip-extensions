@@ -47,11 +47,6 @@ async function shortenWith(provider, selectedURL, fetchFn) {
     return response;
   }
 
-  // is.gd/v.gd use HTTP 502 for rate limiting; don't immediately bypass the limit.
-  if (status === 502) {
-    throw providerError(provider, 'is rate limiting requests (HTTP 502)', false);
-  }
-
   var detail;
   if (/^Error:\s*/i.test(response)) {
     detail = redact(response.replace(/^Error:\s*/i, ''), selectedURL);
