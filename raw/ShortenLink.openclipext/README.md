@@ -1,29 +1,29 @@
 # Shorten Link
 
-Shorten any selected URL using **TinyURL**, **is.gd**, or **v.gd**.
+Shorten a selected URL using **is.gd** or **v.gd**. Both services work without an account or API key.
 
-Select a URL anywhere on your Mac and choose **Shorten Link** from OpenClip to generate a shortened URL and replace or copy it.
+Select an HTTP or HTTPS URL anywhere on your Mac and choose **Shorten Link** in OpenClip. The shortened URL is returned using your normal OpenClip action preference.
 
 ## Features
 
-- **Quick URL Shortening**: Automatically detects and shortens HTTP/HTTPS URLs.
-- **Configurable Service**: Choose between TinyURL, is.gd, or v.gd in extension options.
-- **Async & Responsive**: Displays a loading indicator while fetching the shortened link from the service API.
+- Choose is.gd or v.gd as the preferred service.
+- Optionally try the other service after a temporary network or service failure.
+- No account or API key required.
+
+is.gd and v.gd are related services and may fail together. Rate-limit and invalid-request errors stop fallback so the service response remains visible.
 
 ## Options
 
-- **Shortening Service** (`domain`):
-  - **TinyURL** (default) — [tinyurl.com](https://tinyurl.com)
-  - **is.gd** — [is.gd](https://is.gd)
-  - **v.gd** — [v.gd](https://v.gd)
+- **Preferred service** (`domain`): is.gd is selected by default; v.gd is also available.
+- **Try other service automatically** (`automaticFallback`): when enabled, OpenClip tries the other service after a retryable failure.
 
 ## Requirements
 
-- OpenClip 1.1.0 or later.
-- Active internet connection.
+- OpenClip 1.3.0 or later.
+- An internet connection.
 
 ## Usage
 
-1. Select a URL (e.g. `https://example.com/very/long/path`).
-2. Click **Shorten Link** in the OpenClip menu.
-3. The shortened URL is returned and delivered according to your OpenClip action preference (paste or copy).
+1. Select a URL, such as `https://example.com/very/long/path`.
+2. Choose **Shorten Link** in the OpenClip menu.
+3. The shortened URL is returned according to your OpenClip action preference.

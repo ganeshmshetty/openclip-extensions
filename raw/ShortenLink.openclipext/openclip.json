@@ -7,33 +7,45 @@
     "ja": "短縮リンク作成",
     "fr": "Raccourcir le lien"
   },
-  "version": "1.1.0",
-  "minOpenClipVersion": "1.1.0",
+  "version": "1.2.0",
+  "releaseNotes": "Simplify provider choices to is.gd and v.gd with optional automatic fallback.",
+  "minOpenClipVersion": "1.3.0",
   "author": "OpenClip Team",
   "description": {
-    "en": "Shorten the selected URL using TinyURL, is.gd, or v.gd.",
-    "zh-Hans": "使用 TinyURL、is.gd 或 v.gd 缩短选中的网址。",
-    "zh-Hant": "使用 TinyURL、is.gd 或 v.gd 縮短選取的網址。",
-    "ja": "TinyURL、is.gd または v.gd を使用して選択した URL を短縮します。",
-    "fr": "Raccourcir l'URL sélectionnée avec TinyURL, is.gd ou v.gd."
+    "en": "Shorten the selected URL using is.gd or v.gd, with optional automatic fallback.",
+    "zh-Hans": "使用 is.gd 或 v.gd 缩短选中的网址，并可自动尝试备用服务。",
+    "zh-Hant": "使用 is.gd 或 v.gd 縮短選取的網址，並可自動嘗試備用服務。",
+    "ja": "is.gd または v.gd で URL を短縮し、必要に応じて自動で代替サービスを試します。",
+    "fr": "Raccourcir l'URL sélectionnée avec is.gd ou v.gd, avec basculement automatique facultatif."
   },
   "options": [
     {
       "identifier": "domain",
       "label": {
-        "en": "Shortening Service",
-        "zh-Hans": "短链接服务",
-        "zh-Hant": "短網址服務",
-        "ja": "短縮サービス",
-        "fr": "Service de raccourcissement"
+        "en": "Preferred service",
+        "zh-Hans": "首选服务",
+        "zh-Hant": "偏好服務",
+        "ja": "優先サービス",
+        "fr": "Service préféré"
       },
       "type": "multiple",
-      "default": "TinyURL",
+      "default": "is.gd",
       "values": [
-        "TinyURL",
         "is.gd",
         "v.gd"
       ]
+    },
+    {
+      "identifier": "automaticFallback",
+      "label": {
+        "en": "Try other service automatically",
+        "zh-Hans": "自动尝试另一个服务",
+        "zh-Hant": "自動嘗試另一個服務",
+        "ja": "もう一方のサービスを自動で試す",
+        "fr": "Essayer automatiquement l'autre service"
+      },
+      "type": "boolean",
+      "default": "true"
     }
   ],
   "action": {
