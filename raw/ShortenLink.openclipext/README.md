@@ -10,7 +10,7 @@ Select an HTTP or HTTPS URL anywhere on your Mac and choose **Shorten Link** in 
 - Optionally try the other service after a temporary network or service failure.
 - No account or API key required.
 
-is.gd and v.gd are related services and may fail together. Rate-limit and invalid-request errors stop fallback so the service response remains visible.
+is.gd and v.gd are related services and may fail together. Temporary server failures, including HTTP 502 rate-limit responses, trigger fallback to the other service. Invalid-request errors stop fallback and remain visible.
 
 ## Options
 
