@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-01T18:10:09Z",
+  "updatedAt": "2026-10-01T18:42:42Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -107,7 +107,7 @@
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bitly@1.0.0/Bitly.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bitly.svg",
-      "publishedAt": "2026-10-01T23:38:29+05:30"
+      "publishedAt": "2026-10-02T00:11:05+05:30"
     },
     {
       "id": "io.github.s010s.openclip.bob",
