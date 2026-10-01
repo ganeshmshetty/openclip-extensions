@@ -73,6 +73,7 @@ async function action(selection) {
   if (PROVIDERS.indexOf(primary) === -1) primary = 'is.gd';
 
   var selectedURL = (selection || openclip.input.text).trim();
+  if (!/^https?:\/\//i.test(selectedURL)) selectedURL = 'https://' + selectedURL;
   var fallbackEnabled = option('automaticFallback');
   fallbackEnabled = fallbackEnabled === true || String(fallbackEnabled).toLowerCase() === 'true';
   var providers = fallbackEnabled

@@ -7,8 +7,8 @@
     "ja": "短縮リンク作成",
     "fr": "Raccourcir le lien"
   },
-  "version": "1.2.1",
-  "releaseNotes": "Try the other free provider after HTTP 502 rate-limit responses.",
+  "version": "1.2.3",
+  "releaseNotes": "Accept scheme-less domains and treat them as HTTPS URLs.",
   "minOpenClipVersion": "1.3.0",
   "author": "OpenClip Team",
   "description": {
@@ -69,7 +69,7 @@
       "fr": "Raccourcissement…"
     },
     "requirements": {
-      "regex": "^https?://\\S+$"
+      "regex": "(?i)^\\s*(?:https?://\\S+|[^@.\\s/?#]+(?:\\.[^@.\\s/?#]+)+(?::\\d+)?(?:[/?#]\\S*)?)\\s*$"
     },
     "output": "text"
   }

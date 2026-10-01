@@ -24,6 +24,6 @@ is.gd and v.gd are related services and may fail together. Temporary server fail
 
 ## Usage
 
-1. Select a URL, such as `https://example.com/very/long/path`.
+1. Select a URL, such as `https://example.com/very/long/path` or `www.youtube.com` (treated as HTTPS).
 2. Choose **Shorten Link** in the OpenClip menu.
 3. The shortened URL is returned according to your OpenClip action preference.
