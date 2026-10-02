@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T19:17:51Z",
+  "updatedAt": "2026-10-02T19:40:09Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -103,11 +103,11 @@
       "description": "Shorten a selected URL with Bitly and return the shortened URL as text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "downloadCount": 5,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bitly@1.0.0/Bitly.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bitly@1.0.1/Bitly.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bitly.svg",
-      "publishedAt": "2026-10-02T12:28:42+05:30"
+      "publishedAt": "2026-10-03T01:08:41+05:30"
     },
     {
       "id": "io.github.s010s.openclip.bob",
