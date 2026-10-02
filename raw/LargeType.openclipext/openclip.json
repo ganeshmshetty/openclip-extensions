@@ -1,0 +1,46 @@
+{
+  "identifier": "com.openclip.largetype",
+  "name": {
+    "en": "Large Type",
+    "zh-Hans": "大字显示",
+    "zh-Hant": "大字顯示",
+    "ja": "ラージタイプ",
+    "fr": "Grand texte"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Display the selected text in a giant floating HUD on your screen.",
+    "zh-Hans": "在屏幕中央的大字浮动 HUD 中展示选中的文本。",
+    "zh-Hant": "在螢幕中央的大字浮動 HUD 中展示選取的文字。",
+    "ja": "選択したテキストを画面上の大きなフローティングHUDで表示します。",
+    "fr": "Affiche le texte sélectionné en grand dans un HUD flottant sur votre écran."
+  },
+  "keywords": [
+    "large",
+    "type",
+    "hud",
+    "zoom",
+    "overlay",
+    "screen",
+    "display",
+    "big",
+    "font"
+  ],
+  "action": {
+    "title": {
+      "en": "Large Type",
+      "zh-Hans": "大字显示",
+      "zh-Hant": "大字顯示",
+      "ja": "ラージタイプ",
+      "fr": "Grand texte"
+    },
+    "icon": "icon.svg",
+    "type": "shell",
+    "script": "run.sh",
+    "requirements": {
+      "requiresSelection": true
+    }
+  }
+}

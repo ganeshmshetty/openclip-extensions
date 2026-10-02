@@ -1,0 +1,93 @@
+{
+  "identifier": "com.openclip.save-selection",
+  "name": {
+    "en": "Save Selection as File",
+    "zh-Hans": "保存选中内容为文件",
+    "zh-Hant": "儲存選取內容為檔案",
+    "ja": "選択範囲をファイルとして保存",
+    "fr": "Enregistrer la sélection dans un fichier"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Save the selected text as a .txt, .md, .csv, .json, or .html file.",
+    "zh-Hans": "将选中文本保存为 .txt、.md、.csv、.json 或 .html 文件。",
+    "zh-Hant": "將選取文字儲存為 .txt、.md、.csv、.json 或 .html 檔案。",
+    "ja": "選択したテキストを .txt、.md、.csv、.json、.html ファイルとして保存します。",
+    "fr": "Enregistrez le texte sélectionné dans un fichier .txt, .md, .csv, .json ou .html."
+  },
+  "keywords": [
+    "save",
+    "file",
+    "export",
+    "download",
+    "txt",
+    "markdown",
+    "csv",
+    "json",
+    "html"
+  ],
+  "options": [
+    {
+      "identifier": "format",
+      "label": {
+        "en": "File format",
+        "zh-Hans": "文件格式",
+        "zh-Hant": "檔案格式",
+        "ja": "ファイル形式",
+        "fr": "Format de fichier"
+      },
+      "type": "multiple",
+      "default": "txt",
+      "values": [
+        "txt",
+        "md",
+        "csv",
+        "json",
+        "html"
+      ]
+    },
+    {
+      "identifier": "filename",
+      "label": {
+        "en": "File name",
+        "zh-Hans": "文件名",
+        "zh-Hant": "檔案名稱",
+        "ja": "ファイル名",
+        "fr": "Nom du fichier"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "timestamp",
+      "label": {
+        "en": "Append date and time",
+        "zh-Hans": "追加日期和时间",
+        "zh-Hant": "附加日期與時間",
+        "ja": "日時を追加",
+        "fr": "Ajouter la date et l’heure"
+      },
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "action": {
+    "id": "save",
+    "title": {
+      "en": "Save as File",
+      "zh-Hans": "保存为文件",
+      "zh-Hant": "儲存為檔案",
+      "ja": "ファイルとして保存",
+      "fr": "Enregistrer dans un fichier"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "save.js",
+    "output": "file",
+    "requirements": {
+      "requiresSelection": true
+    }
+  }
+}
