@@ -1,0 +1,80 @@
+{
+  "identifier": "com.openclip.bitly",
+  "name": {
+    "en": "Bitly URL Shortener",
+    "zh-Hans": "Bitly 短网址",
+    "zh-Hant": "Bitly 短網址",
+    "fr": "Raccourcisseur d’URL Bitly",
+    "ja": "Bitly URL短縮"
+  },
+  "description": {
+    "en": "Shorten a selected URL with Bitly and return the shortened URL as text.",
+    "zh-Hans": "使用 Bitly 缩短所选网址，并以文本形式返回短链接。",
+    "zh-Hant": "使用 Bitly 縮短選取的網址，並以文字形式傳回短連結。",
+    "fr": "Raccourcissez l’URL sélectionnée avec Bitly et renvoyez le lien raccourci sous forme de texte.",
+    "ja": "選択したURLをBitlyで短縮し、短縮URLをテキストとして返します。"
+  },
+  "version": "1.0.0",
+  "releaseNotes": "Initial release.",
+  "minOpenClipVersion": "1.3.0",
+  "author": "OpenClip Team",
+  "keywords": ["bitly", "shorten", "short link", "url"],
+  "options": [
+    {
+      "identifier": "accessToken",
+      "label": {
+        "en": "Access Token",
+        "zh-Hans": "访问令牌",
+        "zh-Hant": "存取權杖",
+        "fr": "Jeton d’accès",
+        "ja": "アクセストークン"
+      },
+      "type": "secret"
+    },
+    {
+      "identifier": "groupGuid",
+      "label": {
+        "en": "Group GUID",
+        "zh-Hans": "群组 GUID",
+        "zh-Hant": "群組 GUID",
+        "fr": "GUID du groupe",
+        "ja": "グループ GUID"
+      },
+      "type": "string"
+    }
+  ],
+  "actions": [
+    {
+      "id": "com.openclip.bitly.action.0.shorten",
+      "title": {
+        "en": "Shorten with Bitly",
+        "zh-Hans": "使用 Bitly 缩短链接",
+        "zh-Hant": "使用 Bitly 縮短連結",
+        "fr": "Raccourcir avec Bitly",
+        "ja": "Bitlyで短縮"
+      },
+      "icon": "icon.svg",
+      "type": "javascript",
+      "async": true,
+      "script": "main.js",
+      "loading": true,
+      "loadingMessage": {
+        "en": "Shortening with Bitly…",
+        "zh-Hans": "正在使用 Bitly 缩短…",
+        "zh-Hant": "正在使用 Bitly 縮短…",
+        "fr": "Raccourcissement avec Bitly…",
+        "ja": "Bitlyで短縮中…"
+      },
+      "requirements": {
+        "requiredOptions": ["accessToken", "groupGuid"],
+        "regex": "(?i)^\\s*(?:https?://\\S+|(?:www\\.)?[^@.\\s/?#]+(?:\\.[^@.\\s/?#]+)+(?:[^\\s/?#]*)?(?:[/?#]\\S*)?)\\s*$"
+      },
+      "output": "text",
+      "keywords": [
+        "shorten", "short link", "bitly",
+        "缩短链接", "短网址", "縮短連結", "短網址",
+        "raccourcir", "lien court", "URL短縮", "短縮リンク"
+      ]
+    }
+  ]
+}
