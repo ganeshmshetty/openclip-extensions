@@ -1,0 +1,82 @@
+{
+  "identifier": "com.openclip.cleanlink",
+  "name": {
+    "en": "Clean Link",
+    "zh-Hans": "清理链接",
+    "zh-Hant": "清理連結",
+    "ja": "リンクを整理",
+    "fr": "Nettoyer les liens"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Strip tracking parameters, affiliate tags, and marketing junk from URLs.",
+    "zh-Hans": "从 URL 中移除跟踪参数、营销标签和推广垃圾。",
+    "zh-Hant": "從 URL 中移除追蹤參數、行銷標籤和推廣垃圾。",
+    "ja": "URLからトラッキングパラメータやアフィリエイトタグ、不要なクエリ文字列を削除します。",
+    "fr": "Supprimez les paramètres de suivi, les balises marketing et d'affiliation des URL."
+  },
+  "keywords": [
+    "clean link",
+    "clean url",
+    "url",
+    "link",
+    "tracking",
+    "utm",
+    "clearurl",
+    "strip",
+    "privacy",
+    "remove tracking",
+    "清理链接",
+    "链接",
+    "去参数"
+  ],
+  "options": [
+    {
+      "identifier": "canonicalizeAmazon",
+      "label": {
+        "en": "Simplify Amazon URLs to canonical /dp/ASIN",
+        "zh-Hans": "将亚马逊链接简化为标准 /dp/ASIN 格式",
+        "zh-Hant": "將亞馬遜連結簡化為標準 /dp/ASIN 格式",
+        "ja": "Amazonのリンクを標準の /dp/ASIN 形式に簡略化",
+        "fr": "Simplifier les URL Amazon au format /dp/ASIN standard"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "unwrapGoogleRedirects",
+      "label": {
+        "en": "Unwrap Google search redirects",
+        "zh-Hans": "解析并解开 Google 搜索重定向链接",
+        "zh-Hant": "解析並解開 Google 搜尋重定向連結",
+        "ja": "Google検索のリダイレクトリンクを解除",
+        "fr": "Déballer les redirections de recherche Google"
+      },
+      "type": "boolean",
+      "default": "true"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Clean Link",
+      "zh-Hans": "清理链接",
+      "zh-Hant": "清理連結",
+      "ja": "リンクを整理",
+      "fr": "Nettoyer le lien"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "text",
+    "result": "paste-or-copy",
+    "requirements": {
+      "regex": "(?i)^\\s*(https?:\\/\\/)?(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)\\s*$"
+    },
+    "toast": {
+      "message": "Link cleaned",
+      "style": "success"
+    }
+  }
+}
