@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T19:40:09Z",
+  "updatedAt": "2026-10-03T15:15:55Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -77,7 +77,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 8,
@@ -103,11 +103,11 @@
       "description": "Shorten a selected URL with Bitly and return the shortened URL as text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "downloadCount": 9,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bitly@1.0.1/Bitly.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bitly@1.1.0/Bitly.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bitly.svg",
-      "publishedAt": "2026-10-03T01:08:41+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "io.github.s010s.openclip.bob",
@@ -127,11 +127,11 @@
       "description": "Toggle bold formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "bold",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 106,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.1.0/Bold.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.bold@1.2.0/Bold.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.bold.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.bulletlines",
@@ -307,11 +307,11 @@
       "description": "Delete the selected text.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 78,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.1.0/DeleteSelection.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.deleteselection@1.2.0/DeleteSelection.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.deleteselection.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.devdocs",
@@ -583,11 +583,11 @@
       "description": "Toggle italic formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "italic",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 78,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.1.0/Italic.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.italic@1.2.0/Italic.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.italic.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.jwt",
@@ -859,11 +859,11 @@
       "description": "Paste clipboard text and press Return.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 59,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.1.0/PasteEnter.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteenter@1.2.0/PasteEnter.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pasteenter.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.pasteplaintext",
@@ -871,11 +871,11 @@
       "description": "Paste clipboard content as plain text, stripping formatting.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 132,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteplaintext@1.1.0/PastePlainText.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.pasteplaintext@1.2.0/PastePlainText.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.pasteplaintext.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.pypisearch",
@@ -928,7 +928,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.1.0",
@@ -1099,11 +1099,11 @@
       "description": "Select all content in the current application.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 104,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.1.0/SelectAll.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.selectall@1.2.0/SelectAll.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.selectall.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.semanticversion",
@@ -1363,11 +1363,11 @@
       "description": "Toggle underline formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "underline",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 54,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.1.0/Underline.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underline@1.2.0/Underline.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.underline.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-03T20:43:55+05:30"
     },
     {
       "id": "com.openclip.underscore",
