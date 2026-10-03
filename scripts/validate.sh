@@ -64,6 +64,7 @@ def known_kinds: ["url","urltemplate","js","javascript","applescript","shell","s
 def is_group: ((kind == "group") or (kind == "subactions"));
 def secondary_types: ["copy","paste","openURL","toast","success","none"];
 def toast_styles: ["success","error","info"];
+def input_values: ["optional","text","liveSelection","editableSelection"];
 
 # Option metadata must be complete and unique; malformed options reject the manifest at decode.
 def option_dups($p):
@@ -115,6 +116,38 @@ def check_action($p):
          ["\($p): script path escapes extension directory \"\($sc)\""]
        else [] end)
     else [] end;
+  def requirementsErrors:
+    if (($self.requirements? | type) == "object") then
+      ($self.requirements) as $r |
+      [
+        (if ($r | has("input")) and (($r.input | type) != "string" or (input_values | index($r.input)) == null) then
+           "\($p): requirements.input must be one of optional, text, liveSelection, editableSelection"
+         else empty end),
+        (if ($r | has("input")) and (($r | has("requiresSelection")) or ($r | has("requires-selection"))) then
+           "\($p): requirements.input cannot be combined with legacy requiresSelection/requires-selection; use only input"
+         else empty end),
+        (if ($r | has("requiresSelection")) and (($r.requiresSelection | type) != "boolean") then
+           "\($p): requirements.requiresSelection must be a boolean"
+         else empty end),
+        (if ($r | has("requires-selection")) and (($r["requires-selection"] | type) != "boolean") then
+           "\($p): requirements.requires-selection must be a boolean"
+         else empty end),
+        (if ($r | has("requiresSelection")) and ($r | has("requires-selection")) and ($r.requiresSelection != $r["requires-selection"]) then
+           "\($p): conflicting requiresSelection/requires-selection values; use one alias"
+         else empty end),
+        (if ($r | has("requiresPasteTarget")) and (($r.requiresPasteTarget | type) != "boolean") then
+           "\($p): requirements.requiresPasteTarget must be a boolean"
+         else empty end),
+        (if ($r | has("requires-paste-target")) and (($r["requires-paste-target"] | type) != "boolean") then
+           "\($p): requirements.requires-paste-target must be a boolean"
+         else empty end),
+        (if ($r | has("requiresPasteTarget")) and ($r | has("requires-paste-target")) and ($r.requiresPasteTarget != $r["requires-paste-target"]) then
+           "\($p): conflicting requiresPasteTarget/requires-paste-target values; use one alias"
+         else empty end)
+      ]
+    elif ($self | has("requirements")) and $self.requirements != null then
+      ["\($p): requirements must be an object"]
+    else [] end;
   ($self | option_dups($p)) +
   [
     (($self.type // "url") | ascii_downcase) as $t |
@@ -131,7 +164,7 @@ def check_action($p):
     else
       (if ($self | has_payload | not) then "\($p): missing required payload (url, script, or scriptCode)" else empty end)
     end
-  ] + secondaryErrors + toastErrors("toast") + toastErrors("secondaryToast") + toastErrors("secondary-toast") + scriptErrors + subErrors;
+  ] + requirementsErrors + secondaryErrors + toastErrors("toast") + toastErrors("secondaryToast") + toastErrors("secondary-toast") + scriptErrors + subErrors;
 
 # ---- top-level ----
 . as $m |

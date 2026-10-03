@@ -7,7 +7,7 @@
     "ja": "ペーストして Enter",
     "fr": "Coller et Entrée"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": {
@@ -28,6 +28,10 @@
     "icon": "icon.svg",
     "type": "applescript",
     "scriptCode": "tell application \"System Events\"\n\tkeystroke \"v\" using command down\n\tdelay 0.05\n\tkey code 36\nend tell",
-    "output": "none"
+    "output": "none",
+    "requirements": {
+      "input": "optional",
+      "requiresPasteTarget": true
+    }
   }
 }

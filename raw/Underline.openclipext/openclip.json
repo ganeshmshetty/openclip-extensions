@@ -7,7 +7,7 @@
     "ja": "下線",
     "fr": "Souligné"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": {
@@ -27,6 +27,7 @@
     },
     "icon": "underline",
     "type": "keypress",
-    "keyPress": "command+u"
+    "keyPress": "command+u",
+    "requirements": { "input": "editableSelection" }
   }
 }

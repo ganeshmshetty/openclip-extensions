@@ -435,10 +435,17 @@ reads.
   "regexNegated": false,      // OPTIONAL, default false (alias "regex-negated").
   "apps": ["com.apple.Safari"], // OPTIONAL. Bundle-id list.
   "appsMode": "allow",        // OPTIONAL, default "allow": "allow"|"deny" (alias "apps-mode").
-  "requiresSelection": true,  // OPTIONAL, default true (alias "requires-selection").
+  "input": "text",             // OPTIONAL: optional|text|liveSelection|editableSelection; default "text".
+  "requiresPasteTarget": false, // OPTIONAL, default false (alias "requires-paste-target").
   "requiredOptions": ["lang"] // OPTIONAL. Option ids whose resolved value must be non-blank.
 }
 ```
+
+Legacy `requiresSelection` (and `requires-selection`) remains accepted: `true` maps to
+`input: "text"`, `false` maps to `input: "optional"`. Do not combine either legacy key with
+`input`; that conflict rejects the manifest with an actionable decode error. If both legacy aliases
+are supplied, their values must agree. Unknown or wrongly typed `input` values reject the manifest;
+they never fall back to optional behavior.
 
 `requiredOptions` drives the **required-option UX**: at perform time, if any listed option's
 resolved value is blank, the action short-circuits to the configuration sheet (`.openConfiguration`
@@ -451,15 +458,28 @@ also request configuration at script time via `openclip.requireConfiguration` �
 
 `ActionVisibility.isEnabled` evaluates in this fixed order (pure function; no AppKit/UserDefaults):
 
-1. **requiresSelection** (default `true`): an all-whitespace selection disables the action unless
-   `requiresSelection: false`.
-2. **apps allow/deny**: allow → enabled only in listed bundle ids; deny → disabled in listed ids.
-3. **regex** (from `requirements.regex` or the legacy top-level `regex`): matched with
+1. **input** (default `text`): `optional` permits blank input, `text` requires nonblank text from
+   selection/clipboard/OCR, `liveSelection` requires nonblank text from the current live selection,
+   and `editableSelection` additionally requires the selection reader to confirm that selection's
+   control is editable. Unknown editability fails closed only for `editableSelection`.
+2. **requiresPasteTarget** (default `false`): when `true`, the action is enabled only when the
+   destination app is confirmed to accept Paste. This describes the destination and is independent
+   of the input source; `false` means no paste target is required, not that paste is forbidden.
+3. **apps allow/deny**: allow → enabled only in listed bundle ids; deny → disabled in listed bundle ids.
+4. **regex** (from `requirements.regex` or the legacy top-level `regex`): matched with
    `.dotMatchesLineSeparators, .caseInsensitive`; on success it builds the match info used for
    `{matched}`/`{captureN}` placeholders and capture env. `regexNegated: true` inverts enabled/disabled.
 
 A malformed regex **enables** the action (defensive — a bad manifest never hides an action). With
-**no** rules attached, every extension action defaults to "enabled iff a non-blank selection exists".
+no rules attached, every extension action defaults to `input: "text"`, requiring nonblank text from
+selection, clipboard, or OCR. The input and paste-target gates apply to each group sub-action and
+every runtime kind.
+
+**Release compatibility:** older OpenClip releases ignore unknown manifest keys. Catalog packages
+that depend on `input` or `requiresPasteTarget` must not be published until the first app release
+that enforces these fields. The current source tree is 1.7.3, but that does not establish a released
+minimum version for these requirements; set `minOpenClipVersion` only after the enforcing release
+version is confirmed.
 
 ### 5b. Primary/secondary result delivery (`output`, `result`, `secondary`, `toast`, `secondaryToast`)
 
@@ -1086,9 +1106,9 @@ are rejected at build time by esbuild's browser platform. See
   (the runtime sniffs the returned value), but it is non-conforming: declare `output` explicitly so
   the manifest is self-documenting. Non-output kinds (`url`/`keypress`/`shortcut`/`service`) are
   structurally `none` and need no declaration.
-- **`requiresSelection` gating.** With no `requirements` the default requires a non-blank selection;
-  a selected-empty/app with no selection won't show the action. Set
-  `requirements.requiresSelection: false` for always-on actions.
+- **Input gating.** With no `requirements` the default is `input: "text"`, requiring nonblank
+  text from selection, clipboard, or OCR. Use `input: "optional"` for standalone actions. Legacy
+  `requiresSelection: false` maps to optional input; neither form forbids paste.
 - **Non-zero exit / timeout.** A shell that exits non-zero or exceeds the 60 s watchdog surfaces an
   error status and does not leave the popup spinning.
 - **keyPress on a non-QWERTY layout** may type the "wrong" key (ANSI mapping assumption, §3f).

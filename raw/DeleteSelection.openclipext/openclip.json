@@ -7,7 +7,7 @@
     "ja": "選択範囲を削除",
     "fr": "Supprimer la sélection"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": {
@@ -27,6 +27,7 @@
     },
     "icon": "icon.svg",
     "type": "keypress",
-    "keyPress": "forwarddelete"
+    "keyPress": "forwarddelete",
+    "requirements": { "input": "editableSelection" }
   }
 }
