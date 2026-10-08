@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:27:54Z",
+  "updatedAt": "2026-10-08T10:34:19Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -77,7 +77,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 10,
@@ -964,7 +964,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.1.0",
@@ -1488,6 +1488,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube-thumbnail@1.0.0/YouTubeThumbnail.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.youtube-thumbnail.svg",
       "publishedAt": "2026-10-08T15:56:28+05:30"
+    },
+    {
+      "id": "com.openclip.zapier",
+      "name": "Zapier",
+      "description": "Send selected text directly to automated Zapier workflows and webhooks.",
+      "author": "OpenClip Community",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.zapier@1.0.0/Zapier.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.zapier.svg",
+      "publishedAt": "2026-10-08T16:02:55+05:30"
     }
   ]
 }
