@@ -4,10 +4,12 @@ function action(sel) {
   var num = parseInt(text, 10);
   if (isNaN(num)) return null;
 
-  // Heuristic: 13-digit values (and longer) are milliseconds; everything else
-  // is seconds. This matches the common convention (10 digits = seconds).
-  var digits = text.replace(/^-/, '').length;
-  var ms = digits >= 13 ? num : num * 1000;
+  // Heuristic: values above the 32-bit unsigned seconds ceiling (2106-02-07,
+  // 4294967295) are milliseconds; everything else is seconds. This keeps plain
+  // 10-digit second timestamps (2001–2106) as seconds while correctly reading
+  // 11–13 digit millisecond timestamps.
+  var MAX_UINT32 = 4294967295;
+  var ms = num > MAX_UINT32 ? num : num * 1000;
   var d = new Date(ms);
   if (isNaN(d.getTime())) return null;
 
