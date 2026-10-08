@@ -1,18 +1,12 @@
-# YouTube Thumbnail Grabber
+# YouTube Thumbnail
 
-Download the cover image of any YouTube video straight from OpenClip.
+Download the full-resolution cover image of any YouTube video straight from OpenClip.
 
-Select a YouTube link (or just the video ID) anywhere on your Mac, open OpenClip, and pick a
-resolution. The thumbnail is downloaded and shown as a native file card — drag it out, Copy File,
-Quick Look, or Save it. Downloads land in your **Downloads** folder when it exists.
-
-## Actions
-
-| Action | Image | Size |
-| :--- | :--- | :--- |
-| **Max Resolution** | `maxresdefault` | Up to 1280×720, falls back to HD if the video has no max-res image |
-| **HD (720p)** | `hqdefault` | 480×360 |
-| **Medium (480p)** | `mqdefault` | 320×180 |
+Select a YouTube link (or just the video ID) anywhere on your Mac, open OpenClip, and run
+**Thumbnail**. The image is downloaded at the highest available resolution (`maxresdefault`,
+falling back to HD when the video has no max-resolution image) and shown as a native file card —
+drag it out, Copy File, Quick Look, or Save it. Downloads land in your **Downloads** folder when
+it exists.
 
 Accepted link formats include `youtube.com/watch?v=…`, `youtu.be/…`, `/shorts/…`, `/embed/…`,
 `/live/…`, and a bare 11-character video ID.
@@ -20,8 +14,7 @@ Accepted link formats include `youtube.com/watch?v=…`, `youtu.be/…`, `/short
 ## Usage
 
 1. Select or copy a YouTube link.
-2. Open the OpenClip popup and choose **YouTube Thumbnail**.
-3. Pick **Max Resolution**, **HD**, or **Medium** — the image appears as a file card.
+2. Open the OpenClip popup and run **Thumbnail** — the image appears as a file card.
 
 ## Requirements
 

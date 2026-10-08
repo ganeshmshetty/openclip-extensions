@@ -1,11 +1,10 @@
 #!/bin/zsh
-# Download a YouTube video thumbnail via curl. Quality is derived from the
-# sub-action id suffix (max / hq / mq).
+# Download a YouTube video's full-resolution thumbnail via curl, falling back
+# to the standard HD image when the video has no max-resolution thumbnail.
 
 set -u
 
 CURL=/usr/bin/curl
-MODE="${OPENCLIP_ACTION_ID##*.}"
 
 json_escape() {
   local s="${1:-}"
@@ -48,19 +47,12 @@ fi
 
 [[ -n "$id" ]] || fail "No YouTube video found in the selection."
 
-case "$MODE" in
-  max) names=(maxresdefault hqdefault); label="maxres" ;;
-  hq) names=(hqdefault); label="hq" ;;
-  mq) names=(mqdefault); label="mq" ;;
-  *) fail "Unknown action." ;;
-esac
-
 outdir="${HOME}/Downloads"
 [[ -d "$outdir" ]] || outdir="${TMPDIR:-/tmp}"
 
 tmp="$(mktemp "${TMPDIR:-/tmp}/ytthumb.XXXXXX")"
 ok=0
-for candidate in "${names[@]}"; do
+for candidate in maxresdefault hqdefault; do
   if "$CURL" -fsSL --max-time 30 -o "$tmp" "https://img.youtube.com/vi/${id}/${candidate}.jpg"; then
     if [[ -s "$tmp" ]]; then
       ok=1
@@ -70,10 +62,10 @@ for candidate in "${names[@]}"; do
 done
 [[ "$ok" == 1 ]] || { rm -f "$tmp"; fail "Could not download the thumbnail."; }
 
-out="${outdir}/${id}-${label}.jpg"
+out="${outdir}/${id}.jpg"
 index=2
 while [[ -e "$out" ]]; do
-  out="${outdir}/${id}-${label}-${index}.jpg"
+  out="${outdir}/${id}-${index}.jpg"
   (( index++ ))
 done
 
