@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:47:10Z",
+  "updatedAt": "2026-10-08T10:50:19Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1488,6 +1488,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.underscore@1.1.0/Underscore.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.underscore.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30"
+    },
+    {
+      "id": "com.openclip.unixtime",
+      "name": "Unix Time Converter",
+      "description": "Convert Unix timestamp in seconds or milliseconds to a readable UTC date.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.1.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.unixtime@1.1.0/UnixTime.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.unixtime.svg",
+      "publishedAt": "2026-10-08T16:18:07+05:30"
     },
     {
       "id": "com.openclip.uppercase",
