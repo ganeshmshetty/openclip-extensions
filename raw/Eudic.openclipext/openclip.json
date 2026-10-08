@@ -1,0 +1,71 @@
+{
+  "identifier": "com.openclip.eudic",
+  "name": {
+    "en": "Eudic",
+    "zh-Hans": "欧路词典",
+    "zh-Hant": "歐路詞典",
+    "ja": "Eudic",
+    "fr": "Eudic"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Community Contributor",
+  "description": {
+    "en": "Look up the selected text in Eudic, the Chinese-English dictionary.",
+    "zh-Hans": "在欧路词典中查询选中的文字。",
+    "zh-Hant": "在歐路詞典中查詢選取的文字。",
+    "ja": "選択したテキストを Eudic（欧路辞書）で調べます。",
+    "fr": "Recherche le texte sélectionné dans Eudic, le dictionnaire chinois-anglais."
+  },
+  "keywords": [
+    "eudic",
+    "dictionary",
+    "lookup",
+    "translate",
+    "欧路词典",
+    "词典",
+    "查词",
+    "歐路詞典"
+  ],
+  "options": [
+    {
+      "identifier": "edition",
+      "label": {
+        "en": "Eudic Edition",
+        "zh-Hans": "欧路词典版本",
+        "zh-Hant": "歐路詞典版本",
+        "ja": "Eudic のエディション",
+        "fr": "Édition d'Eudic"
+      },
+      "type": "multiple",
+      "default": "Eudic Lite",
+      "values": [
+        "Eudic Lite",
+        "Eudic Enhanced"
+      ]
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Search In Eudic",
+      "zh-Hans": "在欧路词典中查询",
+      "zh-Hant": "在歐路詞典中查詢",
+      "ja": "Eudic で検索",
+      "fr": "Rechercher dans Eudic"
+    },
+    "icon": "icon.png",
+    "type": "javascript",
+    "output": "none",
+    "keywords": [
+      "eudic",
+      "dictionary",
+      "lookup",
+      "欧路词典",
+      "查词"
+    ],
+    "script": "main.js",
+    "requirements": {
+      "regex": "^[ \\t]*(?=[^\\r\\n]*\\p{L})[^\\r\\n]{1,80}$"
+    }
+  }
+}
