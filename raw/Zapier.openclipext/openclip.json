@@ -64,11 +64,11 @@
       {
         "identifier": "webhookUrl",
         "label": {
-          "en": "Webhook URL (Catch Hook)",
-          "zh-Hans": "Webhook URL（Catch Hook）",
-          "zh-Hant": "Webhook URL（Catch Hook）",
-          "fr": "URL du webhook (Catch Hook)",
-          "ja": "Webhook URL (Catch Hook)"
+          "en": "Webhook URL (Catch Raw Hook)",
+          "zh-Hans": "Webhook URL（Catch Raw Hook）",
+          "zh-Hant": "Webhook URL（Catch Raw Hook）",
+          "fr": "URL du webhook (Catch Raw Hook)",
+          "ja": "Webhook URL (Catch Raw Hook)"
         },
         "type": "string"
       },

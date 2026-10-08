@@ -2,7 +2,7 @@
 // Command: Send to Zapier
 //
 // Sends selected text and contextual metadata (source application, bundle ID,
-// timestamp) to a user-configured Zapier Catch Hook webhook URL.
+// timestamp) to a user-configured Zapier webhook URL over HTTPS.
 
 function option(id) {
   var value = typeof openclip.option === 'function'
@@ -14,10 +14,9 @@ function option(id) {
 function normalizeUrl(raw) {
   var url = String(raw == null ? '' : raw).trim();
   if (!url) return '';
-  if (!/^https?:\/\//i.test(url)) {
-    url = 'https://' + url;
-  }
-  return url;
+  if (/^https:\/\//i.test(url)) return url;
+  if (/^[a-z][a-z0-9+.-]*:\/\//i.test(url)) return '';
+  return 'https://' + url;
 }
 
 async function action(selection) {
@@ -33,13 +32,17 @@ async function action(selection) {
 
   if (!rawUrl) {
     openclip.requireConfiguration({
-      reason: 'Paste your Zapier Catch Hook URL to trigger automations.',
+      reason: 'Paste your Zapier webhook URL (https://) to trigger automations.',
       missing: ['webhookUrl']
     });
     return;
   }
 
   var webhookUrl = normalizeUrl(rawUrl);
+  if (!webhookUrl) {
+    openclip.toast('Webhook URL must use https://', 'error');
+    return;
+  }
 
   var headers = {
     'Content-Type': 'application/json; charset=utf-8',
