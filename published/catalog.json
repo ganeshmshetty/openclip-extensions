@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:22:36Z",
+  "updatedAt": "2026-10-08T10:25:48Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -84,6 +84,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/io.appwrite.openclip@1.1.0/Appwrite.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/io.appwrite.openclip.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30"
+    },
+    {
+      "id": "com.openclip.base64",
+      "name": "Base64",
+      "description": "Encode or decode the selected text as Base64.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.base64@1.0.0/Base64.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.base64.svg",
+      "publishedAt": "2026-10-08T15:53:43+05:30"
     },
     {
       "id": "com.openclip.bearnotes",
