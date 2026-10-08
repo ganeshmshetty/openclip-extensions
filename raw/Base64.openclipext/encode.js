@@ -10,10 +10,17 @@ function action(sel) {
       bytes.push(0xc0 | (code >> 6), 0x80 | (code & 0x3f));
     } else if (code < 0xd800 || code >= 0xe000) {
       bytes.push(0xe0 | (code >> 12), 0x80 | ((code >> 6) & 0x3f), 0x80 | (code & 0x3f));
+    } else if (code < 0xdc00) {
+      var next = text.charCodeAt(i + 1);
+      if (next >= 0xdc00 && next < 0xe000) {
+        i++;
+        code = 0x10000 + (((code & 0x3ff) << 10) | (next & 0x3ff));
+        bytes.push(0xf0 | (code >> 18), 0x80 | ((code >> 12) & 0x3f), 0x80 | ((code >> 6) & 0x3f), 0x80 | (code & 0x3f));
+      } else {
+        bytes.push(0xef, 0xbf, 0xbd);
+      }
     } else {
-      i++;
-      code = 0x10000 + (((code & 0x3ff) << 10) | (text.charCodeAt(i) & 0x3ff));
-      bytes.push(0xf0 | (code >> 18), 0x80 | ((code >> 12) & 0x3f), 0x80 | ((code >> 6) & 0x3f), 0x80 | (code & 0x3f));
+      bytes.push(0xef, 0xbf, 0xbd);
     }
   }
   var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

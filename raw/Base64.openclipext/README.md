@@ -5,7 +5,7 @@ Encode text to Base64 or decode Base64 strings back to plain text.
 ## Features
 
 - **Base64 Encode**: Converts highlighted UTF-8 text into standard Base64 representation.
-- **Base64 Decode**: Decodes Base64 data back to plain text. The decode action activates when the selection matches Base64 character patterns.
+- **Base64 Decode**: Decodes Base64 data back to plain text. The decode action activates when the selection matches Base64 character patterns. It accepts both standard (`+/`) and URL-safe (`-_`) Base64, with or without `=` padding; the decoded bytes must be valid UTF-8 text, so binary data (e.g. images) reports an error instead of producing garbled output.
 - **Pure Local Execution**: Operates instantly and offline using OpenClip's native JavaScriptCore runtime without transmitting data.
 
 ## Usage
