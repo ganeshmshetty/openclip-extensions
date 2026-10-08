@@ -1,0 +1,74 @@
+{
+  "identifier": "com.openclip.chinesenumerals",
+  "name": {
+    "en": "Chinese Numerals",
+    "zh-Hans": "中文大写数字",
+    "zh-Hant": "中文大寫數字",
+    "ja": "漢数字（大字）",
+    "fr": "Chiffres chinois"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Community Contributor",
+  "description": {
+    "en": "Convert numbers to Chinese uppercase numerals or RMB amounts.",
+    "zh-Hans": "将数字转换为中文大写数字或人民币金额。",
+    "zh-Hant": "將數字轉換為中文大寫數字或人民幣金額。",
+    "ja": "数字を中国語の大字または人民元表記に変換します。",
+    "fr": "Convertit un nombre en chiffres chinois capitaux ou en montant RMB."
+  },
+  "keywords": [
+    "chinese",
+    "numerals",
+    "uppercase",
+    "capital",
+    "rmb",
+    "cny",
+    "yuan",
+    "amount",
+    "financial",
+    "中文大写",
+    "大写金额",
+    "人民币",
+    "壹贰叁",
+    "大寫",
+    "漢数字",
+    "大字"
+  ],
+  "action": {
+    "id": "numerals",
+    "title": {
+      "en": "Chinese Numerals",
+      "zh-Hans": "中文大写数字",
+      "zh-Hant": "中文大寫數字",
+      "ja": "漢数字（大字）",
+      "fr": "Chiffres chinois"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "inline": true,
+    "output": "text",
+    "requirements": {
+      "regex": "^\\s*[¥￥]?\\s*-?(?:\\d[\\d,，]*(?:\\.\\d*)?|\\.\\d+)\\s*(?:元|块|圆)?\\s*$"
+    }
+  },
+  "options": [
+    {
+      "identifier": "style",
+      "label": {
+        "en": "Style",
+        "zh-Hans": "输出样式",
+        "zh-Hant": "輸出樣式",
+        "ja": "出力スタイル",
+        "fr": "Style"
+      },
+      "type": "multiple",
+      "default": "RMB amount 壹元整",
+      "values": [
+        "RMB amount 壹元整",
+        "Plain number 壹点贰"
+      ]
+    }
+  ]
+}
