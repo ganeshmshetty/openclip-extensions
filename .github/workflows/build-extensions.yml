@@ -180,6 +180,14 @@ jobs:
             published_at="$(git log -1 --format=%cI -- "$pkg_dir" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")"
             [ -n "$published_at" ] || published_at="$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
 
+            # Stable first-publish date: the commit that first added anything in the package
+            # directory. Unlike `published_at` (the latest commit touching it, which moves on every
+            # release), this does not change when the extension is updated, so the store can call an
+            # extension "New" for a fixed window after it first appeared — an update never ages a new
+            # extension out. Falls back to `published_at` for a package with no add-commit history.
+            added_at="$(git log --diff-filter=A --format=%cI -- "$pkg_dir" 2>/dev/null | tail -1)"
+            [ -n "$added_at" ] || added_at="$published_at"
+
             # Retain download counts from extension-stats.json or previous catalog.json
             dl_count=$(jq -r --arg id "$identifier" \
               '([.downloads[$id], .downloads[($id | ascii_downcase)]] | map(select(. != null)) | first) // 0' \
@@ -224,8 +232,9 @@ jobs:
               --arg url "https://github.com/$GITHUB_REPOSITORY/releases/download/${identifier}@$(jq -r '.version // "1.0.0"' "$manifest")/$pkg_name.zip" \
               --arg iconURL "https://cdn.jsdelivr.net/gh/$GITHUB_REPOSITORY@main/published/icons/${identifier}.svg" \
               --arg publishedAt "$published_at" \
+              --arg addedAt "$added_at" \
               --argjson downloadCount "$dl_count" \
-              '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: $downloadCount, downloadURL: $url, iconURL: $iconURL, publishedAt: $publishedAt}')
+              '{id: $id, name: $name, description: $desc, author: $author, icon: $icon, version: $version, downloadCount: $downloadCount, downloadURL: $url, iconURL: $iconURL, publishedAt: $publishedAt, addedAt: $addedAt}')
 
             jq --argjson entry "$entry" '.extensions += [$entry]' "$CATALOG" > "$CATALOG.tmp"
             mv "$CATALOG.tmp" "$CATALOG"
