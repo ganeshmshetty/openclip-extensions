@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:36:53Z",
+  "updatedAt": "2026-10-08T10:47:10Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -542,6 +542,18 @@
       "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
+      "id": "com.openclip.htmlencode",
+      "name": "HTML Entities",
+      "description": "Encode or decode HTML special character entities.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.htmlencode@1.0.0/HTMLEncode.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.htmlencode.svg",
+      "publishedAt": "2026-10-08T16:12:50+05:30"
+    },
+    {
       "id": "com.openclip.harper",
       "name": "Harper",
       "description": "Proofread the selection with Harper, the offline grammar checker.",
@@ -967,11 +979,11 @@
       "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 751,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quick-translate@1.1.0/QuickTranslate.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quick-translate@1.2.0/QuickTranslate.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quick-translate.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30"
+      "publishedAt": "2026-10-08T16:13:53+05:30"
     },
     {
       "id": "com.openclip.quotelines",
@@ -1346,6 +1358,18 @@
       "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
+      "id": "com.openclip.textedit",
+      "name": "New Document in TextEdit",
+      "description": "Create a new TextEdit document containing the selected text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.1",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.textedit@1.0.1/TextEdit.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.textedit.svg",
+      "publishedAt": "2026-10-08T16:12:33+05:30"
+    },
+    {
       "id": "com.openclip.things",
       "name": "Things 3",
       "description": "Quickly add a to-do to Things 3, or right-click to open Quick Entry.",
@@ -1368,6 +1392,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.timezone-converter@1.1.0/TimeZoneConverter.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.timezone-converter.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30"
+    },
+    {
+      "id": "com.openclip.timestamp",
+      "name": "Insert Timestamp",
+      "description": "Paste the current date and time at the cursor.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.timestamp@1.0.0/Timestamp.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.timestamp.svg",
+      "publishedAt": "2026-10-08T16:12:15+05:30"
     },
     {
       "id": "com.openclip.titlecase",
@@ -1394,6 +1430,18 @@
       "publishedAt": "2026-09-24T23:46:29+05:30"
     },
     {
+      "id": "com.openclip.tot",
+      "name": "Append to Tot",
+      "description": "Append the selected text to a chosen dot in Tot.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.tot@1.0.0/Tot.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.tot.svg",
+      "publishedAt": "2026-10-08T16:11:58+05:30"
+    },
+    {
       "id": "com.openclip.trimlines",
       "name": "Trim Lines",
       "description": "Strip leading and trailing whitespace from every line.",
@@ -1404,6 +1452,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.1.0/TrimLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.trimlines.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30"
+    },
+    {
+      "id": "com.openclip.urlencode",
+      "name": "URL Encode",
+      "description": "Percent-encode or decode the selected text.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.urlencode@1.0.0/URLEncode.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.urlencode.svg",
+      "publishedAt": "2026-10-08T16:13:06+05:30"
     },
     {
       "id": "com.openclip.underline",
