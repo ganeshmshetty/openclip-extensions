@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:34:19Z",
+  "updatedAt": "2026-10-08T10:36:53Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -984,6 +984,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.quotelines@1.1.0/QuoteLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.quotelines.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30"
+    },
+    {
+      "id": "com.openclip.readinglist",
+      "name": "Add to Safari Reading List",
+      "description": "Save the selected URL to Safari Reading List.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.readinglist@1.0.0/ReadingList.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.readinglist.svg",
+      "publishedAt": "2026-10-08T16:04:46+05:30"
     },
     {
       "id": "com.openclip.refine",
