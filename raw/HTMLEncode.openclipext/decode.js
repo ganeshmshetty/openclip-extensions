@@ -21,7 +21,7 @@ function action(sel) {
     return String.fromCharCode(0xd800 + (cp >> 10), 0xdc00 + (cp & 0x3ff));
   }
 
-  return text.replace(/&(#x[0-9a-fA-F]+|#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);/g, function(match) {
+  return text.replace(/&(# [xX][0-9a-fA-F]+|#[0-9]+|[a-zA-Z][a-zA-Z0-9]*);/g, function(match) {
     if (map[match]) return map[match];
     if (match.slice(0, 3).toLowerCase() === '&#x') {
       return codePointToString(parseInt(match.slice(3, -1), 16));
