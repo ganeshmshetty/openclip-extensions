@@ -1,0 +1,94 @@
+{
+  "identifier": "com.openclip.youtube-thumbnail",
+  "name": {
+    "en": "YouTube Thumbnail Grabber",
+    "zh-Hans": "YouTube 缩略图获取",
+    "zh-Hant": "YouTube 縮圖取得",
+    "ja": "YouTube サムネイル取得",
+    "fr": "Récupérateur de miniatures YouTube"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Download the thumbnail image of a selected YouTube video link.",
+    "zh-Hans": "下载选中 YouTube 视频链接的缩略图。",
+    "zh-Hant": "下載選取 YouTube 影片連結的縮圖。",
+    "ja": "選択した YouTube 動画リンクのサムネイル画像をダウンロードします。",
+    "fr": "Téléchargez la miniature de la vidéo YouTube sélectionnée."
+  },
+  "keywords": [
+    "youtube",
+    "thumbnail",
+    "video",
+    "download",
+    "image",
+    "cover",
+    "poster"
+  ],
+  "action": {
+    "id": "thumb",
+    "title": {
+      "en": "YouTube Thumbnail",
+      "zh-Hans": "YouTube 缩略图",
+      "zh-Hant": "YouTube 縮圖",
+      "ja": "YouTube サムネイル",
+      "fr": "Miniature YouTube"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "max",
+        "title": {
+          "en": "Max Resolution",
+          "zh-Hans": "最高分辨率",
+          "zh-Hant": "最高解析度",
+          "ja": "最高解像度",
+          "fr": "Résolution maximale"
+        },
+        "icon": "arrow.up.right",
+        "type": "shell",
+        "script": "fetch.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "(youtu\\.be/|youtube\\.com/|[?&]v=[A-Za-z0-9_-]{11}|/shorts/|/embed/|/live/|^\\s*[A-Za-z0-9_-]{11}\\s*$)"
+        }
+      },
+      {
+        "id": "hq",
+        "title": {
+          "en": "HD (720p)",
+          "zh-Hans": "高清（720p）",
+          "zh-Hant": "高畫質（720p）",
+          "ja": "HD（720p）",
+          "fr": "HD (720p)"
+        },
+        "icon": "photo",
+        "type": "shell",
+        "script": "fetch.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "(youtu\\.be/|youtube\\.com/|[?&]v=[A-Za-z0-9_-]{11}|/shorts/|/embed/|/live/|^\\s*[A-Za-z0-9_-]{11}\\s*$)"
+        }
+      },
+      {
+        "id": "mq",
+        "title": {
+          "en": "Medium (480p)",
+          "zh-Hans": "中清（480p）",
+          "zh-Hant": "中畫質（480p）",
+          "ja": "中画質（480p）",
+          "fr": "Moyenne (480p)"
+        },
+        "icon": "photo",
+        "type": "shell",
+        "script": "fetch.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "(youtu\\.be/|youtube\\.com/|[?&]v=[A-Za-z0-9_-]{11}|/shorts/|/embed/|/live/|^\\s*[A-Za-z0-9_-]{11}\\s*$)"
+        }
+      }
+    ]
+  }
+}
