@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T10:25:48Z",
+  "updatedAt": "2026-10-08T10:27:54Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1476,6 +1476,18 @@
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.wordcount@1.2.0/WordCount.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.wordcount.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30"
+    },
+    {
+      "id": "com.openclip.youtube-thumbnail",
+      "name": "YouTube Thumbnail Grabber",
+      "description": "Download the thumbnail image of a selected YouTube video link.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.youtube-thumbnail@1.0.0/YouTubeThumbnail.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.youtube-thumbnail.svg",
+      "publishedAt": "2026-10-08T15:56:28+05:30"
     }
   ]
 }
