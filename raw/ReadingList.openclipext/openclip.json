@@ -30,7 +30,7 @@
     "serviceName": "com.apple.share.System.add-to-safari-reading-list",
     "output": "none",
     "requirements": {
-      "regex": "^https?://([^\\s/.]+\\.[^\\s/]+|localhost)(:\\d+)?([/?#]\\S*)?$"
+      "regex": "^https?://[^\\s/?#]+([/?#]\\S*)?$"
     },
     "toast": {
       "message": {
