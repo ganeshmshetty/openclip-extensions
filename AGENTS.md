@@ -696,6 +696,16 @@ A script-file action (`ScriptAction`) and inline shell run with the selection on
 vars: `OPENCLIP_TEXT`, `OPENCLIP_MATCHED`, `OPENCLIP_CAPTURE_1`…`N`, `OPENCLIP_BUNDLE_ID`,
 `OPENCLIP_ACTION_ID`. The action id is the uniform/group id from §2.
 
+File-backed shell/script actions expose manifest-level and per-action `options` in Preferences.
+Each invocation exports resolved values as `OPENCLIP_OPTION_<IDENTIFIER>`: uppercase the identifier
+and replace hyphens with underscores (`api-key` → `OPENCLIP_OPTION_API_KEY`). Saved values are
+scoped to the action id; unset values fall back to the declared default or an empty string.
+Secret options use the same environment convention and are resolved from SecretStore.
+Read values as `"$OPENCLIP_OPTION_API_KEY"` in shell or
+`os.environ["OPENCLIP_OPTION_API_KEY"]` in Python; booleans are strings (`"true"` / `"false"`).
+Choose option identifiers with unique normalized names. This convention applies to executable
+script files; inline shell actions do not export option environment variables.
+
 ---
 
 ## 7. The JavaScript `openclip.*` bridge (`OpenClipJSHost`)
