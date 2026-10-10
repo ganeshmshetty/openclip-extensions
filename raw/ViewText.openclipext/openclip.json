@@ -1,0 +1,26 @@
+{
+  "identifier": "com.openclip.viewtext",
+  "name": {
+    "en": "View Text",
+    "zh-Hans": "查看文本",
+    "zh-Hant": "檢視文字",
+    "fr": "Afficher le texte",
+    "ja": "テキストを表示"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "description": {
+    "en": "View the selected text in a result card.",
+    "zh-Hans": "在结果卡片中查看选中的文本。",
+    "zh-Hant": "在結果卡片中檢視選取的文字。",
+    "fr": "Affiche le texte sélectionné dans une carte de résultat.",
+    "ja": "選択したテキストを結果カードに表示します。"
+  },
+  "action": {
+    "icon": "icon.svg",
+    "type": "javascript",
+    "scriptCode": "function action(selection) { return selection; }",
+    "output": "text",
+    "result": "preview"
+  }
+}
