@@ -64,6 +64,7 @@ def known_kinds: ["url","urltemplate","js","javascript","applescript","shell","s
 def is_group: ((kind == "group") or (kind == "subactions"));
 def secondary_types: ["copy","paste","openURL","toast","success","none"];
 def toast_styles: ["success","error","info"];
+def content_types: ["url","email","date","path","phone","address"];
 def input_values: ["optional","text","liveSelection","editableSelection"];
 
 # Option metadata must be complete and unique; malformed options reject the manifest at decode.
@@ -120,6 +121,22 @@ def check_action($p):
     if (($self.requirements? | type) == "object") then
       ($self.requirements) as $r |
       [
+        (if ($r | has("expression")) then
+           "\($p): requirements.expression has been retired; use requirements.content or requirements.regex"
+         else empty end),
+        (if ($r | has("content")) then
+           if ($r.content | type) != "array" then
+             "\($p): requirements.content must be a non-empty array of url, email, date, path, phone, address"
+           elif ($r.content | length) == 0 then
+             "\($p): requirements.content must not be empty"
+           else
+             $r.content[] as $type | if ($type | type) != "string" then
+               "\($p): requirements.content entries must be strings"
+             elif (content_types | index($type)) == null then
+               "\($p): unknown requirements.content type \($type)"
+             else empty end
+           end
+         else empty end),
         (if ($r | has("input")) and (($r.input | type) != "string" or (input_values | index($r.input)) == null) then
            "\($p): requirements.input must be one of optional, text, liveSelection, editableSelection"
          else empty end),

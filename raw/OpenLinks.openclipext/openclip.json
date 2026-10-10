@@ -1,0 +1,38 @@
+{
+  "identifier": "com.openclip.openlinks",
+  "name": {
+    "en": "Open Links",
+    "zh-Hans": "打开链接",
+    "zh-Hant": "開啟連結",
+    "ja": "リンクを開く",
+    "fr": "Ouvrir les liens"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.9.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Open all web links in the selected text, once per distinct URL.",
+    "zh-Hans": "打开选中文本中的所有网页链接，每个不同链接仅打开一次。",
+    "zh-Hant": "開啟所選文字中的所有網頁連結，每個不同連結僅開啟一次。",
+    "ja": "選択したテキスト内のすべてのウェブリンクを、重複を除いて開きます。",
+    "fr": "Ouvre tous les liens Web du texte sélectionné, une fois par URL distincte."
+  },
+  "action": {
+    "title": {
+      "en": "Open Links",
+      "zh-Hans": "打开链接",
+      "zh-Hant": "開啟連結",
+      "ja": "リンクを開く",
+      "fr": "Ouvrir les liens"
+    },
+    "icon": "link",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "none",
+    "requirements": {
+      "content": [
+        "url"
+      ]
+    }
+  }
+}

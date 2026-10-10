@@ -431,6 +431,7 @@ reads.
 
 ```jsonc
 "requirements": {
+  "content": ["url"],       // OPTIONAL, non-empty: url|email|date|path|phone|address; any type matches. Requires 1.9.0.
   "regex": "^\\d+$",          // OPTIONAL. Gate on selection; see §5.
   "regexNegated": false,      // OPTIONAL, default false (alias "regex-negated").
   "apps": ["com.apple.Safari"], // OPTIONAL. Bundle-id list.
@@ -466,11 +467,12 @@ also request configuration at script time via `openclip.requireConfiguration` �
    destination app is confirmed to accept Paste. This describes the destination and is independent
    of the input source; `false` means no paste target is required, not that paste is forbidden.
 3. **apps allow/deny**: allow → enabled only in listed bundle ids; deny → disabled in listed bundle ids.
-4. **regex** (from `requirements.regex` or the legacy top-level `regex`): matched with
+4. **content**: any declared type with at least one native match passes. Detection scans the entire original selection, preserves occurrence order/duplicates, and caches results for JavaScript. Declaring content makes the action contextual. Empty arrays, unknown types, or malformed values reject the manifest.
+5. **regex** (from `requirements.regex` or the legacy top-level `regex`): matched with
    `.dotMatchesLineSeparators, .caseInsensitive`; on success it builds the match info used for
    `{matched}`/`{captureN}` placeholders and capture env. `regexNegated: true` inverts enabled/disabled.
 
-A malformed regex **enables** the action (defensive — a bad manifest never hides an action). With
+A malformed regex **passes the regex gate after other requirements have passed** (defensive — a bad manifest never hides an action). With
 no rules attached, every extension action defaults to `input: "text"`, requiring nonblank text from
 selection, clipboard, or OCR. The input and paste-target gates apply to each group sub-action and
 every runtime kind.
@@ -708,9 +710,13 @@ script files; inline shell actions do not export option environment variables.
 
 ---
 
+`requirements.expression` has been retired. Declaring it rejects the manifest with a migration diagnostic. Use native `content` detection or `regex` for custom conditions; never silently remove a rule. No catalog manifest used expressions at implementation time.
+
 ## 7. The JavaScript `openclip.*` bridge (`OpenClipJSHost`)
 
 Read-only input context:
+
+- `openclip.input.detected` (**requires `minOpenClipVersion: "1.9.0"`**): deeply frozen arrays `urls`, `emails`, `dates`, `paths`, `phones`, `addresses`. Only types requested in `requirements.content` are populated; other arrays and requested types without matches are empty. Detection scans the entire original selection, independent of regex captures, and shares the visibility snapshot. URL/email/phone/path items are strings. Dates are `{ text, date, duration, timeZone? }` (ISO-8601 UTC date, seconds duration); addresses are `{ text, components }` with optional `name`, `jobTitle`, `organization`, `street`, `city`, `state`, `postalCode`, `country`, `phone` fields. Paths expand tilde/file URLs and recognize quoted or escaped spaces without checking existence. Native date/phone/address formats depend on the system detector.
 
 - `openclip.input.text`, `openclip.input.html` (source-app HTML or empty), `openclip.input.rtf` (source-app RTF or empty),
   `openclip.input.matchedText`, `openclip.input.captures` (array),
@@ -768,7 +774,7 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 - `openclip.pasteContent({ 'public.utf8-plain-text': text, 'public.html': html, 'public.rtf': rtf })` — multi-type rich paste (also accepts shorthand `{ text, html, rtf }`)
 - `openclip.copyContent({ 'public.utf8-plain-text': text, 'public.html': html, 'public.rtf': rtf })` — multi-type rich copy (also accepts shorthand `{ text, html, rtf }`)
 - `openclip.cut(text)`
-- `openclip.openURL(url)`
+- `openclip.openURL(url)` — multiple calls already execute in sequence. For actions declaring URL content, web URLs open in the recognized source browser or fall back to the default browser.
 - `openclip.keyPress(key, ["command","shift","option","control", ...])`
 - `openclip.runShortcut(name)`
 - `openclip.notify(title, body)`
@@ -1220,3 +1226,7 @@ so pre-existing extensions keep working with zero action.
 - Options storage: `Sources/Core/Settings/ActionOptionStore.swift`, `SettingKey.swift`,
   `Sources/OpenClip/Platform/Extensions/SecretActionOptionStore.swift`, `Sources/OpenClip/Platform/SecretStore.swift`.
 - Shell JSON effects + watchdog: `Sources/Core/Extensions/ShellProcessRunner.swift`.
+
+### Native content release compatibility
+
+Content requirements and detected JS input reserve the 1.9.0 source version. Packages using them must declare `minOpenClipVersion: "1.9.0"` and wait for that app release before publication. `raw/OpenLinks.openclipext` accompanies this feature: it requests URL content, deduplicates the supplied URLs, and emits one `openURL` effect per distinct link. The app builtin Open Link retains its first-link behavior through the same detector.

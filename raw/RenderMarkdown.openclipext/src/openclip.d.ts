@@ -8,7 +8,17 @@ interface OpenClipApp {
   name: string;
 }
 
+interface OpenClipDetectedContent {
+  readonly urls: readonly string[];
+  readonly emails: readonly string[];
+  readonly paths: readonly string[];
+  readonly phones: readonly string[];
+  readonly dates: readonly { readonly text: string; readonly date: string; readonly duration: number; readonly timeZone?: string }[];
+  readonly addresses: readonly { readonly text: string; readonly components: Readonly<Record<string, string>> }[];
+}
+
 interface OpenClipInput {
+  readonly detected: OpenClipDetectedContent;
   text: string;
   html: string;
   rtf: string;
