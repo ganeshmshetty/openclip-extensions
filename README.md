@@ -22,7 +22,7 @@
 </p>
 <p align="center">
   <a href="https://github.com/ganeshmshetty/openclip"><img src="https://img.shields.io/badge/Read%20the%20Docs-212124?style=for-the-badge&logo=readme&logoColor=white" alt="Read the Docs" /></a>
-  <a href="https://discord.gg/sy4MeFxf8"><img src="https://img.shields.io/badge/Join%20the%20Community-212124?style=for-the-badge&logo=discord&logoColor=white" alt="Join the Community" /></a>
+  <a href="https://discord.gg/acYYdzM7jR"><img src="https://img.shields.io/badge/Join%20the%20Community-212124?style=for-the-badge&logo=discord&logoColor=white" alt="Join the Community" /></a>
   <a href="https://getopenclip.app/support"><img src="https://img.shields.io/badge/Sponsor%20OpenClip-212124?style=for-the-badge&logo=githubsponsors&logoColor=EA4AAA" alt="Sponsor OpenClip" /></a>
 </p>
 
