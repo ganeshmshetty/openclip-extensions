@@ -17,7 +17,8 @@ interface OpenClipDetectedContent {
 }
 
 interface OpenClipInput {
-  readonly detected: OpenClipDetectedContent;
+  /** Available on OpenClip 1.9.0 and later. */
+  readonly detected?: OpenClipDetectedContent;
   text: string;
   matchedText: string;
   captures: string[];
