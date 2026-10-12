@@ -1,23 +1,23 @@
 {
   "identifier": "com.nam.proofread",
   "name": {
-    "en": "Proofread",
-    "zh-Hans": "校对润色"
+    "en": "Claude Proofread",
+    "zh-Hans": "Claude 校对"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Nam",
   "minOpenClipVersion": "1.1.0",
   "description": {
-    "en": "Fix spelling and grammar, or polish wording, with any Anthropic-compatible model endpoint.",
-    "zh-Hans": "用任意 Anthropic 兼容接口修正拼写语法，或润色表达。"
+    "en": "Fix spelling and grammar, polish wording, or run your own instruction on the selection via any Anthropic-compatible API.",
+    "zh-Hans": "通过任意 Anthropic 兼容接口修正拼写语法、润色表达，或对选中文本执行自定义指令。"
   },
   "keywords": ["proofread", "grammar", "spelling", "polish", "claude", "校对", "润色", "语法"],
   "options": [
     {
-      "identifier": "endpoint",
-      "label": { "en": "API endpoint (/v1/messages)", "zh-Hans": "接口地址（/v1/messages）" },
+      "identifier": "baseURL",
+      "label": { "en": "Anthropic Base URL", "zh-Hans": "Anthropic Base URL" },
       "type": "string",
-      "default": "https://api.anthropic.com/v1/messages"
+      "default": "https://api.anthropic.com"
     },
     {
       "identifier": "apiKey",
@@ -48,12 +48,21 @@
       "label": { "en": "Token budget (max_tokens)", "zh-Hans": "Token 预算（max_tokens）" },
       "type": "string",
       "default": "4000"
+    },
+    {
+      "identifier": "customPrompt",
+      "label": {
+        "en": "Custom prompt\nWhen the action runs, the selected text is appended after the instruction",
+        "zh-Hans": "自定义提示词\n操作运行时，选中的文本会附加到指令之后"
+      },
+      "type": "string",
+      "default": ""
     }
   ],
   "action": {
     "title": {
-      "en": "Proofread",
-      "zh-Hans": "校对"
+      "en": "Claude Proofread",
+      "zh-Hans": "Claude 校对"
     },
     "icon": "text.badge.checkmark",
     "type": "javascript",
@@ -68,7 +77,7 @@
     "result": "paste-or-copy",
     "requirements": {
       "input": "text",
-      "requiredOptions": ["endpoint", "apiKey", "model"]
+      "requiredOptions": ["baseURL", "apiKey", "model"]
     }
   }
 }

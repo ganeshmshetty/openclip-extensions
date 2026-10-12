@@ -19,7 +19,7 @@ async function run({ text, options = {}, secondary = false, responses = [] }) {
   const queue = [...responses];
   globalThis.openclip = {
     input: { text, isSecondaryClick: secondary },
-    options: { endpoint: "http://127.0.0.1:3425/v1/messages", apiKey: "magpie", model: "claude-haiku-5-5",
+    options: { baseURL: "http://127.0.0.1:3425", customPrompt: "", apiKey: "magpie", model: "claude-haiku-5-5",
                thinking: true, effort: "low", maxTokens: "4000", ...options },
     option(id) { return this.options[id]; },
     i18n: (d) => d["zh-Hans"] || d.en,
@@ -98,6 +98,37 @@ const tests = {
     assert.match(r.error, /拒绝了这个地址/);
     r = await run({ text: "x", responses: [{ ok: true, status: 200, json: async () => { throw new SyntaxError(); } }] });
     assert.match(r.error, /不是 JSON/);
+  },
+  "Base URL normalization": async () => {
+    const cases = {
+      "http://127.0.0.1:3425": "http://127.0.0.1:3425/v1/messages",
+      "http://127.0.0.1:3425/": "http://127.0.0.1:3425/v1/messages",
+      "https://api.anthropic.com/v1": "https://api.anthropic.com/v1/messages",
+      "https://api.anthropic.com/v1/": "https://api.anthropic.com/v1/messages",
+      "https://api.anthropic.com/v1/messages": "https://api.anthropic.com/v1/messages",
+      "https://gw.example.com/proxy/anthropic": "https://gw.example.com/proxy/anthropic/v1/messages",
+      "  https://api.anthropic.com  ": "https://api.anthropic.com/v1/messages",
+    };
+    for (const [input, expected] of Object.entries(cases)) {
+      const r = await run({ text: "x", options: { baseURL: input }, responses: [okResp("x")] });
+      assert.equal(r.calls[0].url, expected, input);
+    }
+  },
+  "custom prompt: instruction then selection, custom system": async () => {
+    const r = await run({ text: "Good morning", options: { customPrompt: "翻译成日语" }, responses: [okResp("おはようございます")] });
+    assert.equal(r.result, "おはようございます");
+    const b = r.calls[0].body;
+    assert.equal(b.messages[0].content, "翻译成日语\n\nGood morning");
+    assert.match(b.system, /Carry out the user's instruction/);
+  },
+  "custom prompt ignored on secondary click (fix-only)": async () => {
+    const r = await run({ text: "teh", secondary: true, options: { customPrompt: "翻译成日语" }, responses: [okResp("the")] });
+    assert.match(r.calls[0].body.system, /proofreader/);
+    assert.match(r.calls[0].body.messages[0].content, /^<text>/);
+  },
+  "whitespace-only custom prompt falls back to polish": async () => {
+    const r = await run({ text: "x", options: { customPrompt: "   " }, responses: [okResp("x")] });
+    assert.match(r.calls[0].body.system, /copy editor/);
   },
   "strips inline <think> tags": async () => {
     const r = await run({ text: "x", responses: [okResp("<think>hmm</think>Fixed.")] });

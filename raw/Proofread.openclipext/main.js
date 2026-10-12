@@ -1,5 +1,6 @@
-// Proofread — fix or polish the selection through an Anthropic-compatible /v1/messages endpoint.
-// Primary click: fix errors and polish wording. Secondary click (right-click / ⇧-click): fix only.
+// Claude Proofread — fix or polish the selection through an Anthropic-compatible Messages API.
+// Primary click: fix errors and polish wording, or run the custom prompt when one is set.
+// Secondary click (right-click / ⇧-click): fix only.
 
 var DEFAULT_MAX_TOKENS = 4000;
 
@@ -19,6 +20,20 @@ var PROMPT_POLISH =
   "You are a skilled copy editor. Fix all spelling, grammar and punctuation errors, then " +
   "make the expression clearer, more natural and more concise. Keep the original meaning, " +
   "register and voice. Do not add new content, facts or opinions. " + RULES;
+
+// The custom prompt may ask for anything (translate, summarize…), so only the output shape is fixed:
+// the result replaces the selection.
+var PROMPT_CUSTOM =
+  "Carry out the user's instruction on the text that follows it. Output ONLY the resulting " +
+  "text: no quotes, no explanations, no preface.";
+
+// Accepts "https://host", "https://host/", "https://host/v1" or the full ".../v1/messages".
+function messagesURL(base) {
+  var url = base.replace(/\/+$/, "");
+  if (/\/v1\/messages$/i.test(url)) return url;
+  if (/\/v1$/i.test(url)) return url + "/messages";
+  return url + "/v1/messages";
+}
 
 function opt(id) {
   var v;
@@ -48,7 +63,8 @@ function readConfig() {
   if (maxTokens > 128000) maxTokens = 128000;
   var effort = optString("effort");
   return {
-    endpoint: optString("endpoint"),
+    endpoint: messagesURL(optString("baseURL")),
+    customPrompt: optString("customPrompt"),
     apiKey: optString("apiKey"),
     model: optString("model"),
     thinking: optBool("thinking", true),
@@ -60,11 +76,17 @@ function readConfig() {
 }
 
 function buildBody(cfg, input, fixOnly) {
+  var useCustom = !fixOnly && cfg.customPrompt !== "";
   var body = {
     model: cfg.model,
     max_tokens: cfg.maxTokens,
-    system: fixOnly ? PROMPT_FIX : PROMPT_POLISH,
-    messages: [{ role: "user", content: "<text>\n" + input + "\n</text>" }],
+    system: useCustom ? PROMPT_CUSTOM : fixOnly ? PROMPT_FIX : PROMPT_POLISH,
+    messages: [{
+      role: "user",
+      content: useCustom
+        ? cfg.customPrompt + "\n\n" + input
+        : "<text>\n" + input + "\n</text>",
+    }],
   };
   // thinking / effort are Claude-specific; other models behind a gateway may reject them.
   if (/claude/i.test(cfg.model)) {
@@ -160,8 +182,8 @@ async function action(text) {
     data = await res.json();
   } catch (_) {
     throw new Error(openclip.i18n({
-      en: "Response is not JSON; check that the endpoint ends with /v1/messages",
-      "zh-Hans": "返回的不是 JSON，检查地址是否以 /v1/messages 结尾",
+      en: "Response is not JSON; check the Base URL (requested " + cfg.endpoint + ")",
+      "zh-Hans": "返回的不是 JSON，检查 Base URL（实际请求 " + cfg.endpoint + "）",
     }));
   }
   if (data.stop_reason === "max_tokens") {
