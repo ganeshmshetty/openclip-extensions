@@ -1,0 +1,74 @@
+{
+  "identifier": "com.nam.proofread",
+  "name": {
+    "en": "Proofread",
+    "zh-Hans": "校对润色"
+  },
+  "version": "1.0.0",
+  "author": "Nam",
+  "minOpenClipVersion": "1.1.0",
+  "description": {
+    "en": "Fix spelling and grammar, or polish wording, with any Anthropic-compatible model endpoint.",
+    "zh-Hans": "用任意 Anthropic 兼容接口修正拼写语法，或润色表达。"
+  },
+  "keywords": ["proofread", "grammar", "spelling", "polish", "claude", "校对", "润色", "语法"],
+  "options": [
+    {
+      "identifier": "endpoint",
+      "label": { "en": "API endpoint (/v1/messages)", "zh-Hans": "接口地址（/v1/messages）" },
+      "type": "string",
+      "default": "https://api.anthropic.com/v1/messages"
+    },
+    {
+      "identifier": "apiKey",
+      "label": { "en": "API key", "zh-Hans": "API key" },
+      "type": "secret"
+    },
+    {
+      "identifier": "model",
+      "label": { "en": "Model", "zh-Hans": "模型名称" },
+      "type": "string",
+      "default": "claude-haiku-5-5"
+    },
+    {
+      "identifier": "thinking",
+      "label": { "en": "Thinking (Claude only)", "zh-Hans": "模型思考（仅 Claude）" },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "effort",
+      "label": { "en": "Effort (Claude only)", "zh-Hans": "Effort（仅 Claude）" },
+      "type": "multiple",
+      "default": "low",
+      "values": ["model default", "low", "medium", "high", "xhigh", "max"]
+    },
+    {
+      "identifier": "maxTokens",
+      "label": { "en": "Token budget (max_tokens)", "zh-Hans": "Token 预算（max_tokens）" },
+      "type": "string",
+      "default": "4000"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Proofread",
+      "zh-Hans": "校对"
+    },
+    "icon": "text.badge.checkmark",
+    "type": "javascript",
+    "script": "main.js",
+    "async": true,
+    "loading": true,
+    "loadingMessage": {
+      "en": "Proofreading…",
+      "zh-Hans": "正在校对…"
+    },
+    "output": "text",
+    "result": "paste-or-copy",
+    "requirements": {
+      "input": "text",
+      "requiredOptions": ["endpoint", "apiKey", "model"]
+    }
+  }
+}
