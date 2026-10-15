@@ -148,6 +148,14 @@ Common action fields (all OPTIONAL unless noted):
 }
 ```
 
+**Rich selection input.** Optional per-action `"captureRtf": true` and `"captureHtml": true`
+request missing rich representations before the action runs. They populate the existing
+`openclip.input.rtf` / `openclip.input.html`, `{rtf}` / `{html}`, and shell/AppleScript inputs.
+Capture happens on invocation, restores the user's clipboard before running the script, and
+reuses rich data already captured. An app that supplies no rich representation can still yield
+empty input. Clipboard and OCR input never cause Copy in a source app. Neither flag can be
+combined with `"inline": true`; automatic inline evaluation must not mutate the clipboard.
+
 **Output contracts (`output` and `result`).** Every action declares what kind of output it yields:
 - `"output"`: `"text"`, `"file"`, `"none"`, or `"dynamic"`. **Authoring rule: declare `output` explicitly on every output-producing action** (all kinds except `url`/`keypress`/`shortcut`/`service`, which are structurally `none`). The runtime does fall back to sniffing the returned value, but an explicit declaration makes a manifest self-documenting: a reader can tell what an action produces without opening its script. Set `output` on each **sub-action** of a `group`, never on the structural group row.
 - `"result"`: Author recommendation for delivery: `"preview"` (result card), `"paste"`, `"copy"`, `"paste-or-copy"` (paste if target app allows, else copy), `"open"` (open file), `"save"` (save file). Optional — omit to inherit the output kind's default.

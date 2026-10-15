@@ -164,6 +164,12 @@ def check_action($p):
     else
       (if ($self | has_payload | not) then "\($p): missing required payload (url, script, or scriptCode)" else empty end)
     end
+  ] + [
+    (["captureRtf", "captureHtml"][] as $key |
+      if ($self | has($key)) and ($self[$key] | type) != "boolean" then
+        "\($p): \($key) must be a boolean" else empty end),
+    (if $self.inline == true and ($self.captureRtf == true or $self.captureHtml == true) then
+      "\($p): inline previews cannot request captureRtf or captureHtml" else empty end)
   ] + requirementsErrors + secondaryErrors + toastErrors("toast") + toastErrors("secondaryToast") + toastErrors("secondary-toast") + scriptErrors + subErrors;
 
 # ---- top-level ----
