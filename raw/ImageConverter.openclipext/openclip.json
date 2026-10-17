@@ -1,0 +1,147 @@
+{
+  "identifier": "com.openclip.image-convert",
+  "name": {
+    "en": "Image Convert & Compress",
+    "zh-Hans": "图片转换与压缩",
+    "zh-Hant": "圖片轉換與壓縮",
+    "ja": "画像の変換と圧縮",
+    "fr": "Convertir et compresser des images"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Convert or compress a selected image file (JPEG, PNG, HEIC, TIFF) using macOS image tools.",
+    "zh-Hans": "使用 macOS 图像工具转换或压缩选中的图片文件（JPEG、PNG、HEIC、TIFF）。",
+    "zh-Hant": "使用 macOS 影像工具轉換或壓縮選取的圖片檔案（JPEG、PNG、HEIC、TIFF）。",
+    "ja": "macOS の画像ツールで選択した画像ファイル（JPEG、PNG、HEIC、TIFF）を変換・圧縮します。",
+    "fr": "Convertissez ou compressez une image sélectionnée (JPEG, PNG, HEIC, TIFF) avec les outils macOS."
+  },
+  "keywords": [
+    "image",
+    "convert",
+    "compress",
+    "resize",
+    "jpeg",
+    "png",
+    "heic",
+    "tiff",
+    "sips"
+  ],
+  "action": {
+    "id": "image",
+    "title": {
+      "en": "Convert Image",
+      "zh-Hans": "转换图片",
+      "zh-Hant": "轉換圖片",
+      "ja": "画像を変換",
+      "fr": "Convertir l’image"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "jpeg",
+        "title": {
+          "en": "Convert to JPEG",
+          "zh-Hans": "转换为 JPEG",
+          "zh-Hant": "轉換為 JPEG",
+          "ja": "JPEG に変換",
+          "fr": "Convertir en JPEG"
+        },
+        "icon": "photo",
+        "type": "shell",
+        "script": "convert.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "\\.(png|jpe?g|gif|tiff?|heic|heif|webp|bmp|avif)\\s*$"
+        }
+      },
+      {
+        "id": "png",
+        "title": {
+          "en": "Convert to PNG",
+          "zh-Hans": "转换为 PNG",
+          "zh-Hant": "轉換為 PNG",
+          "ja": "PNG に変換",
+          "fr": "Convertir en PNG"
+        },
+        "icon": "photo",
+        "type": "shell",
+        "script": "convert.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "\\.(png|jpe?g|gif|tiff?|heic|heif|webp|bmp|avif)\\s*$"
+        }
+      },
+      {
+        "id": "heic",
+        "title": {
+          "en": "Convert to HEIC",
+          "zh-Hans": "转换为 HEIC",
+          "zh-Hant": "轉換為 HEIC",
+          "ja": "HEIC に変換",
+          "fr": "Convertir en HEIC"
+        },
+        "icon": "photo",
+        "type": "shell",
+        "script": "convert.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "\\.(png|jpe?g|gif|tiff?|heic|heif|webp|bmp|avif)\\s*$"
+        }
+      },
+      {
+        "id": "tiff",
+        "title": {
+          "en": "Convert to TIFF",
+          "zh-Hans": "转换为 TIFF",
+          "zh-Hant": "轉換為 TIFF",
+          "ja": "TIFF に変換",
+          "fr": "Convertir en TIFF"
+        },
+        "icon": "doc",
+        "type": "shell",
+        "script": "convert.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "\\.(png|jpe?g|gif|tiff?|heic|heif|webp|bmp|avif)\\s*$"
+        }
+      },
+      {
+        "id": "resize",
+        "title": {
+          "en": "Resize to 1600 px",
+          "zh-Hans": "缩放到 1600 像素",
+          "zh-Hant": "縮放至 1600 像素",
+          "ja": "1600 px にリサイズ",
+          "fr": "Redimensionner à 1600 px"
+        },
+        "icon": "arrow.up.left.and.arrow.down.right",
+        "type": "shell",
+        "script": "convert.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "\\.(png|jpe?g|gif|tiff?|heic|heif|webp|bmp|avif)\\s*$"
+        }
+      },
+      {
+        "id": "compress",
+        "title": {
+          "en": "Compress (JPEG 60%)",
+          "zh-Hans": "压缩（JPEG 60%）",
+          "zh-Hant": "壓縮（JPEG 60%）",
+          "ja": "圧縮（JPEG 60%）",
+          "fr": "Compresser (JPEG 60%)"
+        },
+        "icon": "arrow.down.circle",
+        "type": "shell",
+        "script": "convert.sh",
+        "output": "file",
+        "requirements": {
+          "regex": "\\.(png|jpe?g|gif|tiff?|heic|heif|webp|bmp|avif)\\s*$"
+        }
+      }
+    ]
+  }
+}
