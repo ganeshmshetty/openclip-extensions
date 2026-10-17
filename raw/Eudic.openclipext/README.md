@@ -5,13 +5,12 @@ Look up the selected word or phrase in Eudic (欧路词典), the Chinese-English
 ## Features
 
 - **One-click lookup**: Opens Eudic and shows the dictionary entry for your selection.
-- **Both editions**: Works with Eudic Lite (欧路词典 Lite) and Eudic Enhanced (欧路词典 增强版).
+- **No configuration**: Uses Eudic's standard lookup URL.
 
-## Options
-
-| Option | Description |
-| :--- | :--- |
-| Eudic Edition | Choose **Eudic Lite** (default) or **Eudic Enhanced** in the extension's settings, matching the app you have installed. |
+The extension opens the app registered with macOS for `eudic://` links, using
+Eudic's [documented URL scheme](https://docs.eudic.net/1/jin-jie-gong-neng/url-scheme).
+It does not select between installed editions. The unused **Eudic Edition**
+setting was removed in version 1.0.1; no settings change is needed when upgrading.
 
 ## Requirements
 

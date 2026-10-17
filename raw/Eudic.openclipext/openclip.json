@@ -7,7 +7,7 @@
     "ja": "Eudic",
     "fr": "Eudic"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.1.0",
   "author": "Kearney3",
   "description": {
@@ -26,24 +26,6 @@
     "词典",
     "查词",
     "歐路詞典"
-  ],
-  "options": [
-    {
-      "identifier": "edition",
-      "label": {
-        "en": "Eudic Edition",
-        "zh-Hans": "欧路词典版本",
-        "zh-Hant": "歐路詞典版本",
-        "ja": "Eudic のエディション",
-        "fr": "Édition d'Eudic"
-      },
-      "type": "multiple",
-      "default": "Eudic Lite",
-      "values": [
-        "Eudic Lite",
-        "Eudic Enhanced"
-      ]
-    }
   ],
   "action": {
     "title": {
