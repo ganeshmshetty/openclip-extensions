@@ -1,0 +1,66 @@
+{
+  "identifier": "com.openclip.monthtranslator",
+  "name": {
+    "en": "Month Translator",
+    "zh-Hans": "月份翻译",
+    "zh-Hant": "月份翻譯",
+    "ja": "月名翻訳",
+    "fr": "Traducteur de mois"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Matej Bačo",
+  "description": {
+    "en": "Translate a selected month name both ways between two languages, inline and offline.",
+    "zh-Hans": "在两种语言之间离线双向翻译所选月份名称，直接显示在弹出栏中。",
+    "zh-Hant": "在兩種語言之間離線雙向翻譯所選月份名稱，直接顯示在彈出列中。",
+    "ja": "選択した月名を 2 つの言語間で双方向に、オフラインでインライン翻訳します。",
+    "fr": "Traduit en ligne et hors connexion un nom de mois dans les deux sens entre deux langues."
+  },
+  "keywords": [
+    "month", "months", "translate", "translation", "calendar", "date", "language", "cldr",
+    "měsíc", "mesiac", "miesiąc", "месяц", "Monat", "mois", "mes", "月份", "月"
+  ],
+  "options": [
+    {
+      "identifier": "languageA",
+      "label": {
+        "en": "Language A (BCP-47 tag, e.g. cs, de-AT, zh-Hans; empty = app language)",
+        "zh-Hans": "语言 A（BCP-47 标签，如 cs、de-AT、zh-Hans；留空 = 应用语言）",
+        "zh-Hant": "語言 A（BCP-47 標籤，如 cs、de-AT、zh-Hans；留空 = 應用程式語言）",
+        "ja": "言語 A（BCP-47 タグ、例: cs、de-AT、zh-Hans。空欄 = アプリの言語）",
+        "fr": "Langue A (code BCP-47, ex. cs, de-AT, zh-Hans ; vide = langue de l’app)"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "languageB",
+      "label": {
+        "en": "Language B (BCP-47 tag; default en)",
+        "zh-Hans": "语言 B（BCP-47 标签；默认 en）",
+        "zh-Hant": "語言 B（BCP-47 標籤；預設 en）",
+        "ja": "言語 B（BCP-47 タグ。既定値 en）",
+        "fr": "Langue B (code BCP-47 ; par défaut en)"
+      },
+      "type": "string",
+      "default": "en"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Translate Month",
+      "zh-Hans": "翻译月份",
+      "zh-Hant": "翻譯月份",
+      "ja": "月名を翻訳",
+      "fr": "Traduire le mois"
+    },
+    "icon": "translate",
+    "type": "javascript",
+    "script": "dist/main.js",
+    "inline": true,
+    "requirements": {
+      "regex": "^\\S{1,40}(?:\\s+\\S{1,40}){0,3}$"
+    }
+  }
+}
