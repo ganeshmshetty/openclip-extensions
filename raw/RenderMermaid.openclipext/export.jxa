@@ -1,0 +1,64 @@
+ObjC.import('AppKit');
+
+function environment(key) {
+  return ObjC.unwrap($.NSProcessInfo.processInfo.environment.objectForKey(key)) || '';
+}
+
+function pngData(payload, scale) {
+  const data = $.NSData.alloc.initWithBase64EncodedStringOptions(payload.data, 0);
+  const image = $.NSImage.alloc.initWithData(data);
+  if (image.isNil()) throw new Error('Could not decode the diagram image.');
+  const width = Math.ceil(image.size.width * scale);
+  const height = Math.ceil(image.size.height * scale);
+  if (width <= 0 || height <= 0 || width > 8192 || height > 8192 || width * height > 16777216) {
+    throw new Error('Diagram is too large for PNG. Choose a lower PNG resolution or SVG format.');
+  }
+  const bitmap = $.NSBitmapImageRep.alloc.initWithBitmapDataPlanesPixelsWidePixelsHighBitsPerSampleSamplesPerPixelHasAlphaIsPlanarColorSpaceNameBytesPerRowBitsPerPixel(
+    null, width, height, 8, 4, true, false, $.NSDeviceRGBColorSpace, 0, 0
+  );
+  if (bitmap.isNil()) throw new Error('Could not create the PNG image.');
+  $.NSGraphicsContext.saveGraphicsState;
+  try {
+    $.NSGraphicsContext.setCurrentContext($.NSGraphicsContext.graphicsContextWithBitmapImageRep(bitmap));
+    image.drawInRectFromRectOperationFraction($.NSMakeRect(0, 0, width, height), $.NSZeroRect, $.NSCompositingOperationCopy, 1);
+  } finally {
+    $.NSGraphicsContext.restoreGraphicsState;
+  }
+  const png = bitmap.representationUsingTypeProperties($.NSBitmapImageFileTypePNG, $({}));
+  if (png.isNil()) throw new Error('Could not encode the PNG image.');
+  return ObjC.unwrap(png.base64EncodedStringWithOptions(0));
+}
+
+function run(args) {
+  try {
+    const options = {};
+    for (const key of ['format', 'theme', 'transparent', 'fontSize', 'padding', 'scale']) {
+      options[key] = environment('OPENCLIP_OPTION_' + key.toUpperCase());
+    }
+    const language = environment('OPENCLIP_LANGUAGE');
+    let result;
+    const openclip = {
+      input: { isSecondaryClick: false },
+      i18n: strings => strings[language] || strings.en,
+      file: payload => { result = { type: 'file', ...payload }; },
+      toast: (message, style) => { result = { type: 'toast', message, style }; }
+    };
+    const module = { exports: {} };
+    const bundle = $.NSString.stringWithContentsOfFileEncodingError(args[0], $.NSUTF8StringEncoding, null);
+    if (bundle.isNil()) throw new Error('Could not load the bundled Mermaid renderer.');
+    const renderer = new Function('module', 'openclip', ObjC.unwrap(bundle) + '\nreturn module.exports;')(module, openclip);
+    const input = $.NSFileHandle.fileHandleWithStandardInput.readDataToEndOfFile;
+    const selection = ObjC.unwrap($.NSString.alloc.initWithDataEncoding(input, $.NSUTF8StringEncoding));
+    renderer(selection || '', options);
+    if (!result) throw new Error('The renderer returned no result.');
+    if (result.type === 'file' && options.format === 'png') {
+      const scale = ['1', '2', '3'].includes(options.scale) ? Number(options.scale) : 2;
+      result.data = pngData(result, scale);
+      result.filename = result.filename.replace(/\.svg$/, '.png');
+      result.mimeType = 'image/png';
+    }
+    return JSON.stringify(result);
+  } catch (error) {
+    return JSON.stringify({ type: 'toast', message: error.message || String(error), style: 'error' });
+  }
+}

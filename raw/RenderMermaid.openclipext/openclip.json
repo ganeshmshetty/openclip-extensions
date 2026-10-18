@@ -1,0 +1,148 @@
+{
+  "identifier": "com.openclip.render-mermaid",
+  "name": {
+    "en": "Render Mermaid",
+    "zh-Hans": "渲染 Mermaid",
+    "zh-Hant": "渲染 Mermaid",
+    "fr": "Rendre Mermaid",
+    "ja": "Mermaid を描画"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "description": {
+    "en": "Turn selected Mermaid code into SVG or PNG diagrams, offline with Pele.",
+    "zh-Hans": "使用 Pele 将选中的 Mermaid 代码离线转换为 SVG 或 PNG 图表。",
+    "zh-Hant": "使用 Pele 將選取的 Mermaid 程式碼離線轉換為 SVG 或 PNG 圖表。",
+    "fr": "Transformez le code Mermaid sélectionné en diagrammes SVG ou PNG hors ligne avec Pele.",
+    "ja": "選択した Mermaid コードを Pele でオフラインで SVG または PNG 図に変換します。"
+  },
+  "keywords": [
+    "mermaid",
+    "pele",
+    "diagram",
+    "flowchart",
+    "svg",
+    "png"
+  ],
+  "action": {
+    "title": {
+      "en": "Render Mermaid",
+      "zh-Hans": "渲染 Mermaid",
+      "zh-Hant": "渲染 Mermaid",
+      "fr": "Rendre Mermaid",
+      "ja": "Mermaid を描画"
+    },
+    "icon": "icon.svg",
+    "type": "shell",
+    "script": "run.sh",
+    "output": "file",
+    "result": "preview",
+    "loading": true,
+    "loadingMessage": {
+      "en": "Rendering Mermaid…",
+      "zh-Hans": "正在渲染 Mermaid…",
+      "zh-Hant": "正在渲染 Mermaid…",
+      "fr": "Rendu Mermaid…",
+      "ja": "Mermaid を描画中…"
+    }
+  },
+  "options": [
+    {
+      "identifier": "format",
+      "label": {
+        "en": "Format",
+        "zh-Hans": "格式",
+        "zh-Hant": "格式",
+        "fr": "Format",
+        "ja": "形式"
+      },
+      "type": "multiple",
+      "default": "svg",
+      "values": [
+        "svg",
+        "png"
+      ]
+    },
+    {
+      "identifier": "theme",
+      "label": {
+        "en": "Theme",
+        "zh-Hans": "主题",
+        "zh-Hant": "主題",
+        "fr": "Thème",
+        "ja": "テーマ"
+      },
+      "type": "multiple",
+      "default": "light",
+      "values": [
+        "light",
+        "dark"
+      ]
+    },
+    {
+      "identifier": "transparent",
+      "label": {
+        "en": "Transparent background",
+        "zh-Hans": "透明背景",
+        "zh-Hant": "透明背景",
+        "fr": "Arrière-plan transparent",
+        "ja": "背景を透明にする"
+      },
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "identifier": "fontSize",
+      "label": {
+        "en": "Font size",
+        "zh-Hans": "字体大小",
+        "zh-Hant": "字型大小",
+        "fr": "Taille du texte",
+        "ja": "文字サイズ"
+      },
+      "type": "multiple",
+      "default": "16",
+      "values": [
+        "12",
+        "16",
+        "20",
+        "24"
+      ]
+    },
+    {
+      "identifier": "padding",
+      "label": {
+        "en": "Padding (pixels)",
+        "zh-Hans": "边距（像素）",
+        "zh-Hant": "邊距（像素）",
+        "fr": "Marge (pixels)",
+        "ja": "余白（ピクセル）"
+      },
+      "type": "multiple",
+      "default": "8",
+      "values": [
+        "8",
+        "16",
+        "24",
+        "32"
+      ]
+    },
+    {
+      "identifier": "scale",
+      "label": {
+        "en": "PNG scale multiplier",
+        "zh-Hans": "PNG 缩放倍数",
+        "zh-Hant": "PNG 縮放倍數",
+        "fr": "Multiplicateur de résolution PNG",
+        "ja": "PNG 解像度の倍率"
+      },
+      "type": "multiple",
+      "default": "2",
+      "values": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ]
+}
