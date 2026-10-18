@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T08:01:32Z",
+  "updatedAt": "2026-10-18T08:08:07Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -461,12 +461,12 @@
       "name": "Eudic",
       "description": "Look up the selected text in Eudic, the Chinese-English dictionary.",
       "author": "Kearney3",
-      "icon": "icon.png",
-      "version": "1.0.0",
+      "icon": "icon.svg",
+      "version": "1.0.1",
       "downloadCount": 1,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.eudic@1.0.0/Eudic.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.eudic@1.0.1/Eudic.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.eudic.svg",
-      "publishedAt": "2026-10-16T15:40:35Z",
+      "publishedAt": "2026-10-18T13:36:29+05:30",
       "addedAt": "2026-10-16T21:10:26+05:30"
     },
     {
