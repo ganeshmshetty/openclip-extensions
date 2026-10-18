@@ -7,7 +7,7 @@
     "ja": "Eudic",
     "fr": "Eudic"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.1.0",
   "author": "Kearney3",
   "description": {
@@ -53,7 +53,7 @@
       "ja": "Eudic で検索",
       "fr": "Rechercher dans Eudic"
     },
-    "icon": "icon.png",
+    "icon": "icon.svg",
     "type": "javascript",
     "output": "none",
     "keywords": [
