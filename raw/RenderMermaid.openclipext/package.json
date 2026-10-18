@@ -1,0 +1,15 @@
+{
+  "name": "com-openclip-render-mermaid",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=cjs --platform=browser --target=es2020 --legal-comments=eof --outfile=dist/main.js",
+    "test": "node --test test/*.test.cjs"
+  },
+  "dependencies": {
+    "pele": "1.6.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1"
+  }
+}
