@@ -1,0 +1,85 @@
+{
+  "identifier": "com.openclip.linearissue",
+  "name": {
+    "en": "Linear Issue",
+    "zh-Hans": "Linear 议题",
+    "zh-Hant": "Linear 議題",
+    "fr": "Ticket Linear",
+    "ja": "Linear イシュー"
+  },
+  "description": {
+    "en": "Create a Linear issue from the selected text. The first line becomes the title and the rest the description.",
+    "zh-Hans": "用所选文本创建 Linear 议题。第一行作为标题，其余作为描述。",
+    "zh-Hant": "用選取的文字建立 Linear 議題。第一行作為標題，其餘作為描述。",
+    "fr": "Créez un ticket Linear à partir du texte sélectionné. La première ligne devient le titre, le reste la description.",
+    "ja": "選択したテキストからLinearイシューを作成します。1行目がタイトル、残りが説明になります。"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.3.0",
+  "author": "Ganesh M",
+  "keywords": [
+    "linear",
+    "issue",
+    "ticket",
+    "bug",
+    "task"
+  ],
+  "options": [
+    {
+      "identifier": "apiKey",
+      "label": {
+        "en": "API Key",
+        "zh-Hans": "API 密钥",
+        "zh-Hant": "API 金鑰",
+        "fr": "Clé API",
+        "ja": "APIキー"
+      },
+      "type": "secret"
+    },
+    {
+      "identifier": "teamKey",
+      "label": {
+        "en": "Team Key",
+        "zh-Hans": "团队标识",
+        "zh-Hant": "團隊標識",
+        "fr": "Clé d'équipe",
+        "ja": "チームキー"
+      },
+      "type": "string"
+    }
+  ],
+  "actions": [
+    {
+      "id": "create",
+      "title": {
+        "en": "Create Linear Issue",
+        "zh-Hans": "创建 Linear 议题",
+        "zh-Hant": "建立 Linear 議題",
+        "fr": "Créer un ticket Linear",
+        "ja": "Linearイシューを作成"
+      },
+      "icon": "icon.svg",
+      "type": "javascript",
+      "async": true,
+      "script": "main.js",
+      "loading": true,
+      "loadingMessage": {
+        "en": "Creating Linear issue…",
+        "zh-Hans": "正在创建 Linear 议题…",
+        "zh-Hant": "正在建立 Linear 議題…",
+        "fr": "Création du ticket Linear…",
+        "ja": "Linearイシューを作成中…"
+      },
+      "output": "none",
+      "keywords": [
+        "linear",
+        "issue",
+        "create issue",
+        "议题",
+        "議題",
+        "ticket",
+        "イシュー"
+      ]
+    }
+  ]
+}
