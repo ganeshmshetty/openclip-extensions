@@ -27,24 +27,6 @@
     "查词",
     "歐路詞典"
   ],
-  "options": [
-    {
-      "identifier": "edition",
-      "label": {
-        "en": "Eudic Edition",
-        "zh-Hans": "欧路词典版本",
-        "zh-Hant": "歐路詞典版本",
-        "ja": "Eudic のエディション",
-        "fr": "Édition d'Eudic"
-      },
-      "type": "multiple",
-      "default": "Eudic Lite",
-      "values": [
-        "Eudic Lite",
-        "Eudic Enhanced"
-      ]
-    }
-  ],
   "action": {
     "title": {
       "en": "Search In Eudic",
