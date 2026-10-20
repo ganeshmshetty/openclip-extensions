@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T08:08:07Z",
+  "updatedAt": "2026-10-20T17:13:42Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 11,
@@ -717,6 +717,19 @@
       "addedAt": "2026-09-10T21:43:36+02:00"
     },
     {
+      "id": "com.openclip.jiraissue",
+      "name": "Jira Issue",
+      "description": "Create a Jira issue from the selected text. The first line becomes the summary and the rest the description.",
+      "author": "Ganesh M",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.jiraissue@1.0.0/JiraIssue.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.jiraissue.svg",
+      "publishedAt": "2026-10-20T22:41:43+05:30",
+      "addedAt": "2026-10-20T22:41:43+05:30"
+    },
+    {
       "id": "com.openclip.joincommas",
       "name": "Join Commas",
       "description": "Join lines into a comma-separated string.",
@@ -767,6 +780,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.linecount.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30",
       "addedAt": "2026-08-20T22:15:43+05:30"
+    },
+    {
+      "id": "com.openclip.linearissue",
+      "name": "Linear Issue",
+      "description": "Create a Linear issue from the selected text. The first line becomes the title and the rest the description.",
+      "author": "Ganesh M",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.linearissue@1.0.0/LinearIssue.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.linearissue.svg",
+      "publishedAt": "2026-10-20T22:41:43+05:30",
+      "addedAt": "2026-10-20T22:41:43+05:30"
     },
     {
       "id": "com.openclip.logseqcapture",
@@ -1070,7 +1096,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.2.0",
