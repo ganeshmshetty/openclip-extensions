@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-20T17:13:42Z",
+  "updatedAt": "2026-10-21T04:29:01Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -466,7 +466,7 @@
       "downloadCount": 4,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.eudic@1.0.1/Eudic.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.eudic.svg",
-      "publishedAt": "2026-10-18T13:36:29+05:30",
+      "publishedAt": "2026-10-20T22:43:44+05:30",
       "addedAt": "2026-10-16T21:10:26+05:30"
     },
     {
@@ -756,16 +756,16 @@
       "addedAt": "2026-08-20T21:44:44+05:30"
     },
     {
-      "id": "com.leafy.openclip",
+      "id": "com.openclip.leafy",
       "name": "Leafy",
       "description": "Look up, translate, or save the selected word with Leafy.",
       "author": "Jtobin",
       "icon": "leaf.fill",
       "version": "1.1.0",
-      "downloadCount": 68,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.leafy.openclip@1.1.0/Leafy.openclipext.zip",
-      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.leafy.openclip.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.leafy@1.1.0/Leafy.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.leafy.svg",
+      "publishedAt": "2026-10-21T09:56:59+05:30",
       "addedAt": "2026-09-06T17:11:07+05:30"
     },
     {
