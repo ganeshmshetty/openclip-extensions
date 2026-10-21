@@ -32,7 +32,9 @@ function jsonOf(res) {
 }
 
 // The classic gtx endpoint, tried on both Google hosts (separate throttle buckets).
-function translateViaGtx(host, text, targetLang) {
+// `redirectFor(detected)` (optional) returns a different language code to use
+// when the detected source language makes the requested target pointless.
+function translateViaGtx(host, text, targetLang, redirectFor) {
   var url =
     'https://' + host + '/translate_a/single' +
     '?client=gtx&sl=auto&dt=t' +
@@ -49,12 +51,12 @@ function translateViaGtx(host, text, targetLang) {
         throw new Error('Unexpected gtx response shape');
       }
       // If the text is already in the target language, optionally translate to
-      // English instead — governed by the `alreadyTarget` option. gtx reports
-      // the detected source language in data[2].
+      // another language instead — see resolveLanguages(). gtx reports the
+      // detected source language in data[2].
       var detected = data[2];
-      if (openclip.option('alreadyTarget') === 'Translate to English instead' &&
-          detected && detected === targetLang && targetLang !== 'en') {
-        return translateViaGtx(host, text, 'en');
+      var redirected = redirectFor ? redirectFor(detected) : null;
+      if (redirected && redirected !== targetLang) {
+        return translateViaGtx(host, text, redirected);
       }
       var translated = data[0].map(function (seg) { return seg[0] || ''; }).join('');
       return translated;
@@ -184,10 +186,10 @@ function translateViaLingva(text, targetLang) {
 
 // Backends in priority order. All return the translated string; all auto-detect
 // the source language.
-function buildBackends() {
+function buildBackends(redirectFor) {
   return [
-    function (text, lang) { return translateViaGtx('translate.googleapis.com', text, lang); },
-    function (text, lang) { return translateViaGtx('translate.google.com', text, lang); },
+    function (text, lang) { return translateViaGtx('translate.googleapis.com', text, lang, redirectFor); },
+    function (text, lang) { return translateViaGtx('translate.google.com', text, lang, redirectFor); },
     translateViaDictChrome,
     translateViaLibreTranslate,
     translateViaSimplyTranslate,
@@ -195,6 +197,39 @@ function buildBackends() {
   ];
 }
 
+function codeFor(name) {
+  return TARGET_CODES[name] || name;
+}
+
+// Picks the language for this click plus a redirect for "already in that
+// language" (only gtx reports the detected source, so only gtx redirects).
+//   - Secondary click with a Second Language set → second language; if the text
+//     is already in it, fall back to the main target.
+//   - Otherwise → main target; `alreadyTarget` decides the redirect
+//     (English, the second language, or keep).
+function resolveLanguages() {
+  var targetLang = codeFor(openclip.option('targetLang') || 'English');
+  var secondPicked = openclip.option('secondLang');
+  var secondLang = (secondPicked && secondPicked !== 'None') ? codeFor(secondPicked) : null;
+
+  if (secondLang && openclip.input.isSecondaryClick && secondLang !== targetLang) {
+    return {
+      lang: secondLang,
+      redirectFor: function (detected) { return detected === secondLang ? targetLang : null; }
+    };
+  }
+
+  var mode = openclip.option('alreadyTarget');
+  var alt = null;
+  if (mode === 'Translate to English instead') alt = 'en';
+  else if (mode === 'Translate to second language') alt = secondLang;
+  return {
+    lang: targetLang,
+    redirectFor: function (detected) {
+      return (alt && detected && detected === targetLang && alt !== targetLang) ? alt : null;
+    }
+  };
+}
 
 async function action() {
   var text = openclip.input.text.trim();
@@ -207,12 +242,12 @@ async function action() {
     return;
   }
 
-  var picked = openclip.option('targetLang') || 'English';
-  var targetLang = TARGET_CODES[picked] || picked;
+  var resolved = resolveLanguages();
+  var targetLang = resolved.lang;
 
   var translated = null;
   var failures = [];
-  var backends = buildBackends();
+  var backends = buildBackends(resolved.redirectFor);
   for (var i = 0; i < backends.length && !translated; i++) {
     try {
       translated = await backends[i](text, targetLang);
