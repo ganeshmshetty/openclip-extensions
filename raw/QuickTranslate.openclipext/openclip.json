@@ -7,7 +7,7 @@
     "ja": "クイック翻訳",
     "fr": "Traduction rapide"
   },
-  "version": "1.3.1",
+  "version": "1.4.0",
   "author": "OpenClip Team",
   "description": {
     "en": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
@@ -143,18 +143,17 @@
     {
       "identifier": "alreadyTarget",
       "label": {
-        "en": "If text is already in target language",
-        "zh-Hans": "若文本已是目标语言",
-        "zh-Hant": "若文本已是目標語言",
-        "ja": "テキストがすでに目標言語の場合",
-        "fr": "Si le texte est déjà dans la langue cible"
+        "en": "If text is already in that language",
+        "zh-Hans": "若文本已是该语言",
+        "zh-Hant": "若文本已是該語言",
+        "ja": "テキストがすでにその言語の場合",
+        "fr": "Si le texte est déjà dans cette langue"
       },
       "type": "multiple",
-      "default": "Keep target language",
+      "default": "Keep as is",
       "values": [
-        "Translate to English instead",
-        "Keep target language",
-        "Translate to second language"
+        "Keep as is",
+        "Switch to the other language"
       ]
     }
   ],

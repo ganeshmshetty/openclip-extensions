@@ -14,15 +14,18 @@ Translate selected text instantly into your chosen language with automatic sourc
 Configure in **OpenClip Preferences ▸ Actions ▸ Quick Translate**:
 
 - **Primary Language (Click)**: Select your desired target language from the alphabetical list (Arabic … Vietnamese, including new additions such as Kannada, Kashmiri (Koshur), Punjabi, Marathi, Filipino and Swahili). Default is `English`.
-- **Secondary Language (Right-click / ⇧-click)**: Optional, default `None`. When set, a right-click or ⇧-click translates into this language instead of the main one (if the text is already in the second language, it goes to the main target). With `None`, secondary click works exactly as before.
-- **If text is already in target language**: What happens when the selection is already in the chosen target language — **Keep target language** (default: translate into the target as usual), **Translate to English instead** (e.g. Danish text with target Danish comes back as English), or **Translate to second language** (uses the Secondary Language; does nothing extra if it's `None`).
+- **Secondary Language (Right-click / ⇧-click)**: Optional, default `None`. When set, a right-click or ⇧-click translates into this language instead of the main one With `None`, secondary click works exactly as before.
+- **If text is already in that language**: Two choices, applied to both clicks:
+  - **Keep as is** (default): always translate into the clicked language.
+  - **Switch to the other language**: a click on text already in the primary language translates it to the secondary; a right-click/⇧-click on text already in the secondary translates it to the primary. Behaves like Keep as is when Secondary Language is `None`.
+
+  Migration from 1.3.x: `Keep target language` → Keep as is; `Translate to second language` and `Translate to English instead` → Switch to the other language (Keep as is if no Secondary Language is set). To keep the old "Translate to English instead" result, set Secondary Language to English.
 
 ## Usage Examples
 
 - Select `"Bonjour tout le monde"` → Translates to `"Hello everyone"`.
 - Target **Danish**, default option: select English text → Danish; select Danish text → Danish.
-- Target **Danish**, with **Translate to English instead**: select Danish text → English.
-- Target **English**, Secondary Language **Hindi**: right-click French text → Hindi; right-click Hindi text → English.
-- Target **English**, Secondary Language **Hindi**, with **Translate to second language**: select English text → Hindi; select Spanish text → English.
+- Target **English**, Secondary Language **Hindi**: right-click French text → Hindi; right-click Hindi text → Hindi (Keep as is).
+- Target **English**, Secondary Language **Hindi**, with **Switch to the other language**: click English text → Hindi; right-click Hindi text → English; click Spanish text → English.
 
 Note: "already in target language" detection relies on the Google gtx backend; if it's unavailable and a fallback backend answers, the selection is translated into the chosen language without the swap.

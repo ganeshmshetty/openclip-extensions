@@ -203,30 +203,31 @@ function codeFor(name) {
 
 // Picks the language for this click plus a redirect for "already in that
 // language" (only gtx reports the detected source, so only gtx redirects).
-//   - Secondary click with a Second Language set → second language; if the text
-//     is already in it, fall back to the main target.
-//   - Otherwise → main target; `alreadyTarget` decides the redirect
-//     (English, the second language, or keep).
+//   - Click → primary; right-click/⇧-click with a Secondary Language → secondary.
+//   - `alreadyTarget`: "Keep as is" never redirects; "Switch to the other
+//     language" sends text already in the clicked language to the other one
+//     (no-op when Secondary Language is None).
+// Legacy values: "Translate to second language" and "Translate to English
+// instead" both map to Switch (Keep as is when no Secondary Language).
+function switchMode() {
+  var mode = openclip.option('alreadyTarget');
+  return mode === 'Switch to the other language' ||
+    mode === 'Translate to second language' ||
+    mode === 'Translate to English instead';
+}
+
 function resolveLanguages() {
   var targetLang = codeFor(openclip.option('targetLang') || 'English');
   var secondPicked = openclip.option('secondLang');
   var secondLang = (secondPicked && secondPicked !== 'None') ? codeFor(secondPicked) : null;
-
-  if (secondLang && openclip.input.isSecondaryClick && secondLang !== targetLang) {
-    return {
-      lang: secondLang,
-      redirectFor: function (detected) { return detected === secondLang ? targetLang : null; }
-    };
-  }
-
-  var mode = openclip.option('alreadyTarget');
-  var alt = null;
-  if (mode === 'Translate to English instead') alt = 'en';
-  else if (mode === 'Translate to second language') alt = secondLang;
+  if (secondLang === targetLang) secondLang = null;
+  var swap = !!secondLang && switchMode();
+  var lang = (secondLang && openclip.input.isSecondaryClick) ? secondLang : targetLang;
+  var other = lang === targetLang ? secondLang : targetLang;
   return {
-    lang: targetLang,
+    lang: lang,
     redirectFor: function (detected) {
-      return (alt && detected && detected === targetLang && alt !== targetLang) ? alt : null;
+      return (swap && detected && detected === lang) ? other : null;
     }
   };
 }
