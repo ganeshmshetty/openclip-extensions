@@ -7,7 +7,7 @@
     "ja": "クイック翻訳",
     "fr": "Traduction rapide"
   },
-  "version": "1.3.0",
+  "version": "1.3.1",
   "author": "OpenClip Team",
   "description": {
     "en": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
@@ -20,11 +20,11 @@
     {
       "identifier": "targetLang",
       "label": {
-        "en": "Translate to",
-        "zh-Hans": "翻译目标语言",
-        "zh-Hant": "翻譯目標語言",
-        "ja": "翻訳先言語",
-        "fr": "Traduire en"
+        "en": "Primary Language (Click)",
+        "zh-Hans": "主要语言（单击）",
+        "zh-Hant": "主要語言（單擊）",
+        "ja": "メイン言語（クリック）",
+        "fr": "Langue principale (clic)"
       },
       "type": "multiple",
       "default": "English",
@@ -81,11 +81,11 @@
     {
       "identifier": "secondLang",
       "label": {
-        "en": "Second Language",
-        "zh-Hans": "第二语言",
-        "zh-Hant": "第二語言",
-        "ja": "第二言語",
-        "fr": "Deuxième langue"
+        "en": "Secondary Language (Right-click / ⇧-click)",
+        "zh-Hans": "次要语言（右键 / ⇧+单击）",
+        "zh-Hant": "次要語言（右鍵 / ⇧+單擊）",
+        "ja": "サブ言語（右クリック / ⇧+クリック）",
+        "fr": "Langue secondaire (clic droit / ⇧-clic)"
       },
       "type": "multiple",
       "default": "None",
