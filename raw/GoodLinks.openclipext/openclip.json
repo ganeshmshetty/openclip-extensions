@@ -1,0 +1,46 @@
+{
+  "identifier": "com.openclip.goodlinks",
+  "name": {
+    "en": "Save to GoodLinks",
+    "zh-Hans": "保存到 GoodLinks",
+    "zh-Hant": "儲存到 GoodLinks",
+    "ja": "GoodLinks に保存",
+    "fr": "Enregistrer dans GoodLinks"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Save the selected URL to GoodLinks.",
+    "zh-Hans": "将选中的链接保存到 GoodLinks。",
+    "zh-Hant": "將選取的連結儲存到 GoodLinks。",
+    "ja": "選択した URL を GoodLinks に保存します。",
+    "fr": "Enregistrer l'URL sélectionnée dans GoodLinks."
+  },
+  "action": {
+    "title": {
+      "en": "GoodLinks",
+      "zh-Hans": "GoodLinks",
+      "zh-Hant": "GoodLinks",
+      "ja": "GoodLinks",
+      "fr": "GoodLinks"
+    },
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "goodlinks://x-callback-url/save?url={text}&quick=1",
+    "output": "none",
+    "keywords": ["goodlinks", "read later", "bookmark", "save link", "reading list"],
+    "requirements": {
+      "regex": "^https?://[^\\s/?#]+([/?#]\\S*)?$"
+    },
+    "toast": {
+      "message": {
+        "en": "Saved to GoodLinks",
+        "zh-Hans": "已保存到 GoodLinks",
+        "zh-Hant": "已儲存到 GoodLinks",
+        "ja": "GoodLinks に保存しました",
+        "fr": "Enregistré dans GoodLinks"
+      }
+    }
+  }
+}
