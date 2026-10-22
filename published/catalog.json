@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T17:30:34Z",
+  "updatedAt": "2026-10-22T08:58:13Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 13,
@@ -559,6 +559,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.githubsearch.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30",
       "addedAt": "2026-08-20T22:24:26+05:30"
+    },
+    {
+      "id": "com.openclip.goodlinks",
+      "name": "Save to GoodLinks",
+      "description": "Save the selected URL to GoodLinks.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.goodlinks@1.0.0/GoodLinks.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.goodlinks.svg",
+      "publishedAt": "2026-10-22T14:25:54+05:30",
+      "addedAt": "2026-10-22T14:25:54+05:30"
     },
     {
       "id": "com.openclip.googlemaps",
@@ -1096,7 +1109,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
@@ -1287,6 +1300,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.runcommand.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30",
       "addedAt": "2026-09-08T13:38:44+05:30"
+    },
+    {
+      "id": "com.openclip.scratchpad",
+      "name": "Save to Scratchpad",
+      "description": "Append the selected text to Scratchpad.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.scratchpad@1.0.0/Scratchpad.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.scratchpad.svg",
+      "publishedAt": "2026-10-22T14:27:19+05:30",
+      "addedAt": "2026-10-22T14:27:19+05:30"
     },
     {
       "id": "com.openclip.youtube",
