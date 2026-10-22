@@ -1,0 +1,46 @@
+{
+  "identifier": "com.openclip.scratchpad",
+  "name": {
+    "en": "Save to Scratchpad",
+    "zh-Hans": "保存到 Scratchpad",
+    "zh-Hant": "儲存到 Scratchpad",
+    "ja": "Scratchpad に保存",
+    "fr": "Enregistrer dans Scratchpad"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Append the selected text to Scratchpad.",
+    "zh-Hans": "将选中的文本追加到 Scratchpad。",
+    "zh-Hant": "將選取的文字附加到 Scratchpad。",
+    "ja": "選択したテキストを Scratchpad に追記します。",
+    "fr": "Ajouter le texte sélectionné à la fin de Scratchpad."
+  },
+  "action": {
+    "title": {
+      "en": "Scratchpad",
+      "zh-Hans": "Scratchpad",
+      "zh-Hant": "Scratchpad",
+      "ja": "Scratchpad",
+      "fr": "Scratchpad"
+    },
+    "icon": "icon.svg",
+    "type": "url",
+    "url": "scratchpad:append?text={text}&hide",
+    "output": "none",
+    "keywords": ["scratchpad", "note", "append", "memo", "sindre sorhus"],
+    "requirements": {
+      "regex": "\\S"
+    },
+    "toast": {
+      "message": {
+        "en": "Added to Scratchpad",
+        "zh-Hans": "已添加到 Scratchpad",
+        "zh-Hant": "已新增到 Scratchpad",
+        "ja": "Scratchpad に追加しました",
+        "fr": "Ajouté à Scratchpad"
+      }
+    }
+  }
+}
