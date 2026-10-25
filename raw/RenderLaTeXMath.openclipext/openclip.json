@@ -105,14 +105,6 @@
     "result": "preview",
     "requirements": {
       "regex": "\\\\[a-zA-Z]{2,}\\s*[{_^]|\\\\(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|sigma|omega|infty|cdot|times|pm|leq|geq|neq|approx|to|sum|int|prod|sqrt|frac|partial|nabla|Delta|Sigma|Omega)(?![a-zA-Z])|[A-Za-z0-9)}]\\^[A-Za-z0-9{(\\\\]|_\\{|^\\s*(?:\\$\\$|\\\\\\[|\\\\\\()|^\\s*\\$[^$\\s][^$]*\\$\\s*$|(?:^|[\\s(=+\\-*,$])[A-Za-z]_(?:\\d+|[a-z])(?![A-Za-z0-9_])"
-    },
-    "loading": true,
-    "loadingMessage": {
-      "en": "Rendering math…",
-      "zh-Hans": "正在渲染公式…",
-      "zh-Hant": "正在渲染公式…",
-      "fr": "Rendu des maths…",
-      "ja": "数式を描画中…"
     }
   }
 }
