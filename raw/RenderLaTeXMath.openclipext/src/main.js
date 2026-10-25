@@ -1,3 +1,4 @@
+import './console-shim.js';
 import katex from 'katex';
 import css from 'katex/dist/katex.min.css';
 import FONTS from './fonts.js';
@@ -6,7 +7,11 @@ const t = strings => (typeof openclip !== 'undefined' && openclip.i18n ? opencli
 
 // Accepts $...$, $$...$$, \(...\), \[...\] or bare math. Inline delimiters render inline.
 function stripDelimiters(selection, mode) {
-  const text = String(selection || '').trim();
+  // Copied text often carries invisible or typographic spaces that KaTeX has no metrics for.
+  const text = String(selection || '')
+    .replace(/[\u200B-\u200D\u2060\uFEFF\u00AD]/g, '')
+    .replace(/[\u00A0\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/g, ' ')
+    .trim();
   const pairs = [[/^\$\$([\s\S]+)\$\$$/, true], [/^\\\[([\s\S]+)\\\]$/, true], [/^\\\(([\s\S]+)\\\)$/, false], [/^\$([^$]+)\$$/, false]];
   for (const [pattern, display] of pairs) {
     const match = text.match(pattern);
