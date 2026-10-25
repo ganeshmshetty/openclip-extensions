@@ -40,8 +40,8 @@ assert.strictEqual(run('x^2').action, 'copy');
 openclip.input.isSecondaryClick = false;
 
 const re = new RegExp(require('../raw/RenderLaTeXMath.openclipext/openclip.json').action.requirements.regex);
-for (const yes of ['\\frac{a}{b}', 'x^2 + y^2', '$a_1$', 'E = mc^2', '\\[x\\]']) assert.ok(re.test(yes), yes);
-for (const no of ['hello world', 'snake_case_name', 'https://example.com/a_b', 'C:\\Users\\me', 'price is $5']) assert.ok(!re.test(no), no);
+for (const yes of ['\\frac{a}{b}', 'x^2 + y^2', '$a_1$', 'E = mc^2', '\\[x\\]', 'x_1', 'a_12', 'x_i + y_j', '(a_n)']) assert.ok(re.test(yes), yes);
+for (const no of ['hello world', 'snake_case_name', 'https://example.com/a_b', 'C:\\Users\\me', 'price is $5', 'snake_case_name', 'my_var_1', 'foo_bar', 'file_name_2', 'see https://x.com/a_1']) assert.ok(!re.test(no), no);
 
 // Settings
 const { parseMacros } = mod;
@@ -73,4 +73,5 @@ const html = Buffer.from(run('\\R^2').data, 'base64').toString('utf8');
 assert.doesNotMatch(body(html), /<span class="katex-display"/);
 assert.match(html, /font-size:2\.2em/); assert.match(html, /#1e1e1e/); assert.match(body(html), /mathbb/);
 openclip.options = {};
+for (const [k, v] of Object.entries(require('../raw/RenderLaTeXMath.openclipext/openclip.json').description)) assert.ok(v.length <= 120, k);
 console.log('render latex math: all tests passed');
