@@ -1,0 +1,36 @@
+{
+  "identifier": "com.openclip.unwrapparagraphs",
+  "name": {
+    "en": "Unwrap Paragraphs",
+    "zh-Hans": "合并段落换行",
+    "zh-Hant": "合併段落換行",
+    "ja": "段落の改行を結合",
+    "fr": "Rejoindre les paragraphes"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Join hard-wrapped lines into one line per paragraph, keeping paragraph breaks and list items.",
+    "zh-Hans": "将强制换行的文本合并为每段一行，保留段落分隔和列表项。",
+    "zh-Hant": "將強制換行的文字合併為每段一行，保留段落分隔和清單項目。",
+    "ja": "強制改行された行を段落ごとに1行へ結合し、段落区切りとリスト項目は保持します。",
+    "fr": "Fusionne les lignes coupées en une ligne par paragraphe, en gardant les sauts de paragraphe et les listes."
+  },
+  "action": {
+    "title": {
+      "en": "Unwrap Paragraphs",
+      "zh-Hans": "合并段落",
+      "zh-Hant": "合併段落",
+      "ja": "段落を結合",
+      "fr": "Rejoindre les lignes"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "text",
+    "requirements": {
+      "regex": "\\S[^\\S\\r\\n]*\\r?\\n[^\\S\\r\\n]*\\S"
+    }
+  }
+}
