@@ -1,0 +1,14 @@
+{
+  "name": "com-openclip-render-latex-math",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=cjs --platform=neutral --main-fields=main,module --target=es2020 --legal-comments=eof --loader:.woff2=base64 --loader:.css=text --outfile=dist/main.js"
+  },
+  "dependencies": {
+    "katex": "0.16.22"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1"
+  }
+}
