@@ -1,0 +1,601 @@
+{
+  "identifier": "com.openclip.openinbrowser",
+  "name": {
+    "en": "Open in Browser",
+    "zh-Hans": "在浏览器中打开",
+    "zh-Hant": "在瀏覽器中打開",
+    "ja": "ブラウザで開く",
+    "fr": "Ouvrir dans le navigateur"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Open the selected link(s) in a specific browser.",
+    "zh-Hans": "在指定的浏览器中打开选中的链接。",
+    "zh-Hant": "在指定的瀏覽器中打開選取的連結。",
+    "ja": "選択したリンクを指定したブラウザで開きます。",
+    "fr": "Ouvrir le ou les liens sélectionnés dans un navigateur précis."
+  },
+  "action": {
+    "id": "open",
+    "title": {
+      "en": "Open in Browser",
+      "zh-Hans": "在浏览器中打开",
+      "zh-Hant": "在瀏覽器中打開",
+      "ja": "ブラウザで開く",
+      "fr": "Ouvrir dans le navigateur"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "keywords": [
+      "browser",
+      "open in",
+      "open with",
+      "link",
+      "url"
+    ],
+    "requirements": {
+      "regex": "https?://[^\\s/?#<>\"]+"
+    },
+    "subActions": [
+      {
+        "id": "safari",
+        "title": {
+          "en": "Safari",
+          "zh-Hans": "Safari",
+          "zh-Hant": "Safari",
+          "ja": "Safari",
+          "fr": "Safari"
+        },
+        "icon": "safari.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "safari",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.apple.Safari",
+            "com.apple.SafariTechnologyPreview"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "chrome",
+        "title": {
+          "en": "Chrome",
+          "zh-Hans": "Chrome",
+          "zh-Hant": "Chrome",
+          "ja": "Chrome",
+          "fr": "Chrome"
+        },
+        "icon": "chrome.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "chrome",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.google.Chrome",
+            "com.google.Chrome.beta",
+            "com.google.Chrome.dev",
+            "com.google.Chrome.canary"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "chromium",
+        "title": {
+          "en": "Chromium",
+          "zh-Hans": "Chromium",
+          "zh-Hant": "Chromium",
+          "ja": "Chromium",
+          "fr": "Chromium"
+        },
+        "icon": "chromium.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "chromium",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "org.chromium.Chromium"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "firefox",
+        "title": {
+          "en": "Firefox",
+          "zh-Hans": "Firefox",
+          "zh-Hant": "Firefox",
+          "ja": "Firefox",
+          "fr": "Firefox"
+        },
+        "icon": "firefox.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "firefox",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "org.mozilla.firefox",
+            "org.mozilla.firefoxdeveloperedition",
+            "org.mozilla.nightly"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "brave",
+        "title": {
+          "en": "Brave",
+          "zh-Hans": "Brave",
+          "zh-Hant": "Brave",
+          "ja": "Brave",
+          "fr": "Brave"
+        },
+        "icon": "brave.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "brave",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.brave.Browser",
+            "com.brave.Browser.beta",
+            "com.brave.Browser.nightly",
+            "com.brave.Browser.dev",
+            "com.brave.Browser.origin",
+            "com.brave.Browser.origin.beta"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "comet",
+        "title": {
+          "en": "Comet",
+          "zh-Hans": "Comet",
+          "zh-Hant": "Comet",
+          "ja": "Comet",
+          "fr": "Comet"
+        },
+        "icon": "comet.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "comet",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "ai.perplexity.comet"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "dia",
+        "title": {
+          "en": "Dia",
+          "zh-Hans": "Dia",
+          "zh-Hant": "Dia",
+          "ja": "Dia",
+          "fr": "Dia"
+        },
+        "icon": "symbol(globe)",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "dia",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "company.thebrowser.dia"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "devonagent",
+        "title": {
+          "en": "DEVONagent Pro",
+          "zh-Hans": "DEVONagent Pro",
+          "zh-Hant": "DEVONagent Pro",
+          "ja": "DEVONagent Pro",
+          "fr": "DEVONagent Pro"
+        },
+        "icon": "symbol(globe)",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "devonagent pro",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.devon-technologies.agent"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "duckduckgo",
+        "title": {
+          "en": "DuckDuckGo",
+          "zh-Hans": "DuckDuckGo",
+          "zh-Hant": "DuckDuckGo",
+          "ja": "DuckDuckGo",
+          "fr": "DuckDuckGo"
+        },
+        "icon": "duckduckgo.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "duckduckgo",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.duckduckgo.macos.browser"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "ecosia",
+        "title": {
+          "en": "Ecosia",
+          "zh-Hans": "Ecosia",
+          "zh-Hant": "Ecosia",
+          "ja": "Ecosia",
+          "fr": "Ecosia"
+        },
+        "icon": "ecosia.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "ecosia",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "org.ecosia.browser"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "edge",
+        "title": {
+          "en": "Edge",
+          "zh-Hans": "Edge",
+          "zh-Hant": "Edge",
+          "ja": "Edge",
+          "fr": "Edge"
+        },
+        "icon": "edge.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "edge",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.microsoft.edgemac",
+            "com.microsoft.edgemac.Beta",
+            "com.microsoft.edgemac.Dev",
+            "com.microsoft.edgemac.Canary"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "helium",
+        "title": {
+          "en": "Helium",
+          "zh-Hans": "Helium",
+          "zh-Hant": "Helium",
+          "ja": "Helium",
+          "fr": "Helium"
+        },
+        "icon": "helium.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "helium",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "net.imput.helium"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "icab",
+        "title": {
+          "en": "iCab",
+          "zh-Hans": "iCab",
+          "zh-Hant": "iCab",
+          "ja": "iCab",
+          "fr": "iCab"
+        },
+        "icon": "symbol(globe)",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "icab",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "de.icab.iCab"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "mullvad",
+        "title": {
+          "en": "Mullvad Browser",
+          "zh-Hans": "Mullvad Browser",
+          "zh-Hant": "Mullvad Browser",
+          "ja": "Mullvad Browser",
+          "fr": "Mullvad Browser"
+        },
+        "icon": "mullvad.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "mullvad browser",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "net.mullvad.mullvadbrowser"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "opera",
+        "title": {
+          "en": "Opera",
+          "zh-Hans": "Opera",
+          "zh-Hant": "Opera",
+          "ja": "Opera",
+          "fr": "Opera"
+        },
+        "icon": "opera.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "opera",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.operasoftware.Opera"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "orion",
+        "title": {
+          "en": "Orion",
+          "zh-Hans": "Orion",
+          "zh-Hant": "Orion",
+          "ja": "Orion",
+          "fr": "Orion"
+        },
+        "icon": "symbol(globe)",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "orion",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.kagi.kagimacOS",
+            "com.kagi.kagimacOS.RC"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "quark",
+        "title": {
+          "en": "Quark",
+          "zh-Hans": "Quark",
+          "zh-Hant": "Quark",
+          "ja": "Quark",
+          "fr": "Quark"
+        },
+        "icon": "quark.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "quark",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+"
+        }
+      },
+      {
+        "id": "tor",
+        "title": {
+          "en": "Tor Browser",
+          "zh-Hans": "Tor Browser",
+          "zh-Hant": "Tor Browser",
+          "ja": "Tor Browser",
+          "fr": "Tor Browser"
+        },
+        "icon": "tor.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "tor browser",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "org.torproject.torbrowser"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "vivaldi",
+        "title": {
+          "en": "Vivaldi",
+          "zh-Hans": "Vivaldi",
+          "zh-Hant": "Vivaldi",
+          "ja": "Vivaldi",
+          "fr": "Vivaldi"
+        },
+        "icon": "vivaldi.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "vivaldi",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.vivaldi.Vivaldi"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "waterfox",
+        "title": {
+          "en": "Waterfox",
+          "zh-Hans": "Waterfox",
+          "zh-Hant": "Waterfox",
+          "ja": "Waterfox",
+          "fr": "Waterfox"
+        },
+        "icon": "waterfox.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "waterfox",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "net.waterfox.waterfox"
+          ],
+          "appsMode": "deny"
+        }
+      },
+      {
+        "id": "zen",
+        "title": {
+          "en": "Zen",
+          "zh-Hans": "Zen",
+          "zh-Hant": "Zen",
+          "ja": "Zen",
+          "fr": "Zen"
+        },
+        "icon": "zen.svg",
+        "type": "script",
+        "script": "open.sh",
+        "output": "dynamic",
+        "keywords": [
+          "zen",
+          "browser",
+          "open in"
+        ],
+        "requirements": {
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "app.zen-browser.zen"
+          ],
+          "appsMode": "deny"
+        }
+      }
+    ]
+  }
+}
