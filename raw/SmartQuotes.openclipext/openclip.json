@@ -1,0 +1,67 @@
+{
+  "identifier": "com.openclip.smartquotes",
+  "name": {
+    "en": "Smart Quotes",
+    "zh-Hans": "智能引号",
+    "zh-Hant": "智慧引號",
+    "ja": "スマート引用符",
+    "fr": "Guillemets typographiques"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Convert straight quotes to curly quotes, or curly quotes back to straight.",
+    "zh-Hans": "将直引号转换为弯引号，或将弯引号还原为直引号。",
+    "zh-Hant": "將直引號轉換為彎引號，或將彎引號還原為直引號。",
+    "ja": "ストレート引用符をカーリー引用符に、またはその逆に変換します。",
+    "fr": "Convertit les guillemets droits en guillemets courbes, ou l'inverse."
+  },
+  "action": {
+    "title": {
+      "en": "Smart Quotes",
+      "zh-Hans": "智能引号",
+      "zh-Hant": "智慧引號",
+      "ja": "スマート引用符",
+      "fr": "Guillemets"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "curl",
+        "title": {
+          "en": "Curly Quotes",
+          "zh-Hans": "转为弯引号",
+          "zh-Hant": "轉為彎引號",
+          "ja": "カーリー引用符に変換",
+          "fr": "Guillemets courbes"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "curl.js",
+        "output": "text",
+        "requirements": {
+          "regex": "[\"']"
+        }
+      },
+      {
+        "id": "straighten",
+        "title": {
+          "en": "Straight Quotes",
+          "zh-Hans": "转为直引号",
+          "zh-Hant": "轉為直引號",
+          "ja": "ストレート引用符に変換",
+          "fr": "Guillemets droits"
+        },
+        "icon": "icon.svg",
+        "type": "javascript",
+        "script": "straighten.js",
+        "output": "text",
+        "requirements": {
+          "regex": "[\u2018\u2019\u201a\u201b\u2032\u201c\u201d\u201e\u201f\u2033]"
+        }
+      }
+    ]
+  }
+}
