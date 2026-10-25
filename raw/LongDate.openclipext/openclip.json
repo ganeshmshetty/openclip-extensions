@@ -1,0 +1,37 @@
+{
+  "identifier": "com.openclip.longdate",
+  "name": {
+    "en": "Long Date",
+    "zh-Hans": "完整日期",
+    "zh-Hant": "完整日期",
+    "ja": "長い日付",
+    "fr": "Date complète"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Paste today's date written out in full, like \"Sunday, 25 October 2026\", in your language.",
+    "zh-Hans": "按你的语言粘贴完整的今日日期，例如“2026年10月25日星期日”。",
+    "zh-Hant": "按你的語言貼上完整的今日日期，例如「2026年10月25日 星期日」。",
+    "ja": "今日の日付を「2026年10月25日日曜日」のように、お使いの言語で貼り付けます。",
+    "fr": "Colle la date du jour en toutes lettres, par exemple « dimanche 25 octobre 2026 », dans votre langue."
+  },
+  "action": {
+    "title": {
+      "en": "Long Date",
+      "zh-Hans": "完整日期",
+      "zh-Hant": "完整日期",
+      "ja": "長い日付",
+      "fr": "Date complète"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "text",
+    "result": "paste",
+    "requirements": {
+      "requiresSelection": false
+    }
+  }
+}
