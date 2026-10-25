@@ -1,3 +1,13 @@
+// src/console-shim.js
+var root = typeof globalThis !== "undefined" ? globalThis : Function("return this")();
+if (typeof root.console !== "object" || root.console === null) root.console = {};
+var log = typeof root.console.log === "function" ? root.console.log.bind(root.console) : () => {
+};
+for (const name of ["log", "info", "warn", "error", "debug"]) {
+  if (typeof root.console[name] !== "function") root.console[name] = name === "log" ? log : () => {
+  };
+}
+
 // node_modules/katex/dist/katex.mjs
 var SourceLocation = class _SourceLocation {
   // The + prefix indicates that these fields aren't writeable
@@ -14610,7 +14620,7 @@ var fonts_default = FONTS;
 // src/main.js
 var t = (strings) => typeof openclip !== "undefined" && openclip.i18n ? openclip.i18n(strings) : strings.en;
 function stripDelimiters(selection, mode) {
-  const text2 = String(selection || "").trim();
+  const text2 = String(selection || "").replace(/[\u200B-\u200D\u2060\uFEFF\u00AD]/g, "").replace(/[\u00A0\u2000-\u200A\u2028\u2029\u202F\u205F\u3000]/g, " ").trim();
   const pairs = [[/^\$\$([\s\S]+)\$\$$/, true], [/^\\\[([\s\S]+)\\\]$/, true], [/^\\\(([\s\S]+)\\\)$/, false], [/^\$([^$]+)\$$/, false]];
   for (const [pattern, display] of pairs) {
     const match = text2.match(pattern);

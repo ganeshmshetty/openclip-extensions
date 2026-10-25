@@ -74,4 +74,34 @@ assert.doesNotMatch(body(html), /<span class="katex-display"/);
 assert.match(html, /font-size:2\.2em/); assert.match(html, /#1e1e1e/); assert.match(body(html), /mathbb/);
 openclip.options = {};
 for (const [k, v] of Object.entries(require('../raw/RenderLaTeXMath.openclipext/openclip.json').description)) assert.ok(v.length <= 120, k);
+
+// App runtime: JavaScriptCore with a console that only has log (OpenClipJSHost.swift), no document/window.
+{
+  const vm = require('node:vm');
+  const fs = require('node:fs');
+  const code = fs.readFileSync(path.join(__dirname, '..', 'raw', 'RenderLaTeXMath.openclipext', 'dist', 'main.js'), 'utf8');
+  const appRun = (text, consoleObj, options = {}) => {
+    const out = [];
+    const ctx = { module: { exports: {} }, openclip: { input: { isSecondaryClick: false }, options, i18n: x => x.en,
+      file: p => out.push({ type: 'file', html: Buffer.from(p.data, 'base64').toString('utf8') }), toast: m => out.push({ type: 'toast', message: m }) } };
+    if (consoleObj) ctx.console = consoleObj;
+    vm.createContext(ctx);
+    vm.runInContext(code + '\n;module.exports', ctx)(text);
+    return out[0];
+  };
+  const quad = 'x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}';
+  const samples = [quad, quad.replace(/ /g, '\u200b'), quad.replace(/ /g, '\u2009') + '\ufeff', '\u00a0' + quad,
+    '\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}', '\\text{café 你好 😀}', '\\sum_{n=1}^\\infty \\frac{1}{n^2}', '\\int_0^1 x\\,dx',
+    '\\begin{aligned}a&=b\\\\c&=d\\end{aligned}', '\\text{\u2603 ☃ \u0915}', 'a +\u2028b'];
+  for (const consoleObj of [undefined, { log() {} }, { log() {}, warn: 5 }]) {
+    for (const sample of samples) {
+      const r = appRun(sample, consoleObj);
+      assert.strictEqual(r.type, 'file', JSON.stringify(sample) + ' -> ' + (r.message || ''));
+      assert.doesNotMatch(r.html.slice(r.html.indexOf('<body')), /katex-error/);
+    }
+  }
+  const zw = appRun(quad.replace(/ /g, '\u200b'), { log() {} });
+  assert.doesNotMatch(zw.html.match(/<annotation[^>]*>([^<]*)</)[1], /\u200b/);
+  assert.strictEqual(appRun('\\frac{1}{', { log() {} }).type, 'toast');
+}
 console.log('render latex math: all tests passed');
