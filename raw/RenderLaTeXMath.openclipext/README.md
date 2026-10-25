@@ -8,6 +8,17 @@ Select an expression, open OpenClip, and choose **Render LaTeX Math**. The resul
 
 The selection can be bare math or wrapped in `$…$`, `$$…$$`, `\(…\)`, or `\[…\]`. Bare math and `$$`/`\[` render in display style; `$` and `\(` render inline. Invalid input shows KaTeX's error message instead of producing a file.
 
+In the action's settings, choose:
+
+| Setting | Choices | Default |
+| --- | --- | --- |
+| Size | Small (1.2em), Medium (1.6em), Large (2.2em) | Medium |
+| Theme | System (follows macOS light/dark), Light, Dark | System |
+| Math without delimiters | Display, Inline | Display |
+| Custom macros | e.g. `\R = \mathbb{R}; \N: \mathbb{N}` | none |
+
+Explicit delimiters always win over the "Math without delimiters" setting. Separate macros with `;` (or new lines); each is `\name = expansion` or `\name: expansion`. Malformed entries are skipped.
+
 Try selecting:
 
 ```latex

@@ -42,4 +42,35 @@ openclip.input.isSecondaryClick = false;
 const re = new RegExp(require('../raw/RenderLaTeXMath.openclipext/openclip.json').action.requirements.regex);
 for (const yes of ['\\frac{a}{b}', 'x^2 + y^2', '$a_1$', 'E = mc^2', '\\[x\\]']) assert.ok(re.test(yes), yes);
 for (const no of ['hello world', 'snake_case_name', 'https://example.com/a_b', 'C:\\Users\\me', 'price is $5']) assert.ok(!re.test(no), no);
+
+// Settings
+const { parseMacros } = mod;
+const body = h => h.slice(h.indexOf('<body'));
+assert.match(renderDocument('x', true, { size: 'Small' }), /font-size:1\.2em/);
+assert.match(renderDocument('x', true, {}), /font-size:1\.6em/);
+assert.match(renderDocument('x', true, { size: 'Large' }), /font-size:2\.2em/);
+assert.match(renderDocument('x', true, { theme: 'Dark' }), /background:#1e1e1e;color:#f0f0f0/);
+assert.doesNotMatch(renderDocument('x', true, { theme: 'Dark' }), /prefers-color-scheme/);
+assert.match(renderDocument('x', true, { theme: 'Light' }), /background:#fff;color:#000/);
+assert.doesNotMatch(renderDocument('x', true, { theme: 'Light' }), /prefers-color-scheme/);
+assert.match(renderDocument('x', true, {}), /@media \(prefers-color-scheme:dark\)\{html,body\{background:#1e1e1e;color:#f0f0f0\}\}/);
+
+assert.deepStrictEqual(parseMacros('\\R = \\mathbb{R}\n\\N: \\mathbb{N}; \\eps=\\varepsilon\nbad line\n= x\n\\Z ='),
+  { macros: { '\\R': '\\mathbb{R}', '\\N': '\\mathbb{N}', '\\eps': '\\varepsilon' }, invalid: ['bad line', '= x', '\\Z ='] });
+assert.deepStrictEqual(parseMacros(''), { macros: {}, invalid: [] });
+assert.deepStrictEqual(parseMacros(undefined), { macros: {}, invalid: [] });
+const withMacro = renderDocument('x \\in \\R', true, { macros: '\\R = \\mathbb{R}; junk' });
+assert.match(body(withMacro), /mathbb/);
+assert.doesNotMatch(body(withMacro), /katex-error/);
+
+assert.deepStrictEqual(strip('x^2', 'Inline'), { source: 'x^2', display: false });
+assert.deepStrictEqual(strip('x^2', 'Display'), { source: 'x^2', display: true });
+assert.deepStrictEqual(strip('$$x^2$$', 'Inline'), { source: 'x^2', display: true });
+assert.deepStrictEqual(strip('\\(x\\)', 'Display'), { source: 'x', display: false });
+
+openclip.options = { mode: 'Inline', macros: '\\R = \\mathbb{R}', theme: 'Dark', size: 'Large' };
+const html = Buffer.from(run('\\R^2').data, 'base64').toString('utf8');
+assert.doesNotMatch(body(html), /<span class="katex-display"/);
+assert.match(html, /font-size:2\.2em/); assert.match(html, /#1e1e1e/); assert.match(body(html), /mathbb/);
+openclip.options = {};
 console.log('render latex math: all tests passed');

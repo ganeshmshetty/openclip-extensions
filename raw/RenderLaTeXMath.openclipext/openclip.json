@@ -25,6 +25,70 @@
     "formula",
     "tex"
   ],
+  "options": [
+    {
+      "identifier": "size",
+      "label": {
+        "en": "Size",
+        "zh-Hans": "大小",
+        "zh-Hant": "大小",
+        "fr": "Taille",
+        "ja": "サイズ"
+      },
+      "type": "multiple",
+      "default": "Medium",
+      "values": [
+        "Small",
+        "Medium",
+        "Large"
+      ]
+    },
+    {
+      "identifier": "theme",
+      "label": {
+        "en": "Theme",
+        "zh-Hans": "主题",
+        "zh-Hant": "主題",
+        "fr": "Thème",
+        "ja": "テーマ"
+      },
+      "type": "multiple",
+      "default": "System",
+      "values": [
+        "System",
+        "Light",
+        "Dark"
+      ]
+    },
+    {
+      "identifier": "mode",
+      "label": {
+        "en": "Math without delimiters",
+        "zh-Hans": "无定界符的公式",
+        "zh-Hant": "無定界符的公式",
+        "fr": "Maths sans délimiteurs",
+        "ja": "区切り記号なしの数式"
+      },
+      "type": "multiple",
+      "default": "Display",
+      "values": [
+        "Display",
+        "Inline"
+      ]
+    },
+    {
+      "identifier": "macros",
+      "label": {
+        "en": "Custom macros (separate with ;), e.g. \\R = \\mathbb{R}",
+        "zh-Hans": "自定义宏（用 ; 分隔），例如 \\R = \\mathbb{R}",
+        "zh-Hant": "自訂巨集（以 ; 分隔），例如 \\R = \\mathbb{R}",
+        "fr": "Macros personnalisées (séparées par ;), ex. \\R = \\mathbb{R}",
+        "ja": "カスタムマクロ（; で区切る）例: \\R = \\mathbb{R}"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
   "action": {
     "title": {
       "en": "Render LaTeX Math",

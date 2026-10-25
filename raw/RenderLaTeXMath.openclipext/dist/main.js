@@ -14609,14 +14609,14 @@ var fonts_default = FONTS;
 
 // src/main.js
 var t = (strings) => typeof openclip !== "undefined" && openclip.i18n ? openclip.i18n(strings) : strings.en;
-function stripDelimiters(selection) {
+function stripDelimiters(selection, mode) {
   const text2 = String(selection || "").trim();
   const pairs = [[/^\$\$([\s\S]+)\$\$$/, true], [/^\\\[([\s\S]+)\\\]$/, true], [/^\\\(([\s\S]+)\\\)$/, false], [/^\$([^$]+)\$$/, false]];
   for (const [pattern, display] of pairs) {
     const match = text2.match(pattern);
     if (match) return { source: match[1].trim(), display };
   }
-  return { source: text2, display: true };
+  return { source: text2, display: mode !== "Inline" };
 }
 function fontFaces(html) {
   const classes = new Set((html.match(/class="([^"]*)"/g) || []).flatMap((c) => c.slice(7, -1).split(/\s+/)));
@@ -14631,9 +14631,29 @@ function fontFaces(html) {
     return face.replace(/src:[^}]*/, `src:url(data:font/woff2;base64,${fonts_default[name]}) format("woff2")`);
   }).join("");
 }
-function renderDocument(source, display) {
-  const math2 = katex.renderToString(source, { displayMode: display, throwOnError: true, output: "htmlAndMathml", trust: false, strict: "ignore" });
-  const style = fontFaces(math2) + katex_min_default.replace(/@font-face\{[^}]*\}/g, "") + "html,body{margin:0;background:#fff;color:#000}body{padding:16px;font-size:20px}.katex-display{margin:0}";
+function parseMacros(text2) {
+  const macros2 = {};
+  const invalid = [];
+  for (const raw of String(text2 || "").split(/[\n;]/)) {
+    const line = raw.trim();
+    if (!line) continue;
+    const match = line.match(/^(\\[a-zA-Z]+)\s*[:=]\s*(\S.*)$/);
+    if (match) macros2[match[1]] = match[2].trim();
+    else invalid.push(line);
+  }
+  return { macros: macros2, invalid };
+}
+var SIZES = { Small: "1.2em", Medium: "1.6em", Large: "2.2em" };
+var LIGHT = "background:#fff;color:#000";
+var DARK = "background:#1e1e1e;color:#f0f0f0";
+function themeCSS(theme) {
+  if (theme === "Light") return `html,body{${LIGHT}}`;
+  if (theme === "Dark") return `html,body{${DARK}}`;
+  return `html,body{${LIGHT}}@media (prefers-color-scheme:dark){html,body{${DARK}}}`;
+}
+function renderDocument(source, display, settings = {}) {
+  const math2 = katex.renderToString(source, { displayMode: display, throwOnError: true, output: "htmlAndMathml", trust: false, strict: "ignore", macros: parseMacros(settings.macros).macros });
+  const style = fontFaces(math2) + katex_min_default.replace(/@font-face\{[^}]*\}/g, "") + "html,body{margin:0}body{padding:16px}.katex-display{margin:0}" + themeCSS(settings.theme) + `.katex{font-size:${SIZES[settings.size] || SIZES.Medium}}`;
   return `<!DOCTYPE html><html><head><meta charset="utf-8"><title>LaTeX</title><style>${style}</style></head><body>${math2}</body></html>`;
 }
 function base64UTF8(text2) {
@@ -14649,7 +14669,8 @@ function base64UTF8(text2) {
 function action(selection) {
   try {
     const text2 = typeof selection === "string" ? selection : openclip.input.text;
-    const { source, display } = stripDelimiters(text2);
+    const settings = typeof openclip !== "undefined" && openclip.options || {};
+    const { source, display } = stripDelimiters(text2, settings.mode);
     if (!source) {
       throw new Error(t({ en: "Select a LaTeX math expression to render.", "zh-Hans": "\u8BF7\u9009\u62E9\u8981\u6E32\u67D3\u7684 LaTeX \u6570\u5B66\u516C\u5F0F\u3002", "zh-Hant": "\u8ACB\u9078\u53D6\u8981\u6E32\u67D3\u7684 LaTeX \u6578\u5B78\u516C\u5F0F\u3002", fr: "S\xE9lectionnez une expression math\xE9matique LaTeX \xE0 rendre.", ja: "\u63CF\u753B\u3059\u308B LaTeX \u6570\u5F0F\u3092\u9078\u629E\u3057\u3066\u304F\u3060\u3055\u3044\u3002" }));
     }
@@ -14657,7 +14678,7 @@ function action(selection) {
       throw new Error(t({ en: "Only LaTeX math expressions are supported, not full documents.", "zh-Hans": "\u4EC5\u652F\u6301 LaTeX \u6570\u5B66\u516C\u5F0F\uFF0C\u4E0D\u652F\u6301\u5B8C\u6574\u6587\u6863\u3002", "zh-Hant": "\u50C5\u652F\u63F4 LaTeX \u6578\u5B78\u516C\u5F0F\uFF0C\u4E0D\u652F\u63F4\u5B8C\u6574\u6587\u4EF6\u3002", fr: "Seules les expressions math\xE9matiques LaTeX sont prises en charge, pas les documents complets.", ja: "LaTeX \u306E\u6570\u5F0F\u306E\u307F\u5BFE\u5FDC\u3057\u3066\u304A\u308A\u3001\u6587\u66F8\u5168\u4F53\u306B\u306F\u5BFE\u5FDC\u3057\u3066\u3044\u307E\u305B\u3093\u3002" }));
     }
     openclip.file({
-      data: base64UTF8(renderDocument(source, display)),
+      data: base64UTF8(renderDocument(source, display, settings)),
       filename: "latex-math.html",
       mimeType: "text/html",
       ...openclip.input.isSecondaryClick ? { action: "copy" } : {}
@@ -14669,4 +14690,5 @@ function action(selection) {
 module.exports = action;
 module.exports.action = action;
 module.exports.stripDelimiters = stripDelimiters;
+module.exports.parseMacros = parseMacros;
 module.exports.renderDocument = renderDocument;
