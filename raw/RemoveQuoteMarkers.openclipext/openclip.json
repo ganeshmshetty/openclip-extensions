@@ -1,0 +1,36 @@
+{
+  "identifier": "com.openclip.removequotemarkers",
+  "name": {
+    "en": "Remove Quote Markers",
+    "zh-Hans": "移除引用符号",
+    "zh-Hant": "移除引用符號",
+    "ja": "引用記号を削除",
+    "fr": "Retirer les marques de citation"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Strip email-style \"> \" quote markers, including nested ones, from the start of each line.",
+    "zh-Hans": "移除每行开头的邮件引用符号“> ”，包括多层嵌套。",
+    "zh-Hant": "移除每行開頭的郵件引用符號「> 」，包括多層巢狀。",
+    "ja": "各行の先頭にあるメール形式の引用記号「> 」を、入れ子も含めて削除します。",
+    "fr": "Supprime les marques de citation « > » des e-mails, même imbriquées, au début de chaque ligne."
+  },
+  "action": {
+    "title": {
+      "en": "Remove Quote Markers",
+      "zh-Hans": "移除引用符号",
+      "zh-Hant": "移除引用符號",
+      "ja": "引用記号を削除",
+      "fr": "Retirer les « > »"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "text",
+    "requirements": {
+      "regex": "(^|\\n)[ \\t]*>"
+    }
+  }
+}
