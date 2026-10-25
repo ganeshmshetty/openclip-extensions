@@ -7,16 +7,35 @@
     "ja": "各行の空白をトリム",
     "fr": "Élaguer les lignes"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Team",
   "description": {
-    "en": "Strip leading and trailing whitespace from every line.",
-    "zh-Hans": "清除选中文本中每一行的首尾多余空白。",
-    "zh-Hant": "清除選取文字中每一行的首尾多餘空白。",
-    "ja": "すべての行の先頭と末尾の空白を削除します。",
-    "fr": "Supprime les espaces au début et à la fin de chaque ligne."
+    "en": "Strip leading and/or trailing whitespace from every line.",
+    "zh-Hans": "清除选中文本中每一行开头和/或结尾的多余空白。",
+    "zh-Hant": "清除選取文字中每一行開頭和/或結尾的多餘空白。",
+    "ja": "すべての行の先頭や末尾の空白を削除します。",
+    "fr": "Supprime les espaces au début et/ou à la fin de chaque ligne."
   },
+  "options": [
+    {
+      "identifier": "mode",
+      "label": {
+        "en": "Trim",
+        "zh-Hans": "修剪位置",
+        "zh-Hant": "修剪位置",
+        "ja": "トリム位置",
+        "fr": "Élaguer"
+      },
+      "type": "multiple",
+      "default": "Both",
+      "values": [
+        "Both",
+        "Start only",
+        "End only"
+      ]
+    }
+  ],
   "action": {
     "title": {
       "en": "Trim Lines",

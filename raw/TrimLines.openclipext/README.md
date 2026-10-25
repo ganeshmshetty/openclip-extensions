@@ -10,6 +10,10 @@ Select multi-line text and choose **Trim Lines** in OpenClip to clean up extrane
 - **Code & Data Formatting**: Cleans up messy copy-pastes, log outputs, or code blocks.
 - **Fast & Offline**: Runs entirely on your Mac.
 
+## Options
+
+- **Trim**: `Both` (default) trims both ends of each line, `Start only` removes just the leading indentation, and `End only` removes just trailing spaces.
+
 ## Requirements
 
 - OpenClip 1.0.0 or later.
