@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:29:11Z",
+  "updatedAt": "2026-10-25T13:38:44Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1233,7 +1233,7 @@
       "downloadCount": 0,
       "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.render-latex-math@1.0.0/RenderLaTeXMath.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.render-latex-math.svg",
-      "publishedAt": "2026-10-25T18:55:04+05:30",
+      "publishedAt": "2026-10-25T19:07:15+05:30",
       "addedAt": "2026-10-25T18:32:10+05:30"
     },
     {
