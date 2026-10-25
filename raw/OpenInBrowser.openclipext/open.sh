@@ -11,7 +11,7 @@ case "$key" in
   chrome)     name="Google Chrome";   ids=(com.google.Chrome com.google.Chrome.beta com.google.Chrome.dev com.google.Chrome.canary) ;;
   chromium)   name="Chromium";        ids=(org.chromium.Chromium) ;;
   firefox)    name="Firefox";         ids=(org.mozilla.firefox org.mozilla.firefoxdeveloperedition org.mozilla.nightly) ;;
-  brave)      name="Brave Browser";   ids=(com.brave.Browser com.brave.Browser.beta com.brave.Browser.nightly com.brave.Browser.origin) ;;
+  brave)      name="Brave Browser";   ids=(com.brave.Browser com.brave.Browser.beta com.brave.Browser.nightly com.brave.Browser.dev com.brave.Browser.origin com.brave.Browser.origin.beta) ;;
   comet)      name="Comet";           ids=(ai.perplexity.comet) ;;
   dia)        name="Dia";             ids=(company.thebrowser.dia) ;;
   devonagent) name="DEVONagent Pro";  ids=(com.devon-technologies.agent) ;;
