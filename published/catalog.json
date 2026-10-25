@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T12:32:57Z",
+  "updatedAt": "2026-10-25T12:43:42Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -821,6 +821,19 @@
       "addedAt": "2026-08-20T22:28:33+05:30"
     },
     {
+      "id": "com.openclip.longdate",
+      "name": "Long Date",
+      "description": "Paste today's date written out in full, like \"Sunday, 25 October 2026\", in your language.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.longdate@1.0.0/LongDate.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.longdate.svg",
+      "publishedAt": "2026-10-25T18:09:39+05:30",
+      "addedAt": "2026-10-25T18:09:39+05:30"
+    },
+    {
       "id": "com.openclip.lowercase",
       "name": "Lowercase",
       "description": "Convert selected text to lowercase.",
@@ -1185,6 +1198,19 @@
       "addedAt": "2026-08-20T21:44:44+05:30"
     },
     {
+      "id": "com.openclip.removequotemarkers",
+      "name": "Remove Quote Markers",
+      "description": "Strip email-style \"> \" quote markers, including nested ones, from the start of each line.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.removequotemarkers@1.0.0/RemoveQuoteMarkers.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.removequotemarkers.svg",
+      "publishedAt": "2026-10-25T18:10:57+05:30",
+      "addedAt": "2026-10-25T18:10:57+05:30"
+    },
+    {
       "id": "com.openclip.render-html",
       "name": "Render HTML",
       "description": "Interpret the selected HTML markup and paste it as rendered rich text.",
@@ -1419,6 +1445,19 @@
       "addedAt": "2026-08-20T08:37:35+05:30"
     },
     {
+      "id": "com.openclip.smartquotes",
+      "name": "Smart Quotes",
+      "description": "Convert straight quotes to curly quotes, or curly quotes back to straight.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.smartquotes@1.0.0/SmartQuotes.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.smartquotes.svg",
+      "publishedAt": "2026-10-25T18:08:41+05:30",
+      "addedAt": "2026-10-25T18:08:41+05:30"
+    },
+    {
       "id": "com.openclip.snakecase",
       "name": "Snake Case",
       "description": "Convert selected text to snake_case.",
@@ -1642,14 +1681,14 @@
     {
       "id": "com.openclip.trimlines",
       "name": "Trim Lines",
-      "description": "Strip leading and trailing whitespace from every line.",
+      "description": "Strip leading and/or trailing whitespace from every line.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 83,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.1.0/TrimLines.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.trimlines@1.2.0/TrimLines.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.trimlines.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30",
+      "publishedAt": "2026-10-25T18:11:13+05:30",
       "addedAt": "2026-08-20T22:07:34+05:30"
     },
     {
@@ -1703,6 +1742,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.unixtime.svg",
       "publishedAt": "2026-10-08T16:18:07+05:30",
       "addedAt": "2026-10-08T16:18:07+05:30"
+    },
+    {
+      "id": "com.openclip.unwrapparagraphs",
+      "name": "Unwrap Paragraphs",
+      "description": "Join hard-wrapped lines into one line per paragraph, keeping paragraph breaks and list items.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.unwrapparagraphs@1.0.0/UnwrapParagraphs.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.unwrapparagraphs.svg",
+      "publishedAt": "2026-10-25T18:10:32+05:30",
+      "addedAt": "2026-10-25T18:10:32+05:30"
     },
     {
       "id": "com.openclip.uppercase",
