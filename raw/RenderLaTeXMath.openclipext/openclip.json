@@ -11,19 +11,20 @@
   "minOpenClipVersion": "1.7.0",
   "author": "OpenClip Team",
   "description": {
-    "en": "Render selected LaTeX math expressions offline with KaTeX. Math only, not full LaTeX documents.",
-    "zh-Hans": "使用 KaTeX 离线渲染选中的 LaTeX 数学公式。仅支持数学公式，不支持完整的 LaTeX 文档。",
-    "zh-Hant": "使用 KaTeX 離線渲染選取的 LaTeX 數學公式。僅支援數學公式，不支援完整的 LaTeX 文件。",
-    "fr": "Rend hors ligne les maths LaTeX sélectionnées avec KaTeX. Maths uniquement, pas de documents complets.",
-    "ja": "選択した LaTeX 数式を KaTeX でオフライン描画します。数式のみ対応で、LaTeX 文書全体には対応していません。"
+    "en": "Turn selected LaTeX math into an SVG image, offline with MathJax. Math only, not full LaTeX documents.",
+    "zh-Hans": "使用 MathJax 离线将选中的 LaTeX 数学公式转为 SVG 图像。仅支持数学公式，不支持完整文档。",
+    "zh-Hant": "使用 MathJax 離線將選取的 LaTeX 數學公式轉為 SVG 圖像。僅支援數學公式，不支援完整文件。",
+    "fr": "Transforme les maths LaTeX sélectionnées en image SVG hors ligne avec MathJax. Maths uniquement.",
+    "ja": "選択した LaTeX 数式を MathJax でオフラインで SVG 画像にします。数式のみ対応で、文書全体は非対応です。"
   },
   "keywords": [
     "latex",
-    "katex",
+    "mathjax",
     "math",
     "equation",
     "formula",
-    "tex"
+    "tex",
+    "svg"
   ],
   "options": [
     {
@@ -104,6 +105,14 @@
     "result": "preview",
     "requirements": {
       "regex": "\\\\[a-zA-Z]{2,}\\s*[{_^]|\\\\(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|sigma|omega|infty|cdot|times|pm|leq|geq|neq|approx|to|sum|int|prod|sqrt|frac|partial|nabla|Delta|Sigma|Omega)(?![a-zA-Z])|[A-Za-z0-9)}]\\^[A-Za-z0-9{(\\\\]|_\\{|^\\s*(?:\\$\\$|\\\\\\[|\\\\\\()|^\\s*\\$[^$\\s][^$]*\\$\\s*$|(?:^|[\\s(=+\\-*,$])[A-Za-z]_(?:\\d+|[a-z])(?![A-Za-z0-9_])"
+    },
+    "loading": true,
+    "loadingMessage": {
+      "en": "Rendering math…",
+      "zh-Hans": "正在渲染公式…",
+      "zh-Hant": "正在渲染公式…",
+      "fr": "Rendu des maths…",
+      "ja": "数式を描画中…"
     }
   }
 }
