@@ -18,7 +18,10 @@ Browser names and logos are trademarks of their owners and are used only to iden
 | Icon | Source | License |
 | --- | --- | --- |
 | Safari, Chrome, Firefox, Brave, DuckDuckGo, Ecosia, Edge, Helium, Mullvad, Opera, Tor Browser, Vivaldi, Zen | [Simple Icons](https://simpleicons.org) via Iconify | CC0 1.0 |
-| Comet | Perplexity logo from [Simple Icons](https://simpleicons.org) | CC0 1.0 |
 | Chromium | `chromium` from [Streamline Ultimate](https://www.streamlinehq.com) via Iconify | CC BY 4.0 |
-| Quark, Waterfox | `quark-browser`, `waterfox` from [Arcticons](https://github.com/Arcticons-Team/Arcticons) | CC BY-SA 4.0 |
-| Open in Browser, Dia, DEVONagent Pro, iCab, Orion | [Lucide](https://lucide.dev) `globe` / SF Symbol `globe` | ISC |
+| Comet, Quark, Waterfox | `comet`, `quark-browser`, `waterfox` from [Arcticons](https://github.com/Arcticons-Team/Arcticons) | CC BY-SA 4.0 |
+| Dia | Single-color trace of the official app icon from [diabrowser.com](https://www.diabrowser.com) | Trademark of The Browser Company, used to identify the app |
+| Orion | Single-color trace of the official app icon from [kagi.com/orion](https://kagi.com/orion/) | Trademark of Kagi Inc., used to identify the app |
+| iCab | Single-color trace of the official logo from [icab.de](https://icab.de) | Trademark of Alexander Clauss, used to identify the app |
+| DEVONagent Pro | Single-color trace of the official app icon from [devontechnologies.com](https://www.devontechnologies.com/apps/devonagent) | Trademark of DEVONtechnologies, used to identify the app |
+| Open in Browser | [Lucide](https://lucide.dev) `globe` | ISC |

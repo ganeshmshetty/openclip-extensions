@@ -215,7 +215,7 @@
           "ja": "Dia",
           "fr": "Dia"
         },
-        "icon": "symbol(globe)",
+        "icon": "dia.svg",
         "type": "script",
         "script": "open.sh",
         "output": "dynamic",
@@ -241,7 +241,7 @@
           "ja": "DEVONagent Pro",
           "fr": "DEVONagent Pro"
         },
-        "icon": "symbol(globe)",
+        "icon": "devonagent.svg",
         "type": "script",
         "script": "open.sh",
         "output": "dynamic",
@@ -374,7 +374,7 @@
           "ja": "iCab",
           "fr": "iCab"
         },
-        "icon": "symbol(globe)",
+        "icon": "icab.svg",
         "type": "script",
         "script": "open.sh",
         "output": "dynamic",
@@ -452,7 +452,7 @@
           "ja": "Orion",
           "fr": "Orion"
         },
-        "icon": "symbol(globe)",
+        "icon": "orion.svg",
         "type": "script",
         "script": "open.sh",
         "output": "dynamic",
@@ -489,7 +489,11 @@
           "open in"
         ],
         "requirements": {
-          "regex": "https?://[^\\s/?#<>\"]+"
+          "regex": "https?://[^\\s/?#<>\"]+",
+          "apps": [
+            "com.quark.desktop"
+          ],
+          "appsMode": "deny"
         }
       },
       {
@@ -565,7 +569,8 @@
         "requirements": {
           "regex": "https?://[^\\s/?#<>\"]+",
           "apps": [
-            "net.waterfox.waterfox"
+            "net.waterfox.waterfox",
+            "org.waterfoxproject.waterfox"
           ],
           "appsMode": "deny"
         }
@@ -591,7 +596,8 @@
         "requirements": {
           "regex": "https?://[^\\s/?#<>\"]+",
           "apps": [
-            "app.zen-browser.zen"
+            "app.zen-browser.zen",
+            "org.mozilla.com.zen.browser"
           ],
           "appsMode": "deny"
         }

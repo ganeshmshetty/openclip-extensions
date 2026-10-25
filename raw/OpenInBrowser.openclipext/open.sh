@@ -23,11 +23,11 @@ case "$key" in
   mullvad)    name="Mullvad Browser"; ids=(net.mullvad.mullvadbrowser) ;;
   opera)      name="Opera";           ids=(com.operasoftware.Opera) ;;
   orion)      name="Orion";           ids=(com.kagi.kagimacOS com.kagi.kagimacOS.RC) ;;
-  quark)      name="Quark";           ids=() ;;
+  quark)      name="Quark";           ids=(com.quark.desktop) ;;
   tor)        name="Tor Browser";     ids=(org.torproject.torbrowser) ;;
   vivaldi)    name="Vivaldi";         ids=(com.vivaldi.Vivaldi) ;;
-  waterfox)   name="Waterfox";        ids=(net.waterfox.waterfox) ;;
-  zen)        name="Zen";             ids=(app.zen-browser.zen) ;;
+  waterfox)   name="Waterfox";        ids=(net.waterfox.waterfox org.waterfoxproject.waterfox) ;;
+  zen)        name="Zen";             ids=(app.zen-browser.zen org.mozilla.com.zen.browser) ;;
   *) emit error "Unknown browser: $key"; exit 0 ;;
 esac
 
