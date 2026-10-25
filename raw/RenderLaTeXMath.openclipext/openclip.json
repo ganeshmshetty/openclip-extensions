@@ -1,0 +1,45 @@
+{
+  "identifier": "com.openclip.render-latex-math",
+  "name": {
+    "en": "Render LaTeX Math",
+    "zh-Hans": "渲染 LaTeX 数学公式",
+    "zh-Hant": "渲染 LaTeX 數學公式",
+    "fr": "Rendre les maths LaTeX",
+    "ja": "LaTeX 数式を描画"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Render selected LaTeX math expressions offline with KaTeX. Math only, not full LaTeX documents.",
+    "zh-Hans": "使用 KaTeX 离线渲染选中的 LaTeX 数学公式。仅支持数学公式，不支持完整的 LaTeX 文档。",
+    "zh-Hant": "使用 KaTeX 離線渲染選取的 LaTeX 數學公式。僅支援數學公式，不支援完整的 LaTeX 文件。",
+    "fr": "Rendez hors ligne les expressions mathématiques LaTeX sélectionnées avec KaTeX. Maths uniquement, pas de documents LaTeX complets.",
+    "ja": "選択した LaTeX 数式を KaTeX でオフライン描画します。数式のみ対応で、LaTeX 文書全体には対応していません。"
+  },
+  "keywords": [
+    "latex",
+    "katex",
+    "math",
+    "equation",
+    "formula",
+    "tex"
+  ],
+  "action": {
+    "title": {
+      "en": "Render LaTeX Math",
+      "zh-Hans": "渲染 LaTeX 数学公式",
+      "zh-Hant": "渲染 LaTeX 數學公式",
+      "fr": "Rendre les maths LaTeX",
+      "ja": "LaTeX 数式を描画"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "dist/main.js",
+    "output": "file",
+    "result": "preview",
+    "requirements": {
+      "regex": "\\\\[a-zA-Z]{2,}\\s*[{_^]|\\\\(?:alpha|beta|gamma|delta|epsilon|theta|lambda|mu|pi|sigma|omega|infty|cdot|times|pm|leq|geq|neq|approx|to|sum|int|prod|sqrt|frac|partial|nabla|Delta|Sigma|Omega)(?![a-zA-Z])|[A-Za-z0-9)}]\\^[A-Za-z0-9{(\\\\]|_\\{|^\\s*(?:\\$\\$|\\\\\\[|\\\\\\()|^\\s*\\$[^$\\s][^$]*\\$\\s*$"
+    }
+  }
+}
