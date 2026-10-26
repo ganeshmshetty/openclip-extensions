@@ -89,8 +89,9 @@ var TIME_RE = /\b(\d{1,2})(?::(\d{2})(?::(\d{2}))?\s*(am|pm)?|\s*(am|pm))\b/i;
 function isZoneToken(token) {
   if (!token) return false;
   if (IANA_MAP[token.toUpperCase()]) return true;
-  if (/^[A-Za-z]+\/[A-Za-z_]+$/.test(token)) return true;
-  if (/^[+-]\d{1,2}(?::?\d{2})?$/.test(token)) return true;
+  // IANA names can have two or three parts: "Asia/Kolkata", "America/Argentina/Buenos_Aires".
+  if (/^[A-Za-z]+(?:\/[A-Za-z_]+)+$/.test(token)) return true;
+  if (parseOffset(token) !== null) return true;
   return false;
 }
 
@@ -108,9 +109,32 @@ function normalizeInput(input) {
 function parseOffset(token) {
   var m = /^([+-])(\d{1,2})(?::?(\d{2}))?$/.exec(token);
   if (!m) return null;
-  var mins = parseInt(m[2], 10) * 60 + (m[3] ? parseInt(m[3], 10) : 0);
+  var hours = parseInt(m[2], 10);
+  var minutes = m[3] ? parseInt(m[3], 10) : 0;
+  // Real offsets run from -12:00 to +14:00; minutes must be a valid clock minute.
+  if (hours > 14 || minutes > 59) return null;
+  var mins = hours * 60 + minutes;
   if (mins > 14 * 60) return null;
   return m[1] === "-" ? -mins : mins;
+}
+
+var MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+
+// Optional calendar date in the selection ("Oct 26, 2026", "26 Oct 2026", "2026-10-26"). When
+// present it is used instead of today, so DST and the weekday are right for that day.
+function parseDate(input) {
+  var m = /\b(\d{4})-(\d{1,2})-(\d{1,2})(?=\b|T)/.exec(input);
+  if (m) return makeDate(+m[1], +m[2] - 1, +m[3]);
+  m = /\b([A-Za-z]{3})[a-z]*\.? (\d{1,2})(?:st|nd|rd|th)?,? (\d{4})\b/.exec(input);
+  if (m && MONTHS.hasOwnProperty(m[1].toLowerCase())) return makeDate(+m[3], MONTHS[m[1].toLowerCase()], +m[2]);
+  m = /\b(\d{1,2}) ([A-Za-z]{3})[a-z]*\.?,? (\d{4})\b/.exec(input);
+  if (m && MONTHS.hasOwnProperty(m[2].toLowerCase())) return makeDate(+m[3], MONTHS[m[2].toLowerCase()], +m[1]);
+  return null;
+}
+
+function makeDate(y, mo, d) {
+  if (mo < 0 || mo > 11 || d < 1 || d > 31) return null;
+  return { year: y, month: mo, day: d };
 }
 
 function parseTime(input) {
@@ -144,8 +168,30 @@ function parseTime(input) {
     minute: min,
     second: sec,
     tz: tzToken,
-    offsetMinutes: offsetMinutes
+    offsetMinutes: offsetMinutes,
+    date: parseDate(input)
   };
+}
+
+// Short label for a resolved IANA zone: our own abbreviation when we have one (Asia/Kolkata ->
+// IST), else Intl's short name, else the IANA name itself.
+var DISPLAY_ABBR = {
+  "UTC": "UTC", "Europe/London": "GMT", "America/New_York": "ET", "America/Chicago": "CT",
+  "America/Denver": "MT", "America/Los_Angeles": "PT", "America/Sao_Paulo": "BRT",
+  "Europe/Paris": "CET", "Europe/Athens": "EET", "Asia/Dubai": "GST", "Asia/Kolkata": "IST",
+  "Asia/Calcutta": "IST", "Asia/Singapore": "SGT", "Asia/Hong_Kong": "HKT", "Asia/Tokyo": "JST",
+  "Asia/Seoul": "KST", "Australia/Sydney": "AEST", "Pacific/Auckland": "NZST"
+};
+
+function zoneLabel(zone, date) {
+  if (DISPLAY_ABBR[zone]) return DISPLAY_ABBR[zone];
+  try {
+    var parts = new Intl.DateTimeFormat("en-US", { timeZone: zone, timeZoneName: "short" }).formatToParts(date);
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i].type === "timeZoneName" && parts[i].value) return parts[i].value;
+    }
+  } catch (e) {}
+  return zone;
 }
 
 function formatResult(actualUtc, sourceDate, targetZone, targetDisplay, is24h, includeDate) {
@@ -183,7 +229,9 @@ function formatResult(actualUtc, sourceDate, targetZone, targetDisplay, is24h, i
 
 function action(selection, options) {
   options = options || (typeof openclip !== "undefined" ? openclip.options : {}) || {};
-  var targetZoneOpt = options.targetZone || "UTC";
+  // Source Time Zone: used only when the selection itself names no zone or offset.
+  var sourceZoneOpt = options.sourceZone || "UTC";
+  var targetZoneOpt = options.targetZone || "Local";
   var timeFormatOpt = options.timeFormat || "12h";
   var includeDateOpt = options.includeDate === true || options.includeDate === "true";
   var is24h = timeFormatOpt === "24h";
@@ -197,19 +245,25 @@ function action(selection, options) {
 
   var parsed = parseTime(input);
   if (!parsed) return null;
+  // The manifest regex hands us only the time ("06:47:31") as matchedText, so look for a date in
+  // the full selection too ("Oct 26, 2026, 06:47:31").
+  if (!parsed.date && typeof openclip !== "undefined" && openclip.input && openclip.input.text) {
+    parsed.date = parseDate(normalizeInput(openclip.input.text));
+  }
 
-  var sourceZone = resolveZone(parsed.tz || "Local");
+  var sourceZone = resolveZone(parsed.tz || sourceZoneOpt);
   var targetZone = resolveZone(targetZoneOpt);
 
   var now = new Date();
-  var baseUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), parsed.hour, parsed.minute, parsed.second);
+  var d = parsed.date || { year: now.getUTCFullYear(), month: now.getUTCMonth(), day: now.getUTCDate() };
+  var baseUtc = Date.UTC(d.year, d.month, d.day, parsed.hour, parsed.minute, parsed.second);
   var sourceDate = new Date(baseUtc);
   var sourceOffset = parsed.offsetMinutes !== null
     ? parsed.offsetMinutes * 60000
     : getTimeZoneOffset(sourceZone, sourceDate);
   var actualUtc = new Date(baseUtc - sourceOffset);
 
-  var targetDisplay = targetZoneOpt === "Local" ? "Local" : targetZoneOpt;
+  var targetDisplay = targetZoneOpt === "Local" ? zoneLabel(targetZone, actualUtc) : targetZoneOpt;
   var result = formatResult(actualUtc, sourceDate, targetZone, targetDisplay, is24h, includeDateOpt);
   if (!result) return null;
 

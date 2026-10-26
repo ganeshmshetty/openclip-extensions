@@ -16,7 +16,8 @@ Configure options under *Preferences → Actions → Time Zone Converter*:
 
 | Option | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| **Target Time Zone** | Picker | `UTC` | Destination time zone (`UTC`, `Local`, `ET`, `CT`, `MT`, `PT`, `GMT`, `CET`, `GST`, `IST`, `SGT`, `JST`, `KST`, `AEST`, `NZST`). |
+| **Source Time Zone** | Picker | `UTC` | Zone assumed when the selected time names no zone or offset (`UTC`, `ET`, `CT`, `MT`, `PT`, `GMT`, `CET`, `GST`, `IST`, `SGT`, `JST`, `KST`, `AEST`, `NZST`). A zone in the text (`12:00 UTC`, `3 PM EST`, `UTC+5:30`, `Asia/Kolkata`) always wins. |
+| **Target Time Zone** | Picker | `Local` | Destination time zone (`Local` = your Mac's zone, shown by its abbreviation such as `IST`, `UTC`, `ET`, `CT`, `MT`, `PT`, `GMT`, `CET`, `GST`, `IST`, `SGT`, `JST`, `KST`, `AEST`, `NZST`). |
 | **Time Format** | Picker | `12h` | Display format (`12h` or `24h`). |
 | **Include Date Shift** | Toggle | `false` | When enabled, shows weekday or date shift indicators (`+1d`, `Fri`). |
 
