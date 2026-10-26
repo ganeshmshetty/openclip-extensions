@@ -7,7 +7,7 @@
     "ja": "タイムゾーン変換",
     "fr": "Convertisseur de fuseau horaire"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -100,7 +100,7 @@
     "script": "main.js",
     "inline": true,
     "requirements": {
-      "regex": "\\b\\d{1,2}(?::\\d{2})?\\s*(?:am|pm|AM|PM)(?:\\s*(?:UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|BST|SGT|HKT|[A-Za-z]{2,5}|[+-]\\d{1,2}(?::?\\d{2})?))?\\b|\\b\\d{1,2}:\\d{2}(?::\\d{2})?(?:\\s*(?:am|pm|AM|PM|UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|BST|SGT|HKT|[A-Za-z]{2,5}|[+-]\\d{1,2}(?::?\\d{2})?))?\\b|\\b\\d{1,2}\\s*(?:UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|BST|SGT|HKT)\\b"
+      "regex": "\\b\\d{1,2}(?::\\d{2})?[\\s\\u00A0\\u202F\\u2009]*[aApP]\\.?[mM]\\.?(?:[\\s\\u00A0\\u202F\\u2009]*(?:(?:UTC|GMT)?[\\s\\u00A0\\u202F\\u2009]*[+-]\\d{1,2}(?::?\\d{2})?|[A-Za-z]+/[A-Za-z_]+|UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|SGT|HKT|[A-Za-z]{2,5}))?(?![A-Za-z])|\\b\\d{1,2}:\\d{2}(?::\\d{2})?(?:[\\s\\u00A0\\u202F\\u2009]*(?:[aApP]\\.?[mM]\\.?|(?:(?:UTC|GMT)?[\\s\\u00A0\\u202F\\u2009]*[+-]\\d{1,2}(?::?\\d{2})?|[A-Za-z]+/[A-Za-z_]+|UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|SGT|HKT|[A-Za-z]{2,5})))?(?![A-Za-z])|\\b\\d{1,2}[\\s\\u00A0\\u202F\\u2009]*(?:UTC|GMT|ET|CT|MT|PT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|CET|CEST|BST|GST|JST|IST|KST|AEST|AEDT|NZST|SGT|HKT)\\b"
     },
     "output": "text"
   }

@@ -94,8 +94,28 @@ function isZoneToken(token) {
   return false;
 }
 
+// Selections often carry odd whitespace: macOS writes "3:30\u202fPM" (narrow no-break space),
+// web pages use &nbsp;, and selections can include tabs/newlines. Collapse all of it to one
+// ASCII space and turn dotted meridiems ("p.m.") into plain "pm" before parsing.
+function normalizeInput(input) {
+  return String(input)
+    .replace(/[\s\u00A0\u202F\u2009\u200B]+/g, " ")
+    .trim()
+    .replace(/\b([ap])\.? ?m\b\.?/gi, "$1m");
+}
+
+// "+5:30", "-0800", "+9" -> minutes east of UTC.
+function parseOffset(token) {
+  var m = /^([+-])(\d{1,2})(?::?(\d{2}))?$/.exec(token);
+  if (!m) return null;
+  var mins = parseInt(m[2], 10) * 60 + (m[3] ? parseInt(m[3], 10) : 0);
+  if (mins > 14 * 60) return null;
+  return m[1] === "-" ? -mins : mins;
+}
+
 function parseTime(input) {
   if (!input) return null;
+  input = normalizeInput(input);
   var m = input.match(TIME_RE);
   if (!m) return null;
 
@@ -111,12 +131,20 @@ function parseTime(input) {
   var rest = input.slice(m.index + m[0].length);
   var zoneMatch = rest.match(/^\s*([A-Za-z]+(?:[\/_][A-Za-z]+)*|[+-]\d{1,2}(?::?\d{2})?)\b/);
   var tzToken = zoneMatch && isZoneToken(zoneMatch[1]) ? zoneMatch[1] : null;
+  var offsetMinutes = null;
+  if (tzToken) {
+    offsetMinutes = parseOffset(tzToken);
+    var after = rest.slice(zoneMatch[0].length);
+    var offMatch = /^(?:UTC|GMT)$/i.test(tzToken) && after.match(/^ ?([+-]\d{1,2}(?::?\d{2})?)(?![\d:])/);
+    if (offMatch) offsetMinutes = parseOffset(offMatch[1]);
+  }
 
   return {
     hour: hour,
     minute: min,
     second: sec,
-    tz: tzToken
+    tz: tzToken,
+    offsetMinutes: offsetMinutes
   };
 }
 
@@ -176,7 +204,9 @@ function action(selection, options) {
   var now = new Date();
   var baseUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), parsed.hour, parsed.minute, parsed.second);
   var sourceDate = new Date(baseUtc);
-  var sourceOffset = getTimeZoneOffset(sourceZone, sourceDate);
+  var sourceOffset = parsed.offsetMinutes !== null
+    ? parsed.offsetMinutes * 60000
+    : getTimeZoneOffset(sourceZone, sourceDate);
   var actualUtc = new Date(baseUtc - sourceOffset);
 
   var targetDisplay = targetZoneOpt === "Local" ? "Local" : targetZoneOpt;
