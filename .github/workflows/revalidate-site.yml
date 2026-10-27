@@ -1,0 +1,47 @@
+name: Revalidate getopenclip.app
+
+# Tells getopenclip.app to rebuild its extension store pages once new catalog
+# data is live on main. The site reads published/*.json (and raw/*/README.md,
+# raw/*/openclip.json) from raw.githubusercontent.com on main.
+#
+# - workflow_run: build-extensions and update-stats commit to published/ with
+#   GITHUB_TOKEN, which does not trigger push events, so hook in after they finish.
+# - push: manual edits to published/ or raw/ metadata (e.g. featured.json).
+on:
+  workflow_run:
+    workflows: ['Build & Publish Extensions', 'Update Extension Stats']
+    types: [completed]
+    branches: [main]
+  push:
+    branches: [main]
+    paths:
+      - 'published/**'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: revalidate-site
+  cancel-in-progress: false
+
+jobs:
+  revalidate:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for raw.githubusercontent.com cache
+        # raw.githubusercontent.com caches files for up to ~5 minutes.
+        run: sleep 300
+
+      - name: Call revalidate endpoint
+        env:
+          REVALIDATE_SECRET: ${{ secrets.REVALIDATE_SECRET }}
+        run: |
+          set -euo pipefail
+          if [ -z "$REVALIDATE_SECRET" ]; then
+            echo "::error::REVALIDATE_SECRET is not set"; exit 1
+          fi
+          curl --fail-with-body -sS -X POST \
+            -H "Authorization: Bearer $REVALIDATE_SECRET" \
+            --retry 3 --retry-delay 10 --retry-all-errors \
+            https://getopenclip.app/api/revalidate
