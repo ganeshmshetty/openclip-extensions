@@ -1,0 +1,19 @@
+Clean Link bundles a snapshot of the ClearURLs rules data so tracking
+parameters can be removed offline.
+
+  clearurls-rules.js
+  Source: https://rules2.clearurls.xyz/data.minify.json
+  Project: https://github.com/ClearURLs/Rules
+  Copyright: ClearURLs contributors
+  License: GNU Lesser General Public License v3.0
+           (LICENSE.clearurls-rules)
+
+The LGPL-3.0 incorporates the terms of the GNU GPL v3.0:
+https://www.gnu.org/licenses/gpl-3.0.txt
+
+That snapshot is data, not a copy of the ClearURLs extension. The cleaner
+that reads it (clearurls.js, main.js) is original code under the MIT license
+of this repository. You can replace clearurls-rules.js with another rules
+file in the same shape without rebuilding anything else.
+
+ClearURLs: https://github.com/ClearURLs/Addon
