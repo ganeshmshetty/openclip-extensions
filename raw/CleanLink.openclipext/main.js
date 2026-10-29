@@ -1,5 +1,11 @@
 // Clean Link — OpenClip Extension
-// Strips tracking parameters, affiliate tags, and marketing junk from URLs.
+// Strips tracking parameters offline using a bundled ClearURLs rules snapshot
+// plus OpenClip host overrides (including X's `a` share token).
+
+var clearurls = require('./clearurls.js');
+var parseUrl = clearurls.parseUrl;
+var parseQueryParams = clearurls.parseQueryParams;
+var stringifyQueryParams = clearurls.stringifyQueryParams;
 
 var TRACKING_PARAMS = [
   // UTM parameters
@@ -56,81 +62,18 @@ var TRACKING_PREFIXES = [
   'campaign_'
 ];
 
+// ClearURLs strips s, t, cn, ref_src, and ref_url on x.com / twitter.com.
+// It does not strip `a`, the share token that now sits beside s=20.
+var X_SHARE_PARAMS = ['s', 't', 'ref_src', 'ref_url', 'a'];
+
 var SINGLE_URL_REGEX = /^(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$/i;
 var EXTRACT_URL_REGEX = /(?:https?:\/\/|www\.)[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)/gi;
 
-function getOption(id, defaultValue) {
-  var val;
-  if (typeof openclip !== 'undefined') {
-    if (typeof openclip.option === 'function') {
-      val = openclip.option(id);
-    } else if (openclip.options && openclip.options[id] !== undefined) {
-      val = openclip.options[id];
-    }
-  }
-  if (val === undefined || val === null || val === '') {
-    return defaultValue;
-  }
-  return val;
+function isXHost(domain) {
+  return /(?:^|\.)(twitter|x)\.com$/i.test(domain);
 }
 
-function getBoolOption(id, defaultValue) {
-  var val = getOption(id, defaultValue);
-  if (typeof val === 'boolean') return val;
-  if (typeof val === 'string') {
-    var lower = val.toLowerCase().trim();
-    if (lower === 'true' || lower === '1' || lower === 'yes') return true;
-    if (lower === 'false' || lower === '0' || lower === 'no') return false;
-  }
-  return Boolean(val);
-}
-
-function parseUrl(rawUrl) {
-  var str = rawUrl.trim();
-  var match = str.match(/^(?:([a-zA-Z][a-zA-Z0-9+.-]*:)\/\/)?([^/?#]+)(\/[^?#]*)?(\?[^#]*)?(#.*)?$/);
-  if (!match) return null;
-  return {
-    protocol: match[1] || '',
-    host: match[2] || '',
-    hostname: (match[2] || '').split(':')[0].toLowerCase(),
-    pathname: match[3] || '/',
-    search: match[4] || '',
-    hash: match[5] || ''
-  };
-}
-
-function parseQueryParams(searchStr) {
-  if (!searchStr || searchStr === '?') return [];
-  var q = searchStr.indexOf('?') === 0 ? searchStr.slice(1) : searchStr;
-  var pairs = q.split('&');
-  var list = [];
-  for (var i = 0; i < pairs.length; i++) {
-    var p = pairs[i];
-    if (!p) continue;
-    var eq = p.indexOf('=');
-    var k = eq !== -1 ? p.slice(0, eq) : p;
-    var v = eq !== -1 ? p.slice(eq + 1) : '';
-    try {
-      var decodedKey = decodeURIComponent(k.replace(/\+/g, ' '));
-      list.push({ key: decodedKey, rawKey: k, value: v });
-    } catch (e) {
-      list.push({ key: k, rawKey: k, value: v });
-    }
-  }
-  return list;
-}
-
-function stringifyQueryParams(params) {
-  if (!params || params.length === 0) return '';
-  var parts = [];
-  for (var i = 0; i < params.length; i++) {
-    var p = params[i];
-    parts.push(p.rawKey + (p.value !== '' ? '=' + p.value : ''));
-  }
-  return parts.length > 0 ? '?' + parts.join('&') : '';
-}
-
-function shouldRemoveParam(domain, key) {
+function shouldRemoveParam(domain, key, pathname) {
   var k = key.toLowerCase();
   if (TRACKING_PARAMS.indexOf(k) !== -1) return true;
   for (var i = 0; i < TRACKING_PREFIXES.length; i++) {
@@ -142,9 +85,10 @@ function shouldRemoveParam(domain, key) {
   if (/(?:^|\.)youtube\.com$/i.test(domain) || /(?:^|\.)youtu\.be$/i.test(domain)) {
     if (['si', 'feature', 'pp', 'embeds_referring_euri', 'embeds_referring_origin', 'source_ve_path'].indexOf(k) !== -1) return true;
   }
-  // Twitter / X
-  if (/(?:^|\.)(twitter|x)\.com$/i.test(domain)) {
-    if (['s', 't', 'ref_src', 'ref_url'].indexOf(k) !== -1) return true;
+  // Twitter / X. /i/redirect uses `t` as a functional flag, so the share-token
+  // list (including `a`) does not apply there. ClearURLs has the same exception.
+  if (isXHost(domain) && !(pathname && pathname.indexOf('/i/redirect') !== -1)) {
+    if (X_SHARE_PARAMS.indexOf(k) !== -1) return true;
   }
   // Spotify
   if (/(?:^|\.)spotify\.com$/i.test(domain)) {
@@ -166,30 +110,48 @@ function shouldRemoveParam(domain, key) {
   return false;
 }
 
-function cleanSingleUrl(rawUrl, options) {
-  options = options || {};
+function cleanSingleUrl(rawUrl, depth) {
+  depth = depth || 0;
+  if (depth > 8) return rawUrl;
   var trimmed = rawUrl.trim();
   var parsed = parseUrl(trimmed);
   if (!parsed) return rawUrl;
 
+  var current = trimmed;
+  if (/^https?:$/i.test(parsed.protocol)) {
+    try {
+      var cleared = clearurls.applyClearURLs(current);
+      if (cleared && cleared !== current) {
+        current = cleared;
+        parsed = parseUrl(current);
+        if (!parsed) return current;
+      }
+    } catch (e) {
+      // Legacy rules below still run if the rules snapshot misbehaves.
+    }
+  }
+
   var params = parseQueryParams(parsed.search);
 
-  // Google Search Redirect Unwrapping
-  var unwrapRedirects = options.unwrapGoogleRedirects !== undefined ? options.unwrapGoogleRedirects : getBoolOption('unwrapGoogleRedirects', true);
-  if (unwrapRedirects && /(?:^|\.)google\.[a-z.]+/i.test(parsed.hostname) && parsed.pathname === '/url') {
+  // Google search redirects are always unwrapped. There is no setting for this.
+  if (/(?:^|\.)google\.[a-z.]+/i.test(parsed.hostname) && parsed.pathname === '/url') {
     for (var i = 0; i < params.length; i++) {
       if (params[i].key === 'q' || params[i].key === 'url') {
-        var target = decodeURIComponent(params[i].value);
-        if (/^https?:\/\//i.test(target)) {
-          return cleanSingleUrl(target, options);
+        var target;
+        try {
+          target = decodeURIComponent(params[i].value);
+        } catch (e) {
+          continue;
+        }
+        if (/^https?:\/\//i.test(target) && target !== current) {
+          return cleanSingleUrl(target, depth + 1);
         }
       }
     }
   }
 
-  // Amazon Product Canonicalization
-  var canonicalizeAmazon = options.canonicalizeAmazon !== undefined ? options.canonicalizeAmazon : getBoolOption('canonicalizeAmazon', true);
-  if (canonicalizeAmazon && /(?:^|\.)amazon\.[a-z.]+/i.test(parsed.hostname)) {
+  // Amazon product links are always shortened to /dp/ASIN.
+  if (/(?:^|\.)amazon\.[a-z.]+/i.test(parsed.hostname)) {
     var asinMatch = parsed.pathname.match(/(?:\/dp\/|\/gp\/product\/)([A-Z0-9]{10})/i);
     if (asinMatch) {
       var proto = parsed.protocol ? parsed.protocol + '//' : '';
@@ -197,39 +159,37 @@ function cleanSingleUrl(rawUrl, options) {
     }
   }
 
-  // Filter tracking parameters
-  var filteredParams = params.filter(function(p) {
-    return !shouldRemoveParam(parsed.hostname, p.key);
+  var filteredParams = params.filter(function (p) {
+    return !shouldRemoveParam(parsed.hostname, p.key, parsed.pathname);
   });
 
   var newSearch = stringifyQueryParams(filteredParams);
 
-  // Clean tracking hash
   var cleanHash = parsed.hash;
   if (cleanHash && /#(?:.*[?&])?(?:utm_|xtor=)/i.test(cleanHash)) {
     cleanHash = '';
   }
 
-  var prefix = parsed.protocol ? parsed.protocol + '//' : '';
+  if (newSearch === (parsed.search || '') && cleanHash === (parsed.hash || '')) return current;
+
   var path = parsed.pathname;
-  if (path === '/' && !newSearch && !cleanHash && !/\/$/.test(trimmed)) {
+  if (path === '/' && !newSearch && !cleanHash && !/\/$/.test(current)) {
     path = '';
   }
 
+  var prefix = parsed.protocol ? parsed.protocol + '//' : '';
   return prefix + parsed.host + path + newSearch + cleanHash;
 }
 
-function cleanText(text, options) {
+function cleanText(text) {
   if (!text) return '';
   var trimmed = text.trim();
 
-  // If the entire selection is a single URL, clean it directly
   if (SINGLE_URL_REGEX.test(trimmed)) {
-    return cleanSingleUrl(trimmed, options);
+    return cleanSingleUrl(trimmed);
   }
 
-  // If text contains URLs, clean each one and preserve surrounding text and punctuation
-  return text.replace(EXTRACT_URL_REGEX, function(match) {
+  return text.replace(EXTRACT_URL_REGEX, function (match) {
     var trailing = '';
     var m = match;
     var punct = /[.,;:!?)]+$/.exec(m);
@@ -237,14 +197,14 @@ function cleanText(text, options) {
       trailing = punct[0];
       m = m.slice(0, -trailing.length);
     }
-    return cleanSingleUrl(m, options) + trailing;
+    return cleanSingleUrl(m) + trailing;
   });
 }
 
 function action(selection, options) {
   var text = typeof selection === 'string' ? selection : (selection && selection.text ? selection.text : String(selection || ''));
   if (!text) return '';
-  return cleanText(text, options);
+  return cleanText(text);
 }
 
 if (typeof module !== 'undefined' && module.exports) {
@@ -252,4 +212,5 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports.action = action;
   module.exports.cleanSingleUrl = cleanSingleUrl;
   module.exports.cleanText = cleanText;
+  module.exports.X_SHARE_PARAMS = X_SHARE_PARAMS;
 }

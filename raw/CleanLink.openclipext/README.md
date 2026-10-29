@@ -4,28 +4,24 @@ Strip tracking parameters, marketing IDs, referral tokens, and privacy-invading 
 
 ## Features
 
-- **Privacy-first & Offline**: Operates 100% locally on your Mac. No URLs are ever sent to an external service.
-- **Universal Tracking Stripper**: Automatically strips common analytics and marketing parameters:
-  - `utm_*` (Google Analytics / marketing campaigns)
-  - `fbclid`, `igshid`, `igsh` (Meta / Facebook / Instagram)
-  - `gclid`, `gbraid`, `wbraid`, `gad_source` (Google Ads)
-  - `msclkid`, `twclid`, `ttclid` (Bing, X / Twitter, TikTok)
-  - `mc_cid`, `mc_eid`, `mkt_tok` (Mailchimp, Marketo, email campaigns)
-  - `pk_*`, `piwik_*`, `yclid`, and many more
-- **Domain-Specific Optimization**:
-  - **YouTube**: Strips `si=`, `feature=`, and tracking parameters while preserving video IDs and timestamps (`t=`).
-  - **X / Twitter**: Removes `s=`, `t=`, `ref_src=`.
-  - **Spotify**: Cleans `si=` and context trackers.
-  - **Amazon**: Cleans referral tags, search tokens, and can simplify product links directly to `/dp/<ASIN>`.
-  - **Google Redirects**: Unwraps `google.com/url?q=...` back into the direct destination link.
+- **Private and offline.** Cleaning runs on your Mac. Nothing is sent out, and short links such as `t.co` or `bit.ly` are not expanded.
+- **ClearURLs rules.** A bundled snapshot of the [ClearURLs](https://github.com/ClearURLs/Rules) ruleset (LGPL-3.0) removes known tracking parameters, path junk, and redirect wrappers. Exceptions in that ruleset are honored, so functional parameters (for example a GitHub `ref`) stay put.
+- **X / Twitter.** Removes the share-surface code `s`, the session token `t`, `ref_src`, `ref_url`, and the newer share token `a`. A copied post link such as `https://x.com/name/status/123?a=…&s=20` becomes `https://x.com/name/status/123`. Sign-in and email links under `/i/redirect` are left alone.
+- **YouTube.** Strips `si`, `feature`, and embed-referrer parameters. The video id and timestamp (`t`) stay.
+- **Spotify.** Removes `si`, `context`, and `nd`.
+- **Amazon.** Strips affiliate and search-tracking parameters, and shortens a product link to `/dp/<ASIN>`.
+- **Bilibili and LinkedIn.** Removes the usual share and click ids.
+- **Google.** Unwraps `google.com/url?q=…` search redirects back to the destination.
+- **Everywhere else.** Common tags such as `utm_*`, `fbclid`, `gclid`, `gbraid`, and `mc_eid`, plus the rest of the bundled rules.
 
-## Options
+These cleanups always run.
 
-- **Simplify Amazon URLs to canonical `/dp/ASIN`**: Strips bloated tracking junk from Amazon product URLs and simplifies them into clean, short product links. Default: `true`.
-- **Unwrap Google search redirects**: Automatically extracts and cleans destination URLs hidden behind Google redirect links. Default: `true`.
+## Rules and credit
+
+Parameter rules in `clearurls-rules.js` are a snapshot of ClearURLs data, copyright ClearURLs contributors, under the GNU Lesser General Public License v3.0 (`LICENSE.clearurls-rules`). The rest of this extension is MIT. Details are in `NOTICE`.
 
 ## Usage
 
-1. Select any link or text containing URLs.
+1. Select a link, or text that contains links.
 2. Trigger OpenClip.
-3. Click **Clean Link** to clean and paste/copy the sanitized link instantly.
+3. Click **Clean Link** to paste or copy the cleaned result.

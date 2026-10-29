@@ -7,7 +7,7 @@
     "ja": "リンクを整理",
     "fr": "Nettoyer les liens"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -31,32 +31,6 @@
     "清理链接",
     "链接",
     "去参数"
-  ],
-  "options": [
-    {
-      "identifier": "canonicalizeAmazon",
-      "label": {
-        "en": "Simplify Amazon URLs to canonical /dp/ASIN",
-        "zh-Hans": "将亚马逊链接简化为标准 /dp/ASIN 格式",
-        "zh-Hant": "將亞馬遜連結簡化為標準 /dp/ASIN 格式",
-        "ja": "Amazonのリンクを標準の /dp/ASIN 形式に簡略化",
-        "fr": "Simplifier les URL Amazon au format /dp/ASIN standard"
-      },
-      "type": "boolean",
-      "default": "true"
-    },
-    {
-      "identifier": "unwrapGoogleRedirects",
-      "label": {
-        "en": "Unwrap Google search redirects",
-        "zh-Hans": "解析并解开 Google 搜索重定向链接",
-        "zh-Hant": "解析並解開 Google 搜尋重定向連結",
-        "ja": "Google検索のリダイレクトリンクを解除",
-        "fr": "Déballer les redirections de recherche Google"
-      },
-      "type": "boolean",
-      "default": "true"
-    }
   ],
   "action": {
     "title": {
