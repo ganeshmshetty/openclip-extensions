@@ -68,7 +68,7 @@ Extensions live in `raw/<Name>.openclipext/` with an `openclip.json` manifest. A
 
 ### 1. Identity & Versioning
 - **Identifier**: Must use a lowercase reverse-DNS format (e.g. `com.openclip.rot13` or `com.author.packagename`).
-- **Semantic Versioning**: Start at `1.0.0`. Every PR modifying an existing extension must bump the version number (`1.0.1`, `1.1.0`, etc.) and update the one-line `releaseNotes` in `openclip.json` describing what changed (required for new extensions too).
+- **Semantic Versioning**: Start at `1.0.0`. Every PR modifying an existing extension must bump the version number (`1.0.1`, `1.1.0`, etc.).
 - **Compatibility**: If using modern host APIs (like `openclip.pasteboard`), declare `"minOpenClipVersion": "1.3.0"`.
 
 ### 2. Localization
