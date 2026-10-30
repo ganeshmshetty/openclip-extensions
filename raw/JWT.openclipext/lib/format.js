@@ -1,4 +1,4 @@
-// Human-facing formatting for JWT commands: localized strings and relative times.
+// Human-facing formatting for Decode JWT: localized strings and relative times.
 // Falls back to English when openclip.i18n is unavailable.
 
 // ---------------------------------------------------------------- i18n
@@ -82,7 +82,7 @@ function formatRelative(seconds, now) {
   return delta < 0 ? label + ' ago' : 'in ' + label;
 }
 
-// Toast-sized expiry message: "Expires in 52 minutes", "Expired 3 hours ago".
+// One-line expiry status: "Expires in 52 minutes", "Expired 3 hours ago".
 function expiryMessage(state) {
   var when = state.kind === 'not-yet' ? state.nbf : state.exp;
   return fill(t(STRINGS.expiry[state.kind]), {
@@ -92,6 +92,5 @@ function expiryMessage(state) {
 
 module.exports = {
   errorMessage: errorMessage,
-  formatRelative: formatRelative,
   expiryMessage: expiryMessage
 };
