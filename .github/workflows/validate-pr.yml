@@ -5,6 +5,7 @@ on:
     paths:
       - 'raw/**'
       - 'scripts/validate.sh'
+      - 'scripts/check-release-notes.sh'
       - '.github/workflows/validate-pr.yml'
   workflow_dispatch:
 
@@ -19,6 +20,8 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Install Tools
         run: |
@@ -29,3 +32,7 @@ jobs:
         run: |
           chmod +x ./scripts/validate.sh
           ./scripts/validate.sh --all
+
+      - name: Check Release Notes
+        if: github.event_name == 'pull_request'
+        run: ./scripts/check-release-notes.sh "origin/${{ github.base_ref }}"
