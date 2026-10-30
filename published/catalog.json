@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T07:18:13Z",
+  "updatedAt": "2026-10-30T15:29:17Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 16,
@@ -722,11 +722,11 @@
       "description": "Decode JSON Web Tokens offline. Shows expiry at a glance.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.1.0",
+      "version": "2.0.0",
       "downloadCount": 38,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.jwt@1.1.0/JWT.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.jwt@2.0.0/JWT.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.jwt.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30",
+      "publishedAt": "2026-10-30T20:57:14+05:30",
       "addedAt": "2026-09-10T21:43:36+02:00"
     },
     {
@@ -1122,7 +1122,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
