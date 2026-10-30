@@ -59,6 +59,9 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   // validation log line (e.g. "Loaded extension manifest <id> (v1.0.1, schema 1, ...)").
   "version": "1.0.0",
 
+  // REQUIRED for new extensions and every version bump. One line saying what changed.
+  "releaseNotes": "Simplified into one Decode JWT action.",
+
   // OPTIONAL. Minimum OpenClip version this package requires ("1.2.3"). Min-only and decode-only:
   // an incompatible package still loads but is gated "Needs Update" until the app is newer (see
   // §11). Absent or malformed → treated as compatible.
