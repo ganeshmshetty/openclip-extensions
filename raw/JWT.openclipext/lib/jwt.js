@@ -143,8 +143,8 @@ function status(payload, nowSeconds) {
   var exp = payload ? claimSeconds(payload.exp) : null;
   var nbf = payload ? claimSeconds(payload.nbf) : null;
   var kind;
-  if (nbf !== null && nbf > now) kind = 'not-yet';
-  else if (exp !== null && exp <= now) kind = 'expired';
+  if (exp !== null && exp <= now) kind = 'expired';
+  else if (nbf !== null && nbf > now) kind = 'not-yet';
   else if (exp !== null) kind = 'valid';
   else kind = 'no-exp';
   return { kind: kind, exp: exp, nbf: nbf, now: now };
