@@ -7,8 +7,8 @@
     "ja": "JWT",
     "fr": "JWT"
   },
-  "version": "1.1.0",
-  "minOpenClipVersion": "1.1.0",
+  "version": "2.0.0",
+  "minOpenClipVersion": "1.7.0",
   "author": "OpenClip Team",
   "description": {
     "en": "Decode JSON Web Tokens offline. Shows expiry at a glance.",
@@ -29,100 +29,34 @@
     "expiry"
   ],
   "action": {
-    "id": "jwt",
+    "id": "decode",
     "title": {
-      "en": "JWT",
-      "zh-Hans": "JWT",
-      "zh-Hant": "JWT",
-      "ja": "JWT",
-      "fr": "JWT"
+      "en": "Decode JWT",
+      "zh-Hans": "解码 JWT",
+      "zh-Hant": "解碼 JWT",
+      "ja": "JWT をデコード",
+      "fr": "Décoder le JWT"
     },
     "icon": "icon.svg",
-    "type": "group",
+    "type": "javascript",
+    "script": "decode.js",
     "requirements": {
       "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
     },
-    "subActions": [
-      {
-        "id": "decode-payload",
-        "title": {
-          "en": "Decode Payload",
-          "zh-Hans": "解码载荷",
-          "zh-Hant": "解碼載荷",
-          "fr": "Décoder la charge utile",
-          "ja": "ペイロードをデコード"
-        },
-        "icon": "curlybraces",
-        "type": "javascript",
-        "script": "decode-payload.js",
-        "requirements": {
-          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
-        },
-        "keywords": [
-          "decode",
-          "payload",
-          "claims",
-          "json",
-          "解码",
-          "décoder",
-          "デコード"
-        ],
-        "output": "text"
-      },
-      {
-        "id": "decode-header",
-        "title": {
-          "en": "Decode Header",
-          "zh-Hans": "解码头部",
-          "zh-Hant": "解碼標頭",
-          "fr": "Décoder l’en-tête",
-          "ja": "ヘッダーをデコード"
-        },
-        "icon": "list.bullet.rectangle",
-        "type": "javascript",
-        "script": "decode-header.js",
-        "requirements": {
-          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
-        },
-        "keywords": [
-          "decode",
-          "header",
-          "alg",
-          "kid",
-          "jose",
-          "头部",
-          "en-tête",
-          "ヘッダー"
-        ],
-        "output": "text"
-      },
-      {
-        "id": "check-expiry",
-        "title": {
-          "en": "Check Expiry",
-          "zh-Hans": "检查有效期",
-          "zh-Hant": "檢查有效期",
-          "fr": "Vérifier l’expiration",
-          "ja": "有効期限を確認"
-        },
-        "icon": "clock.badge.exclamationmark",
-        "type": "javascript",
-        "script": "check-expiry.js",
-        "requirements": {
-          "regex": "^\\s*(?:Authorization\\s*:\\s*)?(?:Bearer\\s+)?[\"'`]?ey[A-Za-z0-9_-]{8,}\\.[A-Za-z0-9_-]{2,}\\.[A-Za-z0-9_-]*[\"'`,;]*\\s*$"
-        },
-        "keywords": [
-          "expiry",
-          "expired",
-          "exp",
-          "valid",
-          "ttl",
-          "有效期",
-          "expiration",
-          "有効期限"
-        ],
-        "output": "none"
-      }
-    ]
+    "keywords": [
+      "decode",
+      "payload",
+      "claims",
+      "expiry",
+      "exp",
+      "解码",
+      "有效期",
+      "décoder",
+      "expiration",
+      "デコード",
+      "有効期限"
+    ],
+    "output": "text",
+    "result": "preview"
   }
 }

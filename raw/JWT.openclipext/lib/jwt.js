@@ -1,4 +1,4 @@
-// JWT parsing shared by every JWT command.
+// JWT parsing for the Decode JWT action.
 //
 // JavaScriptCore has no atob/btoa or TextDecoder, so base64url and UTF-8 are
 // implemented here. Nothing in this file touches the network or the host.
@@ -123,11 +123,6 @@ function parse(text) {
   var payloadIsJson = payload.ok && isPlainObject(payload.value);
 
   return {
-    token: token,
-    segments: segments,
-    signature: segments[2],
-    header: header.value,
-    headerText: headerText,
     payload: payloadIsJson ? payload.value : null,
     payloadText: payloadText,
     payloadIsJson: payloadIsJson
@@ -156,12 +151,6 @@ function status(payload, nowSeconds) {
 }
 
 module.exports = {
-  JwtError: JwtError,
-  base64UrlDecodeBytes: base64UrlDecodeBytes,
-  base64UrlDecodeText: base64UrlDecodeText,
-  utf8Decode: utf8Decode,
-  normalizeToken: normalizeToken,
   parse: parse,
-  claimSeconds: claimSeconds,
   status: status
 };
