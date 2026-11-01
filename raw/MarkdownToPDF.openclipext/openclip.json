@@ -1,0 +1,77 @@
+{
+  "identifier": "com.openclip.markdown-to-pdf",
+  "name": {
+    "en": "Markdown & HTML to PDF",
+    "zh-Hans": "Markdown 与 HTML 转 PDF",
+    "zh-Hant": "Markdown 與 HTML 轉 PDF",
+    "ja": "Markdown・HTML を PDF に",
+    "fr": "Markdown et HTML en PDF"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Convert selected Markdown or HTML into a clean PDF document.",
+    "zh-Hans": "将选中的 Markdown 或 HTML 转换为整洁的 PDF 文档。",
+    "zh-Hant": "將選取的 Markdown 或 HTML 轉換為整潔的 PDF 文件。",
+    "ja": "選択した Markdown や HTML を読みやすい PDF に変換します。",
+    "fr": "Convertissez le Markdown ou le HTML sélectionné en un PDF soigné."
+  },
+  "keywords": [
+    "markdown",
+    "html",
+    "pdf",
+    "convert",
+    "export",
+    "document",
+    "print"
+  ],
+  "action": {
+    "id": "pdf",
+    "title": {
+      "en": "Convert to PDF",
+      "zh-Hans": "转换为 PDF",
+      "zh-Hant": "轉換為 PDF",
+      "ja": "PDF に変換",
+      "fr": "Convertir en PDF"
+    },
+    "icon": "icon.svg",
+    "type": "group",
+    "subActions": [
+      {
+        "id": "markdown",
+        "title": {
+          "en": "Markdown → PDF",
+          "zh-Hans": "Markdown → PDF",
+          "zh-Hant": "Markdown → PDF",
+          "ja": "Markdown → PDF",
+          "fr": "Markdown → PDF"
+        },
+        "icon": "doc.richtext",
+        "type": "shell",
+        "script": "render.sh",
+        "output": "file",
+        "requirements": {
+          "requiresSelection": true
+        }
+      },
+      {
+        "id": "html",
+        "title": {
+          "en": "HTML → PDF",
+          "zh-Hans": "HTML → PDF",
+          "zh-Hant": "HTML → PDF",
+          "ja": "HTML → PDF",
+          "fr": "HTML → PDF"
+        },
+        "icon": "chevron.left.forwardslash.chevron.right",
+        "type": "shell",
+        "script": "render.sh",
+        "output": "file",
+        "requirements": {
+          "requiresSelection": true
+        }
+      }
+    ]
+  }
+}
