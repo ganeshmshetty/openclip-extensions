@@ -1,3 +1,4 @@
 scripts/node_modules/
 .DS_Store
 
+raw/*/node_modules/
