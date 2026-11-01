@@ -7,7 +7,8 @@
     "fr": "Rendre Mermaid",
     "ja": "Mermaid を描画"
   },
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "releaseNotes": "Updated Pele to 1.13.0 for better layouts, readable labels on custom fills, and more Mermaid options.",
   "minOpenClipVersion": "1.7.0",
   "description": {
     "en": "Turn selected Mermaid code into SVG or PNG diagrams, offline with Pele.",
