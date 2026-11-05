@@ -9,7 +9,7 @@ function action(selection) {
     return selection.replace(/[\p{L}\p{N}]+(?:['’][\p{L}\p{N}]+)*/gu, function(word) {
         if (isAllCapsSentence) {
             var lower = word.toLowerCase();
-            return lower.charAt(0).toUpperCase() + lower.slice(1);
+            return lower.replace(/\p{L}/u, function(ch) { return ch.toUpperCase(); });
         }
         // Keep acronyms (all-uppercase, 2+ letters) unchanged, e.g. NASA, URL.
         var letters = word.replace(/[^\p{L}]/gu, "");
