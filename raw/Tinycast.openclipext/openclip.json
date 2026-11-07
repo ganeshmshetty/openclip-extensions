@@ -1,0 +1,31 @@
+{
+  "identifier": "com.tinycast.openclip",
+  "name": {
+    "en": "Tinycast",
+    "zh-Hans": "Tinycast",
+    "zh-Hant": "Tinycast"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "OpenClip Community",
+  "releaseNotes": "Initial release: send selected text to Tinycast search palette.",
+  "description": {
+    "en": "Send selected text to Tinycast search palette.",
+    "zh-Hans": "将选中文字发送至 Tinycast 搜索栏。",
+    "zh-Hant": "將選取文字传至 Tinycast 搜尋列。"
+  },
+  "actions": [
+    {
+      "id": "sendToTinycast",
+      "title": {
+        "en": "Tinycast",
+        "zh-Hans": "Tinycast",
+        "zh-Hant": "Tinycast"
+      },
+      "icon": "icon.svg",
+      "type": "applescript",
+      "script": "send_to_tinycast.applescript",
+      "output": "none"
+    }
+  ]
+}
