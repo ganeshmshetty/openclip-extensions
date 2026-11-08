@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T05:45:34Z",
+  "updatedAt": "2026-11-08T10:04:55Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1658,11 +1658,11 @@
       "description": "Send selected text to Tinycast search palette.",
       "author": "OpenClip Community",
       "icon": "icon.svg",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "downloadCount": 0,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.tinycast.openclip@1.0.0/Tinycast.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.tinycast.openclip@1.0.1/Tinycast.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.tinycast.openclip.svg",
-      "publishedAt": "2026-11-08T11:14:03+05:30",
+      "publishedAt": "2026-11-08T15:33:14+05:30",
       "addedAt": "2026-11-08T11:14:03+05:30"
     },
     {
