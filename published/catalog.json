@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T18:32:42Z",
+  "updatedAt": "2026-11-08T05:45:34Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 20,
@@ -1122,7 +1122,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
@@ -1651,6 +1651,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.timestamp.svg",
       "publishedAt": "2026-10-08T16:12:15+05:30",
       "addedAt": "2026-10-08T16:12:15+05:30"
+    },
+    {
+      "id": "com.tinycast.openclip",
+      "name": "Tinycast",
+      "description": "Send selected text to Tinycast search palette.",
+      "author": "OpenClip Community",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.tinycast.openclip@1.0.0/Tinycast.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.tinycast.openclip.svg",
+      "publishedAt": "2026-11-08T11:14:03+05:30",
+      "addedAt": "2026-11-08T11:14:03+05:30"
     },
     {
       "id": "com.openclip.titlecase",
