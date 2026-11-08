@@ -1,0 +1,27 @@
+{
+  "identifier": "com.openclip.savetosupermemory",
+  "name": "Save to Supermemory",
+  "description": "Save the selected text to your Supermemory memories, tagged with the app it came from.",
+  "version": "0.1.0",
+  "minOpenClipVersion": "1.3.0",
+  "author": "Ganesh M",
+  "keywords": ["supermemory", "memory", "save", "remember", "note"],
+  "options": [
+    { "identifier": "apiKey", "label": "API Key", "type": "secret" },
+    { "identifier": "containerTag", "label": "Container Tag (optional)", "type": "string", "default": "" }
+  ],
+  "actions": [
+    {
+      "id": "com.openclip.savetosupermemory.save",
+      "title": "Save to Supermemory",
+      "icon": "icon.svg",
+      "type": "javascript",
+      "async": true,
+      "script": "main.js",
+      "loading": true,
+      "loadingMessage": "Saving to Supermemory…",
+      "output": "none",
+      "keywords": ["supermemory", "save memory", "remember"]
+    }
+  ]
+}
