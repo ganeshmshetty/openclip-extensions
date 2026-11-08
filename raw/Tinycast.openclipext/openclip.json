@@ -5,10 +5,10 @@
     "zh-Hans": "Tinycast",
     "zh-Hant": "Tinycast"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.0.0",
   "author": "OpenClip Community",
-  "releaseNotes": "Initial release: send selected text to Tinycast search palette.",
+  "releaseNotes": "Open Tinycast search via deeplink instead of clipboard paste.",
   "description": {
     "en": "Send selected text to Tinycast search palette.",
     "zh-Hans": "将选中文字发送至 Tinycast 搜索栏。",
