@@ -4,17 +4,17 @@ Send selected text directly into [Tinycast](https://github.com/abue-ammar/tinyca
 
 ## Features
 
-- **Instant Summon**: Activates Tinycast's launcher search palette with a single click.
-- **Smart Cold-Start Handling**: Automatically launches Tinycast if it is not already running.
-- **Auto-Paste**: Automatically inserts your selected text into the query input field without overwriting your workflow focus.
+- **Instant Summon**: Opens Tinycast's launcher with your selection already typed in the search bar.
+- **No clipboard overwrite**: Uses Tinycast's search deeplink instead of pasting.
 
 ## Usage
 
 1. Select any text (search query, math expression, app name, or prompt).
 2. Click the **Tinycast** icon in the OpenClip action bar.
-3. Tinycast opens immediately with your selection pasted into the search bar.
+3. Tinycast opens with your selection in the search bar.
+
+The first time, Tinycast may ask you to allow the deeplink — choose Always Allow.
 
 ## Requirements
 
 - [Tinycast](https://github.com/abue-ammar/tinycast) installed on macOS.
-- Accessibility permissions enabled for OpenClip.
