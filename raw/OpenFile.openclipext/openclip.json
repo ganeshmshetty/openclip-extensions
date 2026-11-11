@@ -8,7 +8,7 @@
     "fr": "Ouvrir le fichier"
   },
   "version": "1.0.0",
-  "minOpenClipVersion": "1.1.0",
+  "minOpenClipVersion": "1.9.0",
   "author": "OpenClip Team",
   "releaseNotes": "Initial release: open a selected file path in the default app.",
   "description": {
@@ -39,7 +39,9 @@
     "script": "main.sh",
     "output": "none",
     "requirements": {
-      "regex": "^\\s*[\"']?(?:file://|~/|/).+\\s*$"
+      "content": [
+        "path"
+      ]
     }
   }
 }
