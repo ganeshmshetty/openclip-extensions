@@ -1,0 +1,95 @@
+{
+  "identifier": "com.openclip.chineseconvert",
+  "name": {
+    "en": "Simplified ⇄ Traditional",
+    "zh-Hans": "简繁转换",
+    "zh-Hant": "簡繁轉換",
+    "ja": "簡体字⇄繁体字",
+    "fr": "Chinois simplifié ⇄ traditionnel"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "Community Contributor",
+  "description": {
+    "en": "Convert selected Chinese text between Simplified and Traditional.",
+    "zh-Hans": "在简体中文和繁体中文之间转换所选文字。",
+    "zh-Hant": "在簡體中文和繁體中文之間轉換所選文字。",
+    "ja": "選択した中国語を簡体字と繁体字の間で変換します。",
+    "fr": "Convertit le chinois sélectionné entre simplifié et traditionnel."
+  },
+  "keywords": [
+    "chinese",
+    "simplified",
+    "traditional",
+    "convert",
+    "opencc",
+    "hanzi",
+    "简体",
+    "繁体",
+    "简繁转换",
+    "繁簡",
+    "繁體",
+    "簡體",
+    "簡体字",
+    "繁体字"
+  ],
+  "actions": [
+    {
+      "id": "traditional",
+      "title": {
+        "en": "To Traditional",
+        "zh-Hans": "转为繁体",
+        "zh-Hant": "轉為繁體",
+        "ja": "繁体字に変換",
+        "fr": "En traditionnel"
+      },
+      "icon": "icon.svg",
+      "type": "javascript",
+      "script": "to-traditional.js",
+      "inline": true,
+      "output": "text",
+      "requirements": {
+        "regex": "[\\u3400-\\u9fff]"
+      },
+      "result": "copy"
+    },
+    {
+      "id": "simplified",
+      "title": {
+        "en": "To Simplified",
+        "zh-Hans": "转为简体",
+        "zh-Hant": "轉為簡體",
+        "ja": "簡体字に変換",
+        "fr": "En simplifié"
+      },
+      "icon": "icon.svg",
+      "type": "javascript",
+      "script": "to-simplified.js",
+      "inline": true,
+      "output": "text",
+      "requirements": {
+        "regex": "[\\u3400-\\u9fff]"
+      },
+      "result": "copy"
+    }
+  ],
+  "options": [
+    {
+      "identifier": "variant",
+      "label": {
+        "en": "Traditional variant",
+        "zh-Hans": "繁体字形",
+        "zh-Hant": "繁體字形",
+        "ja": "繁体字の種類",
+        "fr": "Variante traditionnelle"
+      },
+      "type": "multiple",
+      "default": "Standard 通用繁體",
+      "values": [
+        "Standard 通用繁體",
+        "Taiwan 台灣繁體",
+        "Taiwan + local phrases 台灣慣用詞"
+      ]
+    }
+  ]
+}
