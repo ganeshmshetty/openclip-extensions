@@ -80,7 +80,7 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   "keywords": ["words", "text", "case"],
 
   // OPTIONAL. Package-level output contract defaults inherited by all actions in the package:
-  // "output": "text" | "emoji" | "color" | "file" | "none" | "dynamic"
+  // "output": "text" | "color" | "file" | "none" | "dynamic"
   "output": "text",
   // "result": "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
   "result": "paste-or-copy",
@@ -141,7 +141,7 @@ Common action fields (all OPTIONAL unless noted):
   "icon": "symbol(textformat.upper)",  // SF Symbol / local image / bare name (see below)
   "type": "javascript",                // default "url"
   "regex": ".*",                       // LEGACY pre-rules visibility gate (see §5)
-  "output": "text",                    // REQUIRED for output-producing kinds: "text" | "emoji" | "color" | "file" | "none" | "dynamic" (see below)
+  "output": "text",                    // REQUIRED for output-producing kinds: "text" | "color" | "file" | "none" | "dynamic" (see below)
   "result": "preview",                 // author recommended delivery: "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
   "presentation": "markdown",          // text card format: "plain" | "markdown" | "code" | "diff" (see below)
   "secondary": { "type": "copy", "value": "Copied text" },  // secondary-click outcome; literal value, NON-JS kinds only (see §5b)
@@ -166,9 +166,9 @@ empty input. Clipboard and OCR input never cause Copy in a source app. Neither f
 combined with `"inline": true`; automatic inline evaluation must not mutate the clipboard.
 
 **Output contracts (`output` and `result`).** Every action declares what kind of output it yields:
-- `"output"`: `"text"`, `"emoji"`, `"color"`, `"file"`, `"none"`, or `"dynamic"`. **Authoring rule: declare `output` explicitly on every output-producing action** (all kinds except `url`/`keypress`/`shortcut`/`service`, which are structurally `none`). The runtime does fall back to sniffing the returned value, but an explicit declaration makes a manifest self-documenting: a reader can tell what an action produces without opening its script. Set `output` on each **sub-action** of a `group`, never on the structural group row. `emoji` and `color` are inline-only typed kinds and require `minOpenClipVersion` `"1.10.0"`.
+- `"output"`: `"text"`, `"color"`, `"file"`, `"none"`, or `"dynamic"`. **Authoring rule: declare `output` explicitly on every output-producing action** (all kinds except `url`/`keypress`/`shortcut`/`service`, which are structurally `none`). The runtime does fall back to sniffing the returned value, but an explicit declaration makes a manifest self-documenting: a reader can tell what an action produces without opening its script. Set `output` on each **sub-action** of a `group`, never on the structural group row. `color` is an inline-only typed kind and requires `minOpenClipVersion` `"1.10.0"`.
 - `"result"`: Author recommendation for delivery: `"preview"` (result card), `"paste"`, `"copy"`, `"paste-or-copy"` (paste if target app allows, else copy), `"open"` (open file), `"save"` (save file). Optional — omit to inherit the output kind's default.
-  - Incompatible pairs (e.g. `output: "text"` with `result: "save"`) produce a non-fatal validation warning, drop the invalid result, and safely fall back to the output kind's default (`paste-or-copy` for text/emoji, `preview` for color/file).
+  - Incompatible pairs (e.g. `output: "text"` with `result: "save"`) produce a non-fatal validation warning, drop the invalid result, and safely fall back to the output kind's default (`paste-or-copy` for text, `preview` for color/file).
   - `color` supports `"preview"` only; any other recommendation falls back to `"preview"` with a validation warning.
   - Unknown enum strings fail open to `nil` (preserving future-compatibility).
   - Users can configure per-action overrides in Settings (`Show in card`, `Paste`, `Copy`).
@@ -212,7 +212,6 @@ Synchronous inline actions may return typed values instead of a string:
 ```js
 return "144";                              // shorthand text (legacy-compatible)
 return { type: "text", value: "144" };     // output: "text"
-return { type: "emoji", value: "🎉" };     // output: "emoji"
 return { type: "color", value: "#FF8800" }; // output: "color"
 return null;                               // no applicable result
 ```
@@ -220,16 +219,16 @@ return null;                               // no applicable result
 - `value` must be a string and must fit the declared `output`. Unknown types, malformed values,
   mismatched kinds, oversize values, and promises produce no preview; they are never reinterpreted
   as text.
-- Text and emoji keep the normal Paste/Copy/Show delivery matrix. Color renders a swatch plus its
-  canonical uppercase hex, and activation always shows the result card; a color never enters
-  automatic copy/paste delivery, including on force-copy. The color card offers explicit Copy (hex)
-  and Save (plain-text hex).
+- Text keeps the normal Paste/Copy/Show delivery matrix. An emoji is ordinary text and renders and
+  pastes verbatim. Color renders a swatch plus its canonical uppercase hex, and activation always
+  shows the result card; a color never enters automatic copy/paste delivery, including on
+  force-copy. The color card offers explicit Copy (hex) and Save (plain-text hex).
 - Set `"displayOnly": true` for informational rows. Requires `inline: true` on a synchronous
   JavaScript action and `minOpenClipVersion` `"1.10.0"`. The item stays visible, searchable, and
   accessible, but clicking, Enter/Shift-Enter, Command-digit, footer controls, and bound hotkeys do
   nothing: no execution, delivery, card, dismissal, or history.
-- Text and emoji inline values are limited to 64 KiB UTF-8 (emoji 128 bytes). Display-only text is
-  limited to 256 grapheme clusters and 4 KiB so the full value remains inspectable.
+- Text inline values are limited to 64 KiB UTF-8. Display-only text is limited to 256 grapheme
+  clusters and 4 KiB so the full value remains inspectable.
 - Typed values and `displayOnly` require `"minOpenClipVersion": "1.10.0"` or newer. Older apps
   ignore the unknown keys and would otherwise run an informational item as a normal action.
 
@@ -846,7 +845,7 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 Deterministic resolution order (`OpenClipJSHost.run`): **JS exception → `.toast(.error)`** (JS throws
 never propagate as Swift errors); else `requireConfiguration` → `.openConfiguration`; a `toast`
 alone → `.toast`, or coexisting with effects → `.sequence([.toast, …effects])`; effects →
-single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; returned non-inline `{ type: "text", value, presentation }` → `.presentedText` (the presentation key is required; unknown values fall back to plain); a restricted inline typed return `{ type: "text" | "emoji" | "color", value }` → a typed inline value (validated against the action's declared output); function string return → `.text(returnValue)` (implicitly returned text, resolved
+single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; returned non-inline `{ type: "text", value, presentation }` → `.presentedText` (the presentation key is required; unknown values fall back to plain); a restricted inline typed return `{ type: "text" | "color", value }` → a typed inline value (validated against the action's declared output); function string return → `.text(returnValue)` (implicitly returned text, resolved
 per the click's preference); else `.success`.
 
 > Execution runs on a background thread (never the `MainActor`); async scripts run with no timer by
