@@ -64,7 +64,8 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   // §11). Absent or malformed → treated as compatible.
   // Rule: declare "1.1.0" for localized dictionary syntax; declare "1.3.0" if using the
   // openclip.pasteboard API; declare "1.7.0" if using the native file-output API
-  // (openclip.file / openclip.copyFile / openclip.saveFile). See §7.
+  // (openclip.file / openclip.copyFile / openclip.saveFile); declare "1.10.0" for typed inline
+  // values or displayOnly. See §7.
   "minOpenClipVersion": "1.3.0",
 
   // OPTIONAL. Declared runtime capabilities. The host's known-capability set is EMPTY on day one,
@@ -76,10 +77,13 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   "keywords": ["words", "text", "case"],
 
   // OPTIONAL. Package-level output contract defaults inherited by all actions in the package:
-  // "output": "text" | "file" | "none" | "dynamic"
+  // "output": "text" | "emoji" | "color" | "file" | "none" | "dynamic"
   "output": "text",
   // "result": "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
   "result": "paste-or-copy",
+  // OPTIONAL. Package-level result-card format for text results:
+  // "plain" (default) | "markdown" | "code" | "diff"
+  "presentation": "plain",
 
   // REQUIRED. Either an ARRAY of action objects ("actions"),
   // or a SINGLE action object ("action"). Alias: "Actions".
@@ -134,8 +138,9 @@ Common action fields (all OPTIONAL unless noted):
   "icon": "symbol(textformat.upper)",  // SF Symbol / local image / bare name (see below)
   "type": "javascript",                // default "url"
   "regex": ".*",                       // LEGACY pre-rules visibility gate (see §5)
-  "output": "text",                    // REQUIRED for output-producing kinds: "text" | "file" | "none" | "dynamic" (see below)
+  "output": "text",                    // REQUIRED for output-producing kinds: "text" | "emoji" | "color" | "file" | "none" | "dynamic" (see below)
   "result": "preview",                 // author recommended delivery: "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
+  "presentation": "markdown",          // text card format: "plain" | "markdown" | "code" | "diff" (see below)
   "secondary": { "type": "copy", "value": "Copied text" },  // secondary-click outcome; literal value, NON-JS kinds only (see §5b)
   "toast": { "message": "Copied" },    // primary-click toast (see §5b)
   "secondaryToast": { "message": "Copied" },  // secondary-click toast (see §5b)
@@ -144,7 +149,8 @@ Common action fields (all OPTIONAL unless noted):
   "keywords": ["uppercase", "all caps", "majuscule", "大写", "大文字"], // search palette keywords
   "loading": true,                       // slow action: early-close + spinner toast, see §5d
   "loadingMessage": "Searching…",        // loading toast text; defaults to "Opening <title>…"
-  "inline": true                         // synchronous javascript only: live inline result preview (see below)
+  "inline": true,                        // synchronous javascript only: live inline result preview (see below)
+  "displayOnly": false                   // inline only: informational row, never executable (requires 1.10.0)
 }
 ```
 
@@ -157,24 +163,74 @@ empty input. Clipboard and OCR input never cause Copy in a source app. Neither f
 combined with `"inline": true`; automatic inline evaluation must not mutate the clipboard.
 
 **Output contracts (`output` and `result`).** Every action declares what kind of output it yields:
-- `"output"`: `"text"`, `"file"`, `"none"`, or `"dynamic"`. **Authoring rule: declare `output` explicitly on every output-producing action** (all kinds except `url`/`keypress`/`shortcut`/`service`, which are structurally `none`). The runtime does fall back to sniffing the returned value, but an explicit declaration makes a manifest self-documenting: a reader can tell what an action produces without opening its script. Set `output` on each **sub-action** of a `group`, never on the structural group row.
+- `"output"`: `"text"`, `"emoji"`, `"color"`, `"file"`, `"none"`, or `"dynamic"`. **Authoring rule: declare `output` explicitly on every output-producing action** (all kinds except `url`/`keypress`/`shortcut`/`service`, which are structurally `none`). The runtime does fall back to sniffing the returned value, but an explicit declaration makes a manifest self-documenting: a reader can tell what an action produces without opening its script. Set `output` on each **sub-action** of a `group`, never on the structural group row. `emoji` and `color` are inline-only typed kinds and require `minOpenClipVersion` `"1.10.0"`.
 - `"result"`: Author recommendation for delivery: `"preview"` (result card), `"paste"`, `"copy"`, `"paste-or-copy"` (paste if target app allows, else copy), `"open"` (open file), `"save"` (save file). Optional — omit to inherit the output kind's default.
-  - Incompatible pairs (e.g. `output: "text"` with `result: "save"`) produce a non-fatal validation warning, drop the invalid result, and safely fall back to the output kind's default (`paste-or-copy` for text, `preview` for file).
+  - Incompatible pairs (e.g. `output: "text"` with `result: "save"`) produce a non-fatal validation warning, drop the invalid result, and safely fall back to the output kind's default (`paste-or-copy` for text/emoji, `preview` for color/file).
+  - `color` supports `"preview"` only; any other recommendation falls back to `"preview"` with a validation warning.
   - Unknown enum strings fail open to `nil` (preserving future-compatibility).
   - Users can configure per-action overrides in Settings (`Show in card`, `Paste`, `Copy`).
 
+**Result presentation (`presentation`).** Optional card format for text results: `"plain"` (default), `"markdown"`, `"code"`, or `"diff"`. Declare it at package or action level, or supply it per result with a typed text return:
+
+```js
+return { type: "text", value: markdown, presentation: "markdown" };
+```
+
+```json
+{ "type": "text", "value": "print(1)", "presentation": "code" }
+```
+
+- `plain` — ordinary text.
+- `markdown` — the card's Markdown renderer. Remote images are never loaded.
+- `code` — monospaced text.
+- `diff` — compares the original selection with the result. If either text is over 2,500 characters, the texts are not meaningfully similar (under 50%), differ only in whitespace, or are identical, the card shows plain text and hides the diff toggle. The toggle / ⌘D remains when a meaningful diff exists.
+
+Copy, Paste, and Drag always use the text itself; presentation is display-only. An omitted action key inherits the package default; a supplied but unknown value falls back to `plain`. Manifest-level values are ignored by older apps, which show plain text. Typed returns require the release that supports this key, so gate them with `minOpenClipVersion` once that release is known. For a non-inline JavaScript return, `presentation` must be present; a bare `{ type: "text", value }` object keeps the inline-only behavior described below.
+
 **Inline results (`inline`).** Set `"inline": true` on a **synchronous `javascript`** action
 (kind `js`/`javascript`, *without* `"async": true`) to have OpenClip evaluate it live as the
-selection is read and render its returned text directly in the popup bar button / search palette —
-the same inline surface as the built-in Calculate action. The preview is the action's `.text`
-output (a non-null, non-blank string), truncated to a single line at the popup's shared max width;
-any other result (`.copy`, `.openURL`, …) or a thrown/empty result shows no preview and the icon
-stays. Clicking still performs the action normally, so the `.text` is delivered per the user's
-per-click preference (§5b — primary pastes / secondary copies by default). Evaluation is prewarmed
-during selection retrieval, memoized per selection, and bounded by a hard timeout, so the popup
-never blocks. `inline` on a non-JS kind, or together with `"async": true`, **rejects the package**
-at validation (`invalidInlineAction`); apps that predate inline results simply ignore the key.
-Reference implementations: `WordCount`, `CharacterCount`.
+selection is read and render its returned value directly in the popup bar button / search palette —
+the same inline surface as the built-in Calculate action. Evaluation is prewarmed during selection
+retrieval, memoized per selection, and bounded by a hard timeout, so the popup never blocks.
+`inline` on a non-JS kind, or together with `"async": true`, **rejects the package** at validation
+(`invalidInlineAction`).
+
+Automatic preview runs in a **restricted environment**: `openclip.pasteboard`, `openclip.fetch`,
+`openclip.file`, `openclip.openURL`, `openclip.notify`, `openclip.keyPress`,
+`openclip.runShortcut`, `openclip.shareService`, `openclip.toast`, `openclip.paste`/`copy`/`cut`,
+and `openclip.requireConfiguration` are removed before top-level code or `require`d modules run.
+A script that needs those effects must not declare `inline`; clicking an inline item reuses the
+preview value or starts another bounded restricted evaluation, never the unrestricted action path.
+
+### 3b-inline. Typed inline values and `displayOnly` (1.10.0)
+
+Synchronous inline actions may return typed values instead of a string:
+
+```js
+return "144";                              // shorthand text (legacy-compatible)
+return { type: "text", value: "144" };     // output: "text"
+return { type: "emoji", value: "🎉" };     // output: "emoji"
+return { type: "color", value: "#FF8800" }; // output: "color"
+return null;                               // no applicable result
+```
+
+- `value` must be a string and must fit the declared `output`. Unknown types, malformed values,
+  mismatched kinds, oversize values, and promises produce no preview; they are never reinterpreted
+  as text.
+- Text and emoji keep the normal Paste/Copy/Show delivery matrix. Color renders a swatch plus its
+  canonical uppercase hex, and activation always shows the result card; a color never enters
+  automatic copy/paste delivery, including on force-copy. The color card offers explicit Copy (hex)
+  and Save (plain-text hex).
+- Set `"displayOnly": true` for informational rows. Requires `inline: true` on a synchronous
+  JavaScript action and `minOpenClipVersion` `"1.10.0"`. The item stays visible, searchable, and
+  accessible, but clicking, Enter/Shift-Enter, Command-digit, footer controls, and bound hotkeys do
+  nothing: no execution, delivery, card, dismissal, or history.
+- Text and emoji inline values are limited to 64 KiB UTF-8 (emoji 128 bytes). Display-only text is
+  limited to 256 grapheme clusters and 4 KiB so the full value remains inspectable.
+- Typed values and `displayOnly` require `"minOpenClipVersion": "1.10.0"` or newer. Older apps
+  ignore the unknown keys and would otherwise run an informational item as a normal action.
+
+Reference packages: `InlineEmoji`, `InlineColor`, and `InlineInfo` in the catalog `raw/` folder.
 
 **Icons** (`parseIcon`): `symbol(Name)` → SF Symbol; a bare string (e.g. `"textformat.upper"`) is
 treated as an SF Symbol too; a string ending in `.png`/`.jpg`/`.jpeg`/`.icns`/`.gif`/`.svg` is read
@@ -787,7 +843,7 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 Deterministic resolution order (`OpenClipJSHost.run`): **JS exception → `.toast(.error)`** (JS throws
 never propagate as Swift errors); else `requireConfiguration` → `.openConfiguration`; a `toast`
 alone → `.toast`, or coexisting with effects → `.sequence([.toast, …effects])`; effects →
-single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; function string return → `.text(returnValue)` (implicitly returned text, resolved
+single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; returned non-inline `{ type: "text", value, presentation }` → `.presentedText` (the presentation key is required; unknown values fall back to plain); a restricted inline typed return `{ type: "text" | "emoji" | "color", value }` → a typed inline value (validated against the action's declared output); function string return → `.text(returnValue)` (implicitly returned text, resolved
 per the click's preference); else `.success`.
 
 > Execution runs on a background thread (never the `MainActor`); async scripts run with no timer by
@@ -930,6 +986,8 @@ outcomes, or kind runtimes):
 | `.paste(String)` | paste plain text (replaces selection / frontmost app) |
 | `.pasteContent(RichPasteboardPayload)` | multi-type rich paste (text, HTML, RTF) |
 | `.text(String)` | implicitly returned text (JS string return / AppleScript output / shell stdout / text snippet); no delivery decision — the per-click preference resolves it to preview/paste/copy |
+| `.presentedText(String, ResultPresentation)` | text with an explicit card format (`.plain`, `.markdown`, `.code`, `.diff`); delivery is identical to `.text` |
+| `.color(InlineColor)` | typed inline color; shown as a swatch card with explicit Copy/Save, never automatic copy/paste |
 | `.openURL(URL)` | open the URL |
 | `.showServices(String)` | macOS share picker on the text |
 | `.shareService(identifier:, text:)` | invoke a specific macOS sharing service by identifier (e.g. Notes inline popup) |
@@ -947,7 +1005,7 @@ outcomes, or kind runtimes):
 Dismissal: `.toast` dismisses the popup by default (`keepVisible: true` keeps it open); `.sequence`
 dismisses only when non-empty and all items dismiss (a `keepVisible` toast forces it open);
 `.file` keeps the popup open; `.copyFile` and `.saveFile` dismiss;
-everything else (including `.openConfiguration`) dismisses. `.text` never auto-dismisses (preview
+everything else (including `.openConfiguration`) dismisses. `.text` and `.presentedText` never auto-dismiss (preview
 keeps the popup open; paste/copy dismiss via the resolved outcome).
 
 The **companion toast** resolved by delivery (the click's declared `toast`/`secondaryToast`, or the
@@ -961,6 +1019,9 @@ A script command may emit one JSON object on stdout (all fields optional except 
 except `shareService`'s `identifier`, which is required):
 
 ```jsonc
+{ "type": "text", "value": "**hi**", "presentation": "markdown" }    // .presentedText — card format for a text result
+{ "type": "text", "value": "print(1)", "presentation": "code" }      // .presentedText
+{ "type": "text", "value": "plain" }                                 // .text — presentation omitted
 { "type": "paste", "value": "text" }                                  // .paste
 { "type": "copy",  "value": "text" }                                  // .copy
 { "type": "pasteContent", "value": "text", "html": "<b>...</b>", "rtf": "..." } // .pasteContent (rich multi-type paste)
