@@ -23,25 +23,6 @@ if [[ -z "$text" ]]; then
   exit 0
 fi
 
-if [[ "$text" == file://* ]]; then
-  rest="${text#file://}"
-  if [[ "$rest" == localhost/* || "$rest" == localhost ]]; then
-    rest="${rest#localhost}"
-  elif [[ "$rest" != /* ]]; then
-    # file://hostname/path → /path
-    rest="/${rest#*/}"
-  fi
-  # Percent-decode %XX sequences (e.g. file:///Users/me/My%20File.txt)
-  text="$(printf '%b' "${rest//\%/\\x}")"
-fi
-
-if [[ "$text" == "~" || "$text" == "~/"* ]]; then
-  text="${HOME}${text#\~}"
-fi
-
-# Terminal copies sometimes escape spaces.
-text="${text//\\ / }"
-
 toast() {
   local kind="$1"
   local lang="${OPENCLIP_LANGUAGE:-en}"
@@ -81,15 +62,54 @@ toast() {
   printf '{"type":"toast","message":"%s","style":"error"}\n' "$msg"
 }
 
+if [[ "$text" == file://* ]]; then
+  rest="${text#file://}"
+  if [[ "$rest" == localhost/* || "$rest" == localhost ]]; then
+    rest="${rest#localhost}"
+  elif [[ "$rest" != /* ]]; then
+    toast missing
+    exit 0
+  fi
+  # Percent-decode %XX sequences (e.g. file:///Users/me/My%20File.txt)
+  rest="${rest//\\/\\\\}"
+  text="$(printf '%b' "${rest//\%/\\x}")"
+else
+  # Terminal copies sometimes escape spaces; URL filenames are already decoded.
+  text="${text//\\ / }"
+fi
+
+if [[ "$text" == "~" || "$text" == "~/"* ]]; then
+  text="${HOME}${text#\~}"
+fi
+
+# Prefer an existing literal filename over interpreting diagnostic line/column suffixes.
+if [[ ! -e "$text" ]]; then
+  if [[ "$text" =~ '^(.+):[0-9]+:[0-9]+$' ]]; then
+    text="${match[1]}"
+  elif [[ "$text" =~ '^(.+):[0-9]+$' ]]; then
+    text="${match[1]}"
+  fi
+fi
+
+# Remove trailing separators while preserving the filesystem root.
+while [[ "$text" != / && "$text" == */ ]]; do
+  text="${text%/}"
+done
+
 if [[ -f "$text" ]]; then
   open -- "$text"
   exit 0
 fi
 
 if [[ -d "$text" ]]; then
-  base="${text##*/}"
-  # Document packages (.pages, .rtfd, .app) are directories with an extension.
-  if [[ "$base" == *.* && "$base" != .* ]]; then
+  # Ask Launch Services whether this directory is a package.
+  if [[ "$(osascript -l JavaScript - "$text" <<'JXA'
+ObjC.import('AppKit');
+function run(argv) {
+  return $.NSWorkspace.sharedWorkspace.isFilePackageAtPath(argv[0]);
+}
+JXA
+  )" == true ]]; then
     open -- "$text"
     exit 0
   fi
