@@ -81,9 +81,6 @@ The loader decodes `~/.openclip/extensions/<dir>/openclip.json` (legacy names `m
   "output": "text",
   // "result": "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
   "result": "paste-or-copy",
-  // OPTIONAL. Package-level result-card format for text results:
-  // "plain" (default) | "markdown" | "code" | "diff"
-  "presentation": "plain",
 
   // REQUIRED. Either an ARRAY of action objects ("actions"),
   // or a SINGLE action object ("action"). Alias: "Actions".
@@ -140,7 +137,6 @@ Common action fields (all OPTIONAL unless noted):
   "regex": ".*",                       // LEGACY pre-rules visibility gate (see §5)
   "output": "text",                    // REQUIRED for output-producing kinds: "text" | "emoji" | "color" | "file" | "none" | "dynamic" (see below)
   "result": "preview",                 // author recommended delivery: "preview" | "paste" | "copy" | "paste-or-copy" | "open" | "save"
-  "presentation": "markdown",          // text card format: "plain" | "markdown" | "code" | "diff" (see below)
   "secondary": { "type": "copy", "value": "Copied text" },  // secondary-click outcome; literal value, NON-JS kinds only (see §5b)
   "toast": { "message": "Copied" },    // primary-click toast (see §5b)
   "secondaryToast": { "message": "Copied" },  // secondary-click toast (see §5b)
@@ -169,23 +165,6 @@ combined with `"inline": true`; automatic inline evaluation must not mutate the 
   - `color` supports `"preview"` only; any other recommendation falls back to `"preview"` with a validation warning.
   - Unknown enum strings fail open to `nil` (preserving future-compatibility).
   - Users can configure per-action overrides in Settings (`Show in card`, `Paste`, `Copy`).
-
-**Result presentation (`presentation`).** Optional card format for text results: `"plain"` (default), `"markdown"`, `"code"`, or `"diff"`. Declare it at package or action level, or supply it per result with a typed text return:
-
-```js
-return { type: "text", value: markdown, presentation: "markdown" };
-```
-
-```json
-{ "type": "text", "value": "print(1)", "presentation": "code" }
-```
-
-- `plain` — ordinary text.
-- `markdown` — the card's Markdown renderer. Remote images are never loaded.
-- `code` — monospaced text.
-- `diff` — compares the original selection with the result. If either text is over 2,500 characters, the texts are not meaningfully similar (under 50%), differ only in whitespace, or are identical, the card shows plain text and hides the diff toggle. The toggle / ⌘D remains when a meaningful diff exists.
-
-Copy, Paste, and Drag always use the text itself; presentation is display-only. An omitted action key inherits the package default; a supplied but unknown value falls back to `plain`. Manifest-level values are ignored by older apps, which show plain text. Typed returns require the release that supports this key, so gate them with `minOpenClipVersion` once that release is known. For a non-inline JavaScript return, `presentation` must be present; a bare `{ type: "text", value }` object keeps the inline-only behavior described below.
 
 **Inline results (`inline`).** Set `"inline": true` on a **synchronous `javascript`** action
 (kind `js`/`javascript`, *without* `"async": true`) to have OpenClip evaluate it live as the
@@ -843,7 +822,7 @@ Side effects (each appends an effect; multiple effects run as a `.sequence` in c
 Deterministic resolution order (`OpenClipJSHost.run`): **JS exception → `.toast(.error)`** (JS throws
 never propagate as Swift errors); else `requireConfiguration` → `.openConfiguration`; a `toast`
 alone → `.toast`, or coexisting with effects → `.sequence([.toast, …effects])`; effects →
-single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; returned non-inline `{ type: "text", value, presentation }` → `.presentedText` (the presentation key is required; unknown values fall back to plain); a restricted inline typed return `{ type: "text" | "emoji" | "color", value }` → a typed inline value (validated against the action's declared output); function string return → `.text(returnValue)` (implicitly returned text, resolved
+single/`sequence`; returned object with `type: "file" | "copyFile" | "saveFile"` → `.file` / `.copyFile` / `.saveFile`; returned `{ type: "text" | "emoji" | "color", value }` → a typed inline value (validated against the action's declared output); function string return → `.text(returnValue)` (implicitly returned text, resolved
 per the click's preference); else `.success`.
 
 > Execution runs on a background thread (never the `MainActor`); async scripts run with no timer by
@@ -986,7 +965,6 @@ outcomes, or kind runtimes):
 | `.paste(String)` | paste plain text (replaces selection / frontmost app) |
 | `.pasteContent(RichPasteboardPayload)` | multi-type rich paste (text, HTML, RTF) |
 | `.text(String)` | implicitly returned text (JS string return / AppleScript output / shell stdout / text snippet); no delivery decision — the per-click preference resolves it to preview/paste/copy |
-| `.presentedText(String, ResultPresentation)` | text with an explicit card format (`.plain`, `.markdown`, `.code`, `.diff`); delivery is identical to `.text` |
 | `.color(InlineColor)` | typed inline color; shown as a swatch card with explicit Copy/Save, never automatic copy/paste |
 | `.openURL(URL)` | open the URL |
 | `.showServices(String)` | macOS share picker on the text |
@@ -1005,7 +983,7 @@ outcomes, or kind runtimes):
 Dismissal: `.toast` dismisses the popup by default (`keepVisible: true` keeps it open); `.sequence`
 dismisses only when non-empty and all items dismiss (a `keepVisible` toast forces it open);
 `.file` keeps the popup open; `.copyFile` and `.saveFile` dismiss;
-everything else (including `.openConfiguration`) dismisses. `.text` and `.presentedText` never auto-dismiss (preview
+everything else (including `.openConfiguration`) dismisses. `.text` never auto-dismisses (preview
 keeps the popup open; paste/copy dismiss via the resolved outcome).
 
 The **companion toast** resolved by delivery (the click's declared `toast`/`secondaryToast`, or the
@@ -1019,9 +997,6 @@ A script command may emit one JSON object on stdout (all fields optional except 
 except `shareService`'s `identifier`, which is required):
 
 ```jsonc
-{ "type": "text", "value": "**hi**", "presentation": "markdown" }    // .presentedText — card format for a text result
-{ "type": "text", "value": "print(1)", "presentation": "code" }      // .presentedText
-{ "type": "text", "value": "plain" }                                 // .text — presentation omitted
 { "type": "paste", "value": "text" }                                  // .paste
 { "type": "copy",  "value": "text" }                                  // .copy
 { "type": "pasteContent", "value": "text", "html": "<b>...</b>", "rtf": "..." } // .pasteContent (rich multi-type paste)
