@@ -1,0 +1,47 @@
+{
+  "identifier": "com.openclip.openfile",
+  "name": {
+    "en": "Open File",
+    "zh-Hans": "打开文件",
+    "zh-Hant": "開啟檔案",
+    "ja": "ファイルを開く",
+    "fr": "Ouvrir le fichier"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.9.0",
+  "author": "OpenClip Team",
+  "releaseNotes": "Initial release: open a selected file path in the default app.",
+  "description": {
+    "en": "Open the selected file path in its default app.",
+    "zh-Hans": "使用默认应用打开选中的文件路径。",
+    "zh-Hant": "使用預設應用程式開啟選取的檔案路徑。",
+    "ja": "選択したファイルパスをデフォルトのアプリで開きます。",
+    "fr": "Ouvrir le chemin de fichier sélectionné dans son application par défaut."
+  },
+  "keywords": [
+    "open",
+    "file",
+    "path",
+    "preview",
+    "default app"
+  ],
+  "action": {
+    "id": "open",
+    "title": {
+      "en": "Open File",
+      "zh-Hans": "打开文件",
+      "zh-Hant": "開啟檔案",
+      "ja": "開く",
+      "fr": "Ouvrir"
+    },
+    "icon": "arrow.up.forward.app",
+    "type": "shell",
+    "script": "main.sh",
+    "output": "none",
+    "requirements": {
+      "content": [
+        "path"
+      ]
+    }
+  }
+}
