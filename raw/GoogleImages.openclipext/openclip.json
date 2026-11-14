@@ -1,0 +1,46 @@
+{
+  "identifier": "com.openclip.googleimages",
+  "name": {
+    "en": "Google Images",
+    "zh-Hans": "Google 图片",
+    "zh-Hant": "Google 圖片",
+    "ja": "Google 画像検索",
+    "fr": "Google Images"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Search Google Images for the selected text.",
+    "zh-Hans": "在 Google 图片中搜索选中文本。",
+    "zh-Hant": "在 Google 圖片中搜尋選取文字。",
+    "ja": "選択したテキストで Google 画像検索を開きます。",
+    "fr": "Rechercher le texte sélectionné sur Google Images."
+  },
+  "keywords": [
+    "images",
+    "image search",
+    "google images",
+    "photo",
+    "picture",
+    "图片",
+    "圖片",
+    "画像",
+    "images"
+  ],
+  "action": {
+    "title": {
+      "en": "Google Images",
+      "zh-Hans": "Google 图片",
+      "zh-Hant": "Google 圖片",
+      "ja": "Google 画像",
+      "fr": "Google Images"
+    },
+    "icon": "photo",
+    "type": "url",
+    "url": "https://www.google.com/search?tbm=isch&q={text}",
+    "requirements": {
+      "input": "text"
+    }
+  }
+}

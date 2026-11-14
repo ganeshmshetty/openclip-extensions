@@ -7,25 +7,103 @@
     "ja": "Google 翻訳",
     "fr": "Google Traduction"
   },
-  "version": "1.1.0",
-  "minOpenClipVersion": "1.0.0",
+  "version": "1.2.0",
+  "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
-    "en": "Translate the selected text into English with Google Translate.",
-    "zh-Hans": "使用 Google 翻译将选中文本翻译为英文。",
-    "zh-Hant": "使用 Google 翻譯將選取文字翻譯為英文。",
-    "ja": "Google 翻訳で選択したテキストを英語に翻訳します。",
-    "fr": "Traduire le texte sélectionné en anglais avec Google Traduction."
+    "en": "Translate the selected text with Google Translate in the language you choose.",
+    "zh-Hans": "使用 Google 翻译将选中文本翻译为你选择的目标语言。",
+    "zh-Hant": "使用 Google 翻譯將選取文字翻譯為你選擇的目標語言。",
+    "ja": "選択したテキストを、指定した言語で Google 翻訳に送ります。",
+    "fr": "Traduire le texte sélectionné avec Google Traduction dans la langue de votre choix."
   },
+  "keywords": [
+    "translate",
+    "translation",
+    "google translate",
+    "language",
+    "翻译",
+    "翻譯",
+    "翻訳",
+    "traduction"
+  ],
+  "options": [
+    {
+      "identifier": "targetLang",
+      "label": {
+        "en": "Translate to",
+        "zh-Hans": "翻译为",
+        "zh-Hant": "翻譯為",
+        "ja": "翻訳先",
+        "fr": "Traduire vers"
+      },
+      "type": "multiple",
+      "default": "English",
+      "values": [
+        "Arabic",
+        "Bengali",
+        "Bulgarian",
+        "Burmese",
+        "Chinese (Simplified)",
+        "Chinese (Traditional)",
+        "Czech",
+        "Danish",
+        "Dutch",
+        "English",
+        "Filipino",
+        "Finnish",
+        "French",
+        "German",
+        "Greek",
+        "Gujarati",
+        "Hebrew",
+        "Hindi",
+        "Hungarian",
+        "Indonesian",
+        "Italian",
+        "Japanese",
+        "Kannada",
+        "Kashmiri (Koshur)",
+        "Korean",
+        "Malay",
+        "Malayalam",
+        "Marathi",
+        "Norwegian",
+        "Persian",
+        "Polish",
+        "Portuguese",
+        "Punjabi",
+        "Romanian",
+        "Russian",
+        "Serbian",
+        "Slovak",
+        "Spanish",
+        "Swahili",
+        "Swedish",
+        "Tamil",
+        "Telugu",
+        "Thai",
+        "Turkish",
+        "Ukrainian",
+        "Urdu",
+        "Vietnamese"
+      ]
+    }
+  ],
   "action": {
     "title": {
-      "en": "Translate",
-      "zh-Hans": "翻译",
-      "zh-Hant": "翻譯",
-      "ja": "翻訳",
-      "fr": "Traduire"
+      "en": "Google Translate",
+      "zh-Hans": "Google 翻译",
+      "zh-Hant": "Google 翻譯",
+      "ja": "Google 翻訳",
+      "fr": "Google Traduction"
     },
     "icon": "globe",
-    "url": "https://translate.google.com/?sl=auto&tl=en&text={text}"
+    "type": "javascript",
+    "script": "main.js",
+    "output": "none",
+    "requirements": {
+      "input": "text"
+    }
   }
 }
