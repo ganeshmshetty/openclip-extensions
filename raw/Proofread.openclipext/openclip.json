@@ -1,0 +1,121 @@
+{
+  "identifier": "com.kaiyo655.proofread",
+  "name": {
+    "en": "Claude Proofread",
+    "zh-Hans": "Claude 校对"
+  },
+  "version": "1.2.0",
+  "author": "kaiyo655",
+  "minOpenClipVersion": "1.1.0",
+  "description": {
+    "en": "Grammarly-style proofreading: fix spelling and grammar or polish wording via any Anthropic-compatible API.",
+    "zh-Hans": "类似 Grammarly 的校对：通过任意 Anthropic 兼容接口修正拼写语法或润色表达。"
+  },
+  "keywords": [
+    "proofread",
+    "grammar",
+    "spelling",
+    "polish",
+    "claude",
+    "校对",
+    "润色",
+    "语法"
+  ],
+  "options": [
+    {
+      "identifier": "baseURL",
+      "label": {
+        "en": "Anthropic Base URL",
+        "zh-Hans": "Anthropic Base URL"
+      },
+      "type": "string",
+      "default": "https://api.anthropic.com"
+    },
+    {
+      "identifier": "apiKey",
+      "label": {
+        "en": "API key",
+        "zh-Hans": "API key"
+      },
+      "type": "secret"
+    },
+    {
+      "identifier": "model",
+      "label": {
+        "en": "Model",
+        "zh-Hans": "模型名称"
+      },
+      "type": "string",
+      "default": "claude-haiku-5-5"
+    },
+    {
+      "identifier": "thinking",
+      "label": {
+        "en": "Thinking (Claude only)",
+        "zh-Hans": "模型思考（仅 Claude）"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "effort",
+      "label": {
+        "en": "Effort (Claude only)",
+        "zh-Hans": "Effort（仅 Claude）"
+      },
+      "type": "multiple",
+      "default": "low",
+      "values": [
+        "model default",
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ]
+    },
+    {
+      "identifier": "maxTokens",
+      "label": {
+        "en": "Token budget (max_tokens)",
+        "zh-Hans": "Token 预算（max_tokens）"
+      },
+      "type": "string",
+      "default": "4000"
+    },
+    {
+      "identifier": "customPrompt",
+      "label": {
+        "en": "Custom prompt\nWhen the action runs, the selected text is appended after the instruction",
+        "zh-Hans": "自定义提示词\n操作运行时，选中的文本会附加到指令之后"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Claude Proofread",
+      "zh-Hans": "Claude 校对"
+    },
+    "icon": "text.badge.checkmark",
+    "type": "javascript",
+    "script": "main.js",
+    "async": true,
+    "loading": true,
+    "loadingMessage": {
+      "en": "Proofreading…",
+      "zh-Hans": "正在校对…"
+    },
+    "output": "text",
+    "result": "paste-or-copy",
+    "requirements": {
+      "input": "text",
+      "requiredOptions": [
+        "baseURL",
+        "apiKey",
+        "model"
+      ]
+    }
+  }
+}
