@@ -44,8 +44,20 @@ function hashHue(str) {
   return h % 360;
 }
 
+// Localized manifest strings are objects ({ en, "zh-Hans", ... }), same as catalog.json.
+function resolveText(value) {
+  if (typeof value === 'string') return value.trim();
+  if (value && typeof value === 'object' && !Array.isArray(value)) {
+    if (typeof value.en === 'string' && value.en.trim()) return value.en.trim();
+    for (const v of Object.values(value)) {
+      if (typeof v === 'string' && v.trim()) return v.trim();
+    }
+  }
+  return '';
+}
+
 function letterTileSvg(id, name) {
-  const initial = (name || id).trim().charAt(0).toUpperCase() || '?';
+  const initial = (resolveText(name) || id || '?').trim().charAt(0).toUpperCase() || '?';
   const hue = hashHue(id);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">\n  <rect width="128" height="128" rx="28" fill="hsl(${hue}, 55%, 45%)"/>\n  <text x="64" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="600" fill="#ffffff">${initial}</text>\n</svg>`;
 }
@@ -135,7 +147,11 @@ async function main() {
 
     const identifier =
       manifest.identifier || `com.openclip.${pkg.replace(/\.openclipext$/, '').toLowerCase()}`;
-    const displayName = manifest.name || identifier;
+    const displayName =
+      resolveText(manifest.name) ||
+      resolveText(manifest.action?.title) ||
+      resolveText(manifest.actions?.[0]?.title) ||
+      identifier;
     const iconValue = manifest.action?.icon ?? manifest.actions?.[0]?.icon ?? 'puzzlepiece';
 
     try {
