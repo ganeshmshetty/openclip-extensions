@@ -5,20 +5,21 @@
 // and language switcher available. The target comes from the `targetLang`
 // option (picker in the action's config sheet; default "English").
 
-// The picker shows display names; the URL needs BCP-47-ish codes. Anything
-// unmapped passes through unchanged (a saved code such as "hu" keeps working).
+// The target picker shows display names; backends need language codes.
+// Anything not in the map (e.g. a legacy saved code like "sv") passes through.
 var TARGET_CODES = {
-  'English': 'en', 'Hindi': 'hi', 'Spanish': 'es', 'French': 'fr', 'German': 'de',
-  'Japanese': 'ja', 'Chinese (Simplified)': 'zh-Hans', 'Chinese (Traditional)': 'zh-Hant',
-  'Korean': 'ko', 'Portuguese': 'pt', 'Russian': 'ru', 'Arabic': 'ar', 'Italian': 'it',
-  'Turkish': 'tr', 'Dutch': 'nl', 'Polish': 'pl', 'Swedish': 'sv', 'Danish': 'da',
-  'Finnish': 'fi', 'Norwegian': 'no', 'Czech': 'cs', 'Greek': 'el', 'Hebrew': 'he',
-  'Thai': 'th', 'Vietnamese': 'vi', 'Indonesian': 'id', 'Ukrainian': 'uk',
-  'Bengali': 'bn', 'Tamil': 'ta', 'Telugu': 'te', 'Malayalam': 'ml', 'Urdu': 'ur',
-  'Persian': 'fa', 'Punjabi': 'pa', 'Marathi': 'mr', 'Filipino': 'tl', 'Swahili': 'sw',
-  'Romanian': 'ro', 'Gujarati': 'gu', 'Hungarian': 'hu', 'Malay': 'ms', 'Slovak': 'sk',
-  'Bulgarian': 'bg', 'Serbian': 'sr', 'Burmese': 'my', 'Kannada': 'kn',
-  'Kashmiri (Koshur)': 'ks'
+  "Arabic": "ar",   "Bengali": "bn",   "Bulgarian": "bg",   "Burmese": "my",
+  "Chinese (Simplified)": "zh-Hans",   "Chinese (Traditional)": "zh-Hant",   "Czech": "cs",   "Danish": "da",
+  "Dutch": "nl",   "English": "en",   "Filipino": "tl",   "Finnish": "fi",
+  "French": "fr",   "German": "de",   "Greek": "el",   "Gujarati": "gu",
+  "Hebrew": "he",   "Hindi": "hi",   "Hungarian": "hu",   "Indonesian": "id",
+  "Italian": "it",   "Japanese": "ja",   "Kannada": "kn",   "Kashmiri (Koshur)": "ks",
+  "Korean": "ko",   "Malay": "ms",   "Malayalam": "ml",   "Marathi": "mr",
+  "Norwegian": "no",   "Persian": "fa",   "Polish": "pl",   "Portuguese": "pt",
+  "Punjabi": "pa",   "Romanian": "ro",   "Russian": "ru",   "Serbian": "sr",
+  "Slovak": "sk",   "Spanish": "es",   "Swahili": "sw",   "Swedish": "sv",
+  "Tamil": "ta",   "Telugu": "te",   "Thai": "th",   "Turkish": "tr",
+  "Ukrainian": "uk",   "Urdu": "ur",   "Vietnamese": "vi"
 };
 
 function action() {

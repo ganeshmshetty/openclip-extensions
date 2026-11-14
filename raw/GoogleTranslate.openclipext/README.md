@@ -4,7 +4,7 @@ Translate selected text by opening Google Translate in your browser, with the so
 
 ## Features
 
-- **Choose your target language**: pick any of the 45 supported languages once, and every translation opens with that language selected.
+- **Choose your target language**: pick any of the 47 supported languages once, and every translation opens with that language selected.
 - **Auto-detection**: Google Translate identifies the source language for you.
 - **Full web experience**: alternate meanings, example sentences, pronunciation, and the language switcher stay available.
 
