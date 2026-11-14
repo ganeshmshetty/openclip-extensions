@@ -98,7 +98,7 @@
       "ja": "Google 翻訳",
       "fr": "Google Traduction"
     },
-    "icon": "globe",
+    "icon": "icon.svg",
     "type": "javascript",
     "script": "main.js",
     "output": "none",

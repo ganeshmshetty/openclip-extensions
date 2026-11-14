@@ -36,7 +36,7 @@
       "ja": "Google 画像",
       "fr": "Google Images"
     },
-    "icon": "photo",
+    "icon": "icon.svg",
     "type": "url",
     "url": "https://www.google.com/search?tbm=isch&q={text}",
     "requirements": {
