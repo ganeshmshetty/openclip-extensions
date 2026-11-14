@@ -1,12 +1,20 @@
 # Google Translate
 
-Translate selected text using Google Translate in your browser.
+Translate selected text by opening Google Translate in your browser, with the source text and your target language already filled in.
 
 ## Features
 
-- **Instant Translation**: Automatically opens Google Translate with the source text populated.
-- **Auto-Detection**: Lets Google Translate detect source language automatically.
+- **Choose your target language**: pick any of the 45 supported languages once, and every translation opens with that language selected.
+- **Auto-detection**: Google Translate identifies the source language for you.
+- **Full web experience**: alternate meanings, example sentences, pronunciation, and the language switcher stay available.
+
+## Options
+
+- **Translate to** — the language Google Translate opens in. Defaults to English.
+
+Open the action's settings (the gear next to it in Customize, or Settings → Actions) to change it.
 
 ## Usage Examples
 
-- Select any foreign language text and choose **Google Translate** to view translation.
+- Set **Translate to** to Hungarian, select a Spanish sentence, and choose **Google Translate** to open it translated into Hungarian.
+- Select a single word to see its dictionary entry and alternate meanings.
