@@ -7,8 +7,9 @@
     "ja": "取り消し線",
     "fr": "Barré"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
   "minOpenClipVersion": "1.0.0",
+  "releaseNotes": "Adds Bean, Scrivener and UpNote (⌘⇧-). Shortcuts with - need OpenClip 1.10.0.",
   "author": "OpenClip Team",
   "description": {
     "en": "Toggle strikethrough formatting in rich text editors.",
