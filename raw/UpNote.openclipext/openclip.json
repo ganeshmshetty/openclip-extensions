@@ -1,0 +1,48 @@
+{
+  "identifier": "com.openclip.upnote",
+  "name": {
+    "en": "UpNote",
+    "zh-Hans": "UpNote",
+    "zh-Hant": "UpNote",
+    "ja": "UpNote",
+    "fr": "UpNote"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "releaseNotes": "Initial release: create a new UpNote note from the selected text, optionally in a chosen notebook.",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Create a new note in UpNote.",
+    "zh-Hans": "在 UpNote 中创建新笔记。",
+    "zh-Hant": "在 UpNote 中建立新筆記。",
+    "ja": "UpNote で新規ノートを作成します。",
+    "fr": "Crée une nouvelle note dans UpNote."
+  },
+  "options": [
+    {
+      "identifier": "notebook",
+      "label": {
+        "en": "Notebook (optional)",
+        "zh-Hans": "笔记本（可选）",
+        "zh-Hant": "筆記本（選填）",
+        "ja": "ノートブック（任意）",
+        "fr": "Carnet (facultatif)"
+      },
+      "type": "string",
+      "default": ""
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "UpNote",
+      "zh-Hans": "UpNote",
+      "zh-Hant": "UpNote",
+      "ja": "UpNote",
+      "fr": "UpNote"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "scriptCode": "function action(text) {\n  var notebook = String((openclip.options && openclip.options.notebook) || '').trim();\n  var url = 'upnote://x-callback-url/note/new?text=' + encodeURIComponent(text);\n  if (notebook) url += '&notebook=' + encodeURIComponent(notebook);\n  openclip.openURL(url);\n}",
+    "output": "none"
+  }
+}
