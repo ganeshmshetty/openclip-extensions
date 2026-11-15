@@ -4,6 +4,7 @@
   "description": "Previews a hex color in the selection as a swatch. Only selections containing a hex code show the action.",
   "version": "1.0.0",
   "minOpenClipVersion": "1.10.0",
+  "releaseNotes": "Adds a color swatch for hex values in the selection.",
   "keywords": ["color", "colour", "hex", "swatch", "inline"],
   "actions": [
     {
