@@ -8,10 +8,11 @@ Select text in an editor and choose **Strikethrough** in OpenClip to apply or re
 
 - **App-Aware Shortcuts**: Automatically triggers the correct shortcut depending on the active app:
   - Apple Pages, Keynote, and Numbers (`⌘ + ⌃ + -`)
+  - Bean, Scrivener, UpNote (`⌘ + ⇧ + -`)
   - Apple Notes, Bear, Notion, Craft (`⌘ + ⇧ + S`)
   - Microsoft Office / Word, Google Docs, Slack, Discord, and others (`⌘ + ⇧ + X`)
 - **Seamless Formatting**: Toggles strikethrough without needing to memorize different application keybindings.
 
 ## Requirements
 
-- OpenClip 1.0.0 or later.
+- OpenClip 1.0.0 or later. Shortcuts with `-` (Pages, Keynote, Numbers, Bean, Scrivener, UpNote) need OpenClip 1.10.0 or later.
