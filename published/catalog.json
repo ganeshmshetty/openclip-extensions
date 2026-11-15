@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T12:05:13Z",
+  "updatedAt": "2026-11-15T12:20:20Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -1794,6 +1794,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.unwrapparagraphs.svg",
       "publishedAt": "2026-10-25T18:10:32+05:30",
       "addedAt": "2026-10-25T18:10:32+05:30"
+    },
+    {
+      "id": "com.openclip.upnote",
+      "name": "UpNote",
+      "description": "Create a new note in UpNote.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.upnote@1.0.0/UpNote.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.upnote.svg",
+      "publishedAt": "2026-11-15T17:48:53+05:30",
+      "addedAt": "2026-11-15T17:48:53+05:30"
     },
     {
       "id": "com.openclip.uppercase",
