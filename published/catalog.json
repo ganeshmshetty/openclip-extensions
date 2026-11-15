@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T12:20:20Z",
+  "updatedAt": "2026-11-15T16:17:12Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -273,6 +273,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.codeblock.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30",
       "addedAt": "2026-08-20T22:11:59+05:30"
+    },
+    {
+      "id": "com.openclip.colorpeek",
+      "name": "Color Peek",
+      "description": "Previews a hex color in the selection as a swatch. Only selections containing a hex code show the action.",
+      "author": "OpenClip Team",
+      "icon": "symbol(paintpalette)",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.colorpeek@1.0.0/ColorPeek.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.colorpeek.svg",
+      "publishedAt": "2026-11-15T21:45:21+05:30",
+      "addedAt": "2026-11-15T21:45:21+05:30"
     },
     {
       "id": "com.openclip.constantcase",
