@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T10:10:26Z",
+  "updatedAt": "2026-11-15T12:05:13Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 21,
@@ -1135,7 +1135,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
@@ -1593,11 +1593,11 @@
       "description": "Toggle strikethrough formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "strikethrough",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "downloadCount": 87,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.1.0/Strikethrough.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.2.0/Strikethrough.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.strikethrough.svg",
-      "publishedAt": "2026-09-24T23:46:29+05:30",
+      "publishedAt": "2026-11-15T17:33:39+05:30",
       "addedAt": "2026-08-21T21:29:28+05:30"
     },
     {
