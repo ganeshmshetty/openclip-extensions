@@ -26,7 +26,7 @@
       "ja": "UpNote",
       "fr": "UpNote"
     },
-    "icon": "note.text.badge.plus",
+    "icon": "icon.svg",
     "type": "url",
     "url": "upnote://x-callback-url/note/new?text={text}"
   }

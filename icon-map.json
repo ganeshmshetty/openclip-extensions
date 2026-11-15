@@ -16,6 +16,5 @@
   "puzzlepiece": "lucide:puzzle",
   "leaf.fill": "lucide:leaf",
   "bookmark.fill": "lucide:bookmark",
-  "rectangle.stack.badge.plus": "lucide:layers",
-  "note.text.badge.plus": "lucide:notebook-pen"
+  "rectangle.stack.badge.plus": "lucide:layers"
 }
