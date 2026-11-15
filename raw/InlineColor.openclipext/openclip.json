@@ -1,0 +1,23 @@
+{
+  "identifier": "com.openclip.examples.inline-color",
+  "name": "Color Swatch",
+  "description": "Previews a hex color in the selection as a swatch. Only selections containing a hex code show the action.",
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.10.0",
+  "keywords": ["color", "colour", "hex", "swatch", "inline"],
+  "actions": [
+    {
+      "id": "color",
+      "title": "Color",
+      "icon": "symbol(paintpalette)",
+      "type": "javascript",
+      "inline": true,
+      "output": "color",
+      "result": "preview",
+      "requirements": {
+        "regex": "#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\\b"
+      },
+      "scriptCode": "function action(sel) {\n  var text = openclip.input.text || '';\n  var match = text.match(/#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})\\b/);\n  return match ? { type: 'color', value: match[0] } : null;\n}"
+    }
+  ]
+}
