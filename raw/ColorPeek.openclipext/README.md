@@ -1,4 +1,4 @@
-# Color Swatch
+# Color Peek
 
 Shows a swatch for a hex color in the selected text.
 
