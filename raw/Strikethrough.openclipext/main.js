@@ -3,19 +3,21 @@ function action() {
     const bundleID = (app.bundleID || "").toLowerCase();
     const name = (app.name || "").toLowerCase();
 
-    // Apple Pages, Keynote, Numbers
-    if (bundleID.startsWith("com.apple.iwork")) {
-        openclip.keyPress("-", ["command", "control"]);
-    }
-    // Bean, Scrivener, UpNote
-    else if (bundleID.includes("scrivener") || bundleID.includes("upnote") || name === "bean" || name.startsWith("scrivener") || name === "upnote") {
-        openclip.keyPress("-", ["command", "shift"]);
-    }
-    // Apple Notes, Bear, Notion, Craft
-    else if (bundleID === "com.apple.notes" || bundleID.includes("notion") || bundleID.includes("bear") || bundleID.includes("craft")) {
+    // Notion uses its own shortcut.
+    if (bundleID.includes("notion")) {
         openclip.keyPress("s", ["command", "shift"]);
     }
-    // Microsoft Word / Office, Google Docs, Slack, Discord, and universal default
+    // Scrivener and Craft use Shift-Command-Minus.
+    else if (bundleID.includes("scrivener") || name.startsWith("scrivener")
+             || name === "craft" || bundleID.includes("lukilabs")) {
+        openclip.keyPress("-", ["command", "shift"]);
+    }
+    // Bean and Bear use Shift-Command-U.
+    else if (name === "bean" || name === "bear"
+             || bundleID.includes("bean-osx") || bundleID.includes("shinyfrog")) {
+        openclip.keyPress("u", ["command", "shift"]);
+    }
+    // Pages, Keynote, Numbers, UpNote, Notes (when assigned), and most other editors.
     else {
         openclip.keyPress("x", ["command", "shift"]);
     }

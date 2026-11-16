@@ -7,9 +7,9 @@
     "ja": "取り消し線",
     "fr": "Barré"
   },
-  "version": "1.2.0",
+  "version": "1.2.1",
   "minOpenClipVersion": "1.0.0",
-  "releaseNotes": "Adds Bean, Scrivener and UpNote (⌘⇧-). Shortcuts with - need OpenClip 1.10.0.",
+  "releaseNotes": "Corrects shortcuts for Bean, Bear, Craft, Notion, UpNote, Pages, Keynote, and Numbers. Pages no longer applies subscript. Scrivener and Craft need OpenClip 1.10.0.",
   "author": "OpenClip Team",
   "description": {
     "en": "Toggle strikethrough formatting in rich text editors.",
