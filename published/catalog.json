@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T16:17:12Z",
+  "updatedAt": "2026-11-16T11:13:22Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 21,
@@ -279,12 +279,12 @@
       "name": "Color Peek",
       "description": "Previews a hex color in the selection as a swatch. Only selections containing a hex code show the action.",
       "author": "OpenClip Team",
-      "icon": "symbol(paintpalette)",
-      "version": "1.0.0",
+      "icon": "paintpalette",
+      "version": "1.0.1",
       "downloadCount": 10,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.colorpeek@1.0.0/ColorPeek.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.colorpeek@1.0.1/ColorPeek.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.colorpeek.svg",
-      "publishedAt": "2026-11-15T21:45:21+05:30",
+      "publishedAt": "2026-11-16T16:41:38+05:30",
       "addedAt": "2026-11-15T21:45:21+05:30"
     },
     {
@@ -1148,7 +1148,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
@@ -1606,11 +1606,11 @@
       "description": "Toggle strikethrough formatting in rich text editors.",
       "author": "OpenClip Team",
       "icon": "strikethrough",
-      "version": "1.2.0",
+      "version": "1.2.1",
       "downloadCount": 121,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.2.0/Strikethrough.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.strikethrough@1.2.1/Strikethrough.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.strikethrough.svg",
-      "publishedAt": "2026-11-15T17:33:39+05:30",
+      "publishedAt": "2026-11-16T12:30:14+05:30",
       "addedAt": "2026-08-21T21:29:28+05:30"
     },
     {
