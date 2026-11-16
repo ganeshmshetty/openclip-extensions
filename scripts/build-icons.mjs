@@ -7,8 +7,8 @@
 //
 // Source priority per package:
 //   1. Packaged SVG → normalize dimensions; packaged PNG → embed as an alpha mask
-//   2. Manifest icon is a bare SF Symbol name → look up icon-map.json
-//      (Iconify id) and fetch https://api.iconify.design/<prefix>/<name>.svg
+//   2. Manifest icon is an SF Symbol name, optionally wrapped in symbol(...) → look up
+//      icon-map.json (Iconify id) and fetch https://api.iconify.design/<prefix>/<name>.svg
 //   3. Nothing resolvable → deterministic colored letter tile (intentionally
 //      self-colored; it is a brand-style fallback, not a tintable glyph)
 //
@@ -152,7 +152,9 @@ async function main() {
       resolveText(manifest.action?.title) ||
       resolveText(manifest.actions?.[0]?.title) ||
       identifier;
-    const iconValue = manifest.action?.icon ?? manifest.actions?.[0]?.icon ?? 'puzzlepiece';
+    const iconValue = String(manifest.action?.icon ?? manifest.actions?.[0]?.icon ?? 'puzzlepiece')
+      .replace(/^symbol\((.*)\)$/i, '$1')
+      .trim();
 
     try {
       let svgText;

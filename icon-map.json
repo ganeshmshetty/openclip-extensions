@@ -1,11 +1,12 @@
 {
-  "$comment": "Maps bare SF Symbol names (manifest icon strings) to Iconify icon ids for web icon generation. Fetch format: https://api.iconify.design/<prefix>/<name>.svg. Add entries here when a new extension uses an SF Symbol instead of a packaged icon.svg.",
+  "$comment": "Maps SF Symbol names to Iconify icon ids for web icon generation. The builder unwraps symbol(Name) before lookup. Fetch format: https://api.iconify.design/<prefix>/<name>.svg. Add entries here when a new extension uses an SF Symbol instead of a packaged icon.svg.",
   "music.note": "lucide:music",
   "bold": "lucide:bold",
   "italic": "lucide:italic",
   "strikethrough": "lucide:strikethrough",
   "underline": "lucide:underline",
   "map": "lucide:map",
+  "paintpalette": "lucide:palette",
   "photo": "lucide:image",
   "globe": "lucide:globe",
   "note.text": "lucide:sticky-note",
