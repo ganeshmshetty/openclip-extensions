@@ -14,9 +14,9 @@
     "fr": "Affiche la couleur hexadécimale de la sélection sous forme de nuancier. L'action n'apparaît que si la sélection contient un code hexadécimal.",
     "ja": "選択範囲内の16進数カラーをスウォッチとしてプレビューします。16進数コードを含む選択範囲でのみ表示されます。"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minOpenClipVersion": "1.10.0",
-  "releaseNotes": "Previews hex colors in the selection as a swatch.",
+  "releaseNotes": "Uses a paint palette icon in the store.",
   "keywords": ["color", "colour", "hex", "swatch", "peek", "inline"],
   "actions": [
     {
@@ -28,7 +28,7 @@
         "fr": "Aperçu couleur",
         "ja": "カラープレビュー"
       },
-      "icon": "symbol(paintpalette)",
+      "icon": "paintpalette",
       "type": "javascript",
       "inline": true,
       "output": "color",
