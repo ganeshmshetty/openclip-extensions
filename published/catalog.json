@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T17:19:52Z",
+  "updatedAt": "2026-11-17T17:38:07Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -631,11 +631,11 @@
       "description": "Translate the selected text with Google Translate in the language you choose.",
       "author": "OpenClip Team",
       "icon": "icon.svg",
-      "version": "1.2.1",
+      "version": "1.2.2",
       "downloadCount": 743,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.2.1/GoogleTranslate.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.2.2/GoogleTranslate.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.translate.svg",
-      "publishedAt": "2026-11-17T22:01:51+05:30",
+      "publishedAt": "2026-11-17T23:06:04+05:30",
       "addedAt": "2026-08-05T22:25:01+05:30"
     },
     {
