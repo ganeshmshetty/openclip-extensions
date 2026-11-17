@@ -33,9 +33,12 @@ jobs:
           git config user.name "OpenClip Bot"
           git config user.email "actions@github.com"
 
-      - name: Build zips and publish releases
+      - name: Build changed zips and publish releases
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BEFORE_SHA: ${{ github.event.before }}
+          HEAD_SHA: ${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
           shopt -s nullglob
@@ -44,7 +47,20 @@ jobs:
           BUILT=""
           CHANGED_ZIPS=""
 
-          for pkg_dir in "$RAW_DIR"/*.openclipext; do
+          # Rebuild only packages touched by this push. A manual run rebuilds all.
+          if [ "$EVENT_NAME" = "push" ] && [ -n "$BEFORE_SHA" ] && [ "${BEFORE_SHA//0/}" != "" ] && git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
+            PACKAGE_DIRS=()
+            while IFS= read -r package_dir; do
+              if [ -n "$package_dir" ]; then
+                PACKAGE_DIRS+=("$package_dir")
+              fi
+            done < <(git diff --name-only "$BEFORE_SHA" "$HEAD_SHA" -- raw | cut -d/ -f2 | sort -u | sed 's#^#raw/#')
+          else
+            PACKAGE_DIRS=("$RAW_DIR"/*.openclipext)
+          fi
+          echo "Packages to build: ${#PACKAGE_DIRS[@]}"
+
+          for pkg_dir in "${PACKAGE_DIRS[@]}"; do
             [ -d "$pkg_dir" ] || continue
             pkg_name="$(basename "$pkg_dir")"                       # e.g. AppleMusic.openclipext
             manifest="$pkg_dir/openclip.json"
