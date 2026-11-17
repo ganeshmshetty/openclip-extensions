@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-16T11:13:22Z",
+  "updatedAt": "2026-11-17T16:33:48Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 22,
@@ -630,12 +630,12 @@
       "name": "Google Translate",
       "description": "Translate the selected text with Google Translate in the language you choose.",
       "author": "OpenClip Team",
-      "icon": "globe",
-      "version": "1.2.0",
+      "icon": "icon.svg",
+      "version": "1.2.1",
       "downloadCount": 743,
-      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.2.0/GoogleTranslate.openclipext.zip",
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.translate@1.2.1/GoogleTranslate.openclipext.zip",
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.translate.svg",
-      "publishedAt": "2026-11-14T14:12:18+05:30",
+      "publishedAt": "2026-11-17T22:01:51+05:30",
       "addedAt": "2026-08-05T22:25:01+05:30"
     },
     {
@@ -1148,7 +1148,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
