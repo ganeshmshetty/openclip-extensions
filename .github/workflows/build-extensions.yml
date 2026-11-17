@@ -260,3 +260,18 @@ jobs:
               exit 1
             fi
           fi
+
+      - name: Trigger web store sync
+        continue-on-error: true
+        env:
+          WEB_SYNC_TOKEN: ${{ secrets.WEB_SYNC_TOKEN }}
+        run: |
+          if [ -z "$WEB_SYNC_TOKEN" ]; then
+            echo "WEB_SYNC_TOKEN is not set; skipping web store sync."
+            exit 0
+          fi
+          GH_TOKEN="$WEB_SYNC_TOKEN" gh api \
+            --method POST \
+            -H "Accept: application/vnd.github+json" \
+            "repos/ganeshmshetty/openclip-web/dispatches" \
+            -f event_type=extensions-published
