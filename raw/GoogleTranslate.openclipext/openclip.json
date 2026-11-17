@@ -7,9 +7,9 @@
     "ja": "Google 翻訳",
     "fr": "Google Traduction"
   },
-  "version": "1.2.1",
+  "version": "1.2.2",
   "minOpenClipVersion": "1.1.0",
-  "releaseNotes": "Uses the Google Translate app icon.",
+  "releaseNotes": "Uses a monochrome 32x32 icon that follows the catalog guidelines.",
   "author": "OpenClip Team",
   "description": {
     "en": "Translate the selected text with Google Translate in the language you choose.",
