@@ -1,0 +1,19 @@
+{
+  "identifier": "com.ani2life.checkor",
+  "name": {
+    "en": "Korean Spelling/Grammar Check",
+    "ko": "한국어 맞춤법/문법 검사"
+  },
+  "version": "1.0.0",
+  "author": "A2",
+  "description": {
+    "en": "Checks Korean spelling and grammar.",
+    "ko": "한국어 맞춤법과 문법을 검사합니다."
+  },
+  "action": {
+    "title": "Checkor",
+    "icon": "icon.svg",
+    "type": "service",
+    "serviceName": "🇰🇷 맞춤법과 문법 검사하기"
+  }
+}
