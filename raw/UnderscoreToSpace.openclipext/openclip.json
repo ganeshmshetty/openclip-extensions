@@ -1,0 +1,35 @@
+{
+  "identifier": "com.rogercrocha.underscoretospace",
+  "name": {
+    "en": "Underscore to Space",
+    "zh-Hans": "下划线转空格",
+    "zh-Hant": "底線轉空格",
+    "ja": "アンダースコアをスペースに",
+    "fr": "Underscore en espace"
+  },
+  "version": "1.0.0",
+  "minOpenClipVersion": "1.0.0",
+  "author": "rogercrocha",
+  "description": {
+    "en": "Replace every underscore in the selected text with a space.",
+    "zh-Hans": "将选中文本中的所有下划线替换为空格。",
+    "zh-Hant": "將選取文字中的所有底線替換為空格。",
+    "ja": "選択したテキストのアンダースコアをすべてスペースに置き換えます。",
+    "fr": "Remplace chaque tiret bas (underscore) du texte sélectionné par une espace."
+  },
+  "keywords": ["underscore", "space", "snake_case", "replace", "espaço"],
+  "action": {
+    "title": {
+      "en": "_ → Space",
+      "zh-Hans": "_ → 空格",
+      "zh-Hant": "_ → 空格",
+      "ja": "_ → スペース",
+      "fr": "_ → Espace"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "regex": "_",
+    "output": "text"
+  }
+}
