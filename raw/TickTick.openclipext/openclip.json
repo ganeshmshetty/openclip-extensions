@@ -8,6 +8,7 @@
     "ja": "TickTick"
   },
   "version": "1.0.0",
+  "releaseNotes": "Initial release: add selected text to TickTick as a task with list, tags, priority, and date options.",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {

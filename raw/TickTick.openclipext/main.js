@@ -36,7 +36,7 @@ function priorityValue(raw) {
 }
 
 function splitTags(raw) {
-  var seen = {};
+  var seen = Object.create(null);
   return String(raw || '')
     .split(',')
     .map(function(tag) { return tag.trim(); })
