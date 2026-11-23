@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-17T17:49:00Z",
+  "updatedAt": "2026-11-23T10:36:05Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 23,
@@ -1148,7 +1148,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
@@ -1651,6 +1651,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.things.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30",
       "addedAt": "2026-08-20T22:28:33+05:30"
+    },
+    {
+      "id": "com.openclip.ticktick",
+      "name": "TickTick",
+      "description": "Add the selection to TickTick as a task.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.ticktick@1.0.0/TickTick.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.ticktick.svg",
+      "publishedAt": "2026-11-23T16:05:37+05:30",
+      "addedAt": "2026-11-23T16:05:37+05:30"
     },
     {
       "id": "com.openclip.timezone-converter",
