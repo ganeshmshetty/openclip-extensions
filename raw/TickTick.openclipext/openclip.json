@@ -1,0 +1,144 @@
+{
+  "identifier": "com.openclip.ticktick",
+  "name": {
+    "en": "TickTick",
+    "zh-Hans": "滴答清单",
+    "zh-Hant": "滴答清單",
+    "fr": "TickTick",
+    "ja": "TickTick"
+  },
+  "version": "1.0.0",
+  "releaseNotes": "Initial release: add selected text to TickTick as a task with list, tags, priority, and date options.",
+  "minOpenClipVersion": "1.1.0",
+  "author": "OpenClip Team",
+  "description": {
+    "en": "Add the selection to TickTick as a task.",
+    "zh-Hans": "将选中的文本作为任务添加到滴答清单。",
+    "zh-Hant": "將選取的文字作為任務新增至滴答清單。",
+    "fr": "Ajoute la sélection comme tâche dans TickTick.",
+    "ja": "選択したテキストを TickTick のタスクとして追加します。"
+  },
+  "keywords": [
+    "ticktick",
+    "tick tick",
+    "todo",
+    "to-do",
+    "task",
+    "task manager",
+    "inbox",
+    "checklist",
+    "滴答清单",
+    "滴答",
+    "待办",
+    "待办事项",
+    "任务",
+    "清单",
+    "待辦",
+    "任務",
+    "清單",
+    "tâche",
+    "liste",
+    "タスク",
+    "リスト",
+    "リマインダー"
+  ],
+  "options": [
+    {
+      "identifier": "list",
+      "label": {
+        "en": "List (optional)",
+        "zh-Hans": "清单（可选）",
+        "zh-Hant": "清單（選填）",
+        "fr": "Liste (facultatif)",
+        "ja": "リスト（任意）"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "tags",
+      "label": {
+        "en": "Tags (comma-separated)",
+        "zh-Hans": "标签（用逗号分隔）",
+        "zh-Hant": "標籤（以逗號分隔）",
+        "fr": "Étiquettes (séparées par des virgules)",
+        "ja": "タグ（カンマ区切り）"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "priority",
+      "label": {
+        "en": "Priority",
+        "zh-Hans": "优先级",
+        "zh-Hant": "優先級",
+        "fr": "Priorité",
+        "ja": "優先度"
+      },
+      "type": "multiple",
+      "default": "none",
+      "values": [
+        "none",
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    {
+      "identifier": "when",
+      "label": {
+        "en": "Date (all-day)",
+        "zh-Hans": "日期（全天）",
+        "zh-Hant": "日期（全天）",
+        "fr": "Date (journée entière)",
+        "ja": "日付（終日）"
+      },
+      "type": "multiple",
+      "default": "none",
+      "values": [
+        "none",
+        "today",
+        "tomorrow"
+      ]
+    },
+    {
+      "identifier": "splitNotes",
+      "label": {
+        "en": "First line as title (rest as notes)",
+        "zh-Hans": "首行作为标题（其余作为备注）",
+        "zh-Hant": "首行作為標題（其餘作為備忘）",
+        "fr": "Première ligne comme titre (le reste en notes)",
+        "ja": "1行目をタイトルにする（残りをメモにする）"
+      },
+      "type": "boolean",
+      "default": "false"
+    }
+  ],
+  "action": {
+    "title": {
+      "en": "Add to TickTick",
+      "zh-Hans": "添加到滴答清单",
+      "zh-Hant": "新增至滴答清單",
+      "fr": "Ajouter à TickTick",
+      "ja": "TickTick に追加"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "script": "main.js",
+    "output": "none",
+    "keywords": [
+      "ticktick",
+      "todo",
+      "task",
+      "inbox",
+      "待办",
+      "任务",
+      "滴答清单",
+      "待辦",
+      "任務",
+      "tâche",
+      "タスク"
+    ]
+  }
+}
