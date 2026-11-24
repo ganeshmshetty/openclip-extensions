@@ -1,0 +1,64 @@
+{
+  "identifier": "com.openclip.firecrawl",
+  "name": {
+    "en": "Firecrawl",
+    "zh-Hans": "Firecrawl",
+    "zh-Hant": "Firecrawl",
+    "fr": "Firecrawl",
+    "ja": "Firecrawl"
+  },
+  "description": {
+    "en": "Turn a selected URL into clean Markdown with Firecrawl.",
+    "zh-Hans": "使用 Firecrawl 将所选网址转换为干净的 Markdown。",
+    "zh-Hant": "使用 Firecrawl 將選取的網址轉換為乾淨的 Markdown。",
+    "fr": "Convertissez l'URL sélectionnée en Markdown propre avec Firecrawl.",
+    "ja": "選択したURLをFirecrawlできれいなMarkdownに変換します。"
+  },
+  "version": "1.0.0",
+  "releaseNotes": "Scrape a selected URL to Markdown with Firecrawl.",
+  "minOpenClipVersion": "1.7.0",
+  "author": "OpenClip Team",
+  "keywords": ["firecrawl", "scrape", "markdown", "web page", "url"],
+  "options": [
+    {
+      "identifier": "apiKey",
+      "label": {
+        "en": "API Key",
+        "zh-Hans": "API 密钥",
+        "zh-Hant": "API 金鑰",
+        "fr": "Clé API",
+        "ja": "APIキー"
+      },
+      "type": "secret"
+    }
+  ],
+  "action": {
+    "id": "scrape",
+    "title": {
+      "en": "Scrape to Markdown",
+      "zh-Hans": "抓取为 Markdown",
+      "zh-Hant": "擷取為 Markdown",
+      "fr": "Extraire en Markdown",
+      "ja": "Markdownとして取得"
+    },
+    "icon": "icon.svg",
+    "type": "javascript",
+    "async": true,
+    "script": "main.js",
+    "loading": true,
+    "loadingMessage": {
+      "en": "Scraping with Firecrawl…",
+      "zh-Hans": "正在使用 Firecrawl 抓取…",
+      "zh-Hant": "正在使用 Firecrawl 擷取…",
+      "fr": "Extraction avec Firecrawl…",
+      "ja": "Firecrawlで取得中…"
+    },
+    "requirements": {
+      "requiredOptions": ["apiKey"],
+      "regex": "(?i)^\\s*(?:https?:\\/\\/\\S+|(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z]{2,24}\\b[-a-zA-Z0-9()@:%_\\+.~#?&\\/\\/=]*)\\s*$"
+    },
+    "output": "text",
+    "result": "preview",
+    "keywords": ["scrape", "markdown", "firecrawl", "抓取", "擷取", "extraire", "取得"]
+  }
+}
