@@ -1,0 +1,218 @@
+ObjC.import('Cocoa');
+ObjC.import('WebKit');
+
+// render.jxa <textFile> <outPdf> <mode> <width>
+// mode = "markdown" | "html". Builds a document and renders it to PDF via WebKit.
+
+function pump(condition, timeoutMs) {
+  var deadline = Date.now() + (timeoutMs || 15000);
+  while (!condition() && Date.now() < deadline) {
+    $.NSRunLoop.currentRunLoop.runUntilDate($.NSDate.dateWithTimeIntervalSinceNow(0.05));
+  }
+  return condition();
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function inline(text) {
+  var codeSpans = [];
+  var s = text.replace(/`([^`]+)`/g, function (_, code) {
+    codeSpans.push('<code>' + code + '</code>');
+    return '\u0000' + (codeSpans.length - 1) + '\u0000';
+  });
+  s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, '<img src="$2" alt="$1">');
+  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, '<a href="$2">$1</a>');
+  s = s.replace(/&lt;(https?:\/\/[^\s&]+)&gt;/g, '<a href="$1">$1</a>');
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+  s = s.replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  s = s.replace(/(^|[^_])_([^_\n]+)_/g, '$1<em>$2</em>');
+  s = s.replace(/~~([^~]+)~~/g, '<del>$1</del>');
+  s = s.replace(/\u0000(\d+)\u0000/g, function (_, index) {
+    return codeSpans[parseInt(index, 10)];
+  });
+  return s;
+}
+
+function isBlank(line) {
+  return /^\s*$/.test(line);
+}
+
+var BLOCK_START = /^\s*(#{1,6}\s|>|```|~~~|[-*+]\s|\d+\.\s)/;
+
+function mdToHtml(markdown) {
+  var lines = String(markdown).replace(/\r\n?/g, '\n').split('\n');
+  var out = [];
+  var i = 0;
+  var n = lines.length;
+
+  while (i < n) {
+    var line = lines[i];
+
+    var fence = line.match(/^\s*(```|~~~)(.*)$/);
+    if (fence) {
+      var lang = fence[2].trim();
+      var code = [];
+      i++;
+      while (i < n && !/^\s*(```|~~~)\s*$/.test(lines[i])) {
+        code.push(lines[i]);
+        i++;
+      }
+      i++;
+      out.push('<pre><code' + (lang ? ' class="language-' + escapeHtml(lang) + '"' : '') + '>' +
+        escapeHtml(code.join('\n')) + '</code></pre>');
+      continue;
+    }
+
+    var heading = line.match(/^(#{1,6})\s+(.*?)\s*#*\s*$/);
+    if (heading) {
+      var level = heading[1].length;
+      out.push('<h' + level + '>' + inline(escapeHtml(heading[2])) + '</h' + level + '>');
+      i++;
+      continue;
+    }
+
+    if (/^\s*([-*_])(\s*\1){2,}\s*$/.test(line)) {
+      out.push('<hr>');
+      i++;
+      continue;
+    }
+
+    if (/^\s*>\s?/.test(line)) {
+      var quoted = [];
+      while (i < n && /^\s*>\s?/.test(lines[i])) {
+        quoted.push(lines[i].replace(/^\s*>\s?/, ''));
+        i++;
+      }
+      out.push('<blockquote>' + mdToHtml(quoted.join('\n')) + '</blockquote>');
+      continue;
+    }
+
+    if (/^\s*[-*+]\s+/.test(line)) {
+      var ul = [];
+      while (i < n && /^\s*[-*+]\s+/.test(lines[i])) {
+        ul.push(lines[i].replace(/^\s*[-*+]\s+/, ''));
+        i++;
+      }
+      out.push('<ul>' + ul.map(function (item) {
+        return '<li>' + inline(escapeHtml(item)) + '</li>';
+      }).join('') + '</ul>');
+      continue;
+    }
+
+    if (/^\s*\d+\.\s+/.test(line)) {
+      var ol = [];
+      while (i < n && /^\s*\d+\.\s+/.test(lines[i])) {
+        ol.push(lines[i].replace(/^\s*\d+\.\s+/, ''));
+        i++;
+      }
+      out.push('<ol>' + ol.map(function (item) {
+        return '<li>' + inline(escapeHtml(item)) + '</li>';
+      }).join('') + '</ol>');
+      continue;
+    }
+
+    if (isBlank(line)) {
+      i++;
+      continue;
+    }
+
+    var paragraph = [];
+    while (i < n && !isBlank(lines[i]) && !BLOCK_START.test(lines[i])) {
+      paragraph.push(lines[i]);
+      i++;
+    }
+    out.push('<p>' + inline(escapeHtml(paragraph.join('\n'))).replace(/\n/g, '<br>') + '</p>');
+  }
+
+  return out.join('\n');
+}
+
+var DOC_CSS =
+  '*{box-sizing:border-box}' +
+  'html,body{margin:0;padding:0}' +
+  'body{padding:44px 48px;color:#1d1d1f;background:#ffffff;' +
+  'font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;' +
+  'font-size:15px;line-height:1.65;word-wrap:break-word}' +
+  'h1,h2,h3,h4,h5,h6{line-height:1.3;margin:1.4em 0 0.5em}' +
+  'h1{font-size:28px}h2{font-size:23px}h3{font-size:19px}h4{font-size:16px}' +
+  'p{margin:0 0 1em}' +
+  'a{color:#0a6cff;text-decoration:none}' +
+  'code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,monospace;font-size:0.9em;' +
+  'background:#f2f2f4;padding:2px 5px;border-radius:4px}' +
+  'pre{background:#f6f6f8;border:1px solid #e5e5ea;border-radius:10px;padding:14px 16px;overflow:auto}' +
+  'pre code{background:none;padding:0;font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word}' +
+  'blockquote{margin:0 0 1em;padding:2px 0 2px 16px;border-left:3px solid #d2d2d7;color:#555}' +
+  'ul,ol{margin:0 0 1em;padding-left:24px}' +
+  'li{margin:0.25em 0}' +
+  'hr{border:none;border-top:1px solid #e5e5ea;margin:1.6em 0}' +
+  'img{max-width:100%}' +
+  'table{border-collapse:collapse;margin:0 0 1em}' +
+  'th,td{border:1px solid #e5e5ea;padding:6px 10px}';
+
+function buildDocument(bodyHtml, alreadyFull, width) {
+  if (alreadyFull) {
+    return bodyHtml;
+  }
+  return '<!doctype html><html><head><meta charset="utf-8"><style>' + DOC_CSS +
+    'body{max-width:' + width + 'px}</style></head><body>' + bodyHtml + '</body></html>';
+}
+
+function run(argv) {
+  var inPath = argv[0];
+  var outPath = argv[1];
+  var mode = (argv[2] || 'markdown').toLowerCase();
+  var width = parseFloat(argv[3]) || 720;
+
+  var text = ObjC.unwrap($.NSString.stringWithContentsOfFileEncodingError(inPath, $.NSUTF8StringEncoding, null));
+  var html;
+  if (mode === 'html') {
+    var alreadyFull = /<html[\s>]/i.test(text);
+    html = buildDocument(text, alreadyFull, width);
+  } else {
+    html = buildDocument(mdToHtml(text), false, width);
+  }
+
+  var app = $.NSApplication.sharedApplication;
+  app.setActivationPolicy($.NSApplicationActivationPolicyProhibited);
+
+  var config = $.WKWebViewConfiguration.alloc.init;
+  var webView = $.WKWebView.alloc.initWithFrameConfiguration($.NSMakeRect(0, 0, width, 400), config);
+  webView.loadHTMLStringBaseURL(html, $.NSURL.fileURLWithPath('/'));
+
+  pump(function () { return !webView.loading; }, 20000);
+
+  var size = { w: width, h: 600 };
+  var measured = false;
+  webView.evaluateJavaScriptCompletionHandler(
+    'JSON.stringify({w:Math.ceil(document.body.scrollWidth),h:Math.ceil(document.body.scrollHeight)})',
+    function (result) {
+      if (result) {
+        try { size = JSON.parse(ObjC.unwrap(result)); } catch (e) {}
+      }
+      measured = true;
+    }
+  );
+  pump(function () { return measured; }, 10000);
+
+  var pdfConfig = $.WKPDFConfiguration.alloc.init;
+  pdfConfig.rect = $.NSMakeRect(0, 0, size.w, size.h);
+
+  var done = false;
+  var data = null;
+  webView.createPDFWithConfigurationCompletionHandler(pdfConfig, function (result) {
+    if (result) { data = result; }
+    done = true;
+  });
+  pump(function () { return done; }, 20000);
+
+  if (!data) {
+    return 'PDF_FAILED';
+  }
+  return data.writeToFileAtomically(outPath, true) ? 'OK' : 'WRITE_FAILED';
+}
