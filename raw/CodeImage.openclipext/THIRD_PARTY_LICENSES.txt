@@ -1,0 +1,7 @@
+Third-Party Licenses
+
+highlight.js
+Copyright (c) 2006, Ivan Sagalaev.
+All rights reserved.
+License: BSD-3-Clause
+https://github.com/highlightjs/highlight.js/blob/main/LICENSE

@@ -1,0 +1,14 @@
+{
+  "name": "com-openclip-code-image",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=cjs --platform=browser --target=es2020 --legal-comments=eof --minify --outfile=dist/main.js"
+  },
+  "dependencies": {
+    "highlight.js": "^11.11.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.1"
+  }
+}

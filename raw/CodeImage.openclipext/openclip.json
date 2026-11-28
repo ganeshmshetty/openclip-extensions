@@ -1,0 +1,179 @@
+{
+  "identifier": "com.openclip.code-image",
+  "name": {
+    "en": "Code Image",
+    "zh-Hans": "代码图片",
+    "zh-Hant": "程式碼圖片",
+    "fr": "Image de code",
+    "ja": "コード画像"
+  },
+  "version": "1.0.0",
+  "releaseNotes": "Initial release of Code Image with 12 offline themes, dark and light modes, and native PNG/SVG export.",
+  "minOpenClipVersion": "1.7.0",
+  "description": {
+    "en": "Turn selected code into styled PNG or SVG images with 12 themes, offline.",
+    "zh-Hans": "将选中的代码离线转换为 12 种主题风格的 PNG 或 SVG 图片。",
+    "zh-Hant": "將選取的程式碼離線轉換為 12 種主題風格的 PNG 或 SVG 圖片。",
+    "fr": "Transforme le code sélectionné en images PNG ou SVG stylisées avec 12 thèmes, hors ligne.",
+    "ja": "選択したコードを 12 種類のテーマでオフラインの PNG / SVG 画像に変換します。"
+  },
+  "keywords": [
+    "code",
+    "image",
+    "screenshot",
+    "png",
+    "svg",
+    "snippet",
+    "share",
+    "card"
+  ],
+  "action": {
+    "title": {
+      "en": "Code Image",
+      "zh-Hans": "代码图片",
+      "zh-Hant": "程式碼圖片",
+      "fr": "Image de code",
+      "ja": "コード画像"
+    },
+    "icon": "icon.svg",
+    "type": "shell",
+    "script": "run.sh",
+    "output": "file",
+    "result": "preview",
+    "loading": true,
+    "loadingMessage": {
+      "en": "Rendering Code Image…",
+      "zh-Hans": "正在生成代码图片…",
+      "zh-Hant": "正在產生程式碼圖片…",
+      "fr": "Rendu de l'image de code…",
+      "ja": "コード画像を生成中…"
+    }
+  },
+  "options": [
+    {
+      "identifier": "theme",
+      "label": {
+        "en": "Theme",
+        "zh-Hans": "主题",
+        "zh-Hant": "主題",
+        "fr": "Thème",
+        "ja": "テーマ"
+      },
+      "type": "multiple",
+      "default": "Breeze",
+      "values": [
+        "Breeze",
+        "Blueprint",
+        "Emerald",
+        "Glass",
+        "Bitmap",
+        "Candy",
+        "Crimson",
+        "Midnight",
+        "Sunset",
+        "Meadow",
+        "Noir",
+        "Sand"
+      ]
+    },
+    {
+      "identifier": "darkMode",
+      "label": {
+        "en": "Dark mode",
+        "zh-Hans": "深色模式",
+        "zh-Hant": "深色模式",
+        "fr": "Mode sombre",
+        "ja": "ダークモード"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "background",
+      "label": {
+        "en": "Show background",
+        "zh-Hans": "显示背景",
+        "zh-Hant": "顯示背景",
+        "fr": "Afficher l'arrière-plan",
+        "ja": "背景を表示"
+      },
+      "type": "boolean",
+      "default": "true"
+    },
+    {
+      "identifier": "lineNumbers",
+      "label": {
+        "en": "Show line numbers",
+        "zh-Hans": "显示行号",
+        "zh-Hant": "顯示行號",
+        "fr": "Afficher les numéros de ligne",
+        "ja": "行番号を表示"
+      },
+      "type": "boolean",
+      "default": "false"
+    },
+    {
+      "identifier": "padding",
+      "label": {
+        "en": "Padding (pixels)",
+        "zh-Hans": "边距（像素）",
+        "zh-Hant": "邊距（像素）",
+        "fr": "Marge (pixels)",
+        "ja": "余白（ピクセル）"
+      },
+      "type": "multiple",
+      "default": "64",
+      "values": [
+        "16",
+        "32",
+        "64",
+        "128"
+      ]
+    },
+    {
+      "identifier": "title",
+      "label": {
+        "en": "Window title (optional)",
+        "zh-Hans": "窗口标题（可选）",
+        "zh-Hant": "視窗標題（選填）",
+        "fr": "Titre de fenêtre (facultatif)",
+        "ja": "ウィンドウタイトル（任意）"
+      },
+      "type": "string",
+      "default": ""
+    },
+    {
+      "identifier": "format",
+      "label": {
+        "en": "Format",
+        "zh-Hans": "格式",
+        "zh-Hant": "格式",
+        "fr": "Format",
+        "ja": "形式"
+      },
+      "type": "multiple",
+      "default": "png",
+      "values": [
+        "png",
+        "svg"
+      ]
+    },
+    {
+      "identifier": "scale",
+      "label": {
+        "en": "PNG scale multiplier",
+        "zh-Hans": "PNG 缩放倍数",
+        "zh-Hant": "PNG 縮放倍數",
+        "fr": "Multiplicateur de résolution PNG",
+        "ja": "PNG 解像度の倍率"
+      },
+      "type": "multiple",
+      "default": "2",
+      "values": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ]
+}
