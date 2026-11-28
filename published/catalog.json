@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T10:36:05Z",
+  "updatedAt": "2026-11-28T16:39:12Z",
   "extensions": [
     {
       "id": "com.openclip.alternatingcase",
@@ -83,7 +83,7 @@
       "id": "io.appwrite.openclip",
       "name": "Appwrite",
       "description": "Use the selection with your Appwrite project: execute a Function on it and use the reply.",
-      "author": "Matej \"Meldiron\" Ba\u010do",
+      "author": "Matej \"Meldiron\" Bačo",
       "icon": "icon.svg",
       "version": "1.1.0",
       "downloadCount": 23,
@@ -273,6 +273,19 @@
       "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.codeblock.svg",
       "publishedAt": "2026-09-24T23:46:29+05:30",
       "addedAt": "2026-08-20T22:11:59+05:30"
+    },
+    {
+      "id": "com.openclip.code-image",
+      "name": "Code Image",
+      "description": "Turn selected code into styled PNG or SVG images with 12 themes, offline.",
+      "author": "OpenClip Team",
+      "icon": "icon.svg",
+      "version": "1.0.0",
+      "downloadCount": 0,
+      "downloadURL": "https://github.com/ganeshmshetty/openclip-extensions/releases/download/com.openclip.code-image@1.0.0/CodeImage.openclipext.zip",
+      "iconURL": "https://cdn.jsdelivr.net/gh/ganeshmshetty/openclip-extensions@main/published/icons/com.openclip.code-image.svg",
+      "publishedAt": "2026-11-28T22:08:51+05:30",
+      "addedAt": "2026-11-28T22:08:51+05:30"
     },
     {
       "id": "com.openclip.colorpeek",
@@ -1148,7 +1161,7 @@
     {
       "id": "com.openclip.quick-translate",
       "name": "Quick Translate",
-      "description": "Translate the selected text instantly \u2014 result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
+      "description": "Translate the selected text instantly — result previewed in the popup or pasted in place. Fully keyless: cascades across Google, LibreTranslate, SimplyTranslate, and Lingva endpoints with source-language auto-detection.",
       "author": "OpenClip Team",
       "icon": "character.bubble",
       "version": "1.4.0",
