@@ -18,6 +18,10 @@ Supports macOS **Terminal**, **iTerm2**, **Warp**, **Ghostty**, **kitty**, and *
 3. **Output Filtering**: Set **Append Command** to `| grep keyword` to filter command output.
 4. **Background / Server Tasks**: Turn on **Use New Tab** when launching servers like `npm run dev` or `docker compose up`.
 
+## When it appears
+
+The action only shows when the selection is a single line that looks like a shell command: it starts with a common command (such as `git`, `npm`, `brew`, `bash`, `cd` or `open`, optionally after `sudo`) or with a path (`~/`, `./`, `/Users/`, `/Applications/` and similar). Plain sentences and multi-line text do not trigger it.
+
 ## Configuration
 
 Configure in **OpenClip Preferences ▸ Actions ▸ Run in Terminal**:

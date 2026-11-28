@@ -7,7 +7,8 @@
     "ja": "ターミナルで実行",
     "fr": "Exécuter dans le Terminal"
   },
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "releaseNotes": "Only shows when the selection looks like a shell command.",
   "minOpenClipVersion": "1.1.0",
   "author": "OpenClip Team",
   "description": {
@@ -100,6 +101,9 @@
     "icon": "icon.svg",
     "type": "applescript",
     "script": "main.applescript",
-    "output": "none"
+    "output": "none",
+    "requirements": {
+      "regex": "^\\s*(?:sudo\\s+)?(?:(?:bash|zsh|sh|cd|ls|git|gh|npm|npx|pnpm|yarn|brew|swift|swiftc|python3?|pip3?|node|open|cat|echo|curl|wget|defaults|xcodebuild|xcrun|make|ssh|scp|rsync|mkdir|rm|cp|mv|ln|chmod|chown|grep|find|docker|kill|killall|pkill|launchctl|osascript|claude|hs|ffmpeg|tail|head|touch|export|source|plutil|mdfind|codesign)\\b|~/|\\./|/(?:Users|Applications|usr|opt|bin|etc|tmp)/)[^\\n]*$"
+    }
   }
 }
